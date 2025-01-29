@@ -32,7 +32,7 @@ export default function ProjectsWrapper() {
 
   return (
     <section className="flex h-screen items-center justify-center">
-      <div className="flex w-[1500px] flex-col items-center justify-center">
+      <div className="flex w-[1400px] flex-col items-center justify-center">
         {projects.map((project, index) => {
           return (
             <Project

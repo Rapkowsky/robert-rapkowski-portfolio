@@ -3,6 +3,21 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import gsap from "gsap";
 
+type Project = {
+  src: string;
+  color: string;
+};
+
+type ModalState = {
+  active: boolean;
+  index: number;
+};
+
+type ModalProps = {
+  modal: ModalState;
+  projects: Project[];
+};
+
 const scaleAnimation = {
   initial: { scale: 0, x: "-50%", y: "-50%" },
   enter: {
@@ -17,21 +32,6 @@ const scaleAnimation = {
     y: "-50%",
     transition: { duration: 0.4, ease: [0.32, 0, 0.67, 0] },
   },
-};
-
-type Project = {
-  src: string;
-  color: string;
-};
-
-type ModalState = {
-  active: boolean;
-  index: number;
-};
-
-type ModalProps = {
-  modal: ModalState;
-  projects: Project[];
 };
 
 export default function Modal({ modal, projects }: ModalProps) {
