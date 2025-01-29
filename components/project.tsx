@@ -23,10 +23,10 @@ export default function Project({ index, title, setModal }: ProjectProps) {
       }}
       className="group flex w-full cursor-pointer items-center justify-between border-t border-[rgb(201,201,201)] px-[100px] py-[50px] transition duration-300 hover:opacity-50"
     >
-      <h2 className="m-0 text-[60px] font-[500] transition-transform duration-300 group-hover:translate-x-[-10px]">
+      <h2 className="m-0 text-[94px] font-[500] transition-transform duration-300 group-hover:translate-x-[-30px]">
         {title}
       </h2>
-      <p className="font-[300] transition-transform duration-300 group-hover:translate-x-[10px]">
+      <p className="font-[300] transition-transform duration-300 group-hover:translate-x-[30px]">
         Design & Development
       </p>
     </div>

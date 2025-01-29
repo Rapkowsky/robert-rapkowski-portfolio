@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Project from "./project";
+import Modal from "./modal";
 
 const projects = [
   {
@@ -31,7 +32,7 @@ export default function ProjectsWrapper() {
 
   return (
     <section className="flex h-screen items-center justify-center">
-      <div className="flex w-[1000px] flex-col items-center justify-center">
+      <div className="flex w-[1500px] flex-col items-center justify-center">
         {projects.map((project, index) => {
           return (
             <Project
@@ -43,6 +44,7 @@ export default function ProjectsWrapper() {
           );
         })}
       </div>
+      <Modal modal={modal} projects={projects} />
     </section>
   );
 }
