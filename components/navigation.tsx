@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { menuSlide } from "@/lib/animations";
 import LinkComponent from "@/components/link";
+import Curve from "./curve";
 
 const navItems = [
   {
@@ -60,9 +61,10 @@ export default function Navigation() {
           <a>Awwwards</a>
           <a>Instagram</a>
           <a>Dribble</a>
-          <a>LinkComponentedIn</a>
+          <a>LinkedIn</a>
         </div>
       </div>
+      <Curve />
     </motion.div>
   );
 }

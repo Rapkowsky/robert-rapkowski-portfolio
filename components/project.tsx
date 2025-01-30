@@ -23,10 +23,10 @@ export default function Project({ index, title, setModal }: ProjectProps) {
       }}
       className="group flex w-full cursor-pointer items-center justify-between border-t border-[#d7d7d8] px-[100px] py-[50px] transition duration-300"
     >
-      <h2 className="m-0 text-[90px] font-[500] transition-all duration-300 group-hover:translate-x-[-30px] group-hover:text-[#b4b5b6]">
+      <h2 className="m-0 text-[90px] font-[500] transition-all duration-300 ease-[cubic-bezier(0.45,0,0.55,1)] group-hover:translate-x-[-30px] group-hover:text-[#b4b5b6]">
         {title}
       </h2>
-      <p className="text-[19px] font-[300] transition-all duration-300 group-hover:translate-x-[30px] group-hover:text-[#b4b5b6]">
+      <p className="text-[19px] font-[300] transition-all duration-300 ease-[cubic-bezier(0.45,0,0.55,1)] group-hover:translate-x-[30px] group-hover:text-[#b4b5b6]">
         Design & Development
       </p>
     </div>
