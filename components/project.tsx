@@ -21,12 +21,12 @@ export default function Project({ index, title, setModal }: ProjectProps) {
       onMouseLeave={() => {
         setModal({ active: false, index });
       }}
-      className="group flex w-full cursor-pointer items-center justify-between border-t border-[rgb(201,201,201)] px-[100px] py-[50px] transition duration-300 hover:opacity-50"
+      className="group flex w-full cursor-pointer items-center justify-between border-t border-[#d7d7d8] px-[100px] py-[50px] transition duration-300"
     >
-      <h2 className="m-0 text-[90px] font-[500] transition-transform duration-300 group-hover:translate-x-[-30px]">
+      <h2 className="m-0 text-[90px] font-[500] transition-all duration-300 group-hover:translate-x-[-30px] group-hover:text-[#b4b5b6]">
         {title}
       </h2>
-      <p className="text-[19px] font-[300] transition-transform duration-300 group-hover:translate-x-[30px]">
+      <p className="text-[19px] font-[300] transition-all duration-300 group-hover:translate-x-[30px] group-hover:text-[#b4b5b6]">
         Design & Development
       </p>
     </div>

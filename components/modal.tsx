@@ -24,13 +24,13 @@ const scaleAnimation = {
     scale: 1,
     x: "-50%",
     y: "-50%",
-    transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] },
+    transition: { duration: 0.4, ease: [0.61, 1, 0.88, 1] },
   },
   closed: {
     scale: 0,
     x: "-50%",
     y: "-50%",
-    transition: { duration: 0.4, ease: [0.32, 0, 0.67, 0] },
+    transition: { duration: 0.4, ease: [0.45, 0, 0.55, 1] },
   },
 };
 
@@ -101,11 +101,11 @@ export default function Modal({ modal, projects }: ModalProps) {
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
-        className="pointer-events-none absolute flex h-[350px] w-[450px] items-center justify-center overflow-hidden bg-white"
+        className="pointer-events-none absolute flex h-[475px] w-[475px] items-center justify-center overflow-hidden bg-white"
       >
         <div
           style={{ top: index * -100 + "%" }}
-          className="absolute h-full w-full transition-[top] duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]"
+          className="absolute h-full w-full transition-[top] duration-500 ease-[cubic-bezier(0.45,0,0.55,1)]"
         >
           {projects.map((project, idx) => {
             const { src, color } = project;
