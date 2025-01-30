@@ -129,7 +129,7 @@ export default function Modal({ modal, projects }: ModalProps) {
       </motion.div>
       <motion.div
         ref={cursor}
-        className="z-2 pointer-events-none absolute flex h-[80px] w-[80px] items-center justify-center rounded-full bg-[#455CE9] text-[14px] font-light text-white"
+        className="z-2 bg-main pointer-events-none absolute flex h-[80px] w-[80px] items-center justify-center rounded-full text-[14px] font-light text-white"
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
@@ -137,7 +137,7 @@ export default function Modal({ modal, projects }: ModalProps) {
 
       <motion.div
         ref={cursorLabel}
-        className="z-2 pointer-events-none absolute flex h-[80px] w-[80px] items-center justify-center rounded-full bg-[#455CE9] bg-transparent text-[14px] font-light text-white"
+        className="z-2 bg-main pointer-events-none absolute flex h-[80px] w-[80px] items-center justify-center rounded-full bg-transparent text-[14px] font-light text-white"
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
