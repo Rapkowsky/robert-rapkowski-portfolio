@@ -1,6 +1,6 @@
 "use client";
 
-import BurgerMenu from "@/components/burger-menu";
+import Header from "@/components/header";
 import HeroWrapper from "@/components/hero-wrapper";
 import ProjectsWrapper from "@/components/projects-wrapper";
 import { useEffect } from "react";
@@ -16,9 +16,9 @@ const Home = () => {
 
   return (
     <main>
+      <Header />
       <HeroWrapper />
       <ProjectsWrapper />
-      <BurgerMenu />
     </main>
   );
 };

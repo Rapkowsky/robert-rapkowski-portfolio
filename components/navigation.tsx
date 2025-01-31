@@ -34,7 +34,7 @@ export default function Navigation() {
       initial="initial"
       animate="enter"
       exit="exit"
-      className="fixed right-0 top-0 h-screen bg-black text-white"
+      className="fixed right-0 top-0 z-30 h-screen bg-black text-white"
     >
       <div className="box-border flex h-full flex-col justify-between p-[100px]">
         <div
