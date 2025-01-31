@@ -4,8 +4,8 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
-import Navigation from "./navigation";
-import BurgerMenu from "./burger-menu";
+import Navigation from "./Navigation";
+import BurgerMenu from "./BurgerMenu";
 
 export default function Header() {
   const header = useRef(null);
@@ -49,33 +49,34 @@ export default function Header() {
         className="absolute top-0 z-[1] box-border flex w-full items-center justify-between p-[35px] font-light text-white"
       >
         <div className="group flex cursor-pointer">
-          <p className="group-hover:rotate-360 m-0 transition duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]">
+          <p className="ease-rrSmooth m-0 duration-500 group-hover:rotate-[360deg]">
             ©
           </p>
-          <div className="relative ml-[5px] flex overflow-hidden whitespace-nowrap transition duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]">
-            <p className="relative transition duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:translate-x-[-100%]">
+          <div className="relative ml-[5px] flex overflow-hidden whitespace-nowrap">
+            <p className="ease-rrSmooth pr-[5px] duration-500 group-hover:translate-x-[-65px]">
               Code by
             </p>
-            <p className="pl-[0.3em] group-hover:translate-x-[-65px] group-hover:pr-[30px]">
-              Dennis
+            <p className="ease-rrSmooth duration-500 group-hover:translate-x-[-65px] group-hover:pr-[30px]">
+              Robert
             </p>
-            <p className="absolute left-[120px] pl-[0.3em] group-hover:translate-x-[-65px]">
-              Snellenberg
+            <p className="ease-rrSmooth absolute left-[120px] duration-500 group-hover:translate-x-[-65px]">
+              Rapkowski
             </p>
           </div>
         </div>
+
         <div className="flex items-center">
           <div className="group relative z-[1] flex cursor-pointer flex-col p-[15px]">
             <a className="cursor-pointer">Work</a>
-            <div className="absolute left-[50%] top-[45px] h-[5px] w-[5px] -translate-x-1/2 scale-0 rounded-full bg-white transition duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-100"></div>
+            <div className="ease-rrSmooth absolute left-[50%] top-[45px] h-[5px] w-[5px] -translate-x-1/2 scale-0 rounded-full bg-white transition duration-500 group-hover:scale-100"></div>
           </div>
           <div className="group relative z-[1] flex cursor-pointer flex-col p-[15px]">
             <a className="cursor-pointer">About</a>
-            <div className="absolute left-[50%] top-[45px] h-[5px] w-[5px] -translate-x-1/2 scale-0 rounded-full bg-white transition duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-100"></div>
+            <div className="ease-rrSmooth absolute left-[50%] top-[45px] h-[5px] w-[5px] -translate-x-1/2 scale-0 rounded-full bg-white transition duration-500 group-hover:scale-100"></div>
           </div>
           <div className="group relative z-[1] flex cursor-pointer flex-col p-[15px]">
             <a className="cursor-pointer">Contact</a>
-            <div className="absolute left-[50%] top-[45px] h-[5px] w-[5px] -translate-x-1/2 scale-0 rounded-full bg-white transition duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-100"></div>
+            <div className="ease-rrSmooth absolute left-[50%] top-[45px] h-[5px] w-[5px] -translate-x-1/2 scale-0 rounded-full bg-white transition duration-500 group-hover:scale-100"></div>
           </div>
         </div>
       </div>

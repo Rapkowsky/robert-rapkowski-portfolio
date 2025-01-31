@@ -1,8 +1,6 @@
 "use client";
-
-import Header from "@/components/header";
-import HeroWrapper from "@/components/hero-wrapper";
-import ProjectsWrapper from "@/components/projects-wrapper";
+import HeroSection from "@/components/HeroSection";
+import ProjectsSection from "@/components/ProjectsSection";
 import { useEffect } from "react";
 
 const Home = () => {
@@ -16,9 +14,8 @@ const Home = () => {
 
   return (
     <main>
-      <Header />
-      <HeroWrapper />
-      <ProjectsWrapper />
+      <HeroSection />
+      <ProjectsSection />
     </main>
   );
 };

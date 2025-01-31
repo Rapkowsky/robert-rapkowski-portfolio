@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Project from "./project";
-import Modal from "./modal";
+import Project from "./Project";
+import Modal from "./Modal";
 
 const projects = [
   {
@@ -27,7 +27,7 @@ const projects = [
   },
 ];
 
-export default function ProjectsWrapper() {
+export default function ProjectsSection() {
   const [modal, setModal] = useState({ active: false, index: 0 });
 
   return (

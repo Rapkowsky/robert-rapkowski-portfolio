@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { menuSlide } from "@/lib/animations";
-import LinkComponent from "@/components/link";
-import Curve from "./curve";
+import LinkComponent from "@/components/LinkComponent";
+import Curve from "./Curve";
 
 const navItems = [
   {

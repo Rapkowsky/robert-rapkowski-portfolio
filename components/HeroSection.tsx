@@ -1,11 +1,11 @@
 import Image from "next/image";
-import bgImage from "@/public/images/hero-img.jpg";
+import bgImage from "@/public/images/bg.jpg";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import ProjectsWrapper from "@/components/projects-wrapper";
 import { useEffect, useRef } from "react";
+import Header from "./Header";
 
-export default function HeroWrapper() {
+export default function HeroSection() {
   // Text animation
   const firstText = useRef(null);
   const secondText = useRef<HTMLDivElement>(null);
@@ -41,6 +41,7 @@ export default function HeroWrapper() {
   };
   return (
     <section className="relative flex h-screen overflow-hidden">
+      <Header />
       <div>
         <Image
           src={bgImage}
@@ -49,7 +50,7 @@ export default function HeroWrapper() {
           objectFit="cover"
           quality={100}
         />
-        <div className="absolute top-[calc(100vh-350px)]">
+        <div className="absolute top-[calc(100vh-400px)]">
           <div
             ref={slider}
             className="relative whitespace-nowrap text-[240px] font-medium text-white"
@@ -67,7 +68,6 @@ export default function HeroWrapper() {
           </div>
         </div>
       </div>
-      <ProjectsWrapper />
     </section>
   );
 }

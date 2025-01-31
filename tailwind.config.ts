@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      transitionTimingFunction: {
+        rrSmooth: "cubic-bezier(0.45, 0, 0.55, 1)",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
