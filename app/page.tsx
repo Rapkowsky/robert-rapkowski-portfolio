@@ -1,4 +1,5 @@
 "use client";
+import Description from "@/components/Description";
 import HeroSection from "@/components/HeroSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import { useEffect } from "react";
@@ -15,6 +16,7 @@ const Home = () => {
   return (
     <main>
       <HeroSection />
+      <Description />
       <ProjectsSection />
     </main>
   );

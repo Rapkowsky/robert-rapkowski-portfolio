@@ -1,20 +1,14 @@
 "use client";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { usePathname } from "next/navigation";
+import { useLayoutEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 
 import BurgerMenu from "./BurgerMenu";
 
 export default function Header() {
-  const header = useRef(null);
   const [isActive, setIsActive] = useState(false);
-  const pathname = usePathname();
+  const header = useRef(null);
   const burgerMenuRef = useRef(null);
-
-  useEffect(() => {
-    if (isActive) setIsActive(false);
-  }, [pathname]);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -22,6 +16,8 @@ export default function Header() {
       scrollTrigger: {
         trigger: document.documentElement,
         start: 0,
+        // Visible right after header nav
+        // end: 68,
         end: window.innerHeight,
         onLeave: () => {
           gsap.to(burgerMenuRef.current, {
@@ -36,6 +32,7 @@ export default function Header() {
             duration: 0.25,
             ease: "power1.out",
           });
+          setIsActive(false);
         },
       },
     });
@@ -79,7 +76,11 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <BurgerMenu ref={burgerMenuRef} />
+      <BurgerMenu
+        ref={burgerMenuRef}
+        isActive={isActive}
+        setIsActive={setIsActive}
+      />
     </>
   );
 }

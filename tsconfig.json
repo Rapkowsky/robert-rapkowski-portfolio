@@ -27,7 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "lib/animations.js"
+    "lib/Animations.js"
   ],
   "exclude": ["node_modules"]
 }

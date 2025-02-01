@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { menuSlide } from "@/lib/animations";
+import { menuSlide } from "@/lib/Animations";
 import LinkComponent from "@/components/LinkComponent";
 import Curve from "./Curve";
 

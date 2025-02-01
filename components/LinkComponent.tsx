@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { slide, scale } from "@/lib/animations";
+import { slide, scale } from "@/lib/Animations";
 
 type LinkProps = {
   data: {
