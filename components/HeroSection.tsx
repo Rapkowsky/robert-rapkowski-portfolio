@@ -1,5 +1,5 @@
 import Image from "next/image";
-import bgImage from "@/public/images/bg.jpg";
+import bgImage from "@/public/images/aaa.jpg";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef } from "react";

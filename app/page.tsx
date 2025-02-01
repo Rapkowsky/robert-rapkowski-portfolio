@@ -2,6 +2,7 @@
 import Description from "@/components/Description";
 import HeroSection from "@/components/HeroSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import SlidingImages from "@/components/SlidingImages";
 import { useEffect } from "react";
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
       <HeroSection />
       <Description />
       <ProjectsSection />
+      <SlidingImages />
     </main>
   );
 };
