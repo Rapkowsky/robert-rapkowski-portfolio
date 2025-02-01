@@ -1,17 +1,17 @@
 "use client";
 import { AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import Navigation from "./Navigation";
 
-export default function BurgerMenu() {
+const BurgerMenu = forwardRef<HTMLDivElement>(function (_, ref) {
   const [isActive, setIsActive] = useState(false);
 
   return (
     <>
       <div
+        ref={ref}
         onClick={() => {
           setIsActive(!isActive);
-          console.log(isActive);
         }}
         className="fixed right-0 top-0 z-50 m-[20px] flex h-[80px] w-[80px] cursor-pointer items-center justify-center rounded-full bg-main"
       >
@@ -25,4 +25,6 @@ export default function BurgerMenu() {
       </AnimatePresence>
     </>
   );
-}
+});
+BurgerMenu.displayName = "BurgerMenu";
+export default BurgerMenu;

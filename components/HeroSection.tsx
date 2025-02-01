@@ -50,10 +50,10 @@ export default function HeroSection() {
           objectFit="cover"
           quality={100}
         />
-        <div className="absolute top-[calc(100vh-400px)]">
+        <div className="absolute top-[calc(100vh-41%)]">
           <div
             ref={slider}
-            className="relative whitespace-nowrap text-[240px] font-medium text-white"
+            className="relative whitespace-nowrap text-[310px] font-medium text-white"
           >
             <p ref={firstText} className="relative m-0 pr-[50px]">
               Freelance Developer -

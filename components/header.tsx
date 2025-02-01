@@ -1,17 +1,16 @@
 "use client";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import { AnimatePresence } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
-import Navigation from "./Navigation";
+
 import BurgerMenu from "./BurgerMenu";
 
 export default function Header() {
   const header = useRef(null);
   const [isActive, setIsActive] = useState(false);
   const pathname = usePathname();
-  const button = useRef(null);
+  const burgerMenuRef = useRef(null);
 
   useEffect(() => {
     if (isActive) setIsActive(false);
@@ -19,20 +18,20 @@ export default function Header() {
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.to(button.current, {
+    gsap.to(burgerMenuRef.current, {
       scrollTrigger: {
         trigger: document.documentElement,
         start: 0,
         end: window.innerHeight,
         onLeave: () => {
-          gsap.to(button.current, {
+          gsap.to(burgerMenuRef.current, {
             scale: 1,
             duration: 0.25,
             ease: "power1.out",
           });
         },
         onEnterBack: () => {
-          gsap.to(button.current, {
+          gsap.to(burgerMenuRef.current, {
             scale: 0,
             duration: 0.25,
             ease: "power1.out",
@@ -49,17 +48,17 @@ export default function Header() {
         className="absolute top-0 z-[1] box-border flex w-full items-center justify-between p-[35px] font-light text-white"
       >
         <div className="group flex cursor-pointer">
-          <p className="ease-rrSmooth m-0 duration-500 group-hover:rotate-[360deg]">
+          <p className="m-0 duration-500 ease-rrSmooth group-hover:rotate-[360deg]">
             ©
           </p>
           <div className="relative ml-[5px] flex overflow-hidden whitespace-nowrap">
-            <p className="ease-rrSmooth pr-[5px] duration-500 group-hover:translate-x-[-65px]">
+            <p className="pr-[5px] duration-500 ease-rrSmooth group-hover:translate-x-[-65px]">
               Code by
             </p>
-            <p className="ease-rrSmooth duration-500 group-hover:translate-x-[-65px] group-hover:pr-[30px]">
+            <p className="duration-500 ease-rrSmooth group-hover:translate-x-[-65px] group-hover:pr-[30px]">
               Robert
             </p>
-            <p className="ease-rrSmooth absolute left-[120px] duration-500 group-hover:translate-x-[-65px]">
+            <p className="absolute left-[120px] duration-500 ease-rrSmooth group-hover:translate-x-[-65px]">
               Rapkowski
             </p>
           </div>
@@ -68,22 +67,19 @@ export default function Header() {
         <div className="flex items-center">
           <div className="group relative z-[1] flex cursor-pointer flex-col p-[15px]">
             <a className="cursor-pointer">Work</a>
-            <div className="ease-rrSmooth absolute left-[50%] top-[45px] h-[5px] w-[5px] -translate-x-1/2 scale-0 rounded-full bg-white transition duration-500 group-hover:scale-100"></div>
+            <div className="absolute left-[50%] top-[45px] h-[5px] w-[5px] -translate-x-1/2 scale-0 rounded-full bg-white transition duration-500 ease-rrSmooth group-hover:scale-100"></div>
           </div>
           <div className="group relative z-[1] flex cursor-pointer flex-col p-[15px]">
             <a className="cursor-pointer">About</a>
-            <div className="ease-rrSmooth absolute left-[50%] top-[45px] h-[5px] w-[5px] -translate-x-1/2 scale-0 rounded-full bg-white transition duration-500 group-hover:scale-100"></div>
+            <div className="absolute left-[50%] top-[45px] h-[5px] w-[5px] -translate-x-1/2 scale-0 rounded-full bg-white transition duration-500 ease-rrSmooth group-hover:scale-100"></div>
           </div>
           <div className="group relative z-[1] flex cursor-pointer flex-col p-[15px]">
             <a className="cursor-pointer">Contact</a>
-            <div className="ease-rrSmooth absolute left-[50%] top-[45px] h-[5px] w-[5px] -translate-x-1/2 scale-0 rounded-full bg-white transition duration-500 group-hover:scale-100"></div>
+            <div className="absolute left-[50%] top-[45px] h-[5px] w-[5px] -translate-x-1/2 scale-0 rounded-full bg-white transition duration-500 ease-rrSmooth group-hover:scale-100"></div>
           </div>
         </div>
       </div>
-      <BurgerMenu />
-      <AnimatePresence mode="wait">
-        {isActive && <Navigation />}
-      </AnimatePresence>
+      <BurgerMenu ref={burgerMenuRef} />
     </>
   );
 }
