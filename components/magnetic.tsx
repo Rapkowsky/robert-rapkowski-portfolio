@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-const Magnetic = ({ children }) => {
+export default function Magnetic({ children }) {
   const magnetic = useRef(null);
 
   useEffect(() => {
     const xTo = gsap.quickTo(magnetic.current, "x", {
-      duration: 1,
+      duration: 1.3,
       ease: "elastic.out(1, 0.3)",
     });
     const yTo = gsap.quickTo(magnetic.current, "y", {
@@ -20,8 +20,8 @@ const Magnetic = ({ children }) => {
         magnetic.current.getBoundingClientRect();
       const x = clientX - (left + width / 2);
       const y = clientY - (top + height / 2);
-      xTo(x * 0.35);
-      yTo(y * 0.35);
+      xTo(x * 0.2);
+      yTo(y * 0.2);
     });
     magnetic.current.addEventListener("mouseleave", (e) => {
       xTo(0);
@@ -30,6 +30,4 @@ const Magnetic = ({ children }) => {
   }, []);
 
   return React.cloneElement(children, { ref: magnetic });
-};
-
-export default Magnetic;
+}

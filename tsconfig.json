@@ -27,7 +27,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "lib/Animations.js"
-, "components/magnetic.tsx"  ],
+    "lib/Animations.js",
+    "components/Magnetic.tsx"
+, "components/Button.jsx"  ],
   "exclude": ["node_modules"]
 }

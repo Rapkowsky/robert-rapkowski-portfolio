@@ -1,17 +1,28 @@
 "use client";
-import Contact from "@/components/contact";
+import Contact from "@/components/Contact";
 import Description from "@/components/Description";
 import HeroSection from "@/components/HeroSection";
+import Preloader from "@/components/Preloader";
 import ProjectsSection from "@/components/ProjectsSection";
 import SlidingImages from "@/components/SlidingImages";
-import { useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   // Smooth scroll
   useEffect(() => {
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
       const locomotiveScroll = new LocomotiveScroll();
+      // setTimeout(() => {
+      //   setIsLoading(false);
+
+      //   document.body.style.cursor = "default";
+
+      //   window.scrollTo(0, 0);
+      // }, 2000);
     })();
   }, []);
 

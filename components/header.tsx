@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 
 import BurgerMenu from "./BurgerMenu";
+import Magnetic from "./Magnetic";
 
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
@@ -62,18 +63,24 @@ export default function Header() {
         </div>
 
         <div className="flex items-center">
-          <div className="group relative z-[1] flex cursor-pointer flex-col p-[15px]">
-            <a className="cursor-pointer">Work</a>
-            <div className="absolute left-[50%] top-[45px] h-[5px] w-[5px] -translate-x-1/2 scale-0 rounded-full bg-white transition duration-500 ease-rrSmooth group-hover:scale-100"></div>
-          </div>
-          <div className="group relative z-[1] flex cursor-pointer flex-col p-[15px]">
-            <a className="cursor-pointer">About</a>
-            <div className="absolute left-[50%] top-[45px] h-[5px] w-[5px] -translate-x-1/2 scale-0 rounded-full bg-white transition duration-500 ease-rrSmooth group-hover:scale-100"></div>
-          </div>
-          <div className="group relative z-[1] flex cursor-pointer flex-col p-[15px]">
-            <a className="cursor-pointer">Contact</a>
-            <div className="absolute left-[50%] top-[45px] h-[5px] w-[5px] -translate-x-1/2 scale-0 rounded-full bg-white transition duration-500 ease-rrSmooth group-hover:scale-100"></div>
-          </div>
+          <Magnetic>
+            <div className="group relative z-[1] flex cursor-pointer flex-col p-[15px]">
+              <a className="cursor-pointer">Work</a>
+              <div className="absolute left-[50%] top-[45px] h-[5px] w-[5px] -translate-x-1/2 scale-0 rounded-full bg-white transition duration-300 ease-rrSmooth group-hover:scale-100"></div>
+            </div>
+          </Magnetic>
+          <Magnetic>
+            <div className="group relative z-[1] flex cursor-pointer flex-col p-[15px]">
+              <a className="cursor-pointer">About</a>
+              <div className="absolute left-[50%] top-[45px] h-[5px] w-[5px] -translate-x-1/2 scale-0 rounded-full bg-white transition duration-300 ease-rrSmooth group-hover:scale-100"></div>
+            </div>
+          </Magnetic>
+          <Magnetic>
+            <div className="group relative z-[1] flex cursor-pointer flex-col p-[15px]">
+              <a className="cursor-pointer">Contact</a>
+              <div className="absolute left-[50%] top-[45px] h-[5px] w-[5px] -translate-x-1/2 scale-0 rounded-full bg-white transition duration-300 ease-rrSmooth group-hover:scale-100"></div>
+            </div>
+          </Magnetic>
         </div>
       </div>
       <BurgerMenu

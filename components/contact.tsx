@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { useRef } from "react";
-import { useScroll, motion, useTransform, useSpring } from "framer-motion";
-import Magnetic from "./magnetic";
+import { useScroll, motion, useTransform } from "framer-motion";
+import Magnetic from "./Magnetic";
+import Button from "./Button";
 
 export default function Contact() {
   const container = useRef(null);
@@ -11,6 +12,8 @@ export default function Contact() {
   });
   const x = useTransform(scrollYProgress, [0, 1], [-150, 0]);
   const y = useTransform(scrollYProgress, [0, 1], [-500, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const scale = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [162, 90]);
   return (
     <motion.div
@@ -20,22 +23,24 @@ export default function Contact() {
     >
       <div className="w-full max-w-[1800px] bg-black">
         <div className="relative ml-[200px] mr-[200px] border-b border-b-[#868686] pb-[100px]">
-          <span className="flex items-center">
-            <div className="relative h-[100px] w-[100px] overflow-hidden rounded-full">
-              <Image
-                fill={true}
-                alt={"image"}
-                src={`/images/rr.jpeg`}
-                className="object-cover"
-              />
-            </div>
-            <h2 className="m-0 pl-[0.3em] text-[min(5vw,133px)] font-light leading-[1.065]">
-              Let's work
+          <motion.div style={{ y, opacity }}>
+            <span className="flex items-center">
+              <motion.div className="relative h-[100px] w-[100px] overflow-hidden rounded-full">
+                <Image
+                  fill={true}
+                  alt={"image"}
+                  src={`/images/rr.jpeg`}
+                  className="object-cover"
+                />
+              </motion.div>
+              <h2 className="m-0 pl-[0.3em] text-[min(5vw,133px)] font-light leading-[1.065]">
+                Let's work
+              </h2>
+            </span>
+            <h2 className="m-0 text-[min(5vw,133px)] font-light leading-[1.065]">
+              together
             </h2>
-          </span>
-          <h2 className="m-0 text-[min(5vw,133px)] font-light leading-[1.065]">
-            together
-          </h2>
+          </motion.div>
           <motion.div
             style={{ x }}
             className="absolute left-[calc(100%-400px)] top-[calc(100%-75px)]"
@@ -61,18 +66,22 @@ export default function Contact() {
             />
           </motion.svg>
         </div>
-        <div className="mx-[200px] mt-[100px] flex gap-[20px]">
-          <div className="relative flex cursor-pointer items-center justify-center rounded-[3em] border border-[#868686] px-[60px] py-[15px]">
+        <motion.div
+          style={{ scale }}
+          className="mx-[200px] mt-[100px] flex gap-[20px]"
+        >
+          <Button className="px-[60px] py-[30px]">
             <p className="relative z-[1] transition-[color] duration-[400ms] ease-linear">
               robertrapkowski19@gmail.com
             </p>
-          </div>
-          <div className="relative flex cursor-pointer items-center justify-center rounded-[3em] border border-[#868686] px-[60px] py-[15px]">
+          </Button>
+
+          <Button className="px-[60px] py-[30px]">
             <p className="relative z-[1] transition-[color] duration-[400ms] ease-linear">
               +48 698868730
             </p>
-          </div>
-        </div>
+          </Button>
+        </motion.div>
         <div className="mt-[200px] flex justify-between p-[20px]">
           <div className="flex items-end gap-[10px]">
             <span className="flex flex-col gap-[15px]">

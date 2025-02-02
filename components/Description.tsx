@@ -1,6 +1,8 @@
 import { useInView, motion } from "framer-motion";
 import { useRef } from "react";
 import { slideUp, opacity } from "@/lib/Animations";
+import Magnetic from "./Magnetic";
+import Button from "./Button";
 
 export default function Description() {
   const phrase =
@@ -40,12 +42,11 @@ export default function Description() {
           The combination of my passion for design, code & interaction positions
           me in a unique place in the web design world.
         </motion.p>
+
         <div data-scroll data-scroll-speed={0.1}>
-          <div className="absolute left-[calc(100%-200px)] top-[80%] flex h-[180px] w-[180px] cursor-pointer items-center justify-center rounded-full bg-[#1C1D20] text-white">
-            <p className="relative z-[1] m-0 text-[16px] font-[300]">
-              About me
-            </p>
-          </div>
+          <Button className="relative flex h-[180px] w-[180px] cursor-pointer items-center justify-center rounded-full bg-[#1C1D20] text-white">
+            <p className="z-10">About me</p>
+          </Button>
         </div>
       </div>
     </div>
