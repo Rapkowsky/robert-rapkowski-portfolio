@@ -47,8 +47,8 @@ export default function HeroSection() {
           src={bgImage}
           alt="Background image"
           fill
-          objectFit="cover"
           quality={100}
+          className="object-cover"
         />
         <div className="absolute top-[calc(100vh-41%)]">
           <div
