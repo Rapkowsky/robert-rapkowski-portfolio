@@ -1,4 +1,5 @@
 "use client";
+import Contact from "@/components/contact";
 import Description from "@/components/Description";
 import HeroSection from "@/components/HeroSection";
 import ProjectsSection from "@/components/ProjectsSection";
@@ -20,6 +21,7 @@ const Home = () => {
       <Description />
       <ProjectsSection />
       <SlidingImages />
+      <Contact />
     </main>
   );
 };

@@ -28,6 +28,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "lib/Animations.js"
-  ],
+, "components/magnetic.tsx"  ],
   "exclude": ["node_modules"]
 }
