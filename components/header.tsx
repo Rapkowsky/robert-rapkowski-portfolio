@@ -17,9 +17,7 @@ export default function Header() {
       scrollTrigger: {
         trigger: document.documentElement,
         start: 0,
-        // Visible right after header nav
-        // end: 68,
-        end: window.innerHeight,
+        end: 68,
         onLeave: () => {
           gsap.to(burgerMenuRef.current, {
             scale: 1,
