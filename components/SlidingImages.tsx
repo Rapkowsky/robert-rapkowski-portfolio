@@ -54,7 +54,7 @@ export default function SlidingImages() {
   return (
     <div
       ref={container}
-      className="relative z-[1] mt-[200px] flex flex-col gap-[3vw] bg-white"
+      className="relative z-[1] flex flex-col gap-[3vw] bg-white"
     >
       <motion.div
         style={{ x: x1 }}
