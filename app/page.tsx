@@ -27,7 +27,7 @@ const Home = () => {
   }, []);
 
   return (
-    <main>
+    <main className="bg-black">
       {/* <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
       </AnimatePresence> */}

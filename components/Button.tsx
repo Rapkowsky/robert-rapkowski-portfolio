@@ -41,7 +41,7 @@ export default function Button({
   return (
     <Magnetic>
       <div
-        className={`relative flex cursor-pointer items-center justify-center rounded-full border border-[#888888] ${className}`}
+        className={`relative flex cursor-pointer items-center justify-center rounded-full ${className}`}
         style={{ overflow: "hidden" }}
         onMouseEnter={() => {
           manageMouseEnter();

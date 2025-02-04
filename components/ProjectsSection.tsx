@@ -8,12 +8,12 @@ const projects = [
   {
     title: "C2 Montreal",
     src: "c2montreal.png",
-    color: "#000000",
+    color: "gray",
   },
   {
     title: "Office Studio",
     src: "officestudio.png",
-    color: "#8C8C8C",
+    color: "#feecbc",
   },
   {
     title: "Locomotive",
@@ -31,8 +31,8 @@ export default function ProjectsSection() {
   const [modal, setModal] = useState({ active: false, index: 0 });
 
   return (
-    <section className="flex h-screen items-center justify-center">
-      <div className="flex w-[1400px] flex-col items-center justify-center">
+    <section className="flex h-screen items-center justify-center bg-black">
+      <div className="flex w-[1600px] flex-col items-center justify-center">
         {projects.map((project, index) => {
           return (
             <Project

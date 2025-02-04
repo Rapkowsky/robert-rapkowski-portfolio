@@ -1,7 +1,6 @@
 import { useInView, motion } from "framer-motion";
 import { useRef } from "react";
 import { slideUp, opacity } from "@/lib/Animations";
-import Magnetic from "./Magnetic";
 import Button from "./Button";
 
 export default function Description() {
@@ -12,7 +11,7 @@ export default function Description() {
   return (
     <div
       ref={description}
-      className="mt-[200px] flex justify-center pl-[200px] pr-[200px]"
+      className="bg-bl mt-[200px] flex justify-center pl-[200px] pr-[200px] text-white"
     >
       <div className="relative flex max-w-[1400px] gap-[50px]">
         <p className="m-0 gap-[8px] text-[36px] leading-[1.3]">
@@ -35,7 +34,7 @@ export default function Description() {
           })}
         </p>
         <motion.p
-          className="w-[80%] text-[18px] font-[300]"
+          className="w-[80%] text-[18px] font-[300] opacity-0"
           variants={opacity}
           animate={isInView ? "open" : "closed"}
         >
@@ -44,9 +43,12 @@ export default function Description() {
         </motion.p>
 
         <div data-scroll data-scroll-speed={0.1}>
-          <Button className="relative flex h-[180px] w-[180px] cursor-pointer items-center justify-center rounded-full bg-[#1C1D20] text-white">
-            <p className="z-10">About me</p>
-          </Button>
+          <div className="relative">
+            <Button className="relative flex h-[180px] w-[180px] cursor-pointer items-center justify-center rounded-full bg-main text-[500]">
+              <p className="z-10">About me</p>
+            </Button>
+            <div className="absolute left-[-100px] top-[100px] z-[-10] h-[10rem] w-[15rem] rounded-full bg-main blur-[5em] dark:bg-main"></div>
+          </div>
         </div>
       </div>
     </div>

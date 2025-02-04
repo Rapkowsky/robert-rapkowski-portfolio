@@ -25,12 +25,12 @@ export default function Contact() {
         <div className="relative ml-[200px] mr-[200px] border-b border-b-[#868686] pb-[100px]">
           <motion.div style={{ y, opacity }}>
             <span className="flex items-center">
-              <motion.div className="relative h-[100px] w-[100px] overflow-hidden rounded-full">
+              <motion.div className="relative h-[120px] w-[120px] overflow-hidden rounded-full">
                 <Image
                   fill={true}
                   alt={"image"}
-                  src={`/images/rr.jpeg`}
-                  className="object-cover"
+                  src={`/images/IMG_3944retkadr.jpg`}
+                  className="object-cover object-top"
                 />
               </motion.div>
               <h2 className="m-0 pl-[0.3em] text-[min(5vw,133px)] font-light leading-[1.065]">
@@ -45,7 +45,7 @@ export default function Contact() {
             style={{ x }}
             className="absolute left-[calc(100%-400px)] top-[calc(100%-75px)]"
           >
-            <div className="absolute bottom-[-175px] flex h-[200px] w-[200px] cursor-pointer items-center justify-center rounded-full border border-[#868686] bg-main p-0 py-[15px] text-white">
+            <div className="absolute bottom-[-175px] flex h-[200px] w-[200px] cursor-pointer items-center justify-center rounded-full bg-main p-0 py-[15px] text-white">
               <p className="relative z-[2] m-0 text-[16px] font-light transition-[color] duration-[400ms] ease-linear">
                 Get in touch
               </p>

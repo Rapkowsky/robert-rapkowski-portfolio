@@ -4,38 +4,38 @@ import Image from "next/image";
 
 const slider1 = [
   {
-    color: "#e3e5e7",
+    color: "black",
     src: "c2.jpg",
   },
   {
-    color: "#d6d7dc",
+    color: "black",
     src: "decimal.jpg",
   },
   {
-    color: "#e3e3e3",
+    color: "black",
     src: "funny.jpg",
   },
   {
-    color: "#21242b",
+    color: "black",
     src: "google.jpg",
   },
 ];
 
 const slider2 = [
   {
-    color: "#d4e3ec",
+    color: "black",
     src: "maven.jpg",
   },
   {
-    color: "#e5e0e1",
+    color: "black",
     src: "panda.jpg",
   },
   {
-    color: "#d7d4cf",
+    color: "black",
     src: "powell.jpg",
   },
   {
-    color: "#e1dad6",
+    color: "black",
     src: "wix.jpg",
   },
 ];
@@ -54,7 +54,7 @@ export default function SlidingImages() {
   return (
     <div
       ref={container}
-      className="relative z-[1] flex flex-col gap-[3vw] bg-white"
+      className="relative z-[1] flex flex-col gap-[3vw] bg-black"
     >
       <motion.div
         style={{ x: x1 }}
@@ -102,7 +102,7 @@ export default function SlidingImages() {
         })}
       </motion.div>
       <motion.div style={{ height }} className="relative mt-[100px]">
-        <div className="rounded-tl-0 rounded-tr-0 absolute left-[-10%] z-[1] h-[1550%] w-[120%] rounded-bl-[50%] rounded-br-[50%] bg-white shadow-[0px_60px_50px_rgba(0,0,0,0.748)]"></div>
+        <div className="rounded-tl-0 rounded-tr-0 absolute left-[-10%] z-[1] h-[1550%] w-[120%] rounded-bl-[50%] rounded-br-[50%] bg-black shadow-[0px_60px_50px_rgba(0,0,0,0.748)]"></div>
       </motion.div>
     </div>
   );
