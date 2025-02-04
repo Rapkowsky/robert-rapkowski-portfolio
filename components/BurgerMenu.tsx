@@ -1,8 +1,8 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
 import { forwardRef, useEffect } from "react";
-import Navigation from "./Navigation";
 import { usePathname } from "next/navigation";
+import Navigation from "./Navigation";
 
 type BurgerMenuProps = {
   isActive: boolean;
