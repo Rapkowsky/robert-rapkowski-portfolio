@@ -61,7 +61,7 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="flex items-center">
+        <div className="flex items-center gap-2">
           <ThemeToggle />
           <Magnetic>
             <div className="group relative z-[1] flex cursor-pointer flex-col p-[15px]">
