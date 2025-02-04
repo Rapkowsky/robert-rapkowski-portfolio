@@ -105,7 +105,7 @@ export default function Modal({ modal, projects }: ModalProps) {
       >
         <div
           style={{ top: index * -100 + "%" }}
-          className="absolute h-full w-full transition-[top] duration-500 ease-[cubic-bezier(0.45,0,0.55,1)]"
+          className="absolute h-full w-full transition-[top] duration-500 ease-rrSmooth"
         >
           {projects.map((project, idx) => {
             const { src, color } = project;

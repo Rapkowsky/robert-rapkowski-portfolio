@@ -4,6 +4,8 @@ import { usePathname } from "next/navigation";
 import { menuSlide } from "@/lib/Animations";
 import LinkComponent from "@/components/LinkComponent";
 import Curve from "./Curve";
+import ThemeToggle from "./ThemeToggle";
+
 
 const navItems = [
   {
@@ -62,6 +64,7 @@ export default function Navigation() {
           <a>Instagram</a>
           <a>Dribble</a>
           <a>LinkedIn</a>
+          <ThemeToggle />
         </div>
       </div>
       <Curve />

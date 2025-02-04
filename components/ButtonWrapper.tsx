@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Magnetic from "./Magnetic";
 
-export default function Button({
+export default function ButtonWrapper({
   className,
   children,
   backgroundColor = "#146ef5",

@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { useScroll, motion, useTransform } from "framer-motion";
 import Magnetic from "./Magnetic";
-import Button from "./Button";
+import ButtonWrapper from "./ButtonWrapper";
 
 export default function Contact() {
   const container = useRef(null);
@@ -46,7 +46,7 @@ export default function Contact() {
             className="absolute left-[calc(100%-400px)] top-[calc(100%-75px)]"
           >
             <div className="absolute bottom-[-175px] flex h-[200px] w-[200px] cursor-pointer items-center justify-center rounded-full bg-main p-0 py-[15px] text-white">
-              <p className="relative z-[2] m-0 text-[16px] font-light transition-[color] duration-[400ms] ease-linear">
+              <p className="duration-400 relative z-[2] m-0 text-[16px] font-light transition-[color] ease-linear">
                 Get in touch
               </p>
             </div>
@@ -70,17 +70,17 @@ export default function Contact() {
           style={{ scale }}
           className="mx-[200px] mt-[100px] flex gap-[20px]"
         >
-          <Button className="px-[60px] py-[30px]">
-            <p className="relative z-[1] transition-[color] duration-[400ms] ease-linear">
+          <ButtonWrapper className="px-[60px] py-[30px]">
+            <p className="duration-400 relative z-[1] transition-[color] ease-linear">
               robertrapkowski19@gmail.com
             </p>
-          </Button>
+          </ButtonWrapper>
 
-          <Button className="px-[60px] py-[30px]">
-            <p className="relative z-[1] transition-[color] duration-[400ms] ease-linear">
+          <ButtonWrapper className="px-[60px] py-[30px]">
+            <p className="duration-400 relative z-[1] transition-[color] ease-linear">
               +48 698868730
             </p>
-          </Button>
+          </ButtonWrapper>
         </motion.div>
         <div className="mt-[200px] flex justify-between p-[20px]">
           <div className="flex items-end gap-[10px]">

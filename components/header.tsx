@@ -5,6 +5,7 @@ import gsap from "gsap";
 
 import BurgerMenu from "./BurgerMenu";
 import Magnetic from "./Magnetic";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
@@ -61,6 +62,7 @@ export default function Header() {
         </div>
 
         <div className="flex items-center">
+          <ThemeToggle />
           <Magnetic>
             <div className="group relative z-[1] flex cursor-pointer flex-col p-[15px]">
               <a className="cursor-pointer">Work</a>
