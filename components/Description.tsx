@@ -44,10 +44,10 @@ export default function Description() {
 
         <div data-scroll data-scroll-speed={0.1}>
           <div className="relative">
-            <Button className="relative flex h-[180px] w-[180px] cursor-pointer items-center justify-center rounded-full bg-main text-[500]">
+            <Button className="relative flex h-[200px] w-[200px] cursor-pointer items-center justify-center rounded-full bg-main font-[700]">
               <p className="z-10">About me</p>
             </Button>
-            <div className="absolute left-[-100px] top-[100px] z-[-10] h-[10rem] w-[15rem] rounded-full bg-main blur-[5em] dark:bg-main"></div>
+            <div className="absolute left-[-230px] top-[90px] z-[-10] h-[390px] w-[590px] rounded-full bg-gradient-to-t from-main via-[#05367f] to-black blur-[200px]"></div>
           </div>
         </div>
       </div>
