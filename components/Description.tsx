@@ -7,7 +7,7 @@ export default function Description() {
   const phrase =
     "Helping brands to stand out in the digital era. Together we will set the new status quo. No nonsense, always on the cutting edge.";
   const description = useRef(null);
-  const isInView = useInView(description);
+  const isInView = useInView(description, { margin: "-150px" });
   return (
     <div
       ref={description}
@@ -43,8 +43,8 @@ export default function Description() {
         </motion.p>
 
         <div data-scroll data-scroll-speed={0.1}>
-          <div className="relative">
-            <Button className="relative flex h-[200px] w-[200px] cursor-pointer items-center justify-center rounded-full bg-main font-[700]">
+          <div className="relative duration-[3000ms] ease-[cubic-bezier(0.5,1,0.89,1)] active:scale-[0.25]">
+            <Button className="relative flex h-[200px] w-[200px] cursor-pointer items-center justify-center rounded-full bg-main font-[700] shadow-[0px_8px_200px_rgba(149,157,165,0.2)] shadow-black">
               <p className="z-10">About me</p>
             </Button>
             <div className="absolute left-[-230px] top-[90px] z-[-10] h-[390px] w-[590px] rounded-full bg-gradient-to-t from-main via-[#05367f] to-black blur-[200px]"></div>
