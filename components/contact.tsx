@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { useScroll, motion, useTransform } from "framer-motion";
-import Magnetic from "./Magnetic";
+
 import ButtonWrapper from "./ButtonWrapper";
+import MagneticWrapper from "./MagneticWrapper";
 
 export default function Contact() {
   const container = useRef(null);
@@ -46,7 +47,7 @@ export default function Contact() {
             className="absolute left-[calc(100%-400px)] top-[calc(100%-75px)]"
           >
             <div className="absolute bottom-[-175px] flex h-[200px] w-[200px] cursor-pointer items-center justify-center rounded-full bg-main p-0 py-[15px] text-white">
-              <p className="duration-400 relative z-[2] m-0 text-[16px] font-light transition-[color] ease-linear">
+              <p className="relative z-[2] m-0 text-[16px] font-light transition-[color] duration-400 ease-linear">
                 Get in touch
               </p>
             </div>
@@ -71,13 +72,13 @@ export default function Contact() {
           className="mx-[200px] mt-[100px] flex gap-[20px]"
         >
           <ButtonWrapper className="px-[60px] py-[30px]">
-            <p className="duration-400 relative z-[1] transition-[color] ease-linear">
+            <p className="relative z-[1] transition-[color] duration-400 ease-linear">
               robertrapkowski19@gmail.com
             </p>
           </ButtonWrapper>
 
           <ButtonWrapper className="px-[60px] py-[30px]">
-            <p className="duration-400 relative z-[1] transition-[color] ease-linear">
+            <p className="relative z-[1] transition-[color] duration-400 ease-linear">
               +48 698868730
             </p>
           </ButtonWrapper>
@@ -106,27 +107,27 @@ export default function Contact() {
               <h3 className="m-0 cursor-pointer p-[2.5px] text-[1em] font-light text-[#868686] hover:after:w-full">
                 socials
               </h3>
-              <Magnetic>
+              <MagneticWrapper>
                 <p className="m-0 cursor-pointer p-[2.5px] hover:after:w-full">
                   Awwwards
                 </p>
-              </Magnetic>
+              </MagneticWrapper>
             </span>
-            <Magnetic>
+            <MagneticWrapper>
               <p className="m-0 cursor-pointer p-[2.5px] hover:after:w-full">
                 Instagram
               </p>
-            </Magnetic>
-            <Magnetic>
+            </MagneticWrapper>
+            <MagneticWrapper>
               <p className="m-0 cursor-pointer p-[2.5px] hover:after:w-full">
                 Dribbble
               </p>
-            </Magnetic>
-            <Magnetic>
+            </MagneticWrapper>
+            <MagneticWrapper>
               <p className="m-0 cursor-pointer p-[2.5px] hover:after:w-full">
                 Linkedin
               </p>
-            </Magnetic>
+            </MagneticWrapper>
           </div>
         </div>
       </div>

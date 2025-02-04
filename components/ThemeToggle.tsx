@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
 import { BsMoon, BsSun } from "react-icons/bs";
-import Magnetic from "./Magnetic";
+import MagneticWrapper from "./MagneticWrapper";
 
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -15,7 +15,7 @@ export default function ThemeToggle() {
 
   return (
     isClient && (
-      <Magnetic>
+      <MagneticWrapper>
         <button
           className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-white bg-opacity-10 dark:bg-black"
           onClick={() => setTheme(theme === "light" ? "dark" : "light")}
@@ -44,7 +44,7 @@ export default function ThemeToggle() {
             )}
           </AnimatePresence>
         </button>
-      </Magnetic>
+      </MagneticWrapper>
     )
   );
 }

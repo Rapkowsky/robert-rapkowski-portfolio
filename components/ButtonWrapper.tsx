@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import Magnetic from "./Magnetic";
+import MagneticWrapper from "./MagneticWrapper";
 
 export default function ButtonWrapper({
   className,
@@ -39,7 +39,7 @@ export default function ButtonWrapper({
   };
 
   return (
-    <Magnetic>
+    <MagneticWrapper>
       <div
         className={`relative flex cursor-pointer items-center justify-center rounded-full ${className}`}
         style={{ overflow: "hidden" }}
@@ -58,6 +58,6 @@ export default function ButtonWrapper({
           className="absolute top-full h-[150%] w-full rounded-full"
         ></div>
       </div>
-    </Magnetic>
+    </MagneticWrapper>
   );
 }
