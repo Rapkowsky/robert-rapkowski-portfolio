@@ -101,7 +101,7 @@ export default function Modal({ modal, projects }: ModalProps) {
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
-        className="pointer-events-none absolute flex h-[475px] w-[475px] items-center justify-center overflow-hidden bg-white"
+        className="pointer-events-none absolute flex h-[475px] w-[475px] items-center justify-center overflow-hidden shadow-[0px_8px_200px_rgba(149,157,165,0.2)] shadow-black"
       >
         <div
           style={{ top: index * -100 + "%" }}
@@ -129,7 +129,7 @@ export default function Modal({ modal, projects }: ModalProps) {
       </motion.div>
       <motion.div
         ref={cursor}
-        className="z-2 bg-main pointer-events-none absolute flex h-[80px] w-[80px] items-center justify-center rounded-full text-[14px] font-light text-white"
+        className="z-2 pointer-events-none absolute flex h-[80px] w-[80px] items-center justify-center rounded-full bg-main text-[14px] font-light text-white"
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
@@ -137,7 +137,7 @@ export default function Modal({ modal, projects }: ModalProps) {
 
       <motion.div
         ref={cursorLabel}
-        className="z-2 bg-main pointer-events-none absolute flex h-[80px] w-[80px] items-center justify-center rounded-full bg-transparent text-[14px] font-light text-white"
+        className="z-2 pointer-events-none absolute flex h-[80px] w-[80px] items-center justify-center rounded-full bg-main bg-transparent text-[14px] font-light text-white"
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
