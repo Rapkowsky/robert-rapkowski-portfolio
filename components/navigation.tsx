@@ -34,9 +34,9 @@ export default function Navigation() {
       initial="initial"
       animate="enter"
       exit="exit"
-      className="fixed right-0 top-0 z-30 h-screen bg-black text-white"
+      className="fixed right-0 top-0 z-30 h-screen bg-[#1c1d20] text-white"
     >
-      <div className="box-border flex h-full flex-col justify-between p-[100px]">
+      <div className="box-border flex h-full flex-col justify-between px-[200px] py-[100px]">
         <div
           onMouseLeave={() => {
             setSelectedIndicator(pathname);
