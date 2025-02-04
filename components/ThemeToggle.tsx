@@ -14,7 +14,7 @@ export default function ThemeToggle() {
   return (
     isClient && (
       <button
-        className="flex h-[40px] w-[40px] items-center justify-center rounded-full border border-white border-opacity-40 bg-white bg-opacity-10 shadow-2xl backdrop-blur-[4px] duration-300 ease-rrSmooth hover:scale-[1.1] active:scale-105 dark:bg-gray-950"
+        className="flex h-[40px] w-[40px] items-center justify-center rounded-full border border-white border-opacity-40 bg-white bg-opacity-10 shadow-2xl duration-300 ease-rrSmooth hover:scale-[1.1] active:scale-105 dark:bg-gray-950"
         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
       >
         {theme === "light" ? <BsSun /> : <BsMoon />}
