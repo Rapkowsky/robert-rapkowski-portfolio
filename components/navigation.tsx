@@ -6,7 +6,6 @@ import LinkComponent from "@/components/LinkComponent";
 import Curve from "./Curve";
 import ThemeToggle from "./ThemeToggle";
 
-
 const navItems = [
   {
     title: "Home",
@@ -59,7 +58,7 @@ export default function Navigation() {
             );
           })}
         </div>
-        <div className="flex w-full justify-between gap-[40px] text-[12px]">
+        <div className="flex w-full items-center justify-between gap-[40px] text-[12px]">
           <a>Awwwards</a>
           <a>Instagram</a>
           <a>Dribble</a>
