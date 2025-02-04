@@ -37,7 +37,7 @@ export default function HeroSection() {
     gsap.set(firstText.current, { xPercent: xPercent });
     gsap.set(secondText.current, { xPercent: xPercent });
     requestAnimationFrame(animate);
-    xPercent += 0.1 * direction;
+    xPercent += 0.05 * direction;
   };
   return (
     <section className="relative flex h-screen overflow-hidden">
