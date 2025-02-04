@@ -1,5 +1,5 @@
 "use client";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { forwardRef, useEffect } from "react";
 import Navigation from "./Navigation";
 import { usePathname } from "next/navigation";
@@ -34,7 +34,18 @@ const BurgerMenu = forwardRef<HTMLDivElement, BurgerMenuProps>(function (
       </div>
 
       <AnimatePresence mode="wait">
-        {isActive && <Navigation />}
+        {isActive && (
+          <>
+            <Navigation />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.7, ease: [0.45, 0, 0.55, 1] }}
+              className="fixed z-[20] h-screen w-screen bg-[linear-gradient(to_right,hsla(220,13%,0%,.3)_40%,hsla(220,13%,0%,1)_80%)]"
+            />
+          </>
+        )}
       </AnimatePresence>
     </>
   );
