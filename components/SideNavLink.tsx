@@ -13,7 +13,7 @@ type LinkProps = {
   setSelectedIndicator: (href: string) => void;
 };
 
-export default function LinkComponent({
+export default function SideNavLink({
   data,
   isActive,
   setSelectedIndicator,
