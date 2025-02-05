@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import MagneticWrapper from "./MagneticWrapper";
+import { cn } from "@/lib/utils";
 
 export default function ButtonWrapper({
   className,
@@ -41,7 +42,10 @@ export default function ButtonWrapper({
   return (
     <MagneticWrapper>
       <div
-        className={`relative flex cursor-pointer items-center justify-center rounded-full ${className}`}
+        className={cn(
+          "relative flex cursor-pointer items-center justify-center rounded-full",
+          className,
+        )}
         style={{ overflow: "hidden" }}
         onMouseEnter={() => {
           manageMouseEnter();
