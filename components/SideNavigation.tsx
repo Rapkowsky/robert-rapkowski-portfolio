@@ -5,6 +5,7 @@ import { menuSlide } from "@/lib/Animations";
 import SideNavLink from "@/components/SideNavLink";
 import Curve from "./Curve";
 import ThemeToggle from "./ThemeToggle";
+import StandardLink from "./StandardLink";
 
 const navItems = [
   {
@@ -58,11 +59,11 @@ export default function SideNavigation() {
             );
           })}
         </div>
-        <div className="flex w-full items-center justify-between gap-[40px] text-[12px]">
-          <a>Awwwards</a>
-          <a>Instagram</a>
-          <a>Dribble</a>
-          <a>LinkedIn</a>
+        <div className="w-ful flex w-[300px] items-center justify-between gap-[40px] text-[12px]">
+          <div className="space-x-5 flex">
+            <StandardLink>LinkedIn</StandardLink>
+            <StandardLink>Instagram</StandardLink>
+          </div>
           <ThemeToggle />
         </div>
       </div>

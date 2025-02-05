@@ -4,6 +4,7 @@ import { useScroll, motion, useTransform } from "framer-motion";
 
 import ButtonWrapper from "./ButtonWrapper";
 import MagneticWrapper from "./MagneticWrapper";
+import StandardLink from "./StandardLink";
 
 export default function Contact() {
   const container = useRef(null);
@@ -35,7 +36,7 @@ export default function Contact() {
                 />
               </motion.div>
               <h2 className="m-0 pl-[0.3em] text-[min(5vw,133px)] font-light leading-[1.065]">
-                Let's work
+                Let&apos;s work
               </h2>
             </span>
             <h2 className="m-0 text-[min(5vw,133px)] font-light leading-[1.065]">
@@ -83,7 +84,7 @@ export default function Contact() {
             </p>
           </ButtonWrapper>
         </motion.div>
-        <div className="mt-[200px] flex justify-between p-[20px]">
+        <div className="mx-auto mt-[200px] flex max-w-[1400px] justify-between p-[20px]">
           <div className="flex items-end gap-[10px]">
             <span className="flex flex-col gap-[15px]">
               <h3 className="m-0 cursor-pointer p-[2.5px] text-[1em] font-light text-[#868686] hover:after:w-full">
@@ -107,27 +108,11 @@ export default function Contact() {
               <h3 className="m-0 cursor-pointer p-[2.5px] text-[1em] font-light text-[#868686] hover:after:w-full">
                 socials
               </h3>
-              <MagneticWrapper>
-                <p className="m-0 cursor-pointer p-[2.5px] hover:after:w-full">
-                  Awwwards
-                </p>
-              </MagneticWrapper>
-            </span>
-            <MagneticWrapper>
-              <p className="m-0 cursor-pointer p-[2.5px] hover:after:w-full">
-                Instagram
-              </p>
-            </MagneticWrapper>
-            <MagneticWrapper>
-              <p className="m-0 cursor-pointer p-[2.5px] hover:after:w-full">
-                Dribbble
-              </p>
-            </MagneticWrapper>
-            <MagneticWrapper>
-              <p className="m-0 cursor-pointer p-[2.5px] hover:after:w-full">
+              <StandardLink href="https://www.linkedin.com/in/robert-rapkowski/details/experience/?locale=en_US">
                 Linkedin
-              </p>
-            </MagneticWrapper>
+              </StandardLink>
+            </span>
+            <StandardLink>Instagram</StandardLink>
           </div>
         </div>
       </div>

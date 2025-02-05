@@ -5,6 +5,7 @@ import gsap from "gsap";
 import BurgerMenu from "./BurgerMenu";
 import ThemeToggle from "./ThemeToggle";
 import MagneticWrapper from "./MagneticWrapper";
+import StandardLink from "./StandardLink";
 
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
@@ -62,24 +63,9 @@ export default function Header() {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <MagneticWrapper>
-            <div className="group relative z-[1] flex cursor-pointer flex-col p-[15px]">
-              <a className="cursor-pointer">Work</a>
-              <div className="absolute left-[50%] top-[45px] h-[5px] w-[5px] -translate-x-1/2 scale-0 rounded-full bg-white transition duration-300 ease-rrSmooth group-hover:scale-100"></div>
-            </div>
-          </MagneticWrapper>
-          <MagneticWrapper>
-            <div className="group relative z-[1] flex cursor-pointer flex-col p-[15px]">
-              <a className="cursor-pointer">About</a>
-              <div className="absolute left-[50%] top-[45px] h-[5px] w-[5px] -translate-x-1/2 scale-0 rounded-full bg-white transition duration-300 ease-rrSmooth group-hover:scale-100"></div>
-            </div>
-          </MagneticWrapper>
-          <MagneticWrapper>
-            <div className="group relative z-[1] flex cursor-pointer flex-col p-[15px]">
-              <a className="cursor-pointer">Contact</a>
-              <div className="absolute left-[50%] top-[45px] h-[5px] w-[5px] -translate-x-1/2 scale-0 rounded-full bg-white transition duration-300 ease-rrSmooth group-hover:scale-100"></div>
-            </div>
-          </MagneticWrapper>
+          <StandardLink variant="external">Work</StandardLink>
+          <StandardLink variant="external">About</StandardLink>
+          <StandardLink variant="external">Contact</StandardLink>
         </div>
       </div>
       <BurgerMenu
