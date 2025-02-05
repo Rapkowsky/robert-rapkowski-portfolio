@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 export default function ButtonWrapper({
   className,
   children,
-  backgroundColor = "#146ef5",
+  overlayBgColor = "dark:bg-[#0a61e5] bg-primary",
   ...attributes
 }) {
   const circle = useRef(null);
@@ -58,8 +58,10 @@ export default function ButtonWrapper({
         {children}
         <div
           ref={circle}
-          style={{ backgroundColor }}
-          className="absolute top-full z-10 h-[150%] w-full rounded-full"
+          className={cn(
+            "absolute top-full z-10 h-[150%] w-full rounded-full",
+            overlayBgColor,
+          )}
         ></div>
       </div>
     </MagneticWrapper>

@@ -36,7 +36,7 @@ export default function SideNav() {
       initial="initial"
       animate="enter"
       exit="exit"
-      className="fixed right-0 top-0 z-30 h-screen bg-[#1c1d20] text-white"
+      className="bg-rrGray fixed right-0 top-0 z-30 h-screen text-white"
     >
       <div className="box-border flex h-full flex-col justify-between px-[200px] py-[100px]">
         <div

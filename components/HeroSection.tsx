@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import bgImage from "@/public/images/canyon-1740973.jpg";
 import gsap from "gsap";
@@ -6,7 +7,6 @@ import { useEffect, useRef } from "react";
 import Header from "./Header";
 
 export default function HeroSection() {
-  // Text animation
   const firstText = useRef(null);
   const secondText = useRef<HTMLDivElement>(null);
   const slider = useRef(null);
@@ -68,7 +68,8 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 z-[1] float-left h-[50vh] w-full bg-[linear-gradient(to_top,black_0%,rgba(0,0,0,0.738)_19%,rgba(0,0,0,0.541)_34%,rgba(0,0,0,0.382)_47%,rgba(0,0,0,0.278)_56.5%,rgba(0,0,0,0.194)_65%,rgba(0,0,0,0.126)_73%,rgba(0,0,0,0.075)_80.2%,rgba(0,0,0,0.042)_86.1%,rgba(0,0,0,0.021)_91%,rgba(0,0,0,0.008)_95.2%,rgba(0,0,0,0.002)_98.2%,transparent_100%)]" />
+
+      <div className="absolute bottom-0 z-[1] float-left h-[50vh] w-full bg-[linear-gradient(to_top,black_0%,rgba(0,0,0,0.738)_19%,rgba(0,0,0,0.541)_34%,rgba(0,0,0,0.382)_47%,rgba(0,0,0,0.278)_56.5%,rgba(0,0,0,0.194)_65%,rgba(0,0,0,0.126)_73%,rgba(0,0,0,0.075)_80.2%,rgba(0,0,0,0.042)_86.1%,rgba(0,0,0,0.021)_91%,rgba(0,0,0,0.008)_95.2%,rgba(0,0,0,0.002)_98.2%,transparent_100%)] opacity-0 duration-500 ease-rrSmooth dark:opacity-100" />
     </section>
   );
 }
