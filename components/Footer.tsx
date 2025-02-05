@@ -4,7 +4,7 @@ import { useScroll, motion, useTransform } from "framer-motion";
 import ButtonWrapper from "./ButtonWrapper";
 import StandardLink from "./StandardLink";
 
-export default function Contact() {
+export default function Footer() {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,

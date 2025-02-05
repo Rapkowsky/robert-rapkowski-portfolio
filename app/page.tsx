@@ -1,5 +1,5 @@
 "use client";
-import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 import Description from "@/components/Description";
 import HeroSection from "@/components/HeroSection";
 import Preloader from "@/components/Preloader";
@@ -35,7 +35,7 @@ const Home = () => {
       <Description />
       <ProjectsSection />
       <SlidingImages />
-      <Contact />
+      <Footer />
     </main>
   );
 };
