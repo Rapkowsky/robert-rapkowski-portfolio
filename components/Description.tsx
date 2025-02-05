@@ -48,7 +48,8 @@ export default function Description() {
             <ButtonWrapper className="relative flex h-[200px] w-[200px] cursor-pointer items-center justify-center rounded-full bg-primary font-[700] shadow-[0px_8px_200px_rgba(149,157,165,0.2)] shadow-black">
               <p className="z-20">About me</p>
             </ButtonWrapper>
-            <div className="absolute left-[-230px] top-[90px] z-[-10] h-[390px] w-[590px] rounded-full bg-gradient-to-t from-primary via-[#05367f] to-black blur-[200px]"></div>
+
+            {/* <div className="absolute left-[-230px] top-[90px] z-[-10] h-[390px] w-[590px] rounded-full bg-gradient-to-t from-primary via-[#05367f] to-black blur-[200px]"></div> */}
           </div>
         </div>
       </div>
