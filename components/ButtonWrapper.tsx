@@ -59,7 +59,7 @@ export default function ButtonWrapper({
         <div
           ref={circle}
           style={{ backgroundColor }}
-          className="absolute top-full h-[150%] w-full rounded-full"
+          className="absolute top-full z-10 h-[150%] w-full rounded-full"
         ></div>
       </div>
     </MagneticWrapper>
