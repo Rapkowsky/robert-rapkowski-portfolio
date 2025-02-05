@@ -4,12 +4,12 @@ import { forwardRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import SideNavigation from "./SideNavigation";
 
-type BurgerMenuProps = {
+type BurgerButtonProps = {
   isActive: boolean;
   setIsActive: (active: boolean) => void;
 };
 
-const BurgerMenu = forwardRef<HTMLDivElement, BurgerMenuProps>(function (
+const BurgerButton = forwardRef<HTMLDivElement, BurgerButtonProps>(function (
   { isActive, setIsActive },
   ref,
 ) {
@@ -50,5 +50,5 @@ const BurgerMenu = forwardRef<HTMLDivElement, BurgerMenuProps>(function (
     </>
   );
 });
-BurgerMenu.displayName = "BurgerMenu";
-export default BurgerMenu;
+BurgerButton.displayName = "BurgerButton";
+export default BurgerButton;

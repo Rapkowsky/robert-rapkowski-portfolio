@@ -2,7 +2,7 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
-import BurgerMenu from "./BurgerMenu";
+import BurgerButton from "./BurgerButton";
 import ThemeToggle from "./ThemeToggle";
 
 import StandardLink from "./StandardLink";
@@ -10,24 +10,24 @@ import StandardLink from "./StandardLink";
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
   const header = useRef(null);
-  const burgerMenuRef = useRef(null);
+  const BurgerButtonRef = useRef(null);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.to(burgerMenuRef.current, {
+    gsap.to(BurgerButtonRef.current, {
       scrollTrigger: {
         trigger: document.documentElement,
         start: 0,
         end: 68,
         onLeave: () => {
-          gsap.to(burgerMenuRef.current, {
+          gsap.to(BurgerButtonRef.current, {
             scale: 1,
             duration: 0.25,
             ease: "power1.out",
           });
         },
         onEnterBack: () => {
-          gsap.to(burgerMenuRef.current, {
+          gsap.to(BurgerButtonRef.current, {
             scale: 0,
             duration: 0.25,
             ease: "power1.out",
@@ -68,8 +68,8 @@ export default function Header() {
           <StandardLink variant="external">Contact</StandardLink>
         </div>
       </div>
-      <BurgerMenu
-        ref={burgerMenuRef}
+      <BurgerButton
+        ref={BurgerButtonRef}
         isActive={isActive}
         setIsActive={setIsActive}
       />
