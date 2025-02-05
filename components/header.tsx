@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import BurgerMenu from "./BurgerMenu";
 import ThemeToggle from "./ThemeToggle";
-import MagneticWrapper from "./MagneticWrapper";
+
 import StandardLink from "./StandardLink";
 
 export default function Header() {
