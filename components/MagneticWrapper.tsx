@@ -1,16 +1,26 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, ReactElement } from "react";
 import gsap from "gsap";
 
-export default function MagneticWrapper({ children }) {
-  const magnetic = useRef(null);
+interface MagneticWrapperProps {
+  children: ReactElement;
+  durationIn?: number;
+  durationOut?: number;
+}
+
+export default function MagneticWrapper({
+  children,
+  durationIn = 1.75,
+  durationOut = 1.75,
+}: MagneticWrapperProps) {
+  const magnetic = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const xTo = gsap.quickTo(magnetic.current, "x", {
-      duration: 2,
+      duration: durationOut,
       ease: "elastic.out(1, 0.3)",
     });
     const yTo = gsap.quickTo(magnetic.current, "y", {
-      duration: 1,
+      duration: durationIn,
       ease: "elastic.out(1, 0.3)",
     });
 
@@ -23,11 +33,11 @@ export default function MagneticWrapper({ children }) {
       xTo(x * 0.5);
       yTo(y * 0.5);
     });
-    magnetic.current.addEventListener("mouseleave", (e) => {
+    magnetic.current.addEventListener("mouseleave", () => {
       xTo(0);
       yTo(0);
     });
-  }, []);
+  }, [durationIn, durationOut]);
 
   return React.cloneElement(children, { ref: magnetic });
 }
