@@ -36,7 +36,7 @@ export default function LinkComponent({
         <motion.div
           variants={scale}
           animate={isActive ? "open" : "closed"}
-          className="absolute left-[-30px] h-[10px] w-[10px] rounded-full bg-white"
+          className="pointer-events-none absolute left-[-30px] h-[10px] w-[10px] rounded-full bg-white"
         ></motion.div>
         <Link href={href} className="font-light text-white no-underline">
           {title}
