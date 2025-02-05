@@ -26,7 +26,7 @@ const navItems = [
   },
 ];
 
-export default function SideNavigation() {
+export default function SideNav() {
   const pathname = usePathname();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
 
@@ -60,7 +60,7 @@ export default function SideNavigation() {
           })}
         </div>
         <div className="w-ful flex w-[300px] items-center justify-between gap-[40px] text-[12px]">
-          <div className="space-x-5 flex">
+          <div className="flex space-x-5">
             <StandardLink>LinkedIn</StandardLink>
             <StandardLink>Instagram</StandardLink>
           </div>
