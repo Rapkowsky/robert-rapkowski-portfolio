@@ -1,9 +1,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { useScroll, motion, useTransform } from "framer-motion";
-
 import ButtonWrapper from "./ButtonWrapper";
-import MagneticWrapper from "./MagneticWrapper";
 import StandardLink from "./StandardLink";
 
 export default function Contact() {
@@ -47,7 +45,7 @@ export default function Contact() {
             style={{ x }}
             className="absolute left-[calc(100%-400px)] top-[calc(100%-75px)]"
           >
-            <div className="absolute bottom-[-175px] flex h-[200px] w-[200px] cursor-pointer items-center justify-center rounded-full bg-main p-0 py-[15px] text-white">
+            <div className="absolute bottom-[-175px] flex h-[200px] w-[200px] cursor-pointer items-center justify-center rounded-full bg-primary p-0 py-[15px] text-white">
               <p className="relative z-[2] m-0 text-[16px] font-light transition-[color] duration-400 ease-linear">
                 Get in touch
               </p>
