@@ -2,7 +2,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { forwardRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import Navigation from "./Navigation";
+import SideNavigation from "./SideNavigation";
 
 type BurgerMenuProps = {
   isActive: boolean;
@@ -36,7 +36,7 @@ const BurgerMenu = forwardRef<HTMLDivElement, BurgerMenuProps>(function (
       <AnimatePresence mode="wait">
         {isActive && (
           <>
-            <Navigation />
+            <SideNavigation />
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

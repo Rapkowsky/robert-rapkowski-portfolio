@@ -25,7 +25,7 @@ const navItems = [
   },
 ];
 
-export default function Navigation() {
+export default function SideNavigation() {
   const pathname = usePathname();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
 
