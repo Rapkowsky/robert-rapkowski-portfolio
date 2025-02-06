@@ -12,7 +12,7 @@ export default function Description() {
   return (
     <div
       ref={description}
-      className="bg-bl mt-[200px] flex justify-center pl-[200px] pr-[200px] text-white"
+      className="bg-bl flex min-h-screen items-center justify-center pl-[200px] pr-[200px] text-white"
     >
       <div className="relative flex max-w-[1400px] gap-[50px]">
         <p className="m-0 gap-[8px] text-[36px] leading-[1.3]">
