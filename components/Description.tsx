@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { slideUp, opacity } from "@/lib/Animations";
 
 import ButtonWrapper from "./ButtonWrapper";
+import Link from "next/link";
 
 export default function Description() {
   const phrase =
@@ -46,7 +47,12 @@ export default function Description() {
         <div data-scroll data-scroll-speed={0.1}>
           <div className="relative duration-3000 ease-rrEaseBtnHover active:scale-[0.25]">
             <ButtonWrapper className="relative flex h-[200px] w-[200px] cursor-pointer items-center justify-center rounded-full bg-primary font-[700] shadow-[0px_8px_200px_rgba(149,157,165,0.2)] shadow-black">
-              <p className="z-20">About me</p>
+              <Link
+                href="/"
+                className="absolute inset-0 z-20 flex items-center justify-center"
+              >
+                About me
+              </Link>
             </ButtonWrapper>
 
             {/* <div className="absolute left-[-230px] top-[90px] z-[-10] h-[390px] w-[590px] rounded-full bg-gradient-to-t from-primary via-[#05367f] to-black blur-[200px]"></div> */}

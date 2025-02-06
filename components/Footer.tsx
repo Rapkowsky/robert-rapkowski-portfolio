@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { useScroll, motion, useTransform } from "framer-motion";
 import ButtonWrapper from "./ButtonWrapper";
 import StandardLink from "./StandardLink";
+import Link from "next/link";
 
 export default function Footer() {
   const container = useRef(null);
@@ -22,7 +23,7 @@ export default function Footer() {
       className="relative flex flex-col items-center justify-center bg-black pt-[clamp(170px,31vh,450px)] text-white"
     >
       <div className="w-full max-w-[1800px] bg-black">
-        <div className="border-b-rrGrayLight relative ml-[200px] mr-[200px] border-b pb-[100px]">
+        <div className="relative ml-[200px] mr-[200px] border-b border-b-rrGrayLight pb-[100px]">
           <motion.div style={{ y, opacity }}>
             <span className="flex items-center">
               <motion.div className="relative h-[120px] w-[120px] overflow-hidden rounded-full">
@@ -48,7 +49,12 @@ export default function Footer() {
           >
             <div className="relative duration-3000 ease-rrEaseBtnHover active:scale-[0.25]">
               <ButtonWrapper className="relative flex h-[200px] w-[200px] cursor-pointer items-center justify-center rounded-full bg-primary font-[700] shadow-[0px_8px_200px_rgba(149,157,165,0.2)] shadow-black">
-                <p className="z-20">Get in touch</p>
+                <Link
+                  href="/"
+                  className="absolute inset-0 z-20 flex items-center justify-center"
+                >
+                  Get in touch
+                </Link>
               </ButtonWrapper>
               {/* <div className="absolute left-[-230px] top-[90px] z-[-10] h-[390px] w-[590px] rounded-full bg-gradient-to-t from-primary via-[#05367f] to-black blur-[200px]"></div> */}
             </div>
@@ -72,13 +78,13 @@ export default function Footer() {
           style={{ scale }}
           className="mx-[200px] mt-[100px] flex gap-[20px]"
         >
-          <ButtonWrapper className="border-rrGrayLight border px-[60px] py-[30px]">
+          <ButtonWrapper className="border border-rrGrayLight px-[60px] py-[30px]">
             <p className="relative z-20 transition-[color] duration-400 ease-linear">
               robertrapkowski19@gmail.com
             </p>
           </ButtonWrapper>
 
-          <ButtonWrapper className="border-rrGrayLight border px-[60px] py-[30px]">
+          <ButtonWrapper className="border border-rrGrayLight px-[60px] py-[30px]">
             <p className="relative z-20 transition-[color] duration-400 ease-linear">
               +48 698868730
             </p>
@@ -87,7 +93,7 @@ export default function Footer() {
         <div className="mx-auto mt-[200px] flex max-w-[1400px] justify-between p-[20px]">
           <div className="flex items-end gap-[10px]">
             <span className="flex flex-col gap-[15px]">
-              <h3 className="text-rrGrayLight m-0 cursor-pointer p-[2.5px] text-[1em] font-light hover:after:w-full">
+              <h3 className="m-0 cursor-pointer p-[2.5px] font-light text-rrGrayLight hover:after:w-full">
                 Version
               </h3>
               <p className="m-0 cursor-pointer p-[2.5px] hover:after:w-full">
@@ -95,7 +101,7 @@ export default function Footer() {
               </p>
             </span>
             <span className="flex flex-col gap-[15px]">
-              <h3 className="text-rrGrayLight m-0 cursor-pointer p-[2.5px] text-[1em] font-light hover:after:w-full">
+              <h3 className="m-0 cursor-pointer p-[2.5px] font-light text-rrGrayLight hover:after:w-full">
                 Local time
               </h3>
               <p className="m-0 cursor-pointer p-[2.5px] hover:after:w-full">
@@ -104,9 +110,9 @@ export default function Footer() {
             </span>
           </div>
           <div className="flex flex-col gap-[10px]">
-            <h3 className="text-rrGrayLight m-0 cursor-pointer p-[2.5px] text-[1em] font-light hover:after:w-full">
-              socials
-            </h3>
+            <p className="m-0 cursor-pointer font-light text-rrGrayLight hover:after:w-full">
+              Socials
+            </p>
 
             <div className="flex space-x-5">
               <StandardLink href="https://www.linkedin.com/in/robert-rapkowski/details/experience/?locale=en_US">

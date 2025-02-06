@@ -36,7 +36,7 @@ export default function SideNav() {
       initial="initial"
       animate="enter"
       exit="exit"
-      className="bg-rrGray fixed right-0 top-0 z-30 h-screen text-white"
+      className="fixed right-0 top-0 z-30 h-screen bg-rrGray text-white"
     >
       <div className="box-border flex h-full flex-col justify-between px-[200px] py-[100px]">
         <div
@@ -45,7 +45,7 @@ export default function SideNav() {
           }}
           className="mt-[80px] flex flex-col gap-[12px] text-[56px]"
         >
-          <div className="mb-[40px] border-b border-[rgb(153,153,153)] text-[11px] uppercase text-[rgb(153,153,153)]">
+          <div className="mb-20 border-b border-rrGrayLight pb-10 text-[11px] uppercase text-rrGrayLight">
             <p>Navigation</p>
           </div>
           {navItems.map((data, index) => {
@@ -60,9 +60,14 @@ export default function SideNav() {
           })}
         </div>
         <div className="w-ful flex w-[300px] items-center justify-between gap-[40px] text-[12px]">
-          <div className="flex space-x-5">
-            <StandardLink>LinkedIn</StandardLink>
-            <StandardLink>Instagram</StandardLink>
+          <div className="flex flex-col gap-[10px]">
+            <p className="m-0 font-light text-rrGrayLight hover:after:w-full">
+              Socials
+            </p>
+            <div className="flex space-x-5">
+              <StandardLink>LinkedIn</StandardLink>
+              <StandardLink>Instagram</StandardLink>
+            </div>
           </div>
           <ThemeToggle />
         </div>

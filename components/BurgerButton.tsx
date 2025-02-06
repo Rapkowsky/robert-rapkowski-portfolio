@@ -31,7 +31,7 @@ const BurgerButton = forwardRef<HTMLDivElement, BurgerButtonProps>(function (
       >
         <ButtonWrapper className="">
           <div
-            className={`relative inset-0 flex h-[90px] w-[90px] cursor-pointer items-center justify-center rounded-full transition-colors duration-1000 ease-rrEaseBurger ${isActive ? "bg-black" : "dark:bg-rrGray"}`}
+            className={`relative inset-0 flex h-[90px] w-[90px] cursor-pointer items-center justify-center rounded-full transition-colors duration-1000 ease-rrEaseBurger ${isActive ? "bg-primary" : "dark:bg-rrGray"}`}
           >
             <div
               className={`z-20 w-full before:relative before:m-auto before:block before:h-[1px] before:w-[40%] before:bg-white before:transition-transform before:duration-500 before:ease-rrEaseBurgerLines before:content-[''] after:relative after:m-auto after:block after:h-[1px] after:w-[40%] after:bg-white after:transition-transform after:duration-500 after:ease-rrEaseBurgerLines after:content-[''] ${isActive ? "before:top-0 before:-rotate-45 after:top-[-1px] after:rotate-45" : "before:top-[5px] after:top-[-5px]"}`}

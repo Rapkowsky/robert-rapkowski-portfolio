@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef } from "react";
 import Header from "./Header";
+import Clock from "./Clock";
 
 export default function HeroSection() {
   const firstText = useRef(null);
@@ -41,6 +42,8 @@ export default function HeroSection() {
   };
   return (
     <section className="relative flex h-screen overflow-hidden">
+      <Clock />
+
       <Header />
       <div>
         <Image
