@@ -4,6 +4,7 @@ import { useScroll, motion, useTransform } from "framer-motion";
 import ButtonWrapper from "./ButtonWrapper";
 import StandardLink from "./StandardLink";
 import Link from "next/link";
+import CurrentYear from "./CurrentYear";
 
 export default function Footer() {
   const container = useRef(null);
@@ -47,10 +48,10 @@ export default function Footer() {
             transition={{ ease: [0.45, 0, 0.55, 1] }}
             className="absolute left-[calc(100%-400px)] top-[calc(100%-100px)]"
           >
-            <div className="relative duration-3000 ease-rrEaseBtnHover active:scale-[0.25]">
+            <div className="relative duration-3000 ease-rrEaseBtnHover active:scale-[0.75]">
               <ButtonWrapper className="relative flex h-[200px] w-[200px] cursor-pointer items-center justify-center rounded-full bg-primary font-[700] shadow-[0px_8px_200px_rgba(149,157,165,0.2)] shadow-black">
                 <Link
-                  href="/"
+                  href="/contact"
                   className="absolute inset-0 z-20 flex items-center justify-center"
                 >
                   Get in touch
@@ -78,39 +79,34 @@ export default function Footer() {
           style={{ scale }}
           className="mx-[200px] mt-[100px] flex gap-[20px]"
         >
-          <ButtonWrapper className="border border-rrGrayLight px-[60px] py-[30px]">
-            <p className="relative z-20 transition-[color] duration-400 ease-linear">
-              robertrapkowski19@gmail.com
-            </p>
-          </ButtonWrapper>
+          <div className="duration-3000 ease-rrEaseBtnHover active:scale-[0.75]">
+            <a href="mailto:robertrapkowski19@gmail.com">
+              <ButtonWrapper className="border border-rrGrayLight px-[60px] py-[30px]">
+                <p className="z-20">robertrapkowski19@gmail.com</p>
+              </ButtonWrapper>
+            </a>
+          </div>
 
-          <ButtonWrapper className="border border-rrGrayLight px-[60px] py-[30px]">
-            <p className="relative z-20 transition-[color] duration-400 ease-linear">
-              +48 698868730
-            </p>
-          </ButtonWrapper>
+          <div className="duration-3000 ease-rrEaseBtnHover active:scale-[0.75]">
+            <a href="tel:+48698868730">
+              <ButtonWrapper className="border border-rrGrayLight px-[60px] py-[30px]">
+                <p className="z-20"> +48 698868730</p>
+              </ButtonWrapper>
+            </a>
+          </div>
         </motion.div>
         <div className="mx-auto mt-[200px] flex max-w-[1400px] justify-between p-[20px]">
           <div className="flex items-end gap-[10px]">
             <span className="flex flex-col gap-[15px]">
-              <h3 className="m-0 cursor-pointer p-[2.5px] font-light text-rrGrayLight hover:after:w-full">
+              <h3 className="m-0 font-light text-rrGrayLight hover:after:w-full">
                 Version
               </h3>
-              <p className="m-0 cursor-pointer p-[2.5px] hover:after:w-full">
-                2025 © Edition
-              </p>
-            </span>
-            <span className="flex flex-col gap-[15px]">
-              <h3 className="m-0 cursor-pointer p-[2.5px] font-light text-rrGrayLight hover:after:w-full">
-                Local time
-              </h3>
-              <p className="m-0 cursor-pointer p-[2.5px] hover:after:w-full">
-                11:49 PM GMT+2
-              </p>
+
+              <CurrentYear />
             </span>
           </div>
           <div className="flex flex-col gap-[10px]">
-            <p className="m-0 cursor-pointer font-light text-rrGrayLight hover:after:w-full">
+            <p className="m-0 font-light text-rrGrayLight hover:after:w-full">
               Socials
             </p>
 
