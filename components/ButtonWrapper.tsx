@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 export default function ButtonWrapper({
   className,
   children,
-  overlayBgColor = "dark:bg-[#0a61e5] bg-primary",
+  overlayBgColor = "dark:bg-[#7f4bea] bg-primary",
   ...attributes
 }) {
   const circle = useRef(null);

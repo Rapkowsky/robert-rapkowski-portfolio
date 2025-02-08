@@ -72,7 +72,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 z-[1] float-left h-[50vh] w-full bg-[linear-gradient(to_top,black_0%,rgba(0,0,0,0.738)_19%,rgba(0,0,0,0.541)_34%,rgba(0,0,0,0.382)_47%,rgba(0,0,0,0.278)_56.5%,rgba(0,0,0,0.194)_65%,rgba(0,0,0,0.126)_73%,rgba(0,0,0,0.075)_80.2%,rgba(0,0,0,0.042)_86.1%,rgba(0,0,0,0.021)_91%,rgba(0,0,0,0.008)_95.2%,rgba(0,0,0,0.002)_98.2%,transparent_100%)] opacity-0 duration-500 ease-rrSmooth dark:opacity-100" />
+      <div className="absolute bottom-0 z-[1] float-left h-[50vh] w-full bg-[linear-gradient(to_top,#090a0f_0%,rgba(9,10,15,0.738)_19%,rgba(9,10,15,0.541)_34%,rgba(9,10,15,0.382)_47%,rgba(9,10,15,0.278)_56.5%,rgba(9,10,15,0.194)_65%,rgba(9,10,15,0.126)_73%,rgba(9,10,15,0.075)_80.2%,rgba(9,10,15,0.042)_86.1%,rgba(9,10,15,0.021)_91%,rgba(9,10,15,0.008)_95.2%,rgba(9,10,15,0.002)_98.2%,transparent_100%)] opacity-0 duration-500 ease-rrSmooth dark:opacity-100" />
     </section>
   );
 }

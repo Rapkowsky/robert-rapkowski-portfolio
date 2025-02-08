@@ -26,6 +26,7 @@ export default {
         primary: "#146ef5",
         rrGray: "#1c1d20",
         rrGrayLight: "#868686",
+        rrDark: "#090a0f",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",

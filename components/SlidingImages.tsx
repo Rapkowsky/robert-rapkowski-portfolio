@@ -54,7 +54,7 @@ export default function SlidingImages() {
   return (
     <div
       ref={container}
-      className="relative z-[1] flex min-h-screen flex-col items-center justify-center gap-[3vw] bg-black"
+      className="bg-rrDark relative z-[1] flex min-h-screen flex-col items-center justify-center gap-[3vw]"
     >
       <motion.div
         style={{ x: x1 }}
@@ -65,7 +65,7 @@ export default function SlidingImages() {
             <div
               key={index}
               className="flex h-[20vw] w-1/4 items-center justify-center"
-              style={{ backgroundColor: project.color }}
+              // style={{ backgroundColor: project.color }}
             >
               <div key={index} className="relative h-[80%] w-[80%]">
                 <Image
@@ -88,7 +88,7 @@ export default function SlidingImages() {
             <div
               key={index}
               className="flex h-[20vw] w-1/4 items-center justify-center"
-              style={{ backgroundColor: project.color }}
+              // style={{ backgroundColor: project.color }}
             >
               <div key={index} className="relative h-[80%] w-[80%]">
                 <Image
@@ -102,7 +102,7 @@ export default function SlidingImages() {
         })}
       </motion.div>
       <motion.div style={{ height }} className="relative mt-[100px]">
-        <div className="rounded-tl-0 rounded-tr-0 absolute left-[-10%] z-[1] h-[1550%] w-[120%] rounded-bl-[50%] rounded-br-[50%] bg-black shadow-[0px_60px_50px_rgba(0,0,0,0.748)]"></div>
+        <div className="absolute left-[-10%] z-[1] h-[1550%] w-[120%] rounded-bl-[50%] rounded-br-[50%] rounded-tl-none rounded-tr-none bg-black shadow-[0px_60px_50px_rgba(0,0,0,0.748)]"></div>
       </motion.div>
     </div>
   );

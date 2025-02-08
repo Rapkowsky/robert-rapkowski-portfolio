@@ -21,9 +21,9 @@ export default function Footer() {
     <motion.div
       style={{ y }}
       ref={container}
-      className="relative flex flex-col items-center justify-center bg-black pt-[clamp(170px,31vh,450px)] text-white"
+      className="bg-rrDark relative flex flex-col items-center justify-center pt-[clamp(170px,31vh,450px)] text-white"
     >
-      <div className="w-full max-w-[1800px] bg-black">
+      <div className="bg-rrDark w-full max-w-[1800px]">
         <div className="relative ml-[200px] mr-[200px] border-b border-b-rrGrayLight pb-[100px]">
           <motion.div style={{ y, opacity }}>
             <span className="flex items-center">
