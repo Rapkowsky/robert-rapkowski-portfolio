@@ -2,9 +2,8 @@ import Image from "next/image";
 import { useRef } from "react";
 import { useScroll, motion, useTransform } from "framer-motion";
 import ButtonWrapper from "./ButtonWrapper";
-import StandardLink from "./StandardLink";
 import Link from "next/link";
-import CurrentYear from "./CurrentYear";
+import FooterInfo from "./FooterInfo";
 
 export default function Footer() {
   const container = useRef(null);
@@ -21,9 +20,9 @@ export default function Footer() {
     <motion.div
       style={{ y }}
       ref={container}
-      className="bg-rrDark relative flex flex-col items-center justify-center pt-[clamp(170px,31vh,450px)] text-white"
+      className="relative flex flex-col items-center justify-center bg-rrDark pt-[clamp(170px,31vh,450px)] text-white"
     >
-      <div className="bg-rrDark w-full max-w-[1800px]">
+      <div className="w-full max-w-[1800px] bg-rrDark">
         <div className="relative ml-[200px] mr-[200px] border-b border-b-rrGrayLight pb-[100px]">
           <motion.div style={{ y, opacity }}>
             <span className="flex items-center">
@@ -95,29 +94,6 @@ export default function Footer() {
             </a>
           </div>
         </motion.div>
-        <div className="mx-auto mt-[200px] flex max-w-[1400px] justify-between p-[20px]">
-          <div className="flex items-end gap-[10px]">
-            <span className="flex flex-col gap-[15px]">
-              <h3 className="m-0 font-light text-rrGrayLight hover:after:w-full">
-                Version
-              </h3>
-
-              <CurrentYear />
-            </span>
-          </div>
-          <div className="flex flex-col gap-[10px]">
-            <p className="m-0 font-light text-rrGrayLight hover:after:w-full">
-              Socials
-            </p>
-
-            <div className="flex space-x-5">
-              <StandardLink href="https://www.linkedin.com/in/robert-rapkowski/details/experience/?locale=en_US">
-                Linkedin
-              </StandardLink>
-              <StandardLink>Instagram</StandardLink>
-            </div>
-          </div>
-        </div>
       </div>
     </motion.div>
   );

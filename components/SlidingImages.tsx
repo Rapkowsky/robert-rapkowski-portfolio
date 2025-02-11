@@ -54,11 +54,11 @@ export default function SlidingImages() {
   return (
     <div
       ref={container}
-      className="bg-rrDark relative z-[1] flex min-h-screen flex-col items-center justify-center gap-[3vw]"
+      className="relative z-[1] mb-[-200px] flex min-h-screen flex-col items-center justify-center gap-[3vw] bg-white duration-500 ease-rrSmooth dark:bg-rrDark"
     >
       <motion.div
         style={{ x: x1 }}
-        className="relative left-[-10vw] flex w-[120vw] gap-[3vw]"
+        className="relative left-[-10vw] flex w-[120vw] gap-[3vw] will-change-transform"
       >
         {slider1.map((project, index) => {
           return (
@@ -81,7 +81,7 @@ export default function SlidingImages() {
       </motion.div>
       <motion.div
         style={{ x: x2 }}
-        className="relative left-[-10vw] flex w-[120vw] gap-[3vw]"
+        className="relative left-[-10vw] flex w-[120vw] gap-[3vw] will-change-transform"
       >
         {slider2.map((project, index) => {
           return (
@@ -101,8 +101,11 @@ export default function SlidingImages() {
           );
         })}
       </motion.div>
-      <motion.div style={{ height }} className="relative mt-[100px]">
-        <div className="absolute left-[-10%] z-[1] h-[1550%] w-[120%] rounded-bl-[50%] rounded-br-[50%] rounded-tl-none rounded-tr-none bg-black shadow-[0px_60px_50px_rgba(0,0,0,0.748)]"></div>
+      <motion.div
+        style={{ height }}
+        className="bg:white relative w-full will-change-[height]"
+      >
+        <div className="absolute left-[-10%] z-[1] h-[1600%] w-[120%] rounded-bl-[50%] rounded-br-[50%] rounded-tl-none rounded-tr-none bg-white duration-500 ease-rrSmooth dark:bg-rrDark"></div>
       </motion.div>
     </div>
   );

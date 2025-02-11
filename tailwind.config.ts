@@ -24,8 +24,9 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: "#146ef5",
+        primaryDarker: "#0a61e5",
         rrGray: "#1c1d20",
-        rrGrayLight: "#868686",
+        rrGrayLight: "#b4b5b6",
         rrDark: "#090a0f",
         card: {
           DEFAULT: "hsl(var(--card))",

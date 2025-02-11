@@ -31,7 +31,7 @@ export default function ProjectsSection() {
   const [modal, setModal] = useState({ active: false, index: 0 });
 
   return (
-    <section className="bg-rrDark flex min-h-screen items-center justify-center">
+    <section className="flex min-h-screen items-center justify-center bg-white duration-500 ease-rrSmooth dark:bg-rrDark">
       <div className="flex w-[1600px] flex-col items-center justify-center">
         {projects.map((project, index) => {
           return (

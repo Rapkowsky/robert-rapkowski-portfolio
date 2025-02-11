@@ -101,7 +101,7 @@ export default function Modal({ modal, projects }: ModalProps) {
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
-        className="pointer-events-none absolute flex h-[475px] w-[475px] items-center justify-center overflow-hidden shadow-[0px_8px_200px_rgba(149,157,165,0.2)] shadow-black"
+        className="pointer-events-none absolute flex h-[475px] w-[475px] items-center justify-center overflow-hidden will-change-transform"
       >
         <div
           style={{ top: index * -100 + "%" }}

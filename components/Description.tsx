@@ -13,22 +13,9 @@ export default function Description() {
   return (
     <div
       ref={description}
-      className="relative flex min-h-screen items-center justify-center overflow-hidden pl-[200px] pr-[200px] text-white"
+      className="relative flex min-h-[50vh] items-center justify-center overflow-hidden bg-white px-[200px] duration-500 ease-rrSmooth dark:bg-rrDark"
     >
-      <div
-        className="absolute right-[-10%] top-[-60%]"
-        data-scroll
-        data-scroll-speed={0.1}
-      >
-        <video
-          className="rotate-[40deg]"
-          src="/images/bg.webm"
-          autoPlay
-          loop
-          muted
-        ></video>
-      </div>
-      <div className="relative flex max-w-[1400px] gap-[50px]">
+      <div className="relative flex max-w-[1400px] gap-[50px] text-rrDark dark:text-white">
         <p className="m-0 gap-[8px] text-[36px] leading-[1.3]">
           {phrase.split(" ").map((word, index) => {
             return (
@@ -59,7 +46,7 @@ export default function Description() {
 
         <div data-scroll data-scroll-speed={0.1} className="will-change-auto">
           <div className="relative duration-3000 ease-rrEaseBtnHover active:scale-[0.25]">
-            <ButtonWrapper className="relative flex h-[200px] w-[200px] cursor-pointer items-center justify-center rounded-full bg-[#9993f9] font-[700] shadow-[0px_8px_200px_rgba(149,157,165,0.2)] shadow-black">
+            <ButtonWrapper className="relative flex h-[200px] w-[200px] cursor-pointer items-center justify-center rounded-full bg-rrDark font-[700] text-white dark:bg-primary">
               <Link
                 href="/"
                 className="absolute inset-0 z-20 flex items-center justify-center"

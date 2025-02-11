@@ -4,7 +4,6 @@ import bgImage from "@/public/images/canyon-1740973.jpg";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef } from "react";
-import Header from "./Header";
 import Clock from "./Clock";
 
 export default function HeroSection() {
@@ -43,8 +42,6 @@ export default function HeroSection() {
   return (
     <section className="relative flex h-screen overflow-hidden">
       <Clock />
-
-      <Header />
       <div>
         <Image
           src={bgImage}
@@ -56,15 +53,18 @@ export default function HeroSection() {
         <div className="absolute top-[calc(100vh-41%)]">
           <div
             ref={slider}
-            className="relative z-10 whitespace-nowrap text-[310px] font-medium text-white"
+            className="relative z-10 whitespace-nowrap text-[310px] font-medium text-white will-change-transform"
           >
-            <p ref={firstText} className="relative m-0 pr-[50px]">
+            <p
+              ref={firstText}
+              className="relative m-0 pr-[50px] will-change-transform"
+            >
               Freelance Developer -
             </p>
 
             <p
               ref={secondText}
-              className="absolute left-full top-0 m-0 pr-[50px]"
+              className="absolute left-full top-0 m-0 pr-[50px] will-change-transform"
             >
               Freelance Developer -
             </p>
