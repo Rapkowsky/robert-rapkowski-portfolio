@@ -23,7 +23,7 @@ export default function Footer() {
       className="relative flex flex-col items-center justify-center bg-rrDark pt-[clamp(170px,31vh,450px)] text-white"
     >
       <div className="w-full max-w-[1800px] bg-rrDark">
-        <div className="relative ml-[200px] mr-[200px] border-b border-b-rrGrayLight pb-[100px]">
+        <div className="relative ml-[200px] mr-[200px] border-b border-b-rrGrayBorder pb-[100px]">
           <motion.div style={{ y, opacity }}>
             <span className="flex items-center">
               <motion.div className="relative h-[120px] w-[120px] overflow-hidden rounded-full">
@@ -80,7 +80,7 @@ export default function Footer() {
         >
           <div className="duration-3000 ease-rrEaseBtnHover active:scale-[0.75]">
             <a href="mailto:robertrapkowski19@gmail.com">
-              <ButtonWrapper className="border border-rrGrayLight px-[60px] py-[30px]">
+              <ButtonWrapper className="border border-rrGrayBorder px-[60px] py-[30px]">
                 <p className="z-20">robertrapkowski19@gmail.com</p>
               </ButtonWrapper>
             </a>
@@ -88,7 +88,7 @@ export default function Footer() {
 
           <div className="duration-3000 ease-rrEaseBtnHover active:scale-[0.75]">
             <a href="tel:+48698868730">
-              <ButtonWrapper className="border border-rrGrayLight px-[60px] py-[30px]">
+              <ButtonWrapper className="border border-rrGrayBorder px-[60px] py-[30px]">
                 <p className="z-20"> +48 698868730</p>
               </ButtonWrapper>
             </a>

@@ -8,7 +8,7 @@ const FooterInfo = () => {
       <div className="mx-auto flex max-w-[1800px] justify-between pb-10 pt-[200px]">
         <div className="flex items-end gap-[10px]">
           <span className="flex flex-col gap-[15px]">
-            <h3 className="m-0 font-light text-rrGrayLight hover:after:w-full text-xs">
+            <h3 className="m-0 font-light text-rrGrayText hover:after:w-full text-xs">
               VERSION
             </h3>
 
@@ -16,7 +16,7 @@ const FooterInfo = () => {
           </span>
         </div>
         <div className="flex flex-col gap-[10px]">
-          <p className="m-0 font-light text-rrGrayLight hover:after:w-full text-xs">
+          <p className="m-0 font-light text-rrGrayText hover:after:w-full text-xs">
             SOCIALS
           </p>
 
