@@ -11,16 +11,16 @@ export default function Curve() {
     },
     enter: {
       d: targetPath,
-      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
+      transition: { duration: 1.2, ease: [0.7, 0, 0.2, 1] },
     },
     exit: {
       d: initialPath,
-      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
+      transition: { duration: 0.8, ease: [0.7, 0, 0.2, 1] },
     },
   };
 
   return (
-    <svg className="fill-rrGray absolute left-[-99px] top-0 h-full w-[100px] stroke-none">
+    <svg className="absolute left-[-99px] top-0 h-full w-[100px] fill-rrGray stroke-none">
       <motion.path
         variants={curve}
         initial="initial"

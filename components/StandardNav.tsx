@@ -4,7 +4,7 @@ import ThemeToggle from "./ThemeToggle";
 
 const StandardNav = () => {
   return (
-    <div className="hidden items-center gap-2 lg:flex">
+    <div className="hidden items-center gap-2 md:flex">
       <ThemeToggle />
       <StandardLink variant="external">Work</StandardLink>
       <StandardLink variant="external">About</StandardLink>

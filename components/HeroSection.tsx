@@ -49,11 +49,12 @@ export default function HeroSection() {
           fill
           quality={100}
           className="object-cover"
+          priority
         />
         <div className="absolute top-[calc(100vh-41%)]">
           <div
             ref={slider}
-            className="relative z-10 whitespace-nowrap text-[310px] font-medium text-white will-change-transform"
+            className="relative z-10 whitespace-nowrap text-[clamp(180px,36vw,310px)] font-medium text-white will-change-transform"
           >
             <p
               ref={firstText}

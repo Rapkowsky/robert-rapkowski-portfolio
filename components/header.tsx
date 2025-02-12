@@ -47,7 +47,7 @@ export default function Header() {
       <div
         ref={headerRef}
         className={cn(
-          "absolute z-[1] flex w-fit flex-col gap-5 px-5 py-10 font-light text-rrDark dark:text-white lg:justify-between xl:p-[35px]",
+          "absolute z-[1] flex w-fit flex-col gap-5 px-5 py-10 font-light text-rrDark dark:text-white md:w-full md:flex-row md:justify-between xl:p-[35px]",
           { "text-white": pathname === "/" },
         )}
       >
@@ -76,10 +76,10 @@ export default function Header() {
       <BurgerButton
         isActive={isActive}
         setIsActive={setIsActive}
-        className="scale-1 lg:hidden"
+        className="scale-1 md:hidden"
       />
       <BurgerButton
-        className="hidden lg:block"
+        className="hidden md:block"
         ref={BurgerButtonRef}
         isActive={isActive}
         setIsActive={setIsActive}

@@ -23,7 +23,7 @@ export default function SideNavLink({
   return (
     <MagneticWrapper>
       <motion.div
-        className="relative ml-[30px] flex w-fit items-center"
+        className="relative ml-[30px] flex w-fit items-center will-change-transform"
         onMouseEnter={() => {
           setSelectedIndicator(href);
         }}
@@ -38,7 +38,7 @@ export default function SideNavLink({
           animate={isActive ? "open" : "closed"}
           className="pointer-events-none absolute left-[-30px] h-[10px] w-[10px] rounded-full bg-white"
         ></motion.div>
-        <Link href={href} className="font-light text-white no-underline">
+        <Link href={href} className="font-normal text-white no-underline">
           {title}
         </Link>
       </motion.div>

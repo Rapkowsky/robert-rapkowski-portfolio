@@ -12,6 +12,9 @@ export default {
     extend: {
       transitionDuration: {
         "400": "400ms",
+        "600": "600ms",
+        "800": "800ms",
+        "900": "900ms",
         "3000": "3000ms",
       },
       transitionTimingFunction: {
@@ -19,6 +22,7 @@ export default {
         rrEaseBurger: "cubic-bezier(0,0.55,0.45,1)",
         rrEaseBurgerLines: "cubic-bezier(0.25,1,0.5,1)",
         rrEaseBtnHover: "cubic-bezier(0.5,1,0.89,1)",
+        rrEaseMain: "cubic-bezier(.7,0,.2,1)",
       },
       colors: {
         background: "hsl(var(--background))",
