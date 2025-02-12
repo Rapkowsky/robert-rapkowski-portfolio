@@ -3,17 +3,16 @@ import { useLayoutEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import BurgerButton from "./BurgerButton";
-import ThemeToggle from "./ThemeToggle";
-import StandardLink from "./StandardLink";
 import MagneticWrapper from "./MagneticWrapper";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import StandardNav from "./StandardNav";
 
 export default function Header() {
   const pathname = usePathname();
   const [isActive, setIsActive] = useState(false);
-  const header = useRef(null);
+  const headerRef = useRef(null);
   const BurgerButtonRef = useRef(null);
 
   useLayoutEffect(() => {
@@ -45,9 +44,9 @@ export default function Header() {
   return (
     <>
       <div
-        ref={header}
+        ref={headerRef}
         className={cn(
-          "absolute top-0 z-[1] box-border flex w-full items-center justify-between p-[35px] font-light text-rrDark dark:text-white",
+          "absolute z-[1] flex w-fit flex-col gap-5 px-5 py-10 font-light text-rrDark dark:text-white lg:justify-between xl:p-[35px]",
           { "text-white": pathname === "/" },
         )}
       >
@@ -71,15 +70,15 @@ export default function Header() {
             </div>
           </Link>
         </MagneticWrapper>
-
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
-          <StandardLink variant="external">Work</StandardLink>
-          <StandardLink variant="external">About</StandardLink>
-          <StandardLink href="/contact" variant="external">Contact</StandardLink>
-        </div>
+        <StandardNav />
       </div>
       <BurgerButton
+        isActive={isActive}
+        setIsActive={setIsActive}
+        className="scale-1 lg:hidden"
+      />
+      <BurgerButton
+        className="hidden lg:block"
         ref={BurgerButtonRef}
         isActive={isActive}
         setIsActive={setIsActive}
