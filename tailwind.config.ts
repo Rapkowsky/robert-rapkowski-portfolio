@@ -26,7 +26,7 @@ export default {
         primary: "#146ef5",
         primaryDarker: "#0a61e5",
         rrGray: "#1c1d20",
-        rrGrayLight: "#b4b5b6",
+        rrGrayLight: "#424346",
         rrDark: "#090a0f",
         card: {
           DEFAULT: "hsl(var(--card))",
