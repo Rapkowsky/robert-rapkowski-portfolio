@@ -8,6 +8,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import StandardNav from "./StandardNav";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Header() {
   const pathname = usePathname();
@@ -83,6 +84,19 @@ export default function Header() {
         isActive={isActive}
         setIsActive={setIsActive}
       />
+      <AnimatePresence mode="wait">
+        {isActive && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.35 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.9, ease: [0.7, 0, 0.2, 1] }}
+              className="will-change-opacity fixed z-20 h-full w-full bg-[linear-gradient(to_right,hsla(220,13%,0%,.3)_40%,hsla(220,13%,0%,1)_80%)] opacity-0"
+            />
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 }

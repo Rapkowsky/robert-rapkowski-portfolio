@@ -23,7 +23,7 @@ export default function SideNavLink({
   return (
     <MagneticWrapper>
       <motion.div
-        className="relative flex w-fit items-center"
+        className="relative ml-[30px] flex w-fit items-center"
         onMouseEnter={() => {
           setSelectedIndicator(href);
         }}

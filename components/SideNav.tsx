@@ -36,16 +36,16 @@ export default function SideNav() {
       initial="initial"
       animate="enter"
       exit="exit"
-      className="fixed right-0 top-0 z-30 h-screen bg-rrGray text-white"
+      className="fixed right-0 top-0 z-30 h-screen w-[600px] bg-rrGray text-white"
     >
-      <div className="box-border flex h-full flex-col justify-between px-[200px] py-[100px]">
+      <div className="box-border flex h-full flex-col justify-between p-5">
         <div
           onMouseLeave={() => {
             setSelectedIndicator(pathname);
           }}
-          className="mt-[80px] flex flex-col gap-[12px] text-[56px]"
+          className="flex flex-col gap-[12px] text-[56px]"
         >
-          <div className="mb-20 border-b border-rrGrayLight pb-10 text-[11px] uppercase text-rrGrayLight">
+          <div className="border-rrGrayBorder text-rrGrayText mb-10 mt-24 border-b pb-10 text-[11px] uppercase">
             <p>Navigation</p>
           </div>
           {navItems.map((data, index) => {
@@ -61,7 +61,7 @@ export default function SideNav() {
         </div>
         <div className="w-ful flex w-[300px] items-center justify-between gap-[40px] text-[12px]">
           <div className="flex flex-col gap-[10px]">
-            <p className="m-0 font-light text-rrGrayLight hover:after:w-full">
+            <p className="text-rrGrayText m-0 font-light hover:after:w-full">
               Socials
             </p>
             <div className="flex space-x-5">
