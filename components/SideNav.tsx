@@ -36,16 +36,16 @@ export default function SideNav() {
       initial="initial"
       animate="enter"
       exit="exit"
-      className="duration-800 fixed right-0 top-0 z-30 h-screen w-screen max-w-[800px] bg-rrGray text-white transition-[width] ease-rrEaseBtnHover will-change-transform min-[500px]:w-[70%]"
+      className="fixed right-0 top-0 z-30 h-screen w-screen bg-rrGray text-white transition-[width] duration-800 ease-rrEaseBtnHover will-change-transform min-[500px]:w-[initial]"
     >
-      <div className="duration-800 box-border flex h-full flex-col justify-between px-5 py-8 transition-[padding] ease-rrEaseBtnHover min-[500px]:px-10 min-[500px]:py-10 lg:px-52 lg:py-36">
+      <div className="box-border flex h-full flex-col justify-between px-5 pb-12 pt-8 transition-[padding] duration-800 ease-rrEaseBtnHover min-[500px]:p-[clamp(50px,10vh,140px)_70px] md:px-[clamp(70px,9vw,220px)]">
         <div
           onMouseLeave={() => {
             setSelectedIndicator(pathname);
           }}
           className="flex flex-col gap-[12px] text-[56px]"
         >
-          <div className="border-rrGrayBorder text-rrGrayText mb-10 mt-24 border-b pb-10 text-xs uppercase">
+          <div className="mb-10 mt-24 border-b border-rrGrayBorder pb-10 text-xs uppercase text-rrGrayText">
             <p>Navigation</p>
           </div>
           {navItems.map((data, index) => {
@@ -59,9 +59,9 @@ export default function SideNav() {
             );
           })}
         </div>
-        <div className="w-ful border-rrGrayBorder flex w-full items-center justify-between border-t pt-10">
+        <div className="flex items-center justify-between border-t border-rrGrayBorder pt-10 transition-[width] duration-800 ease-rrEaseBtnHover min-[500px]:w-[300px] md:w-[350px]">
           <div className="flex flex-col gap-[10px]">
-            <p className="text-rrGrayText m-0 text-xs font-light hover:after:w-full">
+            <p className="m-0 text-xs font-light text-rrGrayText hover:after:w-full">
               Socials
             </p>
             <div className="flex space-x-5">
