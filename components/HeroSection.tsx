@@ -51,7 +51,7 @@ export default function HeroSection() {
           className="object-cover"
           priority
         />
-        <div className="absolute top-[calc(100vh-41%)]">
+        <div className="absolute bottom-10">
           <div
             ref={slider}
             className="relative z-10 whitespace-nowrap text-[clamp(180px,36vw,310px)] font-medium text-white will-change-transform"

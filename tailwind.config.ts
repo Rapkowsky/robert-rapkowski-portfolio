@@ -10,6 +10,14 @@ export default {
   ],
   theme: {
     extend: {
+      spacing: {
+        pxMobile: "20px",
+        px: "50px",
+        pxTablet: "80px",
+        pyMobile: "110px",
+        pyTablet: "220px",
+        pyDesktop: "250px",
+      },
       transitionDuration: {
         "400": "400ms",
         "600": "600ms",
