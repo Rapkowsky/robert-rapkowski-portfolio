@@ -117,7 +117,7 @@ export default function Modal({ modal, projects }: ModalProps) {
               >
                 <Image
                   src={`/images/${src}`}
-                  width={300}
+                  width={400}
                   height={0}
                   alt="image"
                   className="h-auto"

@@ -3,7 +3,6 @@ import { useRef } from "react";
 import { useScroll, motion, useTransform } from "framer-motion";
 import ButtonWrapper from "./ButtonWrapper";
 import Link from "next/link";
-import FooterInfo from "./FooterInfo";
 
 export default function Footer() {
   const container = useRef(null);

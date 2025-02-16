@@ -6,13 +6,17 @@ type ModalState = {
   index: number;
 };
 
-type ProjectProps = {
+type ProjectDesktopProps = {
   index: number;
   title: string;
   setModal: (state: ModalState) => void;
 };
 
-export default function Project({ index, title, setModal }: ProjectProps) {
+export default function ProjectDesktop({
+  index,
+  title,
+  setModal,
+}: ProjectDesktopProps) {
   return (
     <div
       onMouseEnter={() => {

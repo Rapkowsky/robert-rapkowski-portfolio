@@ -11,12 +11,12 @@ export default {
   theme: {
     extend: {
       spacing: {
-        pxMobile: "20px",
-        px: "50px",
-        pxTablet: "80px",
-        pyMobile: "110px",
-        pyTablet: "220px",
-        pyDesktop: "250px",
+        xMobile: "20px",
+        px500: "50px",
+        xTablet: "80px",
+        yMobile: "110px",
+        yTablet: "220px",
+        yDesktop: "250px",
       },
       transitionDuration: {
         "400": "400ms",
@@ -41,6 +41,7 @@ export default {
         rrGrayBorder: "#494a4d",
         rrGrayText: "#8d8e8f",
         rrDark: "#090a0f",
+        grayLight: "#d1d5db",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
