@@ -11,10 +11,10 @@ export default function Description() {
   const description = useRef(null);
   const isInView = useInView(description, { margin: "-150px" });
   return (
-    <SectionWrapper className="md:pt-yTablet lg:pt-yDesktop pt-yMobile">
+    <SectionWrapper className="md:pt-yTablet lg:pt-yDesktop pt-yMobile bg-white duration-500 ease-rrSmooth dark:bg-rrDark">
       <div
         ref={description}
-        className="relative flex items-center justify-center bg-white dark:bg-rrDark"
+        className="relative flex items-center justify-center bg-white duration-500 ease-rrSmooth dark:bg-rrDark"
       >
         <div className="relative flex w-full max-w-[700px] flex-col gap-16 text-rrDark dark:text-white lg:max-w-[1200px] lg:flex-row lg:gap-32">
           <p className="flex max-w-[560px] flex-wrap gap-x-2 text-2xl !leading-[1.2] lg:max-w-full xl:text-4xl">
