@@ -6,6 +6,7 @@ import gsap from "gsap";
 type Project = {
   src: string;
   color: string;
+  colorDark: string;
 };
 
 type ModalState = {
@@ -101,18 +102,17 @@ export default function Modal({ modal, projects }: ModalProps) {
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
-        className="pointer-events-none absolute flex h-[475px] w-[475px] items-center justify-center overflow-hidden will-change-transform"
+        className="pointer-events-none absolute flex h-[525px] w-[475px] items-center justify-center overflow-hidden will-change-transform"
       >
         <div
           style={{ top: index * -100 + "%" }}
           className="absolute h-full w-full transition-[top] duration-500 ease-rrSmooth"
         >
           {projects.map((project, idx) => {
-            const { src, color } = project;
+            const { src, color, colorDark } = project;
             return (
               <div
-                className="flex h-full w-full items-center justify-center"
-                style={{ backgroundColor: color }}
+                className={`flex h-full w-full items-center justify-center ${color} ${colorDark}`}
                 key={`modal_${idx}`}
               >
                 <Image
@@ -129,7 +129,7 @@ export default function Modal({ modal, projects }: ModalProps) {
       </motion.div>
       <motion.div
         ref={cursor}
-        className="z-2 pointer-events-none absolute flex h-[80px] w-[80px] items-center justify-center rounded-full bg-primary text-[14px] font-light text-white"
+        className="z-2 pointer-events-none absolute flex h-[100px] w-[100px] items-center justify-center rounded-full bg-primary text-[14px] font-light text-white"
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
@@ -137,7 +137,7 @@ export default function Modal({ modal, projects }: ModalProps) {
 
       <motion.div
         ref={cursorLabel}
-        className="z-2 bg-primarytext-[14px] pointer-events-none absolute flex h-[80px] w-[80px] items-center justify-center rounded-full font-light text-white"
+        className="z-2 bg-primarytext-[14px] pointer-events-none absolute flex h-[100px] w-[100px] items-center justify-center rounded-full font-light text-white"
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}

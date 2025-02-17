@@ -11,7 +11,7 @@ export default function Description() {
   const description = useRef(null);
   const isInView = useInView(description, { margin: "-150px" });
   return (
-    <SectionWrapper className="md:pt-yTablet lg:pt-yDesktop pt-yMobile bg-white duration-500 ease-rrSmooth dark:bg-rrDark">
+    <SectionWrapper className="bg-white pt-yMobile md:pt-yTablet lg:pt-yDesktop">
       <div
         ref={description}
         className="relative flex items-center justify-center bg-white duration-500 ease-rrSmooth dark:bg-rrDark"
@@ -38,7 +38,7 @@ export default function Description() {
           </p>
           <div className="relative w-full">
             <motion.p
-              className="dark:text-grayLight max-w-[260px] font-[300] text-rrDark opacity-0 lg:max-w-full lg:pr-0 xl:text-xl"
+              className="max-w-[260px] font-[300] text-rrDark opacity-0 dark:text-grayLight lg:max-w-full lg:pr-0 xl:text-xl"
               variants={opacity}
               animate={isInView ? "open" : "closed"}
             >

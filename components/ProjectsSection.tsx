@@ -13,28 +13,36 @@ export const projects = [
     year: "2024",
     scope: "Design & Development",
     src: "mat.png",
-    color: "#132030",
+    color: "bg-[#E4E3E3]",
+    colorDark: "dark:bg-[#1c1d20]",
+    link: "/matuszewski",
   },
   {
     title: "PetSoft",
     year: "2025",
     scope: "Design & Development",
-    src: "karola.png",
-    color: "#2c9676",
+    src: "petsoft.png",
+    color: "bg-[#def0eb]",
+    colorDark: "dark:bg-[#1c1d20]",
+    link: "/petsoft",
   },
   {
     title: "Portfolio",
     year: "2025",
     scope: "Design & Development",
     src: "portfolio.png",
-    color: "#EFE8D3",
+    color: "bg-[#0A0A0A]",
+    colorDark: "dark:bg-[#1c1d20]",
+    link: "/",
   },
   {
     title: "Silencio",
     year: "2022",
     scope: "Design & Development",
     src: "silencio.png",
-    color: "#706D63",
+    color: "bg-[#E4E3E3]",
+    colorDark: "dark:bg-[#1c1d20]",
+    link: "/",
   },
 ];
 
@@ -48,36 +56,54 @@ export default function ProjectsSection() {
     <>
       {isMobile ? (
         <SectionWrapper>
-          {projects.map((project, idx) => {
-            return (
-              <ProjectMobile
-                key={idx}
-                title={project.title}
-                year={project.year}
-                scope={project.scope}
-                src={project.src}
-                idx={idx}
-              />
-            );
-          })}
-        </SectionWrapper>
-      ) : (
-        <section className="flex min-h-screen items-center justify-center bg-white duration-500 ease-rrSmooth dark:bg-rrDark lg:px">
-          <div className="flex w-[1600px] flex-col items-center justify-center">
-            {projects.map((project, index) => {
+          <ProjectsHeader />
+          <section>
+            {projects.map((project, idx) => {
               return (
-                <ProjectDesktop
-                  index={index}
+                <ProjectMobile
+                  key={idx}
                   title={project.title}
-                  setModal={setModal}
-                  key={index}
+                  year={project.year}
+                  scope={project.scope}
+                  src={project.src}
+                  idx={idx}
+                  color={project.color}
+                  colorDark={project.colorDark}
+                  link={project.link}
                 />
               );
             })}
-          </div>
-          <Modal modal={modal} projects={projects} />
-        </section>
+          </section>
+        </SectionWrapper>
+      ) : (
+        <SectionWrapper>
+          <section className="lg:px flex items-center justify-center bg-white duration-500 ease-rrSmooth dark:bg-rrDark">
+            <div className="flex w-[1600px] flex-col items-center justify-center">
+              <ProjectsHeader />
+              {projects.map((project, index) => {
+                return (
+                  <ProjectDesktop
+                    index={index}
+                    title={project.title}
+                    setModal={setModal}
+                    key={index}
+                    link={project.link}
+                  />
+                );
+              })}
+            </div>
+            <Modal modal={modal} projects={projects} />
+          </section>
+        </SectionWrapper>
       )}
     </>
   );
 }
+
+const ProjectsHeader = () => {
+  return (
+    <p className="mb-10 self-start text-xs uppercase text-rrGrayText lg:pl-[100px]">
+      Recent Projects
+    </p>
+  );
+};

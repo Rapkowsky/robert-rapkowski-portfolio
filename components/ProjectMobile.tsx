@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const imageVariants = {
   hidden: { y: 60, opacity: 0.75, scale: 0.95 },
@@ -7,7 +8,7 @@ const imageVariants = {
     y: 0,
     opacity: 1,
     scale: 1,
-    transition: { ease: [0.25, 1, 0.5, 1], duration: 1.5 },
+    transition: { ease: [0.25, 1, 0.5, 1], duration: 2.5 },
   },
 };
 
@@ -51,6 +52,9 @@ type ProjectMobileProps = {
   scope: string;
   idx: number;
   src: string;
+  color: string;
+  colorDark: string;
+  link: string;
 };
 
 export const ProjectMobile = ({
@@ -58,57 +62,66 @@ export const ProjectMobile = ({
   scope,
   year,
   src,
+  color,
+  colorDark,
+  link,
 }: ProjectMobileProps) => {
   return (
-    <div className="mb-20">
-      <motion.div
-        variants={imageVariants}
-        initial="hidden"
-        whileInView="visible"
-      >
-        <Image
-          src={`/images/${src}`}
-          width={0}
-          height={0}
-          sizes="(max-width: 500px) 100vw, 500px"
-          alt="Project image"
-          className="mb-6 h-auto w-full"
+    <Link href={link}>
+      <div className="mb-20">
+        <motion.div
+          variants={imageVariants}
+          initial="hidden"
+          whileInView="visible"
+        >
+          <div
+            className={`mb-6 px-7 py-20 duration-500 ease-rrSmooth dark:px-0 dark:py-0 md:mb-12 ${color} ${colorDark}`}
+          >
+            <Image
+              src={`/images/${src}`}
+              width={0}
+              height={0}
+              sizes="(max-width: 500px) 100vw, 500px"
+              alt="Project image"
+              className="w-full"
+            />
+          </div>
+        </motion.div>
+
+        <motion.p
+          variants={titleVariants}
+          initial="hidden"
+          whileInView="visible"
+          className="text-2xl uppercase text-rrDark dark:text-white"
+        >
+          {title}
+        </motion.p>
+
+        <motion.div
+          variants={dividerVariants}
+          initial="hidden"
+          whileInView="visible"
+          className="my-3 h-[1px] bg-grayLight dark:bg-rrGrayBorder"
         />
-      </motion.div>
 
-      <motion.p
-        variants={titleVariants}
-        initial="hidden"
-        whileInView="visible"
-        className="text-2xl uppercase text-rrDark dark:text-white"
-      >
-        {title}
-      </motion.p>
-
-      <motion.div
-        variants={dividerVariants}
-        initial="hidden"
-        whileInView="visible"
-        className="bg-grayLight my-3 h-[1px] dark:bg-rrGrayBorder"
-      />
-
-      <div className="flex justify-between text-end text-sm uppercase text-zinc-500">
-        <motion.p
-          variants={scopeVariants}
-          initial="hidden"
-          whileInView="visible"
-          className="text-sm uppercase"
-        >
-          {scope}
-        </motion.p>
-        <motion.p
-          variants={yearVariants}
-          initial="hidden"
-          whileInView="visible"
-        >
-          {year}
-        </motion.p>
+        <div className="flex justify-between text-end text-sm uppercase text-rrGrayText">
+          <motion.p
+            variants={scopeVariants}
+            initial="hidden"
+            whileInView="visible"
+            className="text-sm uppercase"
+          >
+            {scope}
+          </motion.p>
+          <motion.p
+            variants={yearVariants}
+            initial="hidden"
+            whileInView="visible"
+          >
+            {year}
+          </motion.p>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
