@@ -11,7 +11,7 @@ export default function Description() {
   const description = useRef(null);
   const isInView = useInView(description, { margin: "-150px" });
   return (
-    <SectionWrapper className="bg-white pt-yMobile md:pt-yTablet lg:pt-yDesktop">
+    <SectionWrapper className="bg-white pb-52 pt-yMobile max-[374px]:pb-52 md:pt-yTablet lg:pt-yDesktop">
       <div
         ref={description}
         className="relative flex items-center justify-center bg-white duration-500 ease-rrSmooth dark:bg-rrDark"
@@ -50,7 +50,7 @@ export default function Description() {
             <div
               data-scroll
               data-scroll-speed={0.1}
-              className="absolute bottom-[-130px] right-0 ease-rrEaseBtnHover max-[374px]:bottom-[-100px] min-[500px]:bottom-0 lg:bottom-[-180px]"
+              className="absolute bottom-[-100px] right-0 ease-rrEaseBtnHover max-[374px]:bottom-[-100px] min-[500px]:bottom-0 lg:bottom-[-180px]"
             >
               <div className="relative duration-3000 ease-rrEaseBtnHover active:scale-[0.25]">
                 <ButtonWrapper className="relative flex h-[150px] w-[150px] cursor-pointer items-center justify-center rounded-full bg-rrDark font-[700] text-white dark:bg-primary md:h-[170px] md:w-[170px] xl:h-[200px] xl:w-[200px]">
