@@ -10,24 +10,22 @@ export default function Footer() {
     target: container,
     offset: ["start end", "end end"],
   });
-  const x = useTransform(scrollYProgress, [0, 1], [-150, 0]);
-  const y = useTransform(scrollYProgress, [0, 1], [-500, 0]);
+  const x = useTransform(scrollYProgress, [0, 1], [-200, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], [-150, 0]);
   const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
-  const scale = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  // const scale = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [162, 90]);
   return (
     <motion.div
       // style={{ y }}
-      // ref={container}
-      className="relative flex flex-col items-center justify-center bg-rrDark pt-[clamp(100px,0vh,450px)] text-white"
+      ref={container}
+      className="relative flex h-[calc(100vh-130px)] max-h-[1400px] min-h-[750px] flex-col items-center justify-center bg-rrDark px-xMobile text-white min-[500px]:px-xTablet"
     >
-      <div className="w-full max-w-[1800px] bg-rrDark">
-        <div className="relative ml-[200px] mr-[200px] border-b border-b-rrGrayBorder pb-[100px]">
-          <motion.div
-          //  style={{ y, opacity }}
-          >
-            <span className="flex items-center">
-              <motion.div className="relative h-[120px] w-[120px] overflow-hidden rounded-full">
+      <div className="w-full max-w-[1300px] bg-rrDark">
+        <div className="relative border-b border-b-rrGrayBorder pb-[100px]">
+          <motion.div style={{ y, opacity }}>
+            <div className="flex items-center">
+              <motion.div className="relative h-[60px] w-[60px] overflow-hidden rounded-full md:h-[90px] md:w-[90px] lg:h-[100px] lg:w-[100px]">
                 <Image
                   fill={true}
                   alt={"image"}
@@ -35,24 +33,24 @@ export default function Footer() {
                   className="object-cover object-top"
                 />
               </motion.div>
-              <h2 className="m-0 pl-[0.3em] text-[min(5vw,133px)] font-light leading-[1.065]">
+              <h2 className="ml-4 text-[2.9rem] leading-[1.065] md:text-7xl lg:text-8xl xl:text-9xl">
                 Let&apos;s work
               </h2>
-            </span>
-            <h2 className="m-0 text-[min(5vw,133px)] font-light leading-[1.065]">
+            </div>
+            <h2 className="text-[2.9rem] leading-[1.065] md:text-7xl lg:text-8xl xl:text-9xl">
               together
             </h2>
           </motion.div>
           <motion.div
             style={{ x }}
-            transition={{ ease: [0.45, 0, 0.55, 1] }}
-            className="absolute left-[calc(100%-400px)] top-[calc(100%-100px)]"
+            transition={{ ease: [0.7, 0, 0.2, 1] }}
+            className="absolute bottom-[-70px] left-[unset] right-[10%] max-[374px]:left-[40%] md:bottom-[-85px]"
           >
             <div className="relative duration-3000 ease-rrEaseBtnHover active:scale-[0.75]">
-              <ButtonWrapper className="relative flex h-[200px] w-[200px] cursor-pointer items-center justify-center rounded-full bg-primary font-[700] shadow-[0px_8px_200px_rgba(149,157,165,0.2)] shadow-black">
+              <ButtonWrapper className="relative flex h-[145px] w-[145px] cursor-pointer items-center justify-center rounded-full bg-primary font-[700] shadow-[0px_8px_200px_rgba(149,157,165,0.2)] shadow-black md:h-[175px] md:w-[175px] lg:h-[200px] lg:w-[200px]">
                 <Link
                   href="/contact"
-                  className="absolute inset-0 z-20 flex items-center justify-center"
+                  className="absolute inset-0 z-20 flex items-center justify-center font-light"
                 >
                   Get in touch
                 </Link>
@@ -67,7 +65,7 @@ export default function Footer() {
             viewBox="0 0 9 9"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute left-[100%] top-[30%]"
+            className="absolute left-[90%] top-[45%]"
           >
             <path
               d="M8 8.5C8.27614 8.5 8.5 8.27614 8.5 8L8.5 3.5C8.5 3.22386 8.27614 3 8 3C7.72386 3 7.5 3.22386 7.5 3.5V7.5H3.5C3.22386 7.5 3 7.72386 3 8C3 8.27614 3.22386 8.5 3.5 8.5L8 8.5ZM0.646447 1.35355L7.64645 8.35355L8.35355 7.64645L1.35355 0.646447L0.646447 1.35355Z"
@@ -75,10 +73,10 @@ export default function Footer() {
             />
           </motion.svg>
         </div>
-        <motion.div className="mx-[200px] mt-[100px] flex gap-[20px]">
+        <motion.div className="mt-[120px] flex flex-col gap-3 md:flex-row">
           <div className="duration-3000 ease-rrEaseBtnHover active:scale-[0.75]">
             <a href="mailto:robertrapkowski19@gmail.com">
-              <ButtonWrapper className="border border-rrGrayBorder px-[60px] py-[30px]">
+              <ButtonWrapper className="border border-rrGrayBorder px-12 py-6 xl:py-7 px-14">
                 <p className="z-20">robertrapkowski19@gmail.com</p>
               </ButtonWrapper>
             </a>
@@ -86,7 +84,7 @@ export default function Footer() {
 
           <div className="duration-3000 ease-rrEaseBtnHover active:scale-[0.75]">
             <a href="tel:+48698868730">
-              <ButtonWrapper className="border border-rrGrayBorder px-[60px] py-[30px]">
+              <ButtonWrapper className="border border-rrGrayBorder px-12 py-6 xl:py-7 px-14">
                 <p className="z-20"> +48 698868730</p>
               </ButtonWrapper>
             </a>

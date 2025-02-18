@@ -5,10 +5,11 @@ import StandardLink from "./StandardLink";
 const FooterInfo = () => {
   return (
     <section className="bg-rrDark">
-      <div className="mx-auto flex max-w-[1800px] justify-between pb-10 pt-[200px]">
-        <div className="flex items-end gap-[10px]">
-          <span className="flex flex-col gap-[15px]">
-            <h3 className="m-0 font-light text-rrGrayText hover:after:w-full text-xs">
+      <div className="relative mx-auto flex max-w-[1900px] justify-between px-xMobile py-10">
+        <div className="absolute left-[20px] top-0 h-[1px] w-[calc(100%-40px)] bg-rrGrayBorder md:hidden" />
+        <div className="flex items-end gap-3">
+          <span className="flex flex-col gap-3">
+            <h3 className="m-0 text-xs font-light text-rrGrayText hover:after:w-full">
               VERSION
             </h3>
 
@@ -16,7 +17,7 @@ const FooterInfo = () => {
           </span>
         </div>
         <div className="flex flex-col gap-[10px]">
-          <p className="m-0 font-light text-rrGrayText hover:after:w-full text-xs">
+          <p className="m-0 text-xs font-light text-rrGrayText hover:after:w-full">
             SOCIALS
           </p>
 
