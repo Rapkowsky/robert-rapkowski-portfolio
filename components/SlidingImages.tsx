@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import Image from "next/image";
-import SectionWrapper from "./SectionWrapper";
 
 const slider1 = [
   {
@@ -48,24 +47,24 @@ export default function SlidingImages() {
     offset: ["start end", "end start"],
   });
 
-  const x1 = useTransform(scrollYProgress, [0, 1], [0, 150]);
-  const x2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  const x1 = useTransform(scrollYProgress, [0, 1], [0, 700]);
+  const x2 = useTransform(scrollYProgress, [0, 1], [0, -700]);
   const height = useTransform(scrollYProgress, [0, 0.9], [50, 0]);
 
   return (
     <div
       ref={container}
-      className="relative z-[1] flex flex-col items-center justify-center gap-[3vw] bg-white duration-500 ease-rrSmooth dark:bg-rrDark"
+      className="relative z-[1] flex flex-col items-center justify-center bg-white duration-500 ease-rrSmooth dark:bg-rrDark"
     >
       <motion.div
         style={{ x: x1 }}
-        className="relative left-[-10vw] flex w-[1400px] gap-[3vw]"
+        className="relative left-[-50vw] mb-[5vw] flex w-[200vw] gap-[5vw]"
       >
         {slider1.map((project, i) => {
           return (
             <div
               key={i}
-              className="flex h-[200px] w-full items-center justify-center"
+              className="flex h-[36vw] w-1/4 items-center justify-center"
               style={{ backgroundColor: project.color }}
             >
               <div key={i} className="relative h-[80%] w-[80%]">
@@ -82,13 +81,13 @@ export default function SlidingImages() {
       </motion.div>
       <motion.div
         style={{ x: x2 }}
-        className="relative left-[-10vw] flex w-[120vw] gap-[3vw]"
+        className="relative right-[-50vw] flex w-[200vw] gap-[5vw]"
       >
         {slider2.map((project, i) => {
           return (
             <div
               key={i}
-              className="flex h-[200px] w-full items-center justify-center"
+              className="flex h-[36vw] w-1/4 items-center justify-center"
               style={{ backgroundColor: project.color }}
             >
               <div key={i} className="relative h-[80%] w-[80%]">

@@ -19,11 +19,13 @@ export default function Footer() {
     <motion.div
       // style={{ y }}
       // ref={container}
-      className="relative flex flex-col items-center justify-center bg-rrDark pt-[clamp(170px,31vh,450px)] text-white"
+      className="relative flex flex-col items-center justify-center bg-rrDark pt-[clamp(100px,0vh,450px)] text-white"
     >
       <div className="w-full max-w-[1800px] bg-rrDark">
         <div className="relative ml-[200px] mr-[200px] border-b border-b-rrGrayBorder pb-[100px]">
-          <motion.div style={{ y, opacity }}>
+          <motion.div
+          //  style={{ y, opacity }}
+          >
             <span className="flex items-center">
               <motion.div className="relative h-[120px] w-[120px] overflow-hidden rounded-full">
                 <Image
