@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import Image from "next/image";
+import SectionWrapper from "./SectionWrapper";
 
 const slider1 = [
   {
@@ -54,20 +55,20 @@ export default function SlidingImages() {
   return (
     <div
       ref={container}
-      className="relative z-[1] mb-[-200px] flex min-h-screen flex-col items-center justify-center gap-[3vw] bg-white duration-500 ease-rrSmooth dark:bg-rrDark"
+      className="relative z-[1] flex flex-col items-center justify-center gap-[3vw] bg-white duration-500 ease-rrSmooth dark:bg-rrDark"
     >
       <motion.div
         style={{ x: x1 }}
-        className="relative left-[-10vw] flex w-[120vw] gap-[3vw] will-change-transform"
+        className="relative left-[-10vw] flex w-[1400px] gap-[3vw]"
       >
-        {slider1.map((project, index) => {
+        {slider1.map((project, i) => {
           return (
             <div
-              key={index}
-              className="flex h-[20vw] w-1/4 items-center justify-center"
-              // style={{ backgroundColor: project.color }}
+              key={i}
+              className="flex h-[200px] w-full items-center justify-center"
+              style={{ backgroundColor: project.color }}
             >
-              <div key={index} className="relative h-[80%] w-[80%]">
+              <div key={i} className="relative h-[80%] w-[80%]">
                 <Image
                   fill={true}
                   alt={"image"}
@@ -81,16 +82,16 @@ export default function SlidingImages() {
       </motion.div>
       <motion.div
         style={{ x: x2 }}
-        className="relative left-[-10vw] flex w-[120vw] gap-[3vw] will-change-transform"
+        className="relative left-[-10vw] flex w-[120vw] gap-[3vw]"
       >
-        {slider2.map((project, index) => {
+        {slider2.map((project, i) => {
           return (
             <div
-              key={index}
-              className="flex h-[20vw] w-1/4 items-center justify-center"
-              // style={{ backgroundColor: project.color }}
+              key={i}
+              className="flex h-[200px] w-full items-center justify-center"
+              style={{ backgroundColor: project.color }}
             >
-              <div key={index} className="relative h-[80%] w-[80%]">
+              <div key={i} className="relative h-[80%] w-[80%]">
                 <Image
                   fill={true}
                   alt={"image"}
@@ -101,10 +102,7 @@ export default function SlidingImages() {
           );
         })}
       </motion.div>
-      <motion.div
-        style={{ height }}
-        className="bg:white relative w-full will-change-[height]"
-      >
+      <motion.div style={{ height }} className="bg:white relative w-full">
         <div className="absolute left-[-10%] z-[1] h-[1600%] w-[120%] rounded-bl-[50%] rounded-br-[50%] rounded-tl-none rounded-tr-none bg-white duration-500 ease-rrSmooth dark:bg-rrDark"></div>
       </motion.div>
     </div>

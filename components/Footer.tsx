@@ -17,8 +17,8 @@ export default function Footer() {
   const rotate = useTransform(scrollYProgress, [0, 1], [162, 90]);
   return (
     <motion.div
-      style={{ y }}
-      ref={container}
+      // style={{ y }}
+      // ref={container}
       className="relative flex flex-col items-center justify-center bg-rrDark pt-[clamp(170px,31vh,450px)] text-white"
     >
       <div className="w-full max-w-[1800px] bg-rrDark">
@@ -73,10 +73,7 @@ export default function Footer() {
             />
           </motion.svg>
         </div>
-        <motion.div
-          style={{ scale }}
-          className="mx-[200px] mt-[100px] flex gap-[20px]"
-        >
+        <motion.div className="mx-[200px] mt-[100px] flex gap-[20px]">
           <div className="duration-3000 ease-rrEaseBtnHover active:scale-[0.75]">
             <a href="mailto:robertrapkowski19@gmail.com">
               <ButtonWrapper className="border border-rrGrayBorder px-[60px] py-[30px]">

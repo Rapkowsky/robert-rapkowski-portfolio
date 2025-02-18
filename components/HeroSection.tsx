@@ -54,18 +54,15 @@ export default function HeroSection() {
         <div className="absolute bottom-10">
           <div
             ref={slider}
-            className="relative z-10 whitespace-nowrap text-[clamp(180px,36vw,310px)] font-medium text-white will-change-transform"
+            className="relative z-10 whitespace-nowrap text-[clamp(180px,36vw,310px)] font-medium text-white"
           >
-            <p
-              ref={firstText}
-              className="relative m-0 pr-[50px] will-change-transform"
-            >
+            <p ref={firstText} className="relative m-0 pr-[50px]">
               Freelance Developer -
             </p>
 
             <p
               ref={secondText}
-              className="absolute left-full top-0 m-0 pr-[50px] will-change-transform"
+              className="absolute left-full top-0 m-0 pr-[50px]"
             >
               Freelance Developer -
             </p>
