@@ -76,7 +76,7 @@ export default function ProjectsSection() {
           </section>
         </SectionWrapper>
       ) : (
-        <SectionWrapper>
+        <SectionWrapper className="!px-0">
           <section className="lg:px flex items-center justify-center bg-white duration-500 ease-rrSmooth dark:bg-rrDark">
             <div className="flex w-[1600px] flex-col items-center justify-center">
               <ProjectsHeader />

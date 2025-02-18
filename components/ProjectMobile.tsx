@@ -92,7 +92,7 @@ export const ProjectMobile = ({
           variants={titleVariants}
           initial="hidden"
           whileInView="visible"
-          className="text-2xl uppercase text-rrDark dark:text-white"
+          className="text-2xl uppercase text-rrDark dark:text-white md:text-4xl"
         >
           {title}
         </motion.p>

@@ -33,7 +33,7 @@ export default function ProjectDesktop({
           index === 0 ? "border-t-[0.1px]" : ""
         } border-b-[0.1px] border-rrGrayBorder px-[100px] py-[75px] duration-300 ease-rrEaseBtnHover dark:hover:border-white`}
       >
-        <h2 className="m-0 text-[90px] font-[400] text-rrDark duration-300 ease-rrEaseBtnHover group-hover:translate-x-[-30px] group-hover:text-rrGrayText dark:text-rrGrayText dark:group-hover:text-white">
+        <h2 className="m-0 text-7xl font-[400] uppercase text-rrDark duration-300 ease-rrEaseBtnHover group-hover:translate-x-[-30px] group-hover:text-rrGrayText dark:text-rrGrayText dark:group-hover:text-white xl:text-8xl">
           {title}
         </h2>
         <p className="text-[19px] font-[300] text-rrDark duration-300 ease-rrEaseBtnHover group-hover:translate-x-[30px] group-hover:text-rrGrayText dark:text-rrGrayText dark:group-hover:text-white">
