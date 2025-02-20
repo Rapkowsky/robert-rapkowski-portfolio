@@ -68,14 +68,14 @@ export const ProjectMobile = ({
 }: ProjectMobileProps) => {
   return (
     <Link href={link}>
-      <div className="mb-20">
+      <div className="mb-24">
         <motion.div
           variants={imageVariants}
           initial="hidden"
           whileInView="visible"
         >
           <div
-            className={`mb-6 px-7 py-20 duration-500 ease-rrSmooth dark:px-0 dark:py-0 md:mb-12 ${color} ${colorDark}`}
+            className={`mb-8 px-7 py-20 duration-500 ease-rrSmooth dark:px-0 dark:py-0 md:mb-12 ${color} ${colorDark}`}
           >
             <Image
               src={`/images/${src}`}
@@ -84,6 +84,7 @@ export const ProjectMobile = ({
               sizes="(max-width: 500px) 100vw, 500px"
               alt="Project image"
               className="w-full"
+              quality={100}
             />
           </div>
         </motion.div>
@@ -92,7 +93,7 @@ export const ProjectMobile = ({
           variants={titleVariants}
           initial="hidden"
           whileInView="visible"
-          className="text-2xl uppercase text-rrDark dark:text-white md:text-4xl"
+          className="text-3xl uppercase text-rrDark dark:text-white md:text-4xl"
         >
           {title}
         </motion.p>
@@ -101,15 +102,15 @@ export const ProjectMobile = ({
           variants={dividerVariants}
           initial="hidden"
           whileInView="visible"
-          className="my-3 h-[1px] bg-grayLight dark:bg-rrGrayBorder"
+          className="my-5 h-[1px] bg-grayLight dark:bg-rrGrayBorder"
         />
 
-        <div className="flex justify-between text-end text-sm uppercase text-rrGrayText">
+        <div className="flex justify-between text-end text-sm text-rrDark dark:text-rrGrayText">
           <motion.p
             variants={scopeVariants}
             initial="hidden"
             whileInView="visible"
-            className="text-sm uppercase"
+            className="text-sm"
           >
             {scope}
           </motion.p>

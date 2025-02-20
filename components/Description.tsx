@@ -29,6 +29,7 @@ export default function Description() {
                     variants={slideUp}
                     custom={index}
                     animate={isInView ? "open" : "closed"}
+                    className="will-change-transform"
                   >
                     {word}
                   </motion.span>
@@ -38,7 +39,7 @@ export default function Description() {
           </p>
           <div className="relative w-full">
             <motion.p
-              className="max-w-[260px] font-[300] text-rrDark opacity-0 dark:text-grayLight lg:max-w-full lg:pr-0 xl:text-xl"
+              className="max-w-[260px] font-[300] text-rrDark opacity-0 will-change-transform dark:text-grayLight lg:max-w-full lg:pr-0 xl:text-xl"
               variants={opacity}
               animate={isInView ? "open" : "closed"}
             >
@@ -50,10 +51,10 @@ export default function Description() {
             <div
               data-scroll
               data-scroll-speed={0.1}
-              className="absolute bottom-[-100px] right-0 ease-rrEaseBtnHover max-[374px]:bottom-[-100px] min-[500px]:bottom-0 lg:bottom-[-180px]"
+              className="absolute bottom-[-100px] right-0 ease-rrEaseBtnHover will-change-transform max-[374px]:bottom-[-100px] min-[500px]:bottom-0 lg:bottom-[-180px]"
             >
               <div className="relative duration-3000 ease-rrEaseBtnHover active:scale-[0.25]">
-                <ButtonWrapper className="relative flex h-[150px] w-[150px] cursor-pointer items-center justify-center rounded-full bg-rrDark font-[700] text-white dark:bg-primary md:h-[170px] md:w-[170px] xl:h-[200px] xl:w-[200px]">
+                <ButtonWrapper className="relative flex h-[150px] w-[150px] cursor-pointer items-center justify-center rounded-full bg-rrDark font-medium text-white dark:bg-primary md:h-[170px] md:w-[170px] xl:h-[200px] xl:w-[200px]">
                   <Link
                     href="/"
                     className="absolute inset-0 z-20 flex items-center justify-center"

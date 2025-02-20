@@ -16,7 +16,7 @@ export default {
         xTablet: "80px",
         yMobile: "110px",
         yTablet: "220px",
-        yDesktop: "250px",
+        yDesktop: "400px",
       },
       transitionDuration: {
         "400": "400ms",
@@ -37,10 +37,10 @@ export default {
         foreground: "hsl(var(--foreground))",
         primary: "#146ef5",
         primaryDarker: "#0a61e5",
-        rrGray: "#1c1d20",
+        rrGray: "#171717",
         rrGrayBorder: "#494a4d",
         rrGrayText: "#8d8e8f",
-        rrDark: "#090a0f",
+        rrDark: "#080808",
         grayLight: "#d1d5db",
         card: {
           DEFAULT: "hsl(var(--card))",

@@ -102,7 +102,7 @@ export default function Modal({ modal, projects }: ModalProps) {
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
-        className="pointer-events-none absolute flex h-[525px] w-[475px] items-center justify-center overflow-hidden"
+        className="pointer-events-none absolute flex h-[525px] w-[475px] items-center justify-center overflow-hidden will-change-transform"
       >
         <div
           style={{ top: index * -100 + "%" }}
@@ -137,7 +137,7 @@ export default function Modal({ modal, projects }: ModalProps) {
 
       <motion.div
         ref={cursorLabel}
-        className="z-2 bg-primarytext-[14px] pointer-events-none absolute flex h-[100px] w-[100px] items-center justify-center rounded-full font-light text-white"
+        className="z-2 bg-primarytext-[14px] pointer-events-none absolute flex h-[100px] w-[100px] items-center justify-center rounded-full font-medium text-white"
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}

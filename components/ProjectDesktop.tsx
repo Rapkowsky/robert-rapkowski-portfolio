@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
 
@@ -14,6 +15,14 @@ type ProjectDesktopProps = {
   setModal: (state: ModalState) => void;
 };
 
+const titleVariants = {
+  hidden: { y: 200 },
+  visible: {
+    y: 0,
+    transition: { ease: [0.5, 1, 0.89, 1], duration: 0.75 },
+  },
+};
+
 export default function ProjectDesktop({
   index,
   title,
@@ -22,16 +31,19 @@ export default function ProjectDesktop({
 }: ProjectDesktopProps) {
   return (
     <Link href={link} className="w-full">
-      <div
+      <motion.div
+        variants={titleVariants}
+        initial="hidden"
+        whileInView="visible"
         onMouseEnter={() => {
           setModal({ active: true, index });
         }}
         onMouseLeave={() => {
           setModal({ active: false, index });
         }}
-        className={`group flex w-full cursor-pointer items-center justify-between ${
+        className={`group flex w-full cursor-pointer items-center justify-between will-change-transform ${
           index === 0 ? "border-t-[0.1px]" : ""
-        } border-b-[0.1px] border-rrGrayBorder px-[100px] py-[75px] duration-300 ease-rrEaseBtnHover dark:hover:border-white`}
+        } border-b-[0.1px] border-rrGrayBorder px-[100px] py-20 transition-all duration-300 ease-rrEaseBtnHover dark:hover:border-white xl:py-24`}
       >
         <h2 className="m-0 text-7xl font-[400] uppercase text-rrDark duration-300 ease-rrEaseBtnHover group-hover:translate-x-[-30px] group-hover:text-rrGrayText dark:text-rrGrayText dark:group-hover:text-white xl:text-8xl">
           {title}
@@ -39,7 +51,7 @@ export default function ProjectDesktop({
         <p className="text-[19px] font-[300] text-rrDark duration-300 ease-rrEaseBtnHover group-hover:translate-x-[30px] group-hover:text-rrGrayText dark:text-rrGrayText dark:group-hover:text-white">
           Design & Development
         </p>
-      </div>
+      </motion.div>
     </Link>
   );
 }

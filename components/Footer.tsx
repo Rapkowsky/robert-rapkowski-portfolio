@@ -11,19 +11,23 @@ export default function Footer() {
     offset: ["start end", "end end"],
   });
   const x = useTransform(scrollYProgress, [0, 1], [-200, 0]);
-  const y = useTransform(scrollYProgress, [0, 1], [-150, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], [-300, 0]);
   const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
-  // const scale = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [162, 90]);
   return (
     <motion.div
-      // style={{ y }}
       ref={container}
-      className="relative flex h-[calc(100vh-130px)] max-h-[1400px] min-h-[750px] flex-col items-center justify-center bg-rrDark px-xMobile text-white min-[500px]:px-xTablet"
+      className="relative flex h-[calc(100vh-130px)] max-h-[1400px] min-h-[750px] flex-col items-center justify-center bg-rrGray px-xMobile text-white min-[500px]:px-xTablet"
     >
-      <div className="w-full max-w-[1300px] bg-rrDark">
-        <div className="relative border-b border-b-rrGrayBorder pb-[100px]">
-          <motion.div style={{ y, opacity }}>
+      <div className="w-full max-w-[1300px] bg-rrGray">
+        <div className="relative pb-[100px]">
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: "100%" }}
+            transition={{ duration: 1.3, ease: [0.45, 0, 0.55, 1] }}
+            className="absolute bottom-0 h-[1px] bg-rrGrayBorder"
+          />
+          <motion.div style={{ y, opacity }} className="will-change-transform">
             <div className="flex items-center">
               <motion.div className="relative h-[60px] w-[60px] overflow-hidden rounded-full md:h-[90px] md:w-[90px] lg:h-[100px] lg:w-[100px]">
                 <Image
@@ -44,18 +48,17 @@ export default function Footer() {
           <motion.div
             style={{ x }}
             transition={{ ease: [0.7, 0, 0.2, 1] }}
-            className="absolute bottom-[-70px] left-[unset] right-[10%] max-[374px]:left-[40%] md:bottom-[-85px]"
+            className="absolute bottom-[-70px] left-[unset] right-[10%] will-change-transform max-[374px]:left-[40%] md:bottom-[-85px] lg:bottom-[-98px]"
           >
             <div className="relative duration-3000 ease-rrEaseBtnHover active:scale-[0.75]">
-              <ButtonWrapper className="relative flex h-[145px] w-[145px] cursor-pointer items-center justify-center rounded-full bg-primary font-[700] shadow-[0px_8px_200px_rgba(149,157,165,0.2)] shadow-black md:h-[175px] md:w-[175px] lg:h-[200px] lg:w-[200px]">
+              <ButtonWrapper className="relative flex h-[145px] w-[145px] cursor-pointer items-center justify-center rounded-full bg-primary font-[700] md:h-[175px] md:w-[175px] lg:h-[200px] lg:w-[200px]">
                 <Link
                   href="/contact"
-                  className="absolute inset-0 z-20 flex items-center justify-center font-light"
+                  className="absolute inset-0 z-20 flex items-center justify-center font-medium"
                 >
                   Get in touch
                 </Link>
               </ButtonWrapper>
-              {/* <div className="absolute left-[-230px] top-[90px] z-[-10] h-[390px] w-[590px] rounded-full bg-gradient-to-t from-primary via-[#05367f] to-black blur-[200px]"></div> */}
             </div>
           </motion.div>
           <motion.svg
@@ -73,10 +76,10 @@ export default function Footer() {
             />
           </motion.svg>
         </div>
-        <motion.div className="mt-[120px] flex flex-col gap-3 md:flex-row">
+        <div className="mt-[120px] flex flex-col gap-3 md:flex-row">
           <div className="duration-3000 ease-rrEaseBtnHover active:scale-[0.75]">
             <a href="mailto:robertrapkowski19@gmail.com">
-              <ButtonWrapper className="border border-rrGrayBorder px-12 py-6 xl:py-7 px-14">
+              <ButtonWrapper className="border border-rrGrayBorder px-14 py-6 xl:py-7">
                 <p className="z-20">robertrapkowski19@gmail.com</p>
               </ButtonWrapper>
             </a>
@@ -84,12 +87,12 @@ export default function Footer() {
 
           <div className="duration-3000 ease-rrEaseBtnHover active:scale-[0.75]">
             <a href="tel:+48698868730">
-              <ButtonWrapper className="border border-rrGrayBorder px-12 py-6 xl:py-7 px-14">
+              <ButtonWrapper className="border border-rrGrayBorder px-14 py-6 xl:py-7">
                 <p className="z-20"> +48 698868730</p>
               </ButtonWrapper>
             </a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </motion.div>
   );

@@ -36,7 +36,7 @@ export default function SideNav() {
       initial="initial"
       animate="enter"
       exit="exit"
-      className="fixed right-0 top-0 z-30 h-screen w-screen bg-rrGray text-white transition-[width] duration-800 ease-rrEaseBtnHover min-[500px]:w-[initial]"
+      className="fixed right-0 top-0 z-30 h-screen w-screen bg-rrGray text-white transition-[width] duration-800 ease-rrEaseBtnHover will-change-transform min-[500px]:w-[initial]"
     >
       <div className="box-border flex h-full flex-col justify-between px-5 pb-12 pt-8 transition-[padding] duration-800 ease-rrEaseBtnHover min-[500px]:p-[clamp(50px,10vh,140px)_70px] md:px-[clamp(70px,9vw,220px)]">
         <div
