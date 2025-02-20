@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Modal from "./Modal";
 import { ProjectMobile } from "./ProjectMobile";
 import useWindowResize from "./hooks/UseWindowResize";
 import ProjectDesktop from "./ProjectDesktop";
 import SectionWrapper from "./SectionWrapper";
+import { motion, useInView } from "framer-motion";
+import { elementSlideUp } from "@/lib/Animations";
 
 export const projects = [
   {
@@ -101,9 +103,17 @@ export default function ProjectsSection() {
 }
 
 const ProjectsHeader = () => {
+  const header = useRef(null);
+  const isInView = useInView(header);
   return (
-    <p className="mb-10 self-start text-xs uppercase text-rrGrayText lg:pl-[100px]">
+    <motion.p
+      ref={header}
+      initial="exit"
+      variants={elementSlideUp}
+      animate={isInView ? "enter" : "exit"}
+      className="mb-10 self-start text-xs uppercase text-rrGrayText will-change-transform lg:pl-[100px]"
+    >
       Recent Projects
-    </p>
+    </motion.p>
   );
 };
