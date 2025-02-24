@@ -41,7 +41,7 @@ export default {
         rrGrayBorder: "#494a4d",
         rrGrayText: "#8d8e8f",
         rrDark: "#080808",
-        grayLight: "#d1d5db",
+        grayLight: "#d7d7d8",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",

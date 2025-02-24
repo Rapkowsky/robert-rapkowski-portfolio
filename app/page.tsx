@@ -8,6 +8,7 @@ import SlidingImages from "@/components/SlidingImages";
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import SkillsSection from "@/components/SkillsSection";
+import { Numbers } from "@/components/Numbers";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -34,6 +35,7 @@ const Home = () => {
       </AnimatePresence> */}
       <HeroSection />
       <Description />
+      <Numbers />
       <SkillsSection />
       <ProjectsSection />
       <SlidingImages />

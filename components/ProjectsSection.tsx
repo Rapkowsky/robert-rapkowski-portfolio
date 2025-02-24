@@ -79,7 +79,7 @@ export default function ProjectsSection() {
       ) : (
         <SectionWrapper className="!px-0">
           <section className="lg:px flex items-center justify-center bg-white duration-500 ease-rrSmooth dark:bg-rrDark">
-            <div className="flex w-full max-w-[1600px] flex-col items-center justify-center">
+            <div className="flex w-full max-w-[1760px] flex-col items-center justify-center">
               <Label text="Recent projects" className="lg:pl-[80px]"/>
               {projects.map((project, index) => {
                 return (
