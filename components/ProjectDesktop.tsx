@@ -43,7 +43,7 @@ export default function ProjectDesktop({
         }}
         className={`group flex w-full cursor-pointer items-center justify-between will-change-transform ${
           index === 0 ? "border-t-[0.1px]" : ""
-        } border-b-[0.1px] border-rrGrayBorder px-[100px] py-20 transition-all duration-300 ease-rrEaseBtnHover dark:hover:border-white xl:py-24`}
+        } border-b-[0.1px] border-rrGrayBorder px-[80px] py-20 transition-all duration-300 ease-rrEaseBtnHover dark:hover:border-white xl:py-24`}
       >
         <h2 className="m-0 text-7xl font-[400] uppercase text-rrDark duration-300 ease-rrEaseBtnHover group-hover:translate-x-[-30px] group-hover:text-rrGrayText dark:text-rrGrayText dark:group-hover:text-white xl:text-8xl">
           {title}

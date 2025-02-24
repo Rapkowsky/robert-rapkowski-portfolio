@@ -10,13 +10,15 @@ export default function SectionWrapper({
   className,
 }: SectionWrapperProps) {
   return (
-    <section
-      className={cn(
-        "mx-auto bg-white px-xMobile py-yMobile pt-0 duration-500 ease-rrSmooth dark:bg-rrDark min-[500px]:px-px500 min-[500px]:pb-yMobile md:px-xTablet md:py-yTablet md:pt-0 lg:py-yDesktop lg:pt-0",
-        className,
-      )}
-    >
-      {children}
+    <section className="bg-white duration-500 ease-rrSmooth dark:bg-rrDark">
+      <div
+        className={cn(
+          "mx-auto w-full max-w-[1600px] px-xMobile py-yMobile pt-0 min-[500px]:px-px500 min-[500px]:pb-yMobile md:px-xTablet md:py-yTablet md:pt-0 lg:py-yDesktop lg:pt-0",
+          className,
+        )}
+      >
+        {children}
+      </div>
     </section>
   );
 }

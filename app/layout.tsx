@@ -29,8 +29,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
           {children}
+          <FooterInfo />
         </ThemeProvider>
-        <FooterInfo />
       </body>
     </html>
   );

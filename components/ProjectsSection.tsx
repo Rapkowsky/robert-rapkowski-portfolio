@@ -1,13 +1,12 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Modal from "./Modal";
 import { ProjectMobile } from "./ProjectMobile";
 import useWindowResize from "./hooks/UseWindowResize";
 import ProjectDesktop from "./ProjectDesktop";
 import SectionWrapper from "./SectionWrapper";
-import { motion, useInView } from "framer-motion";
-import { elementSlideUp } from "@/lib/Animations";
+import Label from "./Label";
 
 export const projects = [
   {
@@ -58,7 +57,7 @@ export default function ProjectsSection() {
     <>
       {isMobile ? (
         <SectionWrapper>
-          <ProjectsHeader />
+          <Label text="Recent projects" />
           <section>
             {projects.map((project, idx) => {
               return (
@@ -80,8 +79,8 @@ export default function ProjectsSection() {
       ) : (
         <SectionWrapper className="!px-0">
           <section className="lg:px flex items-center justify-center bg-white duration-500 ease-rrSmooth dark:bg-rrDark">
-            <div className="flex w-[1600px] flex-col items-center justify-center">
-              <ProjectsHeader />
+            <div className="flex w-full max-w-[1600px] flex-col items-center justify-center">
+              <Label text="Recent projects" className="lg:pl-[80px]"/>
               {projects.map((project, index) => {
                 return (
                   <ProjectDesktop
@@ -101,19 +100,3 @@ export default function ProjectsSection() {
     </>
   );
 }
-
-const ProjectsHeader = () => {
-  const header = useRef(null);
-  const isInView = useInView(header);
-  return (
-    <motion.p
-      ref={header}
-      initial="exit"
-      variants={elementSlideUp}
-      animate={isInView ? "enter" : "exit"}
-      className="mb-10 self-start text-xs uppercase text-rrGrayText will-change-transform lg:pl-[100px]"
-    >
-      Recent Projects
-    </motion.p>
-  );
-};
