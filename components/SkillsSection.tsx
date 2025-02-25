@@ -25,6 +25,8 @@ import ps from "@/public/images/ps.svg";
 import tailwind from "@/public/images/tailwind.svg";
 import scss from "@/public/images/scss.svg";
 import Title from "./Title";
+import { motion } from "framer-motion";
+import { mainAnim, rrEaseBtnHover } from "@/lib/Animations";
 
 interface Skill {
   name: string;
@@ -74,10 +76,22 @@ const SkillsSection = () => {
   const renderSkills = (skills: Skill[], label: string) => (
     <div className="w-full">
       <Label text={label} className="mb-0" />
-      <div className="mb-11 mt-12 h-[1px] bg-grayLight dark:bg-border" />
+      <motion.div
+        initial={{ width: 0 }}
+        whileInView={{ width: "100%" }}
+        transition={{ duration: 2, ease: mainAnim, delay: 0.3 }}
+        className="mb-11 mt-12 h-[1px] bg-grayLight dark:bg-border"
+      />
       <div className="flex flex-wrap gap-10">
-        {skills.map((skill) => (
-          <div
+        {skills.map((skill, idx) => (
+          <motion.div
+            initial={{ opacity: 0, y: 150 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1.5,
+              ease: mainAnim,
+              // delay: 0.3 + idx / 10,
+            }}
             key={skill.name}
             className="flex w-[120px] flex-col items-center gap-2 text-rrDark dark:text-white xl:text-xl"
           >
@@ -87,7 +101,7 @@ const SkillsSection = () => {
               className={`h-16 w-16 ${skill.imgClass || ""}`}
             />
             <p className="text-center">{skill.name}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

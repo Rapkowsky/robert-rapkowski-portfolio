@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { useScroll, motion, useTransform } from "framer-motion";
 import ButtonWrapper from "./ButtonWrapper";
 import Link from "next/link";
+import { mainAnim } from "@/lib/Animations";
 
 export default function Footer() {
   const container = useRef(null);
@@ -24,7 +25,7 @@ export default function Footer() {
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: "100%" }}
-            transition={{ duration: 1.3, ease: [0.45, 0, 0.55, 1] }}
+            transition={{ duration: 1.6, ease: mainAnim }}
             className="absolute bottom-0 h-[1px] bg-rrGrayBorder"
           />
           <motion.div style={{ y, opacity }} className="will-change-transform">

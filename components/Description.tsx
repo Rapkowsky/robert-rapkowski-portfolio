@@ -4,6 +4,7 @@ import { slideUp, opacity } from "@/lib/Animations";
 import ButtonWrapper from "./ButtonWrapper";
 import Link from "next/link";
 import SectionWrapper from "./SectionWrapper";
+import { Numbers } from "./Numbers";
 
 export default function Description() {
   const phrase =
@@ -11,7 +12,7 @@ export default function Description() {
   const description = useRef(null);
   const isInView = useInView(description, { margin: "-150px" });
   return (
-    <SectionWrapper className="pb-52 pt-yMobile max-[374px]:pb-52 md:pt-yTablet lg:pt-yDesktop">
+    <SectionWrapper className=" pt-yMobile md:pt-yTablet lg:pt-yDesktop">
       <div
         ref={description}
         className="relative flex items-center justify-center duration-500 ease-rrSmooth"
@@ -67,6 +68,7 @@ export default function Description() {
           </div>
         </div>
       </div>
+      <Numbers />
     </SectionWrapper>
   );
 }

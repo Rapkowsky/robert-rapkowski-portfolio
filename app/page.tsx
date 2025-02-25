@@ -35,7 +35,7 @@ const Home = () => {
       </AnimatePresence> */}
       <HeroSection />
       <Description />
-      <Numbers />
+
       <SkillsSection />
       <ProjectsSection />
       <SlidingImages />
