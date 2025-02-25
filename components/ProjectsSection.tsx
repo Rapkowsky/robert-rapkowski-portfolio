@@ -15,7 +15,7 @@ export const projects = [
     scope: "Design & Development",
     src: "mat.png",
     color: "bg-[#E4E3E3]",
-    colorDark: "dark:bg-[#1c1d20]",
+    colorDark: "dark:bg-[#f0f0f0]",
     link: "/matuszewski",
   },
   {
@@ -24,7 +24,7 @@ export const projects = [
     scope: "Design & Development",
     src: "petsoft.png",
     color: "bg-[#def0eb]",
-    colorDark: "dark:bg-[#1c1d20]",
+    colorDark: "dark:bg-[#f0f0f0]",
     link: "/petsoft",
   },
   {
@@ -33,7 +33,7 @@ export const projects = [
     scope: "Design & Development",
     src: "portfolio.png",
     color: "bg-[#0A0A0A]",
-    colorDark: "dark:bg-[#1c1d20]",
+    colorDark: "dark:bg-[#f0f0f0]",
     link: "/",
   },
   {
@@ -42,7 +42,7 @@ export const projects = [
     scope: "Design & Development",
     src: "silencio.png",
     color: "bg-[#E4E3E3]",
-    colorDark: "dark:bg-[#1c1d20]",
+    colorDark: "dark:bg-[#f0f0f0]",
     link: "/",
   },
 ];
