@@ -54,9 +54,7 @@ const Stat = ({ num, suffix, decimals = 0, subheading }: Props) => {
         <span ref={ref}></span>
         {suffix}
       </p>
-      <p className="max-w-36 text-center xl:max-w-44 xl:text-xl">
-        {subheading}
-      </p>
+      <p className="max-w-36 text-center xl:max-w-44">{subheading}</p>
     </div>
   );
 };

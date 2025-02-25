@@ -14,6 +14,7 @@ export default {
         xMobile: "20px",
         px500: "50px",
         xTablet: "80px",
+        xDesktop: "150px",
         yMobile: "110px",
         yTablet: "220px",
         yDesktop: "400px",
