@@ -12,7 +12,7 @@ export default function Description() {
   const description = useRef(null);
   const isInView = useInView(description, { amount: 1, once: true });
   return (
-    <SectionWrapper className="pt-yMobile md:pt-yTablet lg:pt-yTablet xl:pt-yTablet">
+    <SectionWrapper className="pt-yMobile md:pt-yTablet lg:pt-yTablet xl:pt-56">
       <div
         ref={description}
         className="relative flex items-center justify-center duration-500 ease-rrSmooth"
@@ -70,7 +70,7 @@ export default function Description() {
           </div>
         </div>
       </div>
-      <Numbers />
+      <Numbers className="max-[374px]:mt-16 mt-24 lg:mt-64" />
     </SectionWrapper>
   );
 }
