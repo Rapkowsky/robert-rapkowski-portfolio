@@ -17,7 +17,7 @@ export default function ThemeToggle() {
     isClient && (
       <MagneticWrapper>
         <button
-          className="dark:bg-rrDark flex h-[40px] w-[40px] items-center justify-center rounded-full bg-white bg-opacity-10"
+          className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-white bg-opacity-10 will-change-[transform,opacity] dark:bg-rrDark"
           onClick={() => setTheme(theme === "light" ? "dark" : "light")}
         >
           <AnimatePresence mode="wait">

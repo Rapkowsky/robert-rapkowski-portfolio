@@ -43,7 +43,7 @@ export default function ButtonWrapper({
     <MagneticWrapper>
       <div
         className={cn(
-          "relative flex cursor-pointer items-center justify-center rounded-full",
+          "relative flex cursor-pointer items-center justify-center rounded-full will-change-transform",
           className,
         )}
         style={{ overflow: "hidden" }}
@@ -59,7 +59,7 @@ export default function ButtonWrapper({
         <div
           ref={circle}
           className={cn(
-            "absolute top-full z-10 h-[150%] w-full rounded-full",
+            "absolute top-full z-10 h-[150%] w-full rounded-full will-change-[width,top]",
             overlayBgColor,
           )}
         ></div>

@@ -52,7 +52,7 @@ export default function Header() {
         )}
       >
         <MagneticWrapper>
-          <Link href="/">
+          <Link href="/" className="will-change-transform">
             <div className="group flex cursor-pointer">
               <p className="m-0 duration-500 ease-rrSmooth group-hover:rotate-[360deg]">
                 ©

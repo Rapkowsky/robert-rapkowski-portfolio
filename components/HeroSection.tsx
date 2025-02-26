@@ -54,7 +54,7 @@ export default function HeroSection() {
         <div className="absolute bottom-10">
           <div
             ref={slider}
-            className="relative z-10 whitespace-nowrap text-[clamp(180px,36vw,310px)] font-medium text-white"
+            className="relative z-10 whitespace-nowrap text-[clamp(180px,36vw,310px)] font-medium text-white will-change-transform"
           >
             <p
               ref={firstText}

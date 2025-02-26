@@ -1,26 +1,33 @@
-import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { mainAnim } from "@/lib/Animations";
-
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 interface TitleProps {
   text: string;
   className?: string;
 }
 
 const Title = ({ text, className }: TitleProps) => {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "1000px end"],
+  });
+  const x = useTransform(scrollYProgress, [0, 1], ["-30%", "101%"]);
   return (
-    <motion.h1
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 2, ease: mainAnim }}
-      viewport={{ amount: 1 }}
-      className={cn(
-        "mb-28 self-start text-[min(16vw,60px)] font-semibold uppercase leading-[1.1] text-rrDark will-change-[transform,opacity] dark:text-white md:mb-40 md:text-8xl xl:text-9xl tracking-wider",
-        className,
-      )}
-    >
-      {text}
-    </motion.h1>
+    <div className="relative" ref={container}>
+      <motion.div
+        style={{ x }}
+        className="pointer-events-none absolute inset-0 z-[1] w-[150%] cursor-none bg-[linear-gradient(90deg,_#fff0,_white_25%)] will-change-transform dark:bg-[linear-gradient(90deg,_#fff0,_#080808_25%)]"
+      ></motion.div>
+      <h1
+        className={cn(
+          "mb-28 self-start text-[min(16vw,60px)] font-semibold uppercase leading-[1.1] tracking-wider text-rrDark dark:text-white md:mb-40 md:text-8xl xl:text-9xl",
+          className,
+        )}
+      >
+        {text}
+      </h1>
+    </div>
   );
 };
 

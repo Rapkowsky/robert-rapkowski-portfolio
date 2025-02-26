@@ -1,6 +1,12 @@
 import React, { useEffect, useRef } from "react";
-import { animate, motion, useInView } from "framer-motion";
-import { mainAnim } from "@/lib/Animations";
+import {
+  animate,
+  motion,
+  useInView,
+  useScroll,
+  useTransform,
+  MotionValue,
+} from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface NumbersProps {
@@ -8,8 +14,17 @@ interface NumbersProps {
 }
 
 export const Numbers = ({ className }: NumbersProps) => {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "1000px end"],
+  });
+  const x = useTransform(scrollYProgress, [0, 1], ["-10%", "101%"]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
   return (
-    <div
+    <motion.div
+      ref={container}
       className={cn(
         "flex flex-col items-center justify-center md:flex-row",
         className,
@@ -19,16 +34,23 @@ export const Numbers = ({ className }: NumbersProps) => {
         num={8}
         suffix=" +"
         subheading="Years of experience in the IT industry"
+        x={x}
       />
-      <Divider />
-      <Stat num={500} suffix=" +" subheading="Coded landing pages" />
-      <Divider />
+      <Divider opacity={opacity} />
+      <Stat
+        num={500}
+        suffix=" +"
+        subheading="Coded landing pages for company"
+        x={x}
+      />
+      <Divider opacity={opacity} />
       <Stat
         num={200}
         suffix=" +"
         subheading="Projects completed in the last year"
+        x={x}
       />
-    </div>
+    </motion.div>
   );
 };
 
@@ -37,9 +59,10 @@ interface Props {
   suffix: string;
   decimals?: number;
   subheading: string;
+  x: MotionValue<string>;
 }
 
-const Stat = ({ num, suffix, decimals = 0, subheading }: Props) => {
+const Stat = ({ num, suffix, decimals = 0, subheading, x }: Props) => {
   const ref = useRef<HTMLSpanElement | null>(null);
   const isInView = useInView(ref);
 
@@ -57,29 +80,28 @@ const Stat = ({ num, suffix, decimals = 0, subheading }: Props) => {
   }, [num, decimals, isInView]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 2, ease: mainAnim }}
-      viewport={{ amount: 1 }}
-      className="flex w-full max-w-[500px] flex-col items-center py-14 text-rrDark dark:text-white md:py-0"
-    >
+    <div className="relative flex w-full max-w-[500px] flex-col items-center overflow-hidden py-14 text-rrDark dark:text-white md:py-0">
+      <motion.div
+        style={{ x }}
+        className="pointer-events-none absolute inset-0 z-0 w-[100%] cursor-none bg-[linear-gradient(90deg,_#fff0,_white_25%)] dark:bg-[linear-gradient(90deg,_#fff0,_#080808_25%)]  will-change-transform"
+      ></motion.div>
       <p className="mb-2 text-center text-7xl font-semibold md:text-6xl lg:text-8xl">
         <span ref={ref}></span>
         {suffix}
       </p>
       <p className="max-w-36 text-center xl:max-w-44">{subheading}</p>
-    </motion.div>
+    </div>
   );
 };
 
-const Divider = () => {
+interface DividerProps {
+  opacity: MotionValue<number>;
+}
+
+const Divider = ({ opacity }: DividerProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 3.5, ease: mainAnim }}
-      viewport={{ amount: 1 }}
+      style={{ opacity }}
       className="h-[1px] w-12 bg-grayLight dark:bg-primary md:h-12 md:w-[1px]"
     />
   );
