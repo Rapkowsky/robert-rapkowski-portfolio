@@ -1,7 +1,5 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-// const cubicSlideUp = [0.45, 0, 0.55, 1];
 const main = [0.7, 0, 0.2, 1];
 
 const elementSlideUp = {
@@ -23,14 +21,11 @@ interface LabelProps {
 }
 
 const Label = ({ text, className }: LabelProps) => {
-  const header = useRef(null);
-  const isInView = useInView(header, { once: true });
   return (
     <motion.p
-      ref={header}
       initial="exit"
       variants={elementSlideUp}
-      animate={isInView ? "enter" : "exit"}
+      whileInView="enter"
       className={cn(
         "mb-20 self-start text-xs uppercase text-rrGrayText will-change-transform",
         className,

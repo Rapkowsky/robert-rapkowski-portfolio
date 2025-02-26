@@ -26,7 +26,7 @@ import tailwind from "@/public/images/tailwind.svg";
 import scss from "@/public/images/scss.svg";
 import Title from "./Title";
 import { motion } from "framer-motion";
-import { mainAnim, rrEaseBtnHover } from "@/lib/Animations";
+import { mainAnim } from "@/lib/Animations";
 
 interface Skill {
   name: string;
@@ -79,18 +79,20 @@ const SkillsSection = () => {
       <motion.div
         initial={{ width: 0 }}
         whileInView={{ width: "100%" }}
+        viewport={{ amount: 1 }}
         transition={{ duration: 2, ease: mainAnim, delay: 0.3 }}
-        className="mb-11 mt-12 h-[1px] bg-grayLight dark:bg-border"
+        className="mb-10 mt-10 h-[1px] bg-grayLight dark:bg-border md:mb-12 md:mt-12"
       />
-      <div className="flex flex-wrap gap-10">
+      <div className="flex flex-wrap gap-7 md:gap-10">
         {skills.map((skill, idx) => (
           <motion.div
-            initial={{ opacity: 0, y: 150 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ amount: 1 }}
             transition={{
-              duration: 1.5,
-              ease: mainAnim,
-              // delay: 0.3 + idx / 10,
+              duration: 1,
+              ease: "easeInOut",
+              delay: 0.7 + 0.1 * idx,
             }}
             key={skill.name}
             className="flex w-[120px] flex-col items-center gap-2 text-rrDark dark:text-white xl:text-xl"
@@ -98,7 +100,7 @@ const SkillsSection = () => {
             <Image
               src={skill.imgSrc}
               alt={`${skill.name} logo`}
-              className={`h-16 w-16 ${skill.imgClass || ""}`}
+              className={`h-14 w-14 md:h-16 md:w-16 ${skill.imgClass || ""}`}
             />
             <p className="text-center">{skill.name}</p>
           </motion.div>
@@ -110,7 +112,7 @@ const SkillsSection = () => {
   return (
     <SectionWrapper>
       <Title text="Tech Stack" />
-      <section className="flex flex-wrap gap-24">
+      <section className="flex flex-wrap gap-32">
         {renderSkills(development, "Development")}
         {renderSkills(design, "Design & Prototyping")}
         {renderSkills(management, "Management / Collaboration")}

@@ -1,6 +1,6 @@
 import { useInView, motion } from "framer-motion";
 import { useRef } from "react";
-import { slideUp, opacity } from "@/lib/Animations";
+import { opacitySlideUp, wordSlideUp } from "@/lib/Animations";
 import ButtonWrapper from "./ButtonWrapper";
 import Link from "next/link";
 import SectionWrapper from "./SectionWrapper";
@@ -10,9 +10,9 @@ export default function Description() {
   const phrase =
     "Crafting modern and interactive websites and apps that help brands shine. Specializing in Next.js and React, I deliver refined, responsive digital experiences alongside cutting edge solutions.";
   const description = useRef(null);
-  const isInView = useInView(description, { margin: "-150px" });
+  const isInView = useInView(description, { amount: 1, once: true });
   return (
-    <SectionWrapper className=" pt-yMobile md:pt-yTablet lg:pt-yDesktop">
+    <SectionWrapper className="pt-yMobile md:pt-yTablet lg:pt-yTablet xl:pt-yTablet">
       <div
         ref={description}
         className="relative flex items-center justify-center duration-500 ease-rrSmooth"
@@ -27,8 +27,9 @@ export default function Description() {
                 >
                   <motion.span
                     key={index}
-                    variants={slideUp}
+                    variants={wordSlideUp}
                     custom={index}
+                    initial="closed"
                     animate={isInView ? "open" : "closed"}
                     className="will-change-transform"
                   >
@@ -41,8 +42,9 @@ export default function Description() {
           <div className="relative w-full">
             <motion.p
               className="max-w-[260px] font-[300] text-rrDark opacity-0 will-change-transform dark:text-grayLight lg:max-w-full lg:pr-0 xl:text-xl"
-              variants={opacity}
-              animate={isInView ? "open" : "closed"}
+              variants={opacitySlideUp}
+              initial="exit"
+              animate={isInView ? "enter" : "exit"}
             >
               Years of working with UX designers on diverse projects have
               sharpened my technical skills to implement these solutions and

@@ -16,8 +16,8 @@ export default {
         xTablet: "80px",
         xDesktop: "150px",
         yMobile: "110px",
-        yTablet: "220px",
-        yDesktop: "400px",
+        yTablet: "170px",
+        yDesktop: "350px",
       },
       transitionDuration: {
         "400": "400ms",

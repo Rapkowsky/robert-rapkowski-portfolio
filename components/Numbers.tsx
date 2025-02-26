@@ -51,6 +51,7 @@ const Stat = ({ num, suffix, decimals = 0, subheading }: Props) => {
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 2, ease: mainAnim }}
+      viewport={{ amount: 1 }}
       className="flex w-full max-w-[500px] flex-col items-center py-14 text-rrDark dark:text-white md:py-0"
     >
       <p className="mb-2 text-center text-7xl font-semibold md:text-6xl lg:text-8xl">
@@ -68,6 +69,7 @@ const Divider = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 3.5, ease: mainAnim }}
+      viewport={{ amount: 1 }}
       className="h-[1px] w-12 bg-grayLight dark:bg-primary md:h-12 md:w-[1px]"
     />
   );
