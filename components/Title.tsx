@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { mainAnim } from "@/lib/Animations";
 interface TitleProps {
   text: string;
   className?: string;
@@ -10,13 +11,14 @@ const Title = ({ text, className }: TitleProps) => {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["start end", "1000px end"],
+    offset: ["end end", "1000px end"],
   });
-  const x = useTransform(scrollYProgress, [0, 1], ["-30%", "101%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["-25%", "101%"]);
   return (
-    <div className="relative" ref={container}>
+    <div className="relative overflow-hidden" ref={container}>
       <motion.div
         style={{ x }}
+        transition={{ ease: mainAnim, duration: 5 }}
         className="pointer-events-none absolute inset-0 z-[1] w-[150%] cursor-none bg-[linear-gradient(90deg,_#fff0,_white_25%)] will-change-transform dark:bg-[linear-gradient(90deg,_#fff0,_#080808_25%)]"
       ></motion.div>
       <h1
