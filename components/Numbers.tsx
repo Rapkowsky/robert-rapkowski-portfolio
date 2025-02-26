@@ -1,10 +1,20 @@
 import React, { useEffect, useRef } from "react";
 import { animate, motion, useInView } from "framer-motion";
 import { mainAnim } from "@/lib/Animations";
+import { cn } from "@/lib/utils";
 
-export const Numbers = () => {
+interface NumbersProps {
+  className?: string;
+}
+
+export const Numbers = ({ className }: NumbersProps) => {
   return (
-    <div className="mt-32 flex flex-col items-center justify-center md:mt-32 md:flex-row lg:mt-80">
+    <div
+      className={cn(
+        "flex flex-col items-center justify-center md:flex-row",
+        className,
+      )}
+    >
       <Stat
         num={8}
         suffix=" +"
