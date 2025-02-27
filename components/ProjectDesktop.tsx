@@ -41,7 +41,7 @@ export default function ProjectDesktop({
         onMouseLeave={() => {
           setModal({ active: false, index });
         }}
-        className={`group flex w-full cursor-pointer items-center justify-between will-change-transform ${
+        className={`group flex w-full cursor-pointer items-center justify-between ${
           index === 0 ? "border-t-[1px]" : ""
         } border-b-[1px] border-grayLight px-[80px] xl:px-xDesktop py-20 transition-all duration-300 dark:border-border ease-rrEaseBtnHover dark:hover:border-white xl:py-24`}
       >

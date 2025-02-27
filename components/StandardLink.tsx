@@ -18,7 +18,7 @@ const StandardLink: React.FC<StandardLinkProps> = ({
       <MagneticWrapper>
         <Link
           href={href}
-          className="group relative z-[1] flex cursor-pointer flex-col p-[15px] will-change-transform"
+          className="group relative z-[1] flex cursor-pointer flex-col p-[15px] "
         >
           {children}
           <div className="absolute left-[50%] top-[45px] h-[5px] w-[5px] -translate-x-1/2 scale-0 rounded-full bg-white transition duration-400 ease-rrEaseBtnHover group-hover:scale-100"></div>

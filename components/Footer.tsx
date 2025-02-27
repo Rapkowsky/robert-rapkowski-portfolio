@@ -28,7 +28,7 @@ export default function Footer() {
             transition={{ duration: 1.6, ease: mainAnim }}
             className="absolute bottom-0 h-[1px] bg-rrGrayBorder"
           />
-          <motion.div style={{ y, opacity }} className="will-change-transform">
+          <motion.div style={{ y, opacity }}>
             <div className="flex items-center">
               <motion.div className="relative h-[60px] w-[60px] overflow-hidden rounded-full md:h-[90px] md:w-[90px] lg:h-[100px] lg:w-[100px]">
                 <Image
@@ -49,7 +49,7 @@ export default function Footer() {
           <motion.div
             style={{ x }}
             transition={{ ease: [0.7, 0, 0.2, 1] }}
-            className="absolute bottom-[-70px] left-[unset] right-[10%] will-change-transform max-[374px]:left-[40%] md:bottom-[-85px] lg:bottom-[-98px]"
+            className="absolute bottom-[-70px] left-[unset] right-[10%] max-[374px]:left-[40%] md:bottom-[-85px] lg:bottom-[-98px]"
           >
             <div className="relative duration-3000 ease-rrEaseBtnHover active:scale-[0.75]">
               <ButtonWrapper className="relative flex h-[145px] w-[145px] cursor-pointer items-center justify-center rounded-full bg-primary font-[700] md:h-[175px] md:w-[175px] lg:h-[200px] lg:w-[200px]">

@@ -58,7 +58,7 @@ export default function SlidingImages() {
     >
       <motion.div
         style={{ x: x1 }}
-        className="relative left-[-50vw] mb-[5vw] flex w-[200vw] gap-[5vw] will-change-transform"
+        className="relative left-[-50vw] mb-[5vw] flex w-[200vw] gap-[5vw]"
       >
         {slider1.map((project, i) => {
           return (
@@ -84,7 +84,7 @@ export default function SlidingImages() {
       </motion.div>
       <motion.div
         style={{ x: x2 }}
-        className="relative right-[-50vw] flex w-[200vw] gap-[5vw] pb-yMobile will-change-transform md:pb-yTablet lg:pb-yDesktop"
+        className="relative right-[-50vw] flex w-[200vw] gap-[5vw] pb-yMobile md:pb-yTablet lg:pb-yDesktop"
       >
         {slider2.map((project, i) => {
           return (
@@ -108,10 +108,7 @@ export default function SlidingImages() {
           );
         })}
       </motion.div>
-      <motion.div
-        style={{ height }}
-        className="relative w-full will-change-[height]"
-      >
+      <motion.div style={{ height }} className="relative w-full">
         <div className="absolute left-[-10%] z-[1] h-[1600%] w-[120%] rounded-bl-[50%] rounded-br-[50%] rounded-tl-none rounded-tr-none bg-white duration-500 ease-rrSmooth dark:bg-rrDark"></div>
       </motion.div>
     </div>
