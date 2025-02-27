@@ -10,7 +10,7 @@ const Title = ({ text, className }: TitleProps) => {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["end end", "1000px end"],
+    offset: ["0.3 end", "1000px end"],
   });
   const x = useTransform(scrollYProgress, [0, 1], ["-25%", "101%"]);
   return (
