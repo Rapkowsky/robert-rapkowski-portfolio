@@ -15,7 +15,7 @@ export default function Description() {
     <SectionWrapper className="pt-yMobile md:pt-yTablet lg:pt-yTablet xl:pt-56">
       <div
         ref={description}
-        className="relative flex items-center justify-center duration-500 ease-rrSmooth"
+        className="relative z-10 flex items-center justify-center duration-500 ease-rrSmooth"
       >
         <div className="relative flex w-full max-w-[700px] flex-col gap-16 text-rrDark dark:text-white lg:max-w-full lg:flex-row lg:gap-32">
           <p className="flex max-w-[560px] flex-wrap gap-x-2 text-2xl !leading-[1.2] lg:max-w-full xl:text-5xl">
