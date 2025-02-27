@@ -68,7 +68,6 @@ const Clock = () => {
             initial="initial"
             animate="animate"
             exit="exit"
-            style={{ willChange: "opacity" }}
           >
             <CiClock1 className="h-full w-full" />
           </motion.div>
@@ -83,7 +82,6 @@ const Clock = () => {
             initial="initial"
             animate="animate"
             exit="initial"
-            style={{ willChange: "opacity, transform" }}
           >
             <div className="flex gap-2">
               <h5>{time.hours} :</h5>
