@@ -24,7 +24,12 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en" suppressHydrationWarning>
-      <ReactLenis root>
+      <ReactLenis
+        root
+        options={{
+          lerp: 0.05,
+        }}
+      >
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
