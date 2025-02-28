@@ -21,7 +21,7 @@ const Title = ({ text, className }: TitleProps) => {
       ></motion.div>
       <h1
         className={cn(
-          "mb-28 self-start text-[min(16vw,60px)] font-semibold uppercase leading-[1.1] tracking-wider text-rrDark dark:text-white md:mb-40 md:text-8xl xl:text-9xl",
+          "mb-28 self-start text-center text-[min(16vw,60px)] font-semibold uppercase leading-[1.1] tracking-wider text-rrDark dark:text-white md:mb-40 md:text-8xl xl:text-9xl",
           className,
         )}
       >

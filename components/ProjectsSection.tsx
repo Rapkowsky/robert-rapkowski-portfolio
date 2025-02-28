@@ -79,7 +79,7 @@ export default function ProjectsSection() {
         </SectionWrapper>
       ) : (
         <SectionWrapper className="!px-0">
-          <Title text="Recent projects" className="pl-20 xl:pl-xDesktop" />
+          <Title text="Recent projects" />
           <section className="lg:px flex items-center justify-center bg-white duration-500 ease-rrSmooth dark:bg-rrDark">
             <div className="flex w-full max-w-[1760px] flex-col items-center justify-center">
               {projects.map((project, index) => {
