@@ -105,7 +105,7 @@ const Divider = ({ opacity }: DividerProps) => {
   return (
     <motion.div
       style={{ opacity }}
-      className="h-[1px] w-12 bg-grayLight dark:bg-primary md:h-12 md:w-[1px]"
+      className="h-[1px] w-12  bg-primary md:h-12 md:w-[1px]"
     />
   );
 };

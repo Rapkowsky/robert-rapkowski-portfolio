@@ -1,10 +1,10 @@
 "use client";
 import Footer from "@/components/Footer";
-import Description from "@/components/Description";
 import HeroSection from "@/components/HeroSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import SlidingImages from "@/components/SlidingImages";
 import SkillsSection from "@/components/SkillsSection";
+import Intro from "@/components/Intro";
 // import Preloader from "@/components/Preloader";
 // import { AnimatePresence } from "framer-motion";
 // import { useEffect, useState } from "react";
@@ -35,7 +35,7 @@ const Home = () => {
         {isLoading && <Preloader />}
       </AnimatePresence> */}
       <HeroSection />
-      <Description />
+      <Intro />
 
       <SkillsSection />
       <ProjectsSection />

@@ -6,13 +6,13 @@ import Link from "next/link";
 import SectionWrapper from "./SectionWrapper";
 import { Numbers } from "./Numbers";
 
-export default function Description() {
+export default function Intro() {
   const phrase =
     "Crafting modern and interactive websites and apps that help brands shine. Specializing in Next.js and React, I deliver refined, responsive digital experiences alongside cutting edge solutions.";
   const description = useRef(null);
   const isInView = useInView(description, { amount: 1, once: true });
   return (
-    <SectionWrapper className="pt-yMobile md:pt-yTablet lg:pt-yTablet xl:pt-56">
+    <SectionWrapper>
       <div
         ref={description}
         className="relative z-10 flex items-center justify-center duration-500 ease-rrSmooth"

@@ -3,17 +3,24 @@ import { cn } from "@/lib/utils";
 interface SectionWrapperProps {
   children: React.ReactNode;
   className?: string;
+  bgWrapperColor?: string;
 }
 
 export default function SectionWrapper({
   children,
   className,
+  bgWrapperColor,
 }: SectionWrapperProps) {
   return (
-    <section className="bg-white duration-500 ease-rrSmooth dark:bg-rrDark">
+    <section
+      className={cn(
+        "bg-white duration-500 ease-rrSmooth dark:bg-rrDark",
+        bgWrapperColor,
+      )}
+    >
       <div
         className={cn(
-          "mx-auto w-full max-w-[1600px] px-xMobile py-yMobile pt-0 min-[500px]:px-px500 min-[500px]:pb-yMobile md:px-xTablet md:py-yTablet md:pt-0 lg:pt-0 xl:px-xDesktop xl:py-yDesktop xl:pt-0",
+          "mx-auto w-full max-w-[1600px] px-xMobile py-yMobile min-[500px]:px-px500 md:px-xTablet md:py-yTablet xl:px-xDesktop xl:py-yDesktop",
           className,
         )}
       >

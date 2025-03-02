@@ -16,8 +16,11 @@ export default {
         xTablet: "80px",
         xDesktop: "150px",
         yMobile: "110px",
-        yTablet: "170px",
-        yDesktop: "350px",
+        yTablet: "135px",
+        yDesktop: "175px",
+      },
+      boxShadow: {
+        shadowMain: "2px 4px 12px #00000014",
       },
       transitionDuration: {
         "400": "400ms",
@@ -38,6 +41,7 @@ export default {
         foreground: "hsl(var(--foreground))",
         primary: "#146ef5",
         primaryDarker: "#0a61e5",
+        rrGrayBg: "#f5f5f7",
         rrGray: "#171717",
         rrGrayBorder: "#494a4d",
         rrGrayText: "#8d8e8f",
