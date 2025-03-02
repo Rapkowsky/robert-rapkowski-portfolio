@@ -13,10 +13,7 @@ export default function SectionWrapper({
 }: SectionWrapperProps) {
   return (
     <section
-      className={cn(
-        "bg-white duration-500 ease-rrSmooth dark:bg-rrDark",
-        bgWrapperColor,
-      )}
+      className={cn("bg-white duration-500 dark:bg-black", bgWrapperColor)}
     >
       <div
         className={cn(

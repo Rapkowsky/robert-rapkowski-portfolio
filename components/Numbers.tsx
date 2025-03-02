@@ -86,7 +86,7 @@ const Stat = ({ num, suffix, decimals = 0, subheading, x }: Props) => {
     <div className="relative flex w-full max-w-[500px] flex-col items-center overflow-hidden py-14 text-rrDark dark:text-white md:py-0">
       <motion.div
         style={{ x }}
-        className="pointer-events-none absolute inset-0 z-0 w-[100%] cursor-none bg-[linear-gradient(90deg,_#fff0,_white_25%)] dark:bg-[linear-gradient(90deg,_#fff0,_#080808_25%)]"
+        className="pointer-events-none absolute inset-0 z-0 w-[100%] cursor-none bg-[linear-gradient(90deg,_#fff0,_white_25%)] dark:bg-[linear-gradient(90deg,_#fff0,_black_25%)]"
       ></motion.div>
       <p className="mb-2 text-center text-7xl font-semibold md:text-6xl lg:text-8xl">
         <span ref={ref}></span>
@@ -105,7 +105,7 @@ const Divider = ({ opacity }: DividerProps) => {
   return (
     <motion.div
       style={{ opacity }}
-      className="h-[1px] w-12  bg-primary md:h-12 md:w-[1px]"
+      className="h-[1px] w-12 bg-primary md:h-12 md:w-[1px]"
     />
   );
 };

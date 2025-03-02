@@ -54,7 +54,7 @@ export default function SlidingImages() {
   return (
     <div
       ref={container}
-      className="relative z-[1] flex flex-col items-center justify-center bg-white duration-500 ease-rrSmooth dark:bg-rrDark"
+      className="relative z-[1] flex flex-col items-center justify-center bg-white duration-500 dark:bg-black"
     >
       <motion.div
         style={{ x: x1 }}
@@ -64,12 +64,12 @@ export default function SlidingImages() {
           return (
             <div
               key={i}
-              className="flex h-[30vw] w-1/4 items-center justify-center duration-500 ease-rrSmooth"
+              className="flex h-[30vw] w-1/4 items-center justify-center"
               style={{ backgroundColor: project.color }}
             >
               <div
                 key={i}
-                className="relative h-[80%] w-[90%] duration-500 ease-rrSmooth dark:h-full dark:w-full"
+                className="relative h-[80%] w-[90%] transition-[width,height] duration-500 dark:h-full dark:w-full"
               >
                 <Image
                   fill={true}
@@ -90,12 +90,12 @@ export default function SlidingImages() {
           return (
             <div
               key={i}
-              className="flex h-[30vw] w-1/4 items-center justify-center duration-500 ease-rrSmooth"
+              className="flex h-[30vw] w-1/4 items-center justify-center"
               style={{ backgroundColor: project.color }}
             >
               <div
                 key={i}
-                className="relative h-[80%] w-[90%] duration-500 ease-rrSmooth dark:h-full dark:w-full"
+                className="relative h-[80%] w-[90%] transition-[width,height] duration-500 dark:h-full dark:w-full"
               >
                 <Image
                   fill={true}
@@ -109,7 +109,7 @@ export default function SlidingImages() {
         })}
       </motion.div>
       <motion.div style={{ height }} className="relative w-full">
-        <div className="absolute left-[-10%] z-[1] h-[1600%] w-[120%] rounded-bl-[50%] rounded-br-[50%] rounded-tl-none rounded-tr-none bg-white duration-500 ease-rrSmooth dark:bg-rrDark"></div>
+        <div className="absolute left-[-10%] z-[1] h-[1600%] w-[120%] rounded-bl-[50%] rounded-br-[50%] rounded-tl-none rounded-tr-none bg-white duration-500 dark:bg-black"></div>
       </motion.div>
     </div>
   );

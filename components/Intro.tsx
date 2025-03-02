@@ -15,7 +15,7 @@ export default function Intro() {
     <SectionWrapper>
       <div
         ref={description}
-        className="relative z-10 flex items-center justify-center duration-500 ease-rrSmooth"
+        className="relative z-10 flex items-center justify-center"
       >
         <div className="relative flex w-full max-w-[700px] flex-col gap-16 text-rrDark dark:text-white lg:max-w-full lg:flex-row lg:gap-32">
           <p className="flex max-w-[560px] flex-wrap gap-x-2 text-2xl !leading-[1.2] lg:max-w-full xl:text-5xl">
@@ -50,11 +50,7 @@ export default function Intro() {
               fueled my ability to deliver UX solutions that make a real impact.
             </motion.p>
 
-            <div
-              data-scroll
-              data-scroll-speed={0.1}
-              className="absolute bottom-[-100px] right-0 ease-rrEaseBtnHover max-[374px]:bottom-[-100px] min-[500px]:bottom-0 lg:bottom-[-180px]"
-            >
+            <div className="absolute bottom-[-100px] right-0 ease-rrEaseBtnHover max-[374px]:bottom-[-100px] min-[500px]:bottom-0 lg:bottom-[-180px]">
               <div className="relative duration-3000 ease-rrEaseBtnHover active:scale-[0.25]">
                 <ButtonWrapper className="relative flex h-[150px] w-[150px] cursor-pointer items-center justify-center rounded-full bg-rrDark font-medium text-white dark:bg-primary md:h-[170px] md:w-[170px] xl:h-[200px] xl:w-[200px]">
                   <Link
