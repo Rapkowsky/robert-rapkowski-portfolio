@@ -56,15 +56,12 @@ export const SkillsSection = () => {
     target: stickyContainerRef,
     offset: ["start start", "end end"],
   });
-  const scale = useTransform(stickyScrollYProgress, [0, 1], ["1.4vw", 0.45]);
+  const scale = useTransform(stickyScrollYProgress, [0, 1], ["0.8vw", 0.12]);
   const opacity = useTransform(stickyScrollYProgress, [0, 1], [1, 0]);
   const titleOpacity = useTransform(stickyScrollYProgress, [0, 0.3], [1, 0]);
   return (
     <>
-      <div
-        ref={stickyContainerRef}
-        className="relative mt-yMobile h-[200vh] min-h-[1050px] md:mt-yTablet xl:mt-yDesktop"
-      >
+      <div ref={stickyContainerRef} className="relative h-[200vh]">
         <motion.div
           className="absolute inset-0 z-10 flex h-screen items-center justify-center"
           style={{ opacity: titleOpacity }}
@@ -73,17 +70,17 @@ export const SkillsSection = () => {
         </motion.div>
 
         <motion.div
-          className="pointer-events-none absolute top-0 z-[1] float-left h-[300vh] w-full bg-[linear-gradient(to_bottom,black,transparent)] duration-500 dark:opacity-100"
+          className="pointer-events-none absolute top-[-10px] z-[1] float-left h-[200vh] w-full bg-[linear-gradient(to_bottom,black,transparent)] duration-500 dark:opacity-100"
           style={{ opacity }}
         />
-        <div className="sticky top-0 h-screen min-h-[1050px] overflow-hidden">
+        <div className="sticky top-0 h-screen overflow-hidden">
           <motion.div
             className="absolute top-0 flex h-full w-full items-center justify-center"
             style={{ scale }}
           >
             <div className="relative min-w-[3008px]">
               <Image src={macBook} alt="image" placeholder="blur" />
-              <div className="absolute left-[378px] top-[200px] h-[1438px] w-[2252px]">
+              <div className="absolute left-[378px] top-[200px] h-[1440px] w-[2252px]">
                 <video
                   src="/images/brain.mp4"
                   autoPlay
@@ -98,7 +95,10 @@ export const SkillsSection = () => {
           </motion.div>
         </div>
       </div>
-      <div ref={cardsRef} className="relative mt-[-10vh]">
+      <div
+        ref={cardsRef}
+        className="relative mt-[-50px] max-[350px]:mt-[-50px]"
+      >
         {CARDS.map((c, idx) => (
           <Card
             key={c.id}
@@ -154,7 +154,7 @@ const Card = ({ position, card, scrollYProgress }: CardProps) => {
         </p>
       </motion.div>
 
-      <div className="flex flex-wrap justify-center gap-10">
+      <div className="grid grid-cols-3 gap-5">
         {card.id === 1 &&
           skillIcons.development.map((skill) => (
             <div key={skill.name} className="flex flex-col items-center">
