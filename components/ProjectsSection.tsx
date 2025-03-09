@@ -56,7 +56,7 @@ export default function ProjectsSection() {
   return (
     <>
       {isMobile ? (
-        <SectionWrapper>
+        <SectionWrapper className="!pt-0">
           <TitleSlideLeft text="Recent projects" />
           <section>
             {projects.map((project, idx) => {
@@ -77,7 +77,7 @@ export default function ProjectsSection() {
           </section>
         </SectionWrapper>
       ) : (
-        <SectionWrapper className="max-w-[1860px] !px-0">
+        <SectionWrapper className="max-w-[1860px] !px-0 !pt-0">
           <TitleSlideLeft text="Recent projects" />
           <section className="lg:px flex items-center justify-center">
             <div className="flex w-full flex-col items-center justify-center">
