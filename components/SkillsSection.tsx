@@ -41,8 +41,9 @@ import figma from "@/public/images/figma.svg";
 import office from "@/public/images/office.svg";
 import { FaApple } from "react-icons/fa";
 import { FaWindows } from "react-icons/fa";
-
 import { cn } from "@/lib/utils";
+import useWindowResize from "./hooks/UseWindowResize";
+import { easefadeInUp } from "@/lib/Animations";
 
 export const SkillsSection = () => {
   const cardsRef = useRef(null);
@@ -56,7 +57,19 @@ export const SkillsSection = () => {
     target: stickyContainerRef,
     offset: ["start start", "end end"],
   });
-  const scale = useTransform(stickyScrollYProgress, [0, 1], ["0.8vw", 0.12]);
+
+  const { width } = useWindowResize();
+  const originalImageWidth = 3880;
+  const scaleFactor = width < 1024 ? 0.9 : 0.5;
+
+  const macScaleEnd = (scaleFactor * width) / originalImageWidth;
+  const macScaleStart = 1.1;
+
+  const scale = useTransform(
+    stickyScrollYProgress,
+    [0, 1],
+    [macScaleStart, macScaleEnd],
+  );
   const opacity = useTransform(stickyScrollYProgress, [0, 1], [1, 0]);
   const titleOpacity = useTransform(stickyScrollYProgress, [0, 0.3], [1, 0]);
   return (
@@ -70,17 +83,17 @@ export const SkillsSection = () => {
         </motion.div>
 
         <motion.div
-          className="pointer-events-none absolute top-[-10px] z-[1] float-left h-[200vh] w-full bg-[linear-gradient(to_bottom,black,transparent)] duration-500 dark:opacity-100"
+          className="pointer-events-none absolute top-[-10px] z-[2] float-left h-[200vh] w-full bg-[linear-gradient(to_bottom,black,transparent)] duration-500 dark:opacity-100"
           style={{ opacity }}
         />
-        <div className="sticky top-0 h-screen overflow-hidden">
+        <div className="sticky top-0 z-[1] h-screen overflow-hidden">
           <motion.div
             className="absolute top-0 flex h-full w-full items-center justify-center"
             style={{ scale }}
           >
-            <div className="relative min-w-[3008px]">
+            <div className={`relative min-w-[${originalImageWidth}px]`}>
               <Image src={macBook} alt="image" placeholder="blur" />
-              <div className="absolute left-[378px] top-[200px] h-[1440px] w-[2252px]">
+              <div className="absolute left-[490px] top-[280px] h-[1822px] w-[2890px]">
                 <video
                   src="/images/brain.mp4"
                   autoPlay
@@ -95,10 +108,7 @@ export const SkillsSection = () => {
           </motion.div>
         </div>
       </div>
-      <div
-        ref={cardsRef}
-        className="relative mt-[-50px] max-[350px]:mt-[-50px]"
-      >
+      <div ref={cardsRef} className="relative mt-[-300px]">
         {CARDS.map((c, idx) => (
           <Card
             key={c.id}
@@ -119,6 +129,9 @@ interface CardProps {
 }
 
 const Card = ({ position, card, scrollYProgress }: CardProps) => {
+  const { width } = useWindowResize();
+  const CARD_HEIGHT = width >= 768 ? 1000 : width > 500 ? 900 : 800;
+
   const scaleFromPct = (position - 1) / CARDS.length;
   const y = useTransform(scrollYProgress, [scaleFromPct, 1], [0, -CARD_HEIGHT]);
 
@@ -137,7 +150,7 @@ const Card = ({ position, card, scrollYProgress }: CardProps) => {
         background: isOddCard ? "black" : "white",
         color: isOddCard ? "white" : "black",
       }}
-      className="sticky top-0 flex w-full origin-top flex-col items-center justify-center gap-14 px-4"
+      className="sticky top-0 flex w-full origin-top flex-col items-center justify-center gap-10 px-4 md:gap-14"
     >
       <motion.div className="flex flex-col items-center gap-6">
         <card.Icon className="text-6xl" />
@@ -154,57 +167,97 @@ const Card = ({ position, card, scrollYProgress }: CardProps) => {
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-3 gap-5">
+      <motion.div
+        className="flex max-w-[1000px] flex-wrap gap-3 min-[500px]:gap-5"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{
+          duration: 1.5,
+          ease: easefadeInUp,
+        }}
+        viewport={{ amount: 0.5 }}
+      >
         {card.id === 1 &&
           skillIcons.development.map((skill) => (
-            <div key={skill.name} className="flex flex-col items-center">
-              <skill.Icon className={cn("h-14 w-14", skill.customClass)} />
-              <span className="mt-2 text-center">{skill.name}</span>
+            <div
+              key={skill.name}
+              className="flex w-[80px] flex-col items-center min-[500px]:w-[90px]"
+            >
+              <skill.Icon
+                className={cn(
+                  "h-10 w-10 min-[500px]:h-12 min-[500px]:w-12",
+                  skill.customClass,
+                )}
+              />
+              <span className="mt-2 text-center text-sm">{skill.name}</span>
             </div>
           ))}
         {card.id === 2 &&
           skillIcons.design.map((skill) => (
-            <div key={skill.name} className="flex flex-col items-center">
+            <div
+              key={skill.name}
+              className="flex w-[80px] flex-col items-center min-[500px]:w-[90px]"
+            >
               {skill.name === "Figma" ? (
                 <Image
                   src={figma}
                   alt={skill.name}
-                  className={cn("h-14 w-14", skill.customClass)}
+                  className={cn(
+                    "h-10 w-10 min-[500px]:h-12 min-[500px]:w-12",
+                    skill.customClass,
+                  )}
                 />
               ) : (
-                <skill.Icon className={cn("h-14 w-14", skill.customClass)} />
+                <skill.Icon
+                  className={cn(
+                    "h-10 w-10 min-[500px]:h-12 min-[500px]:w-12",
+                    skill.customClass,
+                  )}
+                />
               )}
-              <span className="mt-2 text-center">{skill.name}</span>
+              <span className="mt-2 text-center text-sm">{skill.name}</span>
             </div>
           ))}
         {card.id === 3 &&
           skillIcons.management.map((skill) => (
-            <div key={skill.name} className="flex flex-col items-center">
+            <div
+              key={skill.name}
+              className="flex w-[80px] flex-col items-center min-[500px]:w-[90px]"
+            >
               {skill.name === "Asana" ? (
                 <Image
                   src={asana}
                   alt={skill.name}
-                  className={cn("h-14 w-14", skill.customClass)}
+                  className={cn(
+                    "h-10 w-10 min-[500px]:h-12 min-[500px]:w-12",
+                    skill.customClass,
+                  )}
                 />
               ) : skill.name === "Office 365" ? (
                 <Image
                   src={office}
                   alt={skill.name}
-                  className={cn("h-14 w-14", skill.customClass)}
+                  className={cn(
+                    "h-10 w-10 min-[500px]:h-12 min-[500px]:w-12",
+                    skill.customClass,
+                  )}
                 />
               ) : (
-                <skill.Icon className={cn("h-14 w-14", skill.customClass)} />
+                <skill.Icon
+                  className={cn(
+                    "h-10 w-10 min-[500px]:h-12 min-[500px]:w-12",
+                    skill.customClass,
+                  )}
+                />
               )}
 
-              <span className="mt-2 text-center">{skill.name}</span>
+              <span className="mt-2 text-center text-sm">{skill.name}</span>
             </div>
           ))}
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
-
-const CARD_HEIGHT = 700;
 
 type CardType = {
   id: number;
@@ -219,7 +272,7 @@ const CARDS: CardType[] = [
     Icon: RiCodeAiFill,
     title: "Development",
     description:
-      "I specialize in crafting high-performing websites using primarily Next.js and React, with a strong focus on creating custom-tailored interfaces. I bring a robust foundation in HTML, CSS, and JavaScript, enabling me to design responsive, accessible, and user-centric digital experiences that perfectly align with unique business needs.",
+      "Crafting high-performing websites using primarily Next.js and React. Proficiency in core HTML, CSS, and JavaScript, enabling me to design responsive, accessible, digital experiences that align with unique business needs.",
   },
   {
     id: 2,
