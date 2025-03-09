@@ -31,7 +31,7 @@ export const Numbers = ({ className }: NumbersProps) => {
       )}
     >
       <Stat
-        num={8}
+        num={10}
         suffix=" +"
         subheading="Years of experience in the IT industry"
         x={x}

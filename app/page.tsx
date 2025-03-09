@@ -5,6 +5,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import SlidingImages from "@/components/SlidingImages";
 import Intro from "@/components/Intro";
 import { SkillsSection } from "@/components/SkillsSection";
+import { JourneySection } from "@/components/JourneySection";
 // import Preloader from "@/components/Preloader";
 // import { AnimatePresence } from "framer-motion";
 // import { useEffect, useState } from "react";
@@ -38,6 +39,7 @@ const Home = () => {
       <Intro />
       <SkillsSection />
       <ProjectsSection />
+      <JourneySection />
       <SlidingImages />
       <Footer />
     </main>

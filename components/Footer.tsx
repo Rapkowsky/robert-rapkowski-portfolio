@@ -77,7 +77,12 @@ export default function Footer() {
             />
           </motion.svg>
         </div>
-        <div className="mt-[120px] flex flex-col gap-3 md:flex-row">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.3, ease: [0.45, 0, 0.55, 1] }}
+          className="mt-[120px] flex flex-col gap-3 md:flex-row"
+        >
           <div className="duration-3000 ease-rrEaseBtnHover active:scale-[0.75]">
             <a href="mailto:robertrapkowski19@gmail.com">
               <ButtonWrapper className="border border-rrGrayBorder px-14 py-6 xl:py-7">
@@ -93,7 +98,7 @@ export default function Footer() {
               </ButtonWrapper>
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </motion.div>
   );
