@@ -6,8 +6,7 @@ import { ProjectMobile } from "./ProjectMobile";
 import useWindowResize from "./hooks/UseWindowResize";
 import ProjectDesktop from "./ProjectDesktop";
 import SectionWrapper from "./SectionWrapper";
-import Label from "./Label";
-import Title from "./Title";
+import TitleSlideLeft from "./TitleSlideLeft";
 
 export const projects = [
   {
@@ -58,7 +57,7 @@ export default function ProjectsSection() {
     <>
       {isMobile ? (
         <SectionWrapper>
-          <Title text="Recent projects" />
+          <TitleSlideLeft text="Recent projects" />
           <section>
             {projects.map((project, idx) => {
               return (
@@ -79,7 +78,7 @@ export default function ProjectsSection() {
         </SectionWrapper>
       ) : (
         <SectionWrapper className="max-w-[1860px] !px-0">
-          <Title text="Recent projects" />
+          <TitleSlideLeft text="Recent projects" />
           <section className="lg:px flex items-center justify-center">
             <div className="flex w-full flex-col items-center justify-center">
               {projects.map((project, index) => {
