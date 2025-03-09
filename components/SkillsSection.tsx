@@ -91,7 +91,10 @@ export const SkillsSection = () => {
             className="absolute top-0 flex h-full w-full items-center justify-center"
             style={{ scale }}
           >
-            <div className={`relative min-w-[${originalImageWidth}px]`}>
+            <div
+              className="relative"
+              style={{ minWidth: `${originalImageWidth}px` }}
+            >
               <Image src={macBook} alt="image" placeholder="blur" />
               <div className="absolute left-[490px] top-[280px] h-[1822px] w-[2890px]">
                 <video
@@ -175,7 +178,7 @@ const Card = ({ position, card, scrollYProgress }: CardProps) => {
           duration: 1.5,
           ease: easefadeInUp,
         }}
-        viewport={{ amount: 0.5 }}
+        viewport={{ amount: 1, margin: "0px 0px -100px" }}
       >
         {card.id === 1 &&
           skillIcons.development.map((skill) => (
