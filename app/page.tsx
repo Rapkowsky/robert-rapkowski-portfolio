@@ -3,8 +3,8 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import SlidingImages from "@/components/SlidingImages";
-import SkillsSection from "@/components/SkillsSection";
 import Intro from "@/components/Intro";
+import { SkillsSection } from "@/components/SkillsSection";
 // import Preloader from "@/components/Preloader";
 // import { AnimatePresence } from "framer-motion";
 // import { useEffect, useState } from "react";
@@ -36,7 +36,6 @@ const Home = () => {
       </AnimatePresence> */}
       <HeroSection />
       <Intro />
-
       <SkillsSection />
       <ProjectsSection />
       <SlidingImages />

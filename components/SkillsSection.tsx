@@ -1,124 +1,305 @@
-import Image, { StaticImageData } from "next/image";
-import Label from "./Label";
-import SectionWrapper from "./SectionWrapper";
-import nextJs from "@/public/images/nextJs.svg";
-import react from "@/public/images/react.svg";
-import html5 from "@/public/images/html5.svg";
-import js from "@/public/images/js.svg";
-import css from "@/public/images/css.svg";
-import git from "@/public/images/git.svg";
-import rwd from "@/public/images/rwd.svg";
-import seo from "@/public/images/seo.svg";
-import uxUi from "@/public/images/uxUi.svg";
-import api from "@/public/images/api.svg";
-import ts from "@/public/images/ts.svg";
-import pixelPerfect from "@/public/images/pixelPerfect.svg";
-import redux from "@/public/images/redux.svg";
-import performance from "@/public/images/performance.svg";
-import graphQL from "@/public/images/graphQL.svg";
-import figma from "@/public/images/figma.svg";
-import jira from "@/public/images/jira.svg";
-import asana from "@/public/images/asana.svg";
-import er from "@/public/images/er.jpg";
-import office from "@/public/images/office.svg";
-import ps from "@/public/images/ps.svg";
-import tailwind from "@/public/images/tailwind.svg";
-import scss from "@/public/images/scss.svg";
+import {
+  MotionValue,
+  useScroll,
+  motion,
+  useTransform,
+  useInView,
+} from "framer-motion";
+import React, { useRef } from "react";
+import { IconType } from "react-icons";
+import { FiCopy } from "react-icons/fi";
+import { RiCodeAiFill } from "react-icons/ri";
+import macBook from "@/public/images/macbook.png";
+import Image from "next/image";
+import { LuPanelsTopLeft } from "react-icons/lu";
+import { SiNextdotjs } from "react-icons/si";
 import Title from "./Title";
-import { motion } from "framer-motion";
-import { mainAnim } from "@/lib/Animations";
+import { FaReact } from "react-icons/fa";
+import { SiRedux } from "react-icons/si";
+import { SiTypescript } from "react-icons/si";
+import { SiJavascript } from "react-icons/si";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { FaHtml5 } from "react-icons/fa";
+import { FaCss3Alt } from "react-icons/fa";
+import { FaGitAlt } from "react-icons/fa";
+import { BsGitlab } from "react-icons/bs";
+import { AiFillApi } from "react-icons/ai";
+import { GrGraphQl } from "react-icons/gr";
+import { SiPagespeedinsights } from "react-icons/si";
+import { MdOutlineDevices } from "react-icons/md";
+import { TbSeo } from "react-icons/tb";
+import { SlMagnifierAdd } from "react-icons/sl";
+import { SiAdobephotoshop } from "react-icons/si";
+import { SiJira } from "react-icons/si";
+import { SiAsana } from "react-icons/si";
+import { SiRedmine } from "react-icons/si";
+import { FaMicrosoft } from "react-icons/fa";
+import { PiFigmaLogoDuotone } from "react-icons/pi";
+import { FaSass } from "react-icons/fa";
+import asana from "@/public/images/asana.svg";
+import figma from "@/public/images/figma.svg";
+import office from "@/public/images/office.svg";
+import { FaApple } from "react-icons/fa";
+import { FaWindows } from "react-icons/fa";
 
-interface Skill {
-  name: string;
-  imgSrc: StaticImageData;
-  imgClass?: string;
-}
+import { cn } from "@/lib/utils";
 
-const development: Skill[] = [
-  {
-    name: "Next.js",
-    imgSrc: nextJs,
-    imgClass: "rounded-full border border-white dark:bg-white",
-  },
-  { name: "React", imgSrc: react },
-  { name: "Redux", imgSrc: redux },
-  { name: "Typescript", imgSrc: ts },
-  { name: "JavaScript", imgSrc: js },
-  { name: "Tailwind CSS", imgSrc: tailwind },
-  { name: "HTML5", imgSrc: html5 },
-  { name: "CSS", imgSrc: css },
-  { name: "GIT", imgSrc: git },
-  { name: "API", imgSrc: api },
-  { name: "GraphQL", imgSrc: graphQL },
-  { name: "Performance", imgSrc: performance },
-  { name: "SCSS", imgSrc: scss },
-];
+export const SkillsSection = () => {
+  const cardsRef = useRef(null);
+  const { scrollYProgress: cardsScrollYProgress } = useScroll({
+    target: cardsRef,
+    offset: ["start start", "end start"],
+  });
 
-const design: Skill[] = [
-  { name: "RWD", imgSrc: rwd },
-  { name: "SEO", imgSrc: seo },
-  { name: "UX/UI", imgSrc: uxUi },
-  {
-    name: "Pixel Perfect",
-    imgSrc: pixelPerfect,
-    imgClass: "rounded-full border border-white dark:bg-white",
-  },
-  { name: "Figma", imgSrc: figma },
-  { name: "Photoshop", imgSrc: ps },
-];
-const management: Skill[] = [
-  { name: "Jira", imgSrc: jira },
-  { name: "Asana", imgSrc: asana },
-  { name: "EasyRedmine", imgSrc: er },
-  { name: "Office 365", imgSrc: office },
-];
-const SkillsSection = () => {
-  const renderSkills = (skills: Skill[], label: string) => (
-    <div className="w-full">
-      <Label text={label} className="mb-0" />
-      <motion.div
-        initial={{ width: 0 }}
-        whileInView={{ width: "100%" }}
-        viewport={{ amount: 1 }}
-        transition={{ duration: 2, ease: mainAnim, delay: 0.3 }}
-        className="mb-10 mt-10 h-[1px] bg-grayLight dark:bg-border md:mb-12 md:mt-12"
-      />
-      <div className="flex flex-wrap gap-7 md:gap-10">
-        {skills.map((skill, idx) => (
+  const stickyContainerRef = useRef(null);
+  const { scrollYProgress: stickyScrollYProgress } = useScroll({
+    target: stickyContainerRef,
+    offset: ["start start", "end end"],
+  });
+  const scale = useTransform(stickyScrollYProgress, [0, 1], ["1.4vw", 0.45]);
+  const opacity = useTransform(stickyScrollYProgress, [0, 1], [1, 0]);
+  const titleOpacity = useTransform(stickyScrollYProgress, [0, 0.3], [1, 0]);
+  return (
+    <>
+      <div
+        ref={stickyContainerRef}
+        className="relative mt-yMobile h-[200vh] min-h-[1050px] md:mt-yTablet xl:mt-yDesktop"
+      >
+        <motion.div
+          className="absolute inset-0 z-10 flex h-screen items-center justify-center"
+          style={{ opacity: titleOpacity }}
+        >
+          <Title text="Tech stack" className="!mb-0 self-center text-white" />
+        </motion.div>
+
+        <motion.div
+          className="pointer-events-none absolute top-0 z-[1] float-left h-[300vh] w-full bg-[linear-gradient(to_bottom,black,transparent)] duration-500 dark:opacity-100"
+          style={{ opacity }}
+        />
+        <div className="sticky top-0 h-screen min-h-[1050px] overflow-hidden">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ amount: 1 }}
-            transition={{
-              duration: 1,
-              ease: "easeInOut",
-              delay: 0.7 + 0.1 * idx,
-            }}
-            key={skill.name}
-            className="flex w-[120px] flex-col items-center gap-2 text-rrDark dark:text-white xl:text-xl"
+            className="absolute top-0 flex h-full w-full items-center justify-center"
+            style={{ scale }}
           >
-            <Image
-              src={skill.imgSrc}
-              alt={`${skill.name} logo`}
-              className={`h-14 w-14 md:h-16 md:w-16 ${skill.imgClass || ""}`}
-            />
-            <p className="text-center">{skill.name}</p>
+            <div className="relative min-w-[3008px]">
+              <Image src={macBook} alt="image" placeholder="blur" />
+              <div className="absolute left-[378px] top-[200px] h-[1438px] w-[2252px]">
+                <video
+                  src="/images/brain.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  className="h-full w-full object-cover"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
           </motion.div>
+        </div>
+      </div>
+      <div ref={cardsRef} className="relative mt-[-10vh]">
+        {CARDS.map((c, idx) => (
+          <Card
+            key={c.id}
+            card={c}
+            scrollYProgress={cardsScrollYProgress}
+            position={idx + 1}
+          />
         ))}
       </div>
-    </div>
-  );
-
-  return (
-    <SectionWrapper>
-      <Title text="Tech Stack" />
-      <section className="flex flex-wrap gap-32">
-        {renderSkills(development, "Development")}
-        {renderSkills(design, "Design & Prototyping")}
-        {renderSkills(management, "Management / Collaboration")}
-      </section>
-    </SectionWrapper>
+    </>
   );
 };
 
-export default SkillsSection;
+interface CardProps {
+  position: number;
+  card: CardType;
+  scrollYProgress: MotionValue;
+}
+
+const Card = ({ position, card, scrollYProgress }: CardProps) => {
+  const scaleFromPct = (position - 1) / CARDS.length;
+  const y = useTransform(scrollYProgress, [scaleFromPct, 1], [0, -CARD_HEIGHT]);
+
+  const isOddCard = position % 2;
+  const h3Ref = useRef(null);
+  const h3InView = useInView(h3Ref, {
+    margin: "-200px",
+    amount: 1,
+    once: true,
+  });
+  return (
+    <motion.div
+      style={{
+        height: CARD_HEIGHT,
+        y: position === CARDS.length ? undefined : y,
+        background: isOddCard ? "black" : "white",
+        color: isOddCard ? "white" : "black",
+      }}
+      className="sticky top-0 flex w-full origin-top flex-col items-center justify-center gap-14 px-4"
+    >
+      <motion.div className="flex flex-col items-center gap-6">
+        <card.Icon className="text-6xl" />
+
+        <motion.h3
+          ref={h3Ref}
+          className={`text-center text-4xl font-semibold !leading-[1.1] duration-1000 md:text-6xl ${h3InView ? "bg-[linear-gradient(90deg,#146ef5,#6e30f8,#c1498b,#fe5766)] bg-clip-text text-transparent" : ""}`}
+        >
+          {card.title}
+        </motion.h3>
+
+        <p className="max-w-lg text-center text-sm md:text-base">
+          {card.description}
+        </p>
+      </motion.div>
+
+      <div className="flex flex-wrap justify-center gap-10">
+        {card.id === 1 &&
+          skillIcons.development.map((skill) => (
+            <div key={skill.name} className="flex flex-col items-center">
+              <skill.Icon className={cn("h-14 w-14", skill.customClass)} />
+              <span className="mt-2 text-center">{skill.name}</span>
+            </div>
+          ))}
+        {card.id === 2 &&
+          skillIcons.design.map((skill) => (
+            <div key={skill.name} className="flex flex-col items-center">
+              {skill.name === "Figma" ? (
+                <Image
+                  src={figma}
+                  alt={skill.name}
+                  className={cn("h-14 w-14", skill.customClass)}
+                />
+              ) : (
+                <skill.Icon className={cn("h-14 w-14", skill.customClass)} />
+              )}
+              <span className="mt-2 text-center">{skill.name}</span>
+            </div>
+          ))}
+        {card.id === 3 &&
+          skillIcons.management.map((skill) => (
+            <div key={skill.name} className="flex flex-col items-center">
+              {skill.name === "Asana" ? (
+                <Image
+                  src={asana}
+                  alt={skill.name}
+                  className={cn("h-14 w-14", skill.customClass)}
+                />
+              ) : skill.name === "Office 365" ? (
+                <Image
+                  src={office}
+                  alt={skill.name}
+                  className={cn("h-14 w-14", skill.customClass)}
+                />
+              ) : (
+                <skill.Icon className={cn("h-14 w-14", skill.customClass)} />
+              )}
+
+              <span className="mt-2 text-center">{skill.name}</span>
+            </div>
+          ))}
+      </div>
+    </motion.div>
+  );
+};
+
+const CARD_HEIGHT = 700;
+
+type CardType = {
+  id: number;
+  Icon: IconType;
+  title: string;
+  description: string;
+};
+
+const CARDS: CardType[] = [
+  {
+    id: 1,
+    Icon: RiCodeAiFill,
+    title: "Development",
+    description:
+      "I specialize in crafting high-performing websites using primarily Next.js and React, with a strong focus on creating custom-tailored interfaces. I bring a robust foundation in HTML, CSS, and JavaScript, enabling me to design responsive, accessible, and user-centric digital experiences that perfectly align with unique business needs.",
+  },
+  {
+    id: 2,
+    Icon: LuPanelsTopLeft,
+    title: "UX/UI Design",
+    description:
+      "Frontend Developer skilled in UX/UI design, delivering responsive, SEO-friendly, and pixel-perfect digital experiences using Figma and Photoshop.",
+  },
+  {
+    id: 3,
+    Icon: FiCopy,
+    title: "Management tools",
+    description:
+      "Experienced with management tools like Jira, Asana, EasyRedmine, and Office 365, enabling seamless adaptation to similar systems.",
+  },
+];
+
+export interface IconCardType {
+  Icon: IconType;
+  name: string;
+  customClass?: string;
+}
+
+export interface SkillIconsType {
+  development: IconCardType[];
+  design: IconCardType[];
+  management: IconCardType[];
+}
+
+const skillIcons: SkillIconsType = {
+  development: [
+    { Icon: SiNextdotjs, name: "Next.js", customClass: "text-white" },
+    { Icon: FaReact, name: "React", customClass: "text-[#58c4dc]" },
+    { Icon: SiRedux, name: "Redux", customClass: "text-[#7a50be]" },
+    { Icon: SiTypescript, name: "Typescript", customClass: "text-[#2f73c0]" },
+    {
+      Icon: SiJavascript,
+      name: "JavaScript",
+      customClass: "text-[#f0da1c]",
+    },
+    {
+      Icon: RiTailwindCssFill,
+      name: "Tailwind CSS",
+      customClass: "text-[#37b7f0]",
+    },
+    { Icon: FaHtml5, name: "HTML5", customClass: "text-[#e96328]" },
+    { Icon: FaCss3Alt, name: "CSS", customClass: "text-[#2f69ef]" },
+    { Icon: FaSass, name: "SASS", customClass: "text-[#d06a9d]" },
+    { Icon: FaGitAlt, name: "GIT", customClass: "text-[#f1563b]" },
+    { Icon: BsGitlab, name: "GitLab", customClass: "text-[#e34a30]" },
+    { Icon: AiFillApi, name: "API", customClass: "text-white" },
+    { Icon: GrGraphQl, name: "GraphQL", customClass: "text-[#e63eae]" },
+    {
+      Icon: SiPagespeedinsights,
+      name: "Performance",
+      customClass: "text-[#67b340]",
+    },
+    { Icon: TbSeo, name: "SEO", customClass: "text-white" },
+  ],
+  design: [
+    { Icon: MdOutlineDevices, name: "RWD", customClass: "text-primary" },
+    { Icon: LuPanelsTopLeft, name: "UX/UI", customClass: "text-[#983cc2]" },
+    { Icon: SlMagnifierAdd, name: "Pixel Perfect", customClass: "" },
+    {
+      Icon: PiFigmaLogoDuotone,
+      name: "Figma",
+      customClass: "",
+    },
+    {
+      Icon: SiAdobephotoshop,
+      name: "Photoshop",
+      customClass: "text-[#011e36] bg-[#30a7fe] rounded-xl",
+    },
+  ],
+  management: [
+    { Icon: SiJira, name: "Jira", customClass: "text-[#2c81fa]" },
+    { Icon: SiAsana, name: "Asana", customClass: "" },
+    { Icon: SiRedmine, name: "EasyRedmine", customClass: "text-[#d03830]" },
+    { Icon: FaMicrosoft, name: "Office 365", customClass: "" },
+    { Icon: FaApple, name: "macOS", customClass: "" },
+    { Icon: FaWindows, name: "Windows", customClass: "text-[#167eda]" },
+  ],
+};
