@@ -44,7 +44,7 @@ export default {
         rrGrayBg: "#f5f5f7",
         rrGray: "#171717",
         rrGrayBorder: "#494a4d",
-        rrGrayText: "#8d8e8f",
+        rrGrayText: "#86868b",
         rrDark: "#080808",
         grayLight: "#d7d7d8",
         card: {
