@@ -138,7 +138,7 @@ const Card = ({ position, card, scrollYProgress }: CardProps) => {
   const isOddCard = position % 2;
   const h3Ref = useRef(null);
   const h3InView = useInView(h3Ref, {
-    margin: "-200px",
+    margin: "0px 0px -200px",
     amount: 1,
     once: true,
   });
