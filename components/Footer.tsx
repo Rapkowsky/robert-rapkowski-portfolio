@@ -80,7 +80,8 @@ export default function Footer() {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 1.3, ease: [0.45, 0, 0.55, 1] }}
+          transition={{ duration: 1.5, ease: [0.45, 0, 0.55, 1] }}
+          viewport={{ amount: 1, margin: "0px 0px -200px 0px" }}
           className="mt-[120px] flex flex-col gap-3 md:flex-row"
         >
           <div className="duration-3000 ease-rrEaseBtnHover active:scale-[0.75]">
