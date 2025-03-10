@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { menuSlide } from "@/lib/Animations";
-import SideNavLink from "@/components/SideNavLink";
+import IndicatorLink from "@/components/IndicatorLink";
 import Curve from "./Curve";
 import ThemeToggle from "./ThemeToggle";
 import StandardLink from "./StandardLink";
@@ -50,12 +50,12 @@ export default function SideNav() {
           </div>
           {navItems.map((data, index) => {
             return (
-              <SideNavLink
+              <IndicatorLink
                 key={index}
                 data={{ ...data, index }}
                 isActive={selectedIndicator == data.href}
                 setSelectedIndicator={setSelectedIndicator}
-              ></SideNavLink>
+              ></IndicatorLink>
             );
           })}
         </div>

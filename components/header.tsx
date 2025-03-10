@@ -7,8 +7,8 @@ import MagneticWrapper from "./MagneticWrapper";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import StandardNav from "./StandardNav";
 import { AnimatePresence, motion } from "framer-motion";
+import TopNav from "./TopNav";
 
 export default function Header() {
   const pathname = usePathname();
@@ -71,7 +71,7 @@ export default function Header() {
             </div>
           </Link>
         </MagneticWrapper>
-        <StandardNav />
+        <TopNav />
       </div>
       <BurgerButton
         isActive={isActive}
