@@ -19,15 +19,6 @@ export const projects = [
     link: "/matuszewski",
   },
   {
-    title: "PetSoft",
-    year: "2025",
-    scope: "Design & Development",
-    src: "petsoft.png",
-    color: "bg-[#def0eb]",
-    colorDark: "dark:bg-[#f0f0f0]",
-    link: "/petsoft",
-  },
-  {
     title: "Portfolio",
     year: "2025",
     scope: "Design & Development",
@@ -35,6 +26,15 @@ export const projects = [
     color: "bg-[#0A0A0A]",
     colorDark: "dark:bg-[#f0f0f0]",
     link: "/",
+  },
+  {
+    title: "PetSoft",
+    year: "2025",
+    scope: "Design & Development",
+    src: "petsoft.png",
+    color: "bg-[#def0eb]",
+    colorDark: "dark:bg-[#f0f0f0]",
+    link: "/petsoft",
   },
   {
     title: "Silencio",
