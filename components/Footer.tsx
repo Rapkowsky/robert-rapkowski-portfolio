@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { useRef } from "react";
 import { useScroll, motion, useTransform } from "framer-motion";
@@ -52,7 +53,7 @@ export default function Footer() {
             className="absolute bottom-[-70px] left-[unset] right-[10%] max-[374px]:left-[40%] md:bottom-[-85px] lg:bottom-[-98px]"
           >
             <div className="relative duration-3000 ease-rrEaseBtnHover active:scale-[0.75]">
-              <ButtonWrapper className="relative flex h-[145px] w-[145px] cursor-pointer items-center justify-center rounded-full bg-primary font-[700] md:h-[175px] md:w-[175px] lg:h-[200px] lg:w-[200px]">
+              <ButtonWrapper className="relative flex h-[145px] w-[145px] cursor-pointer items-center justify-center rounded-full bg-primary text-xs font-bold md:h-[175px] md:w-[175px] md:text-base lg:h-[200px] lg:w-[200px]">
                 <Link
                   href="/contact"
                   className="absolute inset-0 z-20 flex items-center justify-center font-medium"

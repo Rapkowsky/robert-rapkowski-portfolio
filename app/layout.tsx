@@ -3,8 +3,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Header from "@/components/Header";
-import FooterInfo from "@/components/FooterInfo";
 import { ReactLenis } from "@/lib/lenis";
+import Footer from "@/components/Footer";
+import FooterInfo from "@/components/FooterInfo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,8 +37,9 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <Header />
             {children}
-            <FooterInfo />
           </ThemeProvider>
+          <Footer />
+          <FooterInfo />
         </body>
       </ReactLenis>
     </html>
