@@ -6,6 +6,9 @@ import SlidingImages from "@/components/SlidingImages";
 import Intro from "@/components/Intro";
 import { SkillsSection } from "@/components/SkillsSection";
 import { JourneySection } from "@/components/JourneySection";
+import Preloader from "@/components/Preloader";
+import { AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 // import Preloader from "@/components/Preloader";
 // import { AnimatePresence } from "framer-motion";
 // import { useEffect, useState } from "react";
@@ -14,12 +17,8 @@ import { JourneySection } from "@/components/JourneySection";
 const Home = () => {
   // const [isLoading, setIsLoading] = useState(true);
 
-  // Smooth scroll
-
   // useEffect(() => {
   //   (async () => {
-  //     const LocomotiveScroll = (await import("locomotive-scroll")).default;
-  //     const locomotiveScroll = new LocomotiveScroll();
   //     setTimeout(() => {
   //       setIsLoading(false);
 
@@ -41,7 +40,6 @@ const Home = () => {
       <ProjectsSection />
       <JourneySection />
       <SlidingImages />
-      <Footer />
     </main>
   );
 };
