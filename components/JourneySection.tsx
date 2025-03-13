@@ -3,17 +3,17 @@ import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import SectionWrapper from "./SectionWrapper";
 import TitleSlideLeft from "./TitleSlideLeft";
-import Image from "next/image";
-import appTesting from "../public/images/appTesting.jpg";
-import appTesting2 from "../public/images/appTesting2.jpg";
-import wowSchool from "../public/images/wowSchool.jpg";
-import wowSchoolLogo from "../public/images/wowSchoolLogo.svg";
-import tcWork1 from "../public/images/tcWork1.png";
-import tcWork2 from "../public/images/tcWork2.png";
-import tcWork3 from "../public/images/tcWork3.png";
-import tcWork8 from "../public/images/tcWork8.png";
-import tcWork10 from "../public/images/tcWork10.png";
-import tcWork11 from "../public/images/tcWork11.png";
+// import Image from "next/image";
+// import appTesting from "../public/images/appTesting.jpg";
+// import appTesting2 from "../public/images/appTesting2.jpg";
+// import wowSchool from "../public/images/wowSchool.jpg";
+// import wowSchoolLogo from "../public/images/wowSchoolLogo.svg";
+// import tcWork1 from "../public/images/tcWork1.png";
+// import tcWork2 from "../public/images/tcWork2.png";
+// import tcWork3 from "../public/images/tcWork3.png";
+// import tcWork8 from "../public/images/tcWork8.png";
+// import tcWork10 from "../public/images/tcWork10.png";
+// import tcWork11 from "../public/images/tcWork11.png";
 import { easefadeInUp } from "@/lib/Animations";
 
 interface JourneySectionEntry {
@@ -80,7 +80,7 @@ const data: JourneySectionEntry[] = [
     ),
   },
   {
-    title: "2017 - 2023",
+    title: "2017 - 2022",
     content: (
       <motion.div {...defaultMotionProps}>
         <p className="mb-8 text-lg font-normal dark:text-rrGrayText">
