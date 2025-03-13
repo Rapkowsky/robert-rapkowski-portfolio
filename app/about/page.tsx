@@ -1,8 +1,14 @@
 "use client";
 import SectionWrapper from "@/components/SectionWrapper";
 import TitleSlideLeft from "@/components/TitleSlideLeft";
-import { easefadeInUp, mainAnim } from "@/lib/Animations";
-import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
+import { easefadeInUp, mainAnim, wordSlideUp } from "@/lib/Animations";
+import {
+  useScroll,
+  useTransform,
+  motion,
+  MotionValue,
+  useInView,
+} from "framer-motion";
 import { useRef } from "react";
 import { FaCode } from "react-icons/fa6";
 import { LuPanelsLeftBottom } from "react-icons/lu";
@@ -75,6 +81,16 @@ const ImageGridHero = () => {
   const y = useTransform(containerScrollYProgress, [0, 0.5], [100, 0]);
   const height = useTransform(curveScrollYProgress, [0, 1], [100, 0]);
   const opacity = useTransform(containerScrollYProgress, [0, 0.5], [0, 1]);
+
+  const phrase =
+    "Cutting-edge Frontend Developer delivering bespoke, responsive digital experiences, driven by quality and the latest technologies.";
+  const description1Ref = useRef(null);
+  const isInView1 = useInView(description1Ref, {
+    amount: 1,
+    once: true,
+    margin: "0px 0px -100px 0px",
+  });
+
   return (
     <>
       <section ref={targetRef} className="h-[350vh]">
@@ -94,17 +110,40 @@ const ImageGridHero = () => {
       <SectionWrapper className="max-w-[1730px]">
         <div className="flex min-h-screen flex-col">
           <div className="relative mb-28 md:mb-40">
-            <TitleSlideLeft
+            <motion.p
+              className="mb-28 flex flex-wrap gap-x-2 text-left text-[9.1vw] font-medium normal-case !leading-[1.2] min-[500px]:text-[8.4vw] md:mb-40 md:text-6xl xl:text-7xl"
+              ref={description1Ref}
+            >
+              {phrase.split(" ").map((word, index) => {
+                return (
+                  <span
+                    className="relative inline-flex overflow-hidden"
+                    key={index}
+                  >
+                    <motion.span
+                      key={index}
+                      variants={wordSlideUp}
+                      custom={index}
+                      initial="closed"
+                      animate={isInView1 ? "open" : "closed"}
+                    >
+                      {word}
+                    </motion.span>
+                  </span>
+                );
+              })}
+            </motion.p>
+            {/* <TitleSlideLeft
               titleClassName="normal-case text-left xl:text-7xl !leading-[1.1] font-medium text-[9.1vw] min-[500px]:text-[8.4vw] md:text-6xl"
               text="Cutting-edge Frontend Developer delivering bespoke, responsive digital experiences, driven by quality and the latest technologies."
-            ></TitleSlideLeft>
+            ></TitleSlideLeft> */}
 
             <div className="overflow-hidden">
               <motion.div
                 initial={{ x: "-25vw" }}
                 whileInView={{ x: 0 }}
                 transition={{ duration: 1.8, ease: mainAnim }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                 className="h-[0.5px] w-full bg-[linear-gradient(90deg,#fe5766,#c1498b,#6e30f8,#146ef5,transparent)]"
               />
               <motion.div
@@ -112,7 +151,7 @@ const ImageGridHero = () => {
                 initial={{ x: "-15vw" }}
                 whileInView={{ x: 0 }}
                 transition={{ duration: 2, ease: mainAnim }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "0px 0px -100px 0px" }}
               >
                 <motion.div className="relative duration-3000 ease-rrEaseBtnHover active:scale-[0.25]">
                   <ButtonWrapper className="relative flex h-[150px] w-[150px] cursor-pointer items-center justify-center rounded-full bg-rrDark font-medium text-white dark:bg-primary md:h-[170px] md:w-[170px] xl:h-[200px] xl:w-[200px]">
