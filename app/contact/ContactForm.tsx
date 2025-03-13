@@ -17,6 +17,7 @@ import {
 import { z } from "zod";
 import { formSchema } from "@/lib/schemas";
 import { send } from "@/lib/email";
+import { toast } from "sonner";
 
 export default function ContactForm() {
   //  Define form
@@ -31,8 +32,18 @@ export default function ContactForm() {
   });
 
   // Define a submit handler
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    send(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      await send(values);
+      toast.success(
+        values.firstName + " " + ", your message was sent correctly!",
+      );
+      form.reset();
+    } catch {
+      toast.error(
+        "An error occurred while sending the message. Please try again.",
+      );
+    }
   }
 
   //   const [formData, setFormData] = useState({
@@ -67,7 +78,7 @@ export default function ContactForm() {
     <Card className="mx-auto w-full max-w-md">
       <CardHeader>
         <CardTitle className="text-center text-2xl font-bold">
-          Contact Us
+          Let&apos;s work together
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
