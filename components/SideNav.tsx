@@ -46,7 +46,7 @@ export default function SideNav(isActive: { isActive: boolean }) {
           }}
           className="flex flex-col text-[40px] leading-[1.1] md:text-[56px]"
         >
-          <div className="mb-10 mt-20 border-b border-rrGrayBorder pb-10 text-xs uppercase text-rrGrayText">
+          <div className="mb-10 mt-20 border-b border-rrGrayBorder pb-8 text-xs uppercase text-rrGrayText">
             <p>Navigation</p>
           </div>
           <div className="flex flex-col gap-5 md:gap-9">
@@ -62,7 +62,7 @@ export default function SideNav(isActive: { isActive: boolean }) {
             })}
           </div>
         </div>
-        <div className="flex items-center justify-between border-t border-rrGrayBorder pt-10 transition-[width] duration-800 ease-rrEaseBtnHover min-[500px]:w-[300px] md:w-[350px]">
+        <div className="flex items-center justify-between border-t border-rrGrayBorder pt-8 transition-[width] duration-800 ease-rrEaseBtnHover min-[500px]:w-[300px] md:w-[350px]">
           <div className="flex flex-col gap-[10px]">
             <p className="m-0 text-xs font-light text-rrGrayText hover:after:w-full">
               Socials
