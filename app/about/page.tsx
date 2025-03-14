@@ -20,6 +20,7 @@ import { PiHandshake } from "react-icons/pi";
 import ButtonWrapper from "@/components/ButtonWrapper";
 import Link from "next/link";
 import { easefadeInUp, mainAnim, wordSlideUp } from "@/lib/Animations";
+import { AlwaysScrollToTop } from "@/lib/utils";
 
 const data = [
   {
@@ -61,6 +62,10 @@ const data = [
 ];
 
 const ImageGridHero = () => {
+  useEffect(() => {
+    AlwaysScrollToTop();
+  }, []);
+
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,

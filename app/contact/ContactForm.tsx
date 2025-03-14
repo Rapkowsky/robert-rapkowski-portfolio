@@ -25,8 +25,13 @@ import { motion } from "framer-motion";
 import { easefadeInUp, mainAnim } from "@/lib/Animations";
 import rrImg from "@/public/images/IMG_3944retkadr.jpg";
 import ButtonWrapper from "@/components/ButtonWrapper";
+import { useEffect } from "react";
+import { AlwaysScrollToTop } from "@/lib/utils";
 
 export default function ContactForm() {
+  useEffect(() => {
+    AlwaysScrollToTop();
+  }, []);
   //  Define form
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
