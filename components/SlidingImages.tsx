@@ -4,38 +4,38 @@ import Image from "next/image";
 
 const slider1 = [
   {
-    color: "#F3F4F6",
+    bgColor: "bg-[#F3F4F6] dark:bg-transparent",
     src: "petsoft.png",
   },
   {
-    color: "#F9FAFB",
+    bgColor: "bg-[#F9FAFB] dark:bg-transparent",
     src: "portfolioFooter.png",
   },
   {
-    color: "#E5E7EB",
+    bgColor: "bg-[#E5E7EB] dark:bg-transparent",
     src: "portfolio.png",
   },
   {
-    color: "#D1D5DB",
+    bgColor: "bg-[#D1D5DB] dark:bg-transparent",
     src: "mat.png",
   },
 ];
 
 const slider2 = [
   {
-    color: "#def0eb",
+    bgColor: "bg-[#def0eb] dark:bg-transparent",
     src: "petsoft.png",
   },
   {
-    color: "#D6D6D6",
+    bgColor: "bg-[#D6D6D6] dark:bg-transparent",
     src: "portfolioProjects.png",
   },
   {
-    color: "#CFCFCF",
+    bgColor: "bg-[#CFCFCF] dark:bg-transparent",
     src: "matContact.png",
   },
   {
-    color: "#CFCFCF",
+    bgColor: "bg-[#CFCFCF] dark:bg-transparent",
     src: "matContact.png",
   },
 ];
@@ -64,8 +64,7 @@ export default function SlidingImages() {
           return (
             <div
               key={i}
-              className="flex h-[30vw] w-1/4 items-center justify-center"
-              style={{ backgroundColor: project.color }}
+              className={`flex h-[30vw] w-1/4 items-center justify-center ${project.bgColor}`}
             >
               <div
                 key={i}
@@ -90,8 +89,7 @@ export default function SlidingImages() {
           return (
             <div
               key={i}
-              className="flex h-[30vw] w-1/4 items-center justify-center"
-              style={{ backgroundColor: project.color }}
+              className={`flex h-[30vw] w-1/4 items-center justify-center ${project.bgColor}`}
             >
               <div
                 key={i}
