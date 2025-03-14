@@ -44,21 +44,23 @@ export default function SideNav() {
           onMouseLeave={() => {
             setSelectedIndicator(pathname);
           }}
-          className="flex flex-col gap-[12px] text-[56px]"
+          className="flex flex-col text-[40px] leading-[1.1] md:text-[56px]"
         >
-          <div className="mb-10 mt-24 border-b border-rrGrayBorder pb-10 text-xs uppercase text-rrGrayText">
+          <div className="mb-10 mt-20 border-b border-rrGrayBorder pb-10 text-xs uppercase text-rrGrayText">
             <p>Navigation</p>
           </div>
-          {navItems.map((data, index) => {
-            return (
-              <IndicatorLink
-                key={index}
-                data={{ ...data, index }}
-                isActive={selectedIndicator == data.href}
-                setSelectedIndicator={setSelectedIndicator}
-              ></IndicatorLink>
-            );
-          })}
+          <div className="flex flex-col gap-5 md:gap-9">
+            {navItems.map((data, index) => {
+              return (
+                <IndicatorLink
+                  key={index}
+                  data={{ ...data, index }}
+                  isActive={selectedIndicator == data.href}
+                  setSelectedIndicator={setSelectedIndicator}
+                ></IndicatorLink>
+              );
+            })}
+          </div>
         </div>
         <div className="flex items-center justify-between border-t border-rrGrayBorder pt-10 transition-[width] duration-800 ease-rrEaseBtnHover min-[500px]:w-[300px] md:w-[350px]">
           <div className="flex flex-col gap-[10px]">

@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, ReactElement } from "react";
 import gsap from "gsap";
+import useWindowResize from "./hooks/UseWindowResize";
 
 interface MagneticWrapperProps {
   children: ReactElement;
@@ -14,9 +15,10 @@ export default function MagneticWrapper({
   durationOut = 1.75,
 }: MagneticWrapperProps) {
   const magnetic = useRef<HTMLDivElement | null>(null);
-
+  const { width } = useWindowResize();
+  const isMobile = width < 1024;
   useEffect(() => {
-    if (!magnetic.current) return;
+    if (!magnetic.current || isMobile) return;
 
     const xTo = gsap.quickTo(magnetic.current, "x", {
       duration: durationOut,
@@ -29,7 +31,7 @@ export default function MagneticWrapper({
 
     const node = magnetic.current;
 
-    node.addEventListener("mousemove", (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       const { clientX, clientY } = e;
       const { height, width, left, top } = node.getBoundingClientRect();
       const x = clientX - (left + width / 2);
@@ -37,18 +39,21 @@ export default function MagneticWrapper({
 
       xTo(x * 0.5);
       yTo(y * 0.5);
-    });
+    };
 
-    node.addEventListener("mouseleave", () => {
+    const handleMouseLeave = () => {
       xTo(0);
       yTo(0);
-    });
+    };
+
+    node.addEventListener("mousemove", handleMouseMove);
+    node.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
-      node.removeEventListener("mousemove", () => {});
-      node.removeEventListener("mouseleave", () => {});
+      node.removeEventListener("mousemove", handleMouseMove);
+      node.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, [durationIn, durationOut]);
+  }, [durationIn, durationOut, isMobile]);
 
   return (
     // @ts-expect-error – child DOM with ref
