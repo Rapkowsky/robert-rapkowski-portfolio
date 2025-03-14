@@ -43,34 +43,34 @@ export default function HeroSection() {
     <section className="relative flex h-screen overflow-hidden">
       <Clock />
       <div>
-      <Image
-        src={bgImage}
-        alt="Background image"
-        fill
-        quality={100}
-        className="object-cover"
-        priority
-      />
-      <div className="absolute bottom-10">
-        <div
-        ref={slider}
-        className="relative z-10 whitespace-nowrap text-[clamp(180px,36vw,310px)] font-medium text-white"
-        >
-        <p ref={firstText} className="relative m-0 pr-[50px]">
-          Freelance Developer -
-        </p>
+        <Image
+          src={bgImage}
+          alt="Background image"
+          fill
+          quality={100}
+          className="object-cover"
+          priority
+        />
+        <div className="absolute bottom-10">
+          <div
+            ref={slider}
+            className="relative z-10 whitespace-nowrap text-[clamp(180px,36vw,310px)] font-medium text-white"
+          >
+            <p ref={firstText} className="relative m-0 pr-[50px]">
+              Freelance Developer -
+            </p>
 
-        <p
-          ref={secondText}
-          className="absolute left-full top-0 m-0 pr-[50px]"
-        >
-          Freelance Developer -
-        </p>
+            <p
+              ref={secondText}
+              className="absolute left-full top-0 m-0 pr-[50px]"
+            >
+              Freelance Developer -
+            </p>
+          </div>
         </div>
       </div>
-      </div>
 
-      <div className="absolute bottom-0 z-[1] float-left h-[50vh] w-full bg-[linear-gradient(to_top,black,transparent)] opacity-0 duration-500 dark:opacity-100" />
+      <div className="absolute bottom-[-10px] z-[1] float-left h-[50vh] w-full bg-[linear-gradient(to_top,black,transparent)] opacity-0 duration-500 dark:opacity-100" />
     </section>
   );
 }
