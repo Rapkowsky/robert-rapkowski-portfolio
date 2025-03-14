@@ -16,7 +16,7 @@ export default function CurveLine() {
     },
     exit: {
       d: initialPath,
-      transition: { duration: 0.6075, ease: mainAnim },
+      transition: { duration: 0.8, ease: mainAnim },
     },
   };
 
