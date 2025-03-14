@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { menuSlide } from "@/lib/Animations";
 import IndicatorLink from "@/components/IndicatorLink";
-import Curve from "./Curve";
+
 import ThemeToggle from "./ThemeToggle";
 import StandardLink from "./StandardLink";
+import CurveLine from "./CurveLine";
 
 const navItems = [
   {
@@ -72,7 +73,7 @@ export default function SideNav() {
           <ThemeToggle />
         </div>
       </div>
-      <Curve />
+      <CurveLine />
     </motion.div>
   );
 }
