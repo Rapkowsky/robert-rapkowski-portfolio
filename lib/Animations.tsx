@@ -34,7 +34,7 @@ export const slide = {
     transition: {
       duration: 0.95,
       ease: mainAnim,
-      delay: i === 0 ? 0 : 0.05 * i,
+      delay: i === 0 ? 0 : 0.025 * i,
     },
   }),
   exit: (i: number) => ({
@@ -42,7 +42,7 @@ export const slide = {
     transition: {
       duration: 0.45,
       ease: mainAnim,
-      delay: i === 0 ? 0 : 0.05 * i,
+      delay: i === 0 ? 0 : 0.025 * i,
     },
   }),
 };
