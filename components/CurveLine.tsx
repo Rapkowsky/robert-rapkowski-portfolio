@@ -12,7 +12,7 @@ export default function CurveLine() {
     },
     enter: {
       d: targetPath,
-      transition: { duration: 1.215, ease: mainAnim },
+      transition: { duration: 1.15, ease: mainAnim },
     },
     exit: {
       d: initialPath,

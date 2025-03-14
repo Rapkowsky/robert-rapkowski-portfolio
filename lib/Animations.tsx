@@ -31,12 +31,16 @@ export const slide = {
   initial: { x: 100 },
   enter: (i: number) => ({
     x: 0,
-    transition: { duration: 1, ease: mainAnim, delay: i === 0 ? 0 : 0.05 * i },
+    transition: {
+      duration: 0.95,
+      ease: mainAnim,
+      delay: i === 0 ? 0 : 0.05 * i,
+    },
   }),
   exit: (i: number) => ({
     x: 100,
     transition: {
-      duration: 0.5,
+      duration: 0.45,
       ease: mainAnim,
       delay: i === 0 ? 0 : 0.05 * i,
     },
