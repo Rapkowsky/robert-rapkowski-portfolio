@@ -88,7 +88,7 @@ export const SkillsSection = () => {
         />
         <div className="sticky top-0 z-[1] h-screen overflow-hidden">
           <motion.div
-            className="absolute top-0 flex h-full w-full items-center justify-center will-change-transform"
+            className="absolute top-0 flex h-full w-full items-center justify-center"
             style={{ scale }}
           >
             <div
