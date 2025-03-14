@@ -6,6 +6,7 @@ import Intro from "@/components/Intro";
 import { SkillsSection } from "@/components/SkillsSection";
 import { JourneySection } from "@/components/JourneySection";
 import { useEffect } from "react";
+import { AlwaysScrollToTop } from "@/lib/utils";
 
 // import Preloader from "@/components/Preloader";
 // import { AnimatePresence } from "framer-motion";
@@ -13,8 +14,22 @@ import { useEffect } from "react";
 // import { Numbers } from "@/components/Numbers";
 
 const Home = () => {
+  // const [isLoading, setIsLoading] = useState(true);
+
+  // useEffect(() => {
+  //   (async () => {
+  //     setTimeout(() => {
+  //       setIsLoading(false);
+
+  //       document.body.style.cursor = "default";
+
+  //       window.scrollTo(0, 0);
+  //     }, 2000);
+  //   })();
+  // }, []);
+
   useEffect(() => {
-    window.scrollTo(0, 0);
+    AlwaysScrollToTop();
   }, []);
 
   return (

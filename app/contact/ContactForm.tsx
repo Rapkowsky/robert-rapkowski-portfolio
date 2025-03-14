@@ -108,7 +108,6 @@ export default function ContactForm() {
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               <motion.div
-                className="space-y-2"
                 initial={{ y: 100, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1.5, ease: mainAnim }}
@@ -123,13 +122,14 @@ export default function ContactForm() {
                         <Input placeholder="Enter your first name" {...field} />
                       </FormControl>
 
-                      <FormMessage />
+                      <div className="h-[32px] w-full">
+                        <FormMessage />
+                      </div>
                     </FormItem>
                   )}
                 />
               </motion.div>
               <motion.div
-                className="space-y-2"
                 initial={{ y: 100, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1.5, ease: mainAnim }}
@@ -144,14 +144,15 @@ export default function ContactForm() {
                         <Input placeholder="Enter your last name" {...field} />
                       </FormControl>
 
-                      <FormMessage />
+                      <div className="h-[32px] w-full">
+                        <FormMessage />
+                      </div>
                     </FormItem>
                   )}
                 />
               </motion.div>
 
               <motion.div
-                className="space-y-2"
                 initial={{ y: 100, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1.5, ease: mainAnim }}
@@ -166,13 +167,14 @@ export default function ContactForm() {
                         <Input placeholder="Enter your email" {...field} />
                       </FormControl>
 
-                      <FormMessage />
+                      <div className="h-[32px] w-full">
+                        <FormMessage />
+                      </div>
                     </FormItem>
                   )}
                 />
               </motion.div>
               <motion.div
-                className="space-y-2"
                 initial={{ y: 100, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1.5, ease: mainAnim }}
@@ -192,7 +194,9 @@ export default function ContactForm() {
                         />
                       </FormControl>
 
-                      <FormMessage />
+                      <div className="h-[32px] w-full">
+                        <FormMessage />
+                      </div>
                     </FormItem>
                   )}
                 />
