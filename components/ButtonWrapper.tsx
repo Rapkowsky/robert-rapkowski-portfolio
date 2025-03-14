@@ -4,15 +4,21 @@ import gsap from "gsap";
 import MagneticWrapper from "./MagneticWrapper";
 import { cn } from "@/lib/utils";
 
+interface ButtonWrapperProps extends React.HTMLAttributes<HTMLDivElement> {
+  className?: string;
+  children?: React.ReactNode;
+  overlayBgColor?: string;
+}
+
 export default function ButtonWrapper({
   className,
   children,
   overlayBgColor = "bg-primaryDarker",
   ...attributes
-}) {
+}: ButtonWrapperProps) {
   const circle = useRef(null);
-  let timeline = useRef(null);
-  let timeoutId = null;
+  const timeline = useRef<gsap.core.Timeline | null>(null);
+  const timeoutId = useRef<NodeJS.Timeout | null>(null);
   useEffect(() => {
     timeline.current = gsap.timeline({ paused: true });
     timeline.current
@@ -29,13 +35,17 @@ export default function ButtonWrapper({
   }, []);
 
   const manageMouseEnter = () => {
-    if (timeoutId) clearTimeout(timeoutId);
-    timeline.current.tweenFromTo("enter", "exit");
+    if (timeoutId.current) clearTimeout(timeoutId.current);
+    if (timeline.current) {
+      timeline.current.tweenFromTo("enter", "exit");
+    }
   };
 
   const manageMouseLeave = () => {
-    timeoutId = setTimeout(() => {
-      timeline.current.play();
+    timeoutId.current = setTimeout(() => {
+      if (timeline.current) {
+        timeline.current.play();
+      }
     }, 300);
   };
 
