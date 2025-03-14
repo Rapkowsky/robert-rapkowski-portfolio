@@ -56,13 +56,13 @@ export default function HeroSection() {
             ref={slider}
             className="relative z-10 whitespace-nowrap text-[clamp(180px,36vw,310px)] font-medium text-white"
           >
-            <p ref={firstText} className="relative m-0 pr-[50px]">
+            <p ref={firstText} className="relative m-0 pr-[50px] will-change-transform">
               Freelance Developer -
             </p>
 
             <p
               ref={secondText}
-              className="absolute left-full top-0 m-0 pr-[50px]"
+              className="absolute left-full top-0 m-0 pr-[50px] will-change-transform"
             >
               Freelance Developer -
             </p>
