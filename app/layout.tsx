@@ -35,7 +35,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <body
           className={`${geistSans.variable} ${geistMono.variable} min-w-[320px] bg-white antialiased duration-500 dark:bg-black`}
         >
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ThemeProvider attribute="class" defaultTheme="dark">
             <Nav />
             <Toaster />
             {children}
