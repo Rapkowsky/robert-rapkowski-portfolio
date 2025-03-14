@@ -12,7 +12,7 @@ export default function SectionWrapper({
   bgWrapperColor,
 }: SectionWrapperProps) {
   return (
-    <section className={cn("", bgWrapperColor)}>
+    <section className={cn("w-full", bgWrapperColor)}>
       <div
         className={cn(
           "mx-auto w-full max-w-[1600px] px-xMobile py-yMobile min-[500px]:px-px500 md:px-xTablet md:py-yTablet xl:px-xDesktop xl:py-yDesktop",

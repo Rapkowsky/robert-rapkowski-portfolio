@@ -11,6 +11,7 @@ export function Toaster() {
       toastOptions={{
         classNames: {
           icon: "text-primary",
+          description: "text-2xl",
         },
       }}
     />

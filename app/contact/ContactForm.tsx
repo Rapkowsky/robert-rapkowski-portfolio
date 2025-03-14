@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -18,6 +18,13 @@ import { z } from "zod";
 import { formSchema } from "@/lib/schemas";
 import { send } from "@/lib/email";
 import { toast } from "sonner";
+import SectionWrapper from "@/components/SectionWrapper";
+import TitleSlideLeft from "@/components/TitleSlideLeft";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { easefadeInUp, mainAnim } from "@/lib/Animations";
+import rrImg from "@/public/images/IMG_3944retkadr.jpg";
+import ButtonWrapper from "@/components/ButtonWrapper";
 
 export default function ContactForm() {
   //  Define form
@@ -37,6 +44,7 @@ export default function ContactForm() {
       await send(values);
       toast.success(
         values.firstName + " " + ", your message was sent correctly!",
+        { className: "text-2xl" }
       );
       form.reset();
     } catch {
@@ -75,17 +83,36 @@ export default function ContactForm() {
   //   };
 
   return (
-    <Card className="mx-auto w-full max-w-md">
-      <CardHeader>
-        <CardTitle className="text-center text-2xl font-bold">
-          Let&apos;s work together
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-4">
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-2">
+    <SectionWrapper className="mt-[min(100vw,100px)] overflow-hidden">
+      <div className="relative flex max-w-[331px] justify-between md:max-w-[527px] lg:max-w-full">
+        <TitleSlideLeft
+          text="Let's work together"
+          animateAutomatically
+          titleClassName="text-left w-min lg:w-[initial]"
+        />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2, ease: easefadeInUp }}
+          className="absolute right-0 flex-none lg:top-[30px] xl:top-[90px]"
+        >
+          <Image
+            alt={"image"}
+            src={rrImg}
+            className="ml-auto h-[min(30vw,100px)] w-[min(30vw,100px)] rounded-full object-cover object-top md:h-[150px] md:w-[150px]"
+          />
+        </motion.div>
+      </div>
+      <Card>
+        <CardContent className="space-y-4">
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+              <motion.div
+                className="space-y-2"
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1.5, ease: mainAnim }}
+              >
                 <FormField
                   control={form.control}
                   name="firstName"
@@ -93,15 +120,20 @@ export default function ContactForm() {
                     <FormItem>
                       <FormLabel>First Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="Your first name" {...field} />
+                        <Input placeholder="Enter your first name" {...field} />
                       </FormControl>
 
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-              </div>
-              <div className="space-y-2">
+              </motion.div>
+              <motion.div
+                className="space-y-2"
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1.5, ease: mainAnim }}
+              >
                 <FormField
                   control={form.control}
                   name="lastName"
@@ -109,57 +141,84 @@ export default function ContactForm() {
                     <FormItem>
                       <FormLabel>Last Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="Your last name" {...field} />
+                        <Input placeholder="Enter your last name" {...field} />
                       </FormControl>
 
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Your email" {...field} />
-                    </FormControl>
+              </motion.div>
 
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <div className="space-y-2">
-              <FormField
-                control={form.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Message</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        id="message"
-                        placeholder="Type in your message here"
-                        {...field}
-                      />
-                    </FormControl>
+              <motion.div
+                className="space-y-2"
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1.5, ease: mainAnim }}
+              >
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Enter your email" {...field} />
+                      </FormControl>
 
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <Button type="submit" className="w-full">
-              Submit
-            </Button>
-          </form>
-        </Form>
-      </CardContent>
-    </Card>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </motion.div>
+              <motion.div
+                className="space-y-2"
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1.5, ease: mainAnim }}
+              >
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Message</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          id="message"
+                          rows={5}
+                          placeholder="Type in your message here"
+                          {...field}
+                        />
+                      </FormControl>
+
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </motion.div>
+              <motion.div
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1.5, ease: mainAnim }}
+                viewport={{ once: true }}
+                className="ml-auto mr-[20%] mt-10 w-fit"
+              >
+                <motion.div className="relative duration-3000 ease-rrEaseBtnHover active:scale-[0.25]">
+                  <ButtonWrapper className="relative flex h-[150px] w-[150px] cursor-pointer items-center justify-center rounded-full bg-rrDark font-medium text-white dark:bg-primary md:h-[170px] md:w-[170px] xl:h-[200px] xl:w-[200px]">
+                    <Button
+                      type="submit"
+                      className="!absolute inset-0 z-20 flex h-full items-center justify-center text-lg"
+                    >
+                      Submit
+                    </Button>
+                  </ButtonWrapper>
+                </motion.div>
+              </motion.div>
+            </form>
+          </Form>
+        </CardContent>
+      </Card>
+    </SectionWrapper>
   );
 }

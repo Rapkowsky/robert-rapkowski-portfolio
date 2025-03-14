@@ -69,7 +69,7 @@ export default function Intro() {
               <div className="relative duration-3000 ease-rrEaseBtnHover active:scale-[0.25]">
                 <ButtonWrapper className="relative flex h-[150px] w-[150px] cursor-pointer items-center justify-center rounded-full bg-rrDark font-medium text-white dark:bg-primary md:h-[170px] md:w-[170px] xl:h-[200px] xl:w-[200px]">
                   <Link
-                    href="/"
+                    href="/about"
                     className="absolute inset-0 z-20 flex items-center justify-center"
                   >
                     About me
