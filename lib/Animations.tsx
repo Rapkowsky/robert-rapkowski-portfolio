@@ -26,14 +26,13 @@ export const menuSlide = {
     transition: { duration: 0.8, ease: [0.7, 0, 0.2, 1] },
   },
 };
-
 export const slide = {
   initial: { x: 80 },
-  enter: (i) => ({
+  enter: (i: number) => ({
     x: 0,
     transition: { duration: 1, ease: [0.7, 0, 0.2, 1], delay: 0.05 * i },
   }),
-  exit: (i) => ({
+  exit: (i: number) => ({
     x: 80,
     transition: { duration: 0.5, ease: [0.7, 0, 0.2, 1], delay: 0.05 * i },
   }),
@@ -48,7 +47,7 @@ export const wordSlideUp = {
   initial: {
     y: "100%",
   },
-  open: (i) => ({
+  open: (i: number) => ({
     y: "0%",
     transition: { duration: 0.6, delay: 0.04 * i, ease: "easeInOut" },
   }),
