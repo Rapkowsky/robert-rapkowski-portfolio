@@ -6,7 +6,7 @@ import { ReactLenis } from "@/lib/lenis";
 import Footer from "@/components/Footer";
 import FooterInfo from "@/components/FooterInfo";
 import { Toaster } from "@/components/Toaster";
-import Header from "@/components/Header";
+import Nav from "@/components/Nav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +36,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           className={`${geistSans.variable} ${geistMono.variable} min-w-[320px] bg-white antialiased duration-500 dark:bg-black`}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <Header />
+            <Nav />
             <Toaster />
             {children}
           </ThemeProvider>

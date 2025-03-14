@@ -23,7 +23,7 @@ const navItems = [
   },
 ];
 
-const TopNav = () => {
+const TopNavLinks = () => {
   const pathname = usePathname();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
   useEffect(() => {
@@ -56,4 +56,4 @@ const TopNav = () => {
   );
 };
 
-export default TopNav;
+export default TopNavLinks;
