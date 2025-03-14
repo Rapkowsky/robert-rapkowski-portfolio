@@ -28,13 +28,13 @@ export const menuSlide = {
 };
 
 export const slide = {
-  initial: { x: 135 },
+  initial: { x: 100 },
   enter: (i: number) => ({
     x: 0,
     transition: { duration: 1, ease: mainAnim, delay: i === 0 ? 0 : 0.05 * i },
   }),
   exit: (i: number) => ({
-    x: 150,
+    x: 100,
     transition: {
       duration: 0.5,
       ease: mainAnim,
