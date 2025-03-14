@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import Modal from "./Modal";
 import { ProjectMobile } from "./ProjectMobile";
 import useWindowResize from "./hooks/UseWindowResize";
 import ProjectDesktop from "./ProjectDesktop";
 import SectionWrapper from "./SectionWrapper";
 import TitleSlideLeft from "./TitleSlideLeft";
+import ProjectModal from "./ProjectModal";
+
 
 export const projects = [
   {
@@ -93,7 +94,7 @@ export default function ProjectsSection() {
                 );
               })}
             </div>
-            <Modal modal={modal} projects={projects} />
+            <ProjectModal modal={modal} projects={projects} />
           </section>
         </SectionWrapper>
       )}

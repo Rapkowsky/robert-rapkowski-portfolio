@@ -35,7 +35,7 @@ const scaleAnimation = {
   },
 };
 
-export default function Modal({ modal, projects }: ModalProps) {
+export default function ProjectModal({ modal, projects }: ModalProps) {
   const modalContainer = useRef<HTMLDivElement | null>(null);
   const cursor = useRef<HTMLDivElement | null>(null);
   const cursorLabel = useRef<HTMLDivElement | null>(null);
