@@ -1,4 +1,5 @@
-import { cn } from "@/lib/utils";
+import { AlwaysScrollToTop, cn } from "@/lib/utils";
+import { useEffect } from "react";
 
 interface SectionWrapperProps {
   children: React.ReactNode;
@@ -11,6 +12,9 @@ export default function SectionWrapper({
   className,
   bgWrapperColor,
 }: SectionWrapperProps) {
+  useEffect(() => {
+    AlwaysScrollToTop();
+  }, []);
   return (
     <section className={cn("w-full", bgWrapperColor)}>
       <div

@@ -27,11 +27,9 @@ const Home = () => {
   //     }, 2000);
   //   })();
   // }, []);
-
   useEffect(() => {
     AlwaysScrollToTop();
   }, []);
-
   return (
     <main>
       {/* <AnimatePresence mode="wait">
