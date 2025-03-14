@@ -5,6 +5,7 @@ import SlidingImages from "@/components/SlidingImages";
 import Intro from "@/components/Intro";
 import { SkillsSection } from "@/components/SkillsSection";
 import { JourneySection } from "@/components/JourneySection";
+import { useEffect } from "react";
 
 // import Preloader from "@/components/Preloader";
 // import { AnimatePresence } from "framer-motion";
@@ -12,19 +13,9 @@ import { JourneySection } from "@/components/JourneySection";
 // import { Numbers } from "@/components/Numbers";
 
 const Home = () => {
-  // const [isLoading, setIsLoading] = useState(true);
-
-  // useEffect(() => {
-  //   (async () => {
-  //     setTimeout(() => {
-  //       setIsLoading(false);
-
-  //       document.body.style.cursor = "default";
-
-  //       window.scrollTo(0, 0);
-  //     }, 2000);
-  //   })();
-  // }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <main>
