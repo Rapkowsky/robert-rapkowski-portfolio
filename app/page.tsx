@@ -5,8 +5,7 @@ import SlidingImages from "@/components/SlidingImages";
 import Intro from "@/components/Intro";
 import { SkillsSection } from "@/components/SkillsSection";
 import { JourneySection } from "@/components/JourneySection";
-import { useEffect } from "react";
-import { AlwaysScrollToTop } from "@/lib/utils";
+import { ScrollToTop, SmoothScroll } from "@/lib/utils";
 
 // import Preloader from "@/components/Preloader";
 // import { AnimatePresence } from "framer-motion";
@@ -27,9 +26,10 @@ const Home = () => {
   //     }, 2000);
   //   })();
   // }, []);
-  useEffect(() => {
-    AlwaysScrollToTop();
-  }, []);
+
+  SmoothScroll();
+
+  ScrollToTop();
   return (
     <main>
       {/* <AnimatePresence mode="wait">

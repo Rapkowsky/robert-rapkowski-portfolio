@@ -25,13 +25,11 @@ import { motion } from "framer-motion";
 import { easefadeInUp, mainAnim } from "@/lib/Animations";
 import rrImg from "@/public/images/IMG_3944retkadr.jpg";
 import ButtonWrapper from "@/components/ButtonWrapper";
-import { useEffect } from "react";
-import { AlwaysScrollToTop } from "@/lib/utils";
+import { ScrollToTop, SmoothScroll } from "@/lib/utils";
 
 export default function ContactForm() {
-  useEffect(() => {
-    AlwaysScrollToTop();
-  }, []);
+  SmoothScroll();
+  ScrollToTop();
   //  Define form
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -58,34 +56,6 @@ export default function ContactForm() {
       );
     }
   }
-
-  //   const [formData, setFormData] = useState({
-  //     firstName: "",
-  //     lastName: "",
-  //     email: "",
-  //     message: "",
-  //   });
-
-  //   const handleChange = (
-  //     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  //   ) => {
-  //     const { name, value } = e.target;
-  //     setFormData((prevData) => ({
-  //       ...prevData,
-  //       [name]: value,
-  //     }));
-  //   };
-
-  //   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-  //     e.preventDefault();
-  //     console.log("Form submitted:", formData);
-  //     setFormData({
-  //       firstName: "",
-  //       lastName: "",
-  //       email: "",
-  //       message: "",
-  //     });
-  //   };
 
   return (
     <SectionWrapper className="mt-[min(100vw,100px)] overflow-hidden">
@@ -114,7 +84,7 @@ export default function ContactForm() {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               <motion.div
                 initial={{ y: 100, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
+                animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1.5, ease: mainAnim }}
               >
                 <FormField
@@ -136,7 +106,7 @@ export default function ContactForm() {
               </motion.div>
               <motion.div
                 initial={{ y: 100, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
+                animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1.5, ease: mainAnim }}
               >
                 <FormField
@@ -159,7 +129,7 @@ export default function ContactForm() {
 
               <motion.div
                 initial={{ y: 100, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
+                animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1.5, ease: mainAnim }}
               >
                 <FormField
@@ -181,7 +151,7 @@ export default function ContactForm() {
               </motion.div>
               <motion.div
                 initial={{ y: 100, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
+                animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1.5, ease: mainAnim }}
               >
                 <FormField
@@ -208,7 +178,7 @@ export default function ContactForm() {
               </motion.div>
               <motion.div
                 initial={{ y: 100, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
+                animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1.5, ease: mainAnim }}
                 viewport={{ once: true }}
                 className="ml-auto mr-[20%] mt-10 w-fit"

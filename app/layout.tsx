@@ -2,7 +2,6 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { ReactLenis } from "@/lib/lenis";
 import Footer from "@/components/Footer";
 import FooterInfo from "@/components/FooterInfo";
 import { Toaster } from "@/components/Toaster";
@@ -26,24 +25,17 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en" suppressHydrationWarning>
-      <ReactLenis
-        root
-        options={{
-          lerp: 0.05,
-        }}
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} min-w-[320px] bg-white antialiased duration-500 dark:bg-black`}
       >
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} min-w-[320px] bg-white antialiased duration-500 dark:bg-black`}
-        >
-          <ThemeProvider attribute="class" defaultTheme="dark">
-            <Nav />
-            <Toaster />
-            {children}
-          </ThemeProvider>
-          <Footer />
-          <FooterInfo />
-        </body>
-      </ReactLenis>
+        <ThemeProvider attribute="class" defaultTheme="dark">
+          <Nav />
+          <Toaster />
+          {children}
+        </ThemeProvider>
+        <Footer />
+        <FooterInfo />
+      </body>
     </html>
   );
 };
