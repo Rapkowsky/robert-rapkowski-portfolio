@@ -8,7 +8,7 @@ import {
   MotionValue,
   useInView,
 } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaCode } from "react-icons/fa6";
 import { LuPanelsLeftBottom } from "react-icons/lu";
 import { IoPulseOutline } from "react-icons/io5";
@@ -227,9 +227,6 @@ const Copy = ({
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 2.5, ease: mainAnim }}
       style={{
         scale: copyScale,
         opacity: copyOpacity,
@@ -269,6 +266,16 @@ const Images = ({
   const imageOffsetX = useTransform(scrollYProgress, [0, 1], ["25%", "0%"]);
   const imageOffsetY = useTransform(scrollYProgress, [0, 1], ["25%", "0%"]);
 
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsScrolling(true);
+    }, 1300);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <motion.div
@@ -281,6 +288,9 @@ const Images = ({
           scale,
           x: image1Offset,
           y: image1Offset,
+          z: 0,
+          transform: "translateZ(0)",
+          willChange: isScrolling ? "transform" : undefined,
         }}
       />
       <motion.div
@@ -293,6 +303,9 @@ const Images = ({
           scale,
           x: image2OffsetX,
           y: image2OffsetY,
+          z: 0,
+          transform: "translateZ(0)",
+          willChange: isScrolling ? "transform" : undefined,
         }}
       />
 
@@ -306,6 +319,9 @@ const Images = ({
           scale,
           x: image3OffsetX,
           y: image3OffsetY,
+          z: 0,
+          transform: "translateZ(0)",
+          willChange: isScrolling ? "transform" : undefined,
         }}
       />
       <motion.div
@@ -319,6 +335,9 @@ const Images = ({
           scale,
           x: image4OffsetX,
           y: image4OffsetY,
+          z: 0,
+          transform: "translateZ(0)",
+          willChange: isScrolling ? "transform" : undefined,
         }}
       />
 
@@ -332,6 +351,9 @@ const Images = ({
           scale,
           x: image5OffsetX,
           y: image5OffsetY,
+          z: 0,
+          transform: "translateZ(0)",
+          willChange: isScrolling ? "transform" : undefined,
         }}
       />
       <motion.div
@@ -344,6 +366,9 @@ const Images = ({
           scale,
           x: imageOffsetX,
           y: imageOffsetY,
+          z: 0,
+          transform: "translateZ(0)",
+          willChange: isScrolling ? "transform" : undefined,
         }}
       />
     </>
