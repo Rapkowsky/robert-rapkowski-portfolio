@@ -44,7 +44,7 @@ export default function ContactForm() {
       await send(values);
       toast.success(
         values.firstName + " " + ", your message was sent correctly!",
-        { className: "text-2xl" }
+        { className: "text-2xl" },
       );
       form.reset();
     } catch {

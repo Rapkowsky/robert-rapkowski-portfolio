@@ -13,9 +13,11 @@ export default function MagneticWrapper({
   durationIn = 1.75,
   durationOut = 1.75,
 }: MagneticWrapperProps) {
-  const magnetic = useRef<HTMLDivElement>(null);
+  const magnetic = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    if (!magnetic.current) return;
+
     const xTo = gsap.quickTo(magnetic.current, "x", {
       duration: durationOut,
       ease: "elastic.out(1, 0.3)",
@@ -25,20 +27,31 @@ export default function MagneticWrapper({
       ease: "elastic.out(1, 0.3)",
     });
 
-    magnetic.current.addEventListener("mousemove", (e) => {
+    const node = magnetic.current;
+
+    node.addEventListener("mousemove", (e) => {
       const { clientX, clientY } = e;
-      const { height, width, left, top } =
-        magnetic.current.getBoundingClientRect();
+      const { height, width, left, top } = node.getBoundingClientRect();
       const x = clientX - (left + width / 2);
       const y = clientY - (top + height / 2);
+
       xTo(x * 0.5);
       yTo(y * 0.5);
     });
-    magnetic.current.addEventListener("mouseleave", () => {
+
+    node.addEventListener("mouseleave", () => {
       xTo(0);
       yTo(0);
     });
+
+    return () => {
+      node.removeEventListener("mousemove", () => {});
+      node.removeEventListener("mouseleave", () => {});
+    };
   }, [durationIn, durationOut]);
 
-  return React.cloneElement(children, { ref: magnetic });
+  return (
+    // @ts-expect-error – child DOM with ref
+    React.cloneElement(children, { ref: magnetic })
+  );
 }
