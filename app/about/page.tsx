@@ -1,6 +1,6 @@
 "use client";
 import SectionWrapper from "@/components/SectionWrapper";
-import { easefadeInUp, mainAnim, wordSlideUp } from "@/lib/Animations";
+
 import {
   useScroll,
   useTransform,
@@ -19,6 +19,7 @@ import { RiSpeakAiLine } from "react-icons/ri";
 import { PiHandshake } from "react-icons/pi";
 import ButtonWrapper from "@/components/ButtonWrapper";
 import Link from "next/link";
+import { easefadeInUp, mainAnim, wordSlideUp } from "@/lib/Animations";
 
 const data = [
   {
