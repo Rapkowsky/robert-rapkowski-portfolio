@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { mainAnim } from "@/lib/Animations";
 
 export default function CurveLine() {
   const initialPath = `M100 0 L200 0 L200 ${window.innerHeight} L100 ${window.innerHeight} Q-100 ${window.innerHeight / 2} 100 0`;
@@ -11,11 +12,11 @@ export default function CurveLine() {
     },
     enter: {
       d: targetPath,
-      transition: { duration: 1.2, ease: [0.7, 0, 0.2, 1] },
+      transition: { duration: 1.215, ease: mainAnim },
     },
     exit: {
       d: initialPath,
-      transition: { duration: 0.8, ease: [0.7, 0, 0.2, 1] },
+      transition: { duration: 0.6075, ease: mainAnim },
     },
   };
 

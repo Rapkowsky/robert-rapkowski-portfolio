@@ -51,7 +51,7 @@ export default function IndicatorLink({
   return (
     <MagneticWrapper>
       <motion.div
-        className="relative ml-[30px] flex w-fit items-center transition-[margin] duration-800 ease-rrEaseBtnHover xl:ml-0"
+        className={`relative ml-[30px] flex w-fit items-center transition-[margin] xl:ml-0 ${isActive ? "will-change-transform" : ""}`}
         onMouseEnter={() => setSelectedIndicator(href)}
         custom={index}
         variants={slide}

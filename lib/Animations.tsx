@@ -20,21 +20,26 @@ export const fadeInUp = {
 
 export const menuSlide = {
   initial: { x: "calc(100% + 100px)" },
-  enter: { x: "0", transition: { duration: 0.8, ease: [0.7, 0, 0.2, 1] } },
+  enter: { x: "0", transition: { duration: 0.972, ease: mainAnim } },
   exit: {
     x: "calc(100% + 100px)",
-    transition: { duration: 0.8, ease: [0.7, 0, 0.2, 1] },
+    transition: { duration: 0.7614, ease: mainAnim },
   },
 };
+
 export const slide = {
-  initial: { x: 80 },
+  initial: { x: 135 },
   enter: (i: number) => ({
     x: 0,
-    transition: { duration: 1, ease: [0.7, 0, 0.2, 1], delay: 0.05 * i },
+    transition: { duration: 1, ease: mainAnim, delay: i === 0 ? 0 : 0.05 * i },
   }),
   exit: (i: number) => ({
-    x: 80,
-    transition: { duration: 0.5, ease: [0.7, 0, 0.2, 1], delay: 0.05 * i },
+    x: 150,
+    transition: {
+      duration: 0.5,
+      ease: mainAnim,
+      delay: i === 0 ? 0 : 0.05 * i,
+    },
   }),
 };
 
@@ -86,6 +91,6 @@ export const preloaderSlideUp = {
   },
   exit: {
     top: "-100vh",
-    transition: { duration: 0.8, ease: [0.7, 0, 0.2, 1], delay: 0.2 },
+    transition: { duration: 0.8, ease: mainAnim, delay: 0.2 },
   },
 };

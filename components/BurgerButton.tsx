@@ -54,7 +54,7 @@ const BurgerButton = forwardRef<HTMLDivElement, BurgerButtonProps>(function (
         )}
       </div>
 
-      <AnimatePresence mode="wait">{isActive && <SideNav />}</AnimatePresence>
+      <AnimatePresence mode="wait">{isActive && <SideNav isActive={isActive} />}</AnimatePresence>
     </>
   );
 });

@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import TopNavLinks from "./TopNavLinks";
+import useWindowResize from "./hooks/UseWindowResize";
 
 export default function Nav() {
   const pathname = usePathname();
@@ -41,6 +42,9 @@ export default function Nav() {
       },
     });
   }, []);
+
+  const { width } = useWindowResize();
+  const isMobile = width < 1024;
 
   return (
     <>
@@ -76,13 +80,8 @@ export default function Nav() {
       <BurgerButton
         isActive={isActive}
         setIsActive={setIsActive}
-        className="scale-1 md:hidden"
-      />
-      <BurgerButton
-        className="hidden md:block"
-        ref={BurgerButtonRef}
-        isActive={isActive}
-        setIsActive={setIsActive}
+        className={`${isMobile ? "scale-1 md:hidden" : "hidden md:block"}`}
+        {...(!isMobile && { ref: BurgerButtonRef })}
       />
       <AnimatePresence mode="wait">
         {isActive && (
