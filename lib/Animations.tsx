@@ -19,18 +19,20 @@ export const fadeInUp = {
 };
 
 export const menuSlide = {
-  initial: { x: "calc(100% + 100px)" },
-  enter: { x: "0", transition: { duration: 0.972, ease: mainAnim } },
+  initial: { x: "calc(100% + 100px)", z: 0 },
+  enter: { x: "0", transition: { duration: 0.972, ease: mainAnim }, z: 0 },
   exit: {
     x: "calc(100% + 100px)",
+    z: 0,
     transition: { duration: 0.7614, ease: mainAnim },
   },
 };
 
 export const slide = {
-  initial: { x: 100 },
+  initial: { x: 100, z: 0 },
   enter: (i: number) => ({
     x: 0,
+    z: 0,
     transition: {
       duration: 0.95,
       ease: mainAnim,
@@ -39,6 +41,7 @@ export const slide = {
   }),
   exit: (i: number) => ({
     x: 100,
+    z: 0,
     transition: {
       duration: 0.45,
       ease: mainAnim,

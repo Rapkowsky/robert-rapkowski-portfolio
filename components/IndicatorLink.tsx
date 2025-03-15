@@ -58,6 +58,7 @@ export default function IndicatorLink({
         initial="initial"
         animate="enter"
         exit="exit"
+        style={{ transform: "translateZ(0)" }}
       >
         <motion.div
           variants={scale}

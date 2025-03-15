@@ -9,12 +9,15 @@ export default function CurveLine() {
   const curve = {
     initial: {
       d: initialPath,
+      z: 0,
     },
     enter: {
+      z: 0,
       d: targetPath,
       transition: { duration: 1.15, ease: mainAnim },
     },
     exit: {
+      z: 0,
       d: initialPath,
       transition: { duration: 0.8, ease: mainAnim },
     },
@@ -27,6 +30,7 @@ export default function CurveLine() {
         initial="initial"
         animate="enter"
         exit="exit"
+        style={{ transform: "translateZ(0)" }}
       ></motion.path>
     </svg>
   );
