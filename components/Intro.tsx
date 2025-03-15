@@ -20,7 +20,7 @@ export default function Intro() {
     target: aboutMeBtnRef,
     offset: ["start end", "start start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], [100, -150]);
+  const y = useTransform(scrollYProgress, [0, 1], [100, -50]);
   return (
     <SectionWrapper className="pb-0">
       <div className="relative z-10 flex items-center justify-center">
