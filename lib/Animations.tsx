@@ -1,5 +1,5 @@
 export const rrEaseBtnHover = [0.5, 1, 0.89, 1];
-export const mainAnim = [0.7, 0, 0.2, 1];
+export const mainAnim = [0.5, 0, 0.1, 1];
 export const easefadeInUp = [0, 0, 0.5, 1];
 
 export const fadeInUp = {
