@@ -9,11 +9,8 @@ import { Numbers } from "./Numbers";
 export default function Intro() {
   const phrase =
     "Crafting modern and interactive websites and apps that help brands shine. Specializing in Next.js and React, I deliver refined, responsive digital experiences alongside cutting edge solutions.";
-  const description1Ref = useRef(null);
-  const isInView1 = useInView(description1Ref, { amount: 1 });
-
-  const description2Ref = useRef(null);
-  const isInView2 = useInView(description2Ref, { amount: 1 });
+  const descriptionRef = useRef(null);
+  const isInView = useInView(descriptionRef, { amount: 0.5, once: true });
 
   const aboutMeBtnRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -23,12 +20,12 @@ export default function Intro() {
   const y = useTransform(scrollYProgress, [0, 1], [100, -150]);
   return (
     <SectionWrapper className="pb-0">
-      <div className="relative z-10 flex items-center justify-center">
+      <div
+        ref={descriptionRef}
+        className="relative z-10 flex items-center justify-center"
+      >
         <div className="relative flex w-full max-w-[700px] flex-col gap-16 text-rrDark dark:text-white lg:max-w-full lg:flex-row lg:gap-32">
-          <motion.p
-            className="flex max-w-[560px] flex-wrap gap-x-2 text-2xl !leading-[1.2] lg:max-w-full xl:text-5xl"
-            ref={description1Ref}
-          >
+          <motion.p className="flex max-w-[560px] flex-wrap gap-x-2 text-2xl !leading-[1.2] lg:max-w-full xl:text-5xl">
             {phrase.split(" ").map((word, index) => {
               return (
                 <span
@@ -40,7 +37,7 @@ export default function Intro() {
                     variants={wordSlideUp}
                     custom={index}
                     initial="closed"
-                    animate={isInView1 ? "open" : "closed"}
+                    animate={isInView ? "open" : "closed"}
                   >
                     {word}
                   </motion.span>
@@ -50,11 +47,10 @@ export default function Intro() {
           </motion.p>
           <div className="relative w-full">
             <motion.p
-              ref={description2Ref}
               className="max-w-[260px] font-[300] text-rrDark opacity-0 dark:text-grayLight lg:max-w-full lg:pr-0 xl:text-xl"
               variants={opacitySlideUp}
               initial="exit"
-              animate={isInView2 ? "enter" : "exit"}
+              animate={isInView ? "enter" : "exit"}
             >
               Years of working with UX designers on diverse projects have
               sharpened my technical skills to implement these solutions and
