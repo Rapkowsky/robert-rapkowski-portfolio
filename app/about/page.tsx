@@ -293,7 +293,6 @@ const Images = ({
           scale,
           x: image1Offset,
           y: image1Offset,
-          z: 0,
           transform: "translateZ(0)",
           willChange: isScrolling ? "transform" : undefined,
         }}
@@ -308,7 +307,6 @@ const Images = ({
           scale,
           x: image2OffsetX,
           y: image2OffsetY,
-          z: 0,
           transform: "translateZ(0)",
           willChange: isScrolling ? "transform" : undefined,
         }}
@@ -324,7 +322,6 @@ const Images = ({
           scale,
           x: image3OffsetX,
           y: image3OffsetY,
-          z: 0,
           transform: "translateZ(0)",
           willChange: isScrolling ? "transform" : undefined,
         }}
@@ -340,7 +337,6 @@ const Images = ({
           scale,
           x: image4OffsetX,
           y: image4OffsetY,
-          z: 0,
           transform: "translateZ(0)",
           willChange: isScrolling ? "transform" : undefined,
         }}
@@ -356,7 +352,6 @@ const Images = ({
           scale,
           x: image5OffsetX,
           y: image5OffsetY,
-          z: 0,
           transform: "translateZ(0)",
           willChange: isScrolling ? "transform" : undefined,
         }}
@@ -371,7 +366,6 @@ const Images = ({
           scale,
           x: imageOffsetX,
           y: imageOffsetY,
-          z: 0,
           transform: "translateZ(0)",
           willChange: isScrolling ? "transform" : undefined,
         }}
