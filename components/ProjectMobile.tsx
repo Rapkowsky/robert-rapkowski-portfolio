@@ -73,6 +73,7 @@ export const ProjectMobile = ({
           variants={imageVariants}
           initial="hidden"
           whileInView="visible"
+          viewport={{ once: true }}
         >
           <div
             className={`mb-8 px-7 py-20 duration-500 ease-rrSmooth dark:px-0 dark:py-0 md:mb-12 ${color} ${colorDark}`}
@@ -93,6 +94,7 @@ export const ProjectMobile = ({
           variants={titleVariants}
           initial="hidden"
           whileInView="visible"
+          viewport={{ once: true }}
           className="text-3xl uppercase text-rrDark dark:text-white md:text-4xl"
         >
           {title}
@@ -102,6 +104,7 @@ export const ProjectMobile = ({
           variants={dividerVariants}
           initial="hidden"
           whileInView="visible"
+          viewport={{ once: true }}
           className="my-5 h-[1px] bg-grayLight dark:bg-rrGrayBorder"
         />
 
@@ -110,6 +113,7 @@ export const ProjectMobile = ({
             variants={scopeVariants}
             initial="hidden"
             whileInView="visible"
+            viewport={{ once: true }}
             className="text-sm"
           >
             {scope}
@@ -118,6 +122,7 @@ export const ProjectMobile = ({
             variants={yearVariants}
             initial="hidden"
             whileInView="visible"
+            viewport={{ once: true }}
           >
             {year}
           </motion.p>
