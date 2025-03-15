@@ -175,10 +175,10 @@ const Card = ({ position, card, scrollYProgress }: CardProps) => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{
-          duration: 1.5,
+          duration: 1,
           ease: easefadeInUp,
         }}
-        viewport={{ amount: 1, margin: "0px 0px -100px" }}
+        viewport={{ once: true }}
       >
         {card.id === 1 &&
           skillIcons.development.map((skill) => (
