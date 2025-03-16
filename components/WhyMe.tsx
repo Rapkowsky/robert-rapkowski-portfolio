@@ -46,7 +46,7 @@ const WhyMe = () => {
             />
           </motion.div>
         </motion.div>
-        <div className="absolute bottom-[100px] flex h-[100svh] max-w-[1200px] flex-col justify-end gap-10 px-xMobile text-[min(10vw,40px)] font-bold text-white min-[500px]:px-xTablet lg:gap-20 lg:text-6xl xl:text-7xl">
+        <div className="absolute bottom-[100px] flex h-[100svh] max-w-[1200px] flex-col justify-end gap-10 px-xMobile text-[min(7.9vw,40px)] font-bold text-white min-[500px]:px-xTablet lg:gap-20 lg:text-6xl xl:text-7xl">
           <FadeIn>
             <p>Over 10 years of experience in the IT industry.</p>
           </FadeIn>
