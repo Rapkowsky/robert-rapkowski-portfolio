@@ -46,7 +46,7 @@ export default function HeroSection() {
         <motion.div
           initial={{ scale: 1.25 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 50, ease: fadeIn }}
+          transition={{ duration: 10, ease: fadeIn }}
         >
           <Image
             src={bgImage}
