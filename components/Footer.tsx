@@ -32,7 +32,7 @@ export default function Footer() {
                   <Image
                     fill={true}
                     alt={"image"}
-                    src={`/images/IMG_3944retkadr.jpg`}
+                    src={`/IMG_3944retkadr.jpg`}
                     className="object-cover object-top"
                   />
                 </motion.div>

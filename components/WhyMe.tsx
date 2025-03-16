@@ -26,7 +26,7 @@ const WhyMe = () => {
           className={`flex h-[180vh] min-h-[1530px] flex-col bg-black md:min-h-[1000px] lg:h-[150vh] xl:h-[145vh] ${isImgInView ? "will-change-[opacity]" : ""}`}
         >
           <video
-            src="/images/appleMov2.mp4"
+            src="/keyboard.webm"
             muted
             loop
             playsInline
@@ -42,7 +42,7 @@ const WhyMe = () => {
           >
             <Title
               text="Where Creativity Meets Code"
-              className="!mb-0 px-xMobile text-[min(8.8vw,40px)] font-bold md:text-[min(6.6vw,55px)] xl:text-[90px]"
+              className="!mb-0 px-xMobile text-[min(8.8vw,40px)] font-bold text-white md:text-[min(6.6vw,55px)] xl:text-[90px]"
             />
           </motion.div>
         </motion.div>

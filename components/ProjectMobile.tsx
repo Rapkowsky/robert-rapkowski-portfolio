@@ -79,7 +79,7 @@ export const ProjectMobile = ({
             className={`mb-8 px-7 py-20 duration-500 ease-rrSmooth dark:px-0 dark:py-0 md:mb-12 ${color} ${colorDark}`}
           >
             <Image
-              src={`/images/${src}`}
+              src={`/${src}`}
               width={0}
               height={0}
               sizes="(max-width: 500px) 100vw, 500px"

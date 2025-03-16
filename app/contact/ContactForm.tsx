@@ -23,7 +23,7 @@ import TitleSlideLeft from "@/components/TitleSlideLeft";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { easefadeInUp, mainAnim } from "@/lib/Animations";
-import rrImg from "@/public/images/IMG_3944retkadr.jpg";
+import rrImg from "@/public/IMG_3944retkadr.jpg";
 import ButtonWrapper from "@/components/ButtonWrapper";
 import { ScrollToTop, SmoothScroll } from "@/lib/utils";
 

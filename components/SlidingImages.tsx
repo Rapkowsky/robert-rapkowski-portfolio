@@ -76,7 +76,7 @@ export default function SlidingImages() {
                 <Image
                   fill={true}
                   alt={"image"}
-                  src={`/images/${project.src}`}
+                  src={`/${project.src}`}
                   className="object-cover object-top"
                 />
               </div>
@@ -101,7 +101,7 @@ export default function SlidingImages() {
                 <Image
                   fill={true}
                   alt={"image"}
-                  src={`/images/${project.src}`}
+                  src={`/${project.src}`}
                   className="object-cover object-top"
                 />
               </div>

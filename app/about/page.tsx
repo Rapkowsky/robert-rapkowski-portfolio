@@ -14,7 +14,7 @@ import { LuPanelsLeftBottom } from "react-icons/lu";
 import { IoPulseOutline } from "react-icons/io5";
 import { RiRobot2Fill } from "react-icons/ri";
 import Image from "next/image";
-import rrImg from "@/public/images/IMG_3944retkadr.jpg";
+import rrImg from "@/public/IMG_3944retkadr.jpg";
 import { RiSpeakAiLine } from "react-icons/ri";
 import { PiHandshake } from "react-icons/pi";
 import ButtonWrapper from "@/components/ButtonWrapper";
@@ -287,7 +287,7 @@ const Images = ({
         className="relative z-10 col-span-2"
         style={{
           borderRadius: "10px",
-          backgroundImage: "url(/images/rr1.jpeg)",
+          backgroundImage: "url(/rr1.jpeg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           scale,
@@ -301,7 +301,7 @@ const Images = ({
         className="relative z-10 row-span-2"
         style={{
           borderRadius: "10px",
-          backgroundImage: "url(/images/rr2.jpeg)",
+          backgroundImage: "url(/rr2.jpeg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           scale,
@@ -316,7 +316,7 @@ const Images = ({
         className="relative z-10 row-span-2"
         style={{
           borderRadius: "10px",
-          backgroundImage: "url(/images/rr8.jpeg)",
+          backgroundImage: "url(/rr8.jpeg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           scale,
@@ -330,7 +330,7 @@ const Images = ({
         className="relative z-10"
         style={{
           borderRadius: "10px",
-          backgroundImage: "url(/images/rr4.jpeg)",
+          backgroundImage: "url(/rr4.jpeg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundPositionY: "32%",
@@ -346,7 +346,7 @@ const Images = ({
         className="relative z-10"
         style={{
           borderRadius: "10px",
-          backgroundImage: "url(/images/rr5.jpeg)",
+          backgroundImage: "url(/rr5.jpeg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           scale,
@@ -360,7 +360,7 @@ const Images = ({
         className="relative z-10"
         style={{
           borderRadius: "10px",
-          backgroundImage: "url(/images/rr6.jpeg)",
+          backgroundImage: "url(/rr6.jpeg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           scale,

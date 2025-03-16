@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import bgImage from "@/public/images/apple2.jpg";
+import bgImage from "@/public/apple3.jpg";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef } from "react";
@@ -30,6 +30,7 @@ export default function HeroSection() {
   }, []);
 
   const animate = () => {
+    if (!slider.current || !firstText.current || !secondText.current) return;
     if (xPercent < -100) {
       xPercent = 0;
     } else if (xPercent > 0) {

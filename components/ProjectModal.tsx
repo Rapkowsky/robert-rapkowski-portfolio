@@ -116,7 +116,7 @@ export default function ProjectModal({ modal, projects }: ModalProps) {
                 key={`modal_${idx}`}
               >
                 <Image
-                  src={`/images/${src}`}
+                  src={`/${src}`}
                   width={400}
                   height={0}
                   alt="image"
