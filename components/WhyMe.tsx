@@ -18,14 +18,14 @@ const WhyMe = () => {
   });
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
-  const ySpacing = "py-yMobile md:py-yTablet p xl:py-yDesktop";
+  const ySpacing = "dark:py-yMobile dark:md:py-yTablet dark:xl:py-yDesktop";
   return (
     <>
-      <div className={`relative justify-center ${ySpacing} flex`}>
+      <div className={`relative justify-center ${ySpacing} flex bg-black`}>
         <motion.div
           style={{ opacity }}
           ref={videoContainerRef}
-          className={`flex h-[180vh] min-h-[1530px] flex-col md:min-h-[1000px] lg:h-[150vh] xl:h-[145vh] ${isImgInView ? "will-change-[opacity]" : ""}`}
+          className={`flex h-[180vh] min-h-[1530px] flex-col bg-black md:min-h-[1000px] lg:h-[150vh] xl:h-[145vh] ${isImgInView ? "will-change-[opacity]" : ""}`}
         >
           <Image
             src={appleIMg}

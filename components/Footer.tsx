@@ -15,7 +15,6 @@ export default function Footer() {
     target: container,
     offset: ["start end", "end end"],
   });
-  const x = useTransform(scrollYProgress, [0, 1], [-200, 0]);
   const y = useTransform(scrollYProgress, [0, 1], [-300, 0]);
   const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [162, 90]);
@@ -23,16 +22,10 @@ export default function Footer() {
     !isContactPage && (
       <motion.div
         ref={container}
-        className="bg-bgGray relative flex h-[calc(100vh-130px)] max-h-[1400px] min-h-[750px] flex-col items-center justify-center px-xMobile text-white min-[500px]:px-xTablet"
+        className="relative flex h-[calc(100vh-130px)] max-h-[1400px] min-h-[750px] flex-col items-center justify-center bg-bgGray px-xMobile text-white min-[500px]:px-xTablet"
       >
-        <div className="bg-bgGray w-full max-w-[1300px]">
+        <div className="relative w-full max-w-[1300px] bg-bgGray">
           <div className="relative pb-[100px]">
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: "100%" }}
-              transition={{ duration: 1.6, ease: mainAnim }}
-              className="bg-borderGray absolute bottom-0 h-[1px]"
-            />
             <motion.div style={{ y, opacity }}>
               <div className="flex items-center">
                 <motion.div className="relative h-[60px] w-[60px] overflow-hidden rounded-full md:h-[90px] md:w-[90px] lg:h-[100px] lg:w-[100px]">
@@ -52,9 +45,11 @@ export default function Footer() {
               </h2>
             </motion.div>
             <motion.div
-              style={{ x }}
-              transition={{ ease: [0.7, 0, 0.2, 1] }}
-              className="absolute bottom-[-70px] left-[unset] right-[10%] max-[374px]:left-[40%] md:bottom-[-85px] lg:bottom-[-98px]"
+              initial={{ x: "-100%" }}
+              whileInView={{ x: 0 }}
+              transition={{ duration: 1.6, ease: mainAnim }}
+              viewport={{ once: true }}
+              className="absolute bottom-[-70px] left-[unset] right-[10%] z-[1] max-[374px]:left-[40%] md:bottom-[-85px] lg:bottom-[-98px]"
             >
               <div className="relative duration-3000 ease-rrEaseBtnHover active:scale-[0.75]">
                 <ButtonWrapper className="relative flex h-[145px] w-[145px] cursor-pointer items-center justify-center rounded-full bg-primary text-xs font-bold md:h-[175px] md:w-[175px] md:text-base lg:h-[200px] lg:w-[200px]">
@@ -82,16 +77,25 @@ export default function Footer() {
               />
             </motion.svg>
           </div>
+          <div className="relative z-0 h-[1px] w-full overflow-hidden">
+            <motion.div
+              initial={{ x: "-100%" }}
+              whileInView={{ x: 0 }}
+              transition={{ duration: 1.6, ease: mainAnim }}
+              viewport={{ once: true }}
+              className="absolute bottom-0 h-[1px] w-full bg-borderGray"
+            />
+          </div>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 1.5, ease: [0.45, 0, 0.55, 1] }}
-            viewport={{ amount: 1, margin: "0px 0px -200px 0px" }}
+            transition={{ duration: 2.5, ease: mainAnim }}
+            viewport={{ amount: 1, once: true }}
             className="mt-[120px] flex flex-col gap-3 md:flex-row"
           >
             <div className="duration-3000 ease-rrEaseBtnHover active:scale-[0.75]">
               <a href="mailto:robertrapkowski19@gmail.com">
-                <ButtonWrapper className="border-borderGray border px-14 py-6 xl:py-7">
+                <ButtonWrapper className="border border-borderGray px-14 py-6 xl:py-7">
                   <p className="z-20">robertrapkowski19@gmail.com</p>
                 </ButtonWrapper>
               </a>
@@ -99,7 +103,7 @@ export default function Footer() {
 
             <div className="duration-3000 ease-rrEaseBtnHover active:scale-[0.75]">
               <a href="tel:+48698868730">
-                <ButtonWrapper className="border-borderGray border px-14 py-6 xl:py-7">
+                <ButtonWrapper className="border border-borderGray px-14 py-6 xl:py-7">
                   <p className="z-20"> +48 698868730</p>
                 </ButtonWrapper>
               </a>

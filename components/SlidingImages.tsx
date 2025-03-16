@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useScroll, useTransform, motion } from "framer-motion";
+import { useScroll, useTransform, motion, useInView } from "framer-motion";
 import Image from "next/image";
 
 const slider1 = [
@@ -51,6 +51,9 @@ export default function SlidingImages() {
   const x2 = useTransform(scrollYProgress, [0, 1], [0, -700]);
   const height = useTransform(scrollYProgress, [0, 1], [100, 0]);
 
+  const isSlidingContainerInView = useInView(container, {
+    margin: "200px 0px",
+  });
   return (
     <div
       ref={container}
@@ -58,7 +61,7 @@ export default function SlidingImages() {
     >
       <motion.div
         style={{ x: x1 }}
-        className="relative left-[-50vw] mb-[5vw] flex w-[200vw] gap-[5vw]"
+        className={`relative left-[-50vw] mb-[5vw] flex w-[200vw] gap-[5vw] ${isSlidingContainerInView ? "will-change-transform" : ""}`}
       >
         {slider1.map((project, i) => {
           return (
@@ -83,7 +86,7 @@ export default function SlidingImages() {
       </motion.div>
       <motion.div
         style={{ x: x2 }}
-        className="relative right-[-50vw] flex w-[200vw] gap-[5vw] pb-yMobile md:pb-yTablet lg:pb-yDesktop"
+        className={`relative right-[-50vw] flex w-[200vw] gap-[5vw] pb-yMobile md:pb-yTablet lg:pb-yDesktop ${isSlidingContainerInView ? "will-change-transform" : ""}`}
       >
         {slider2.map((project, i) => {
           return (
