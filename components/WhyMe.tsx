@@ -1,6 +1,4 @@
-import Image from "next/image";
 import React, { useRef } from "react";
-import appleIMg from "@/public/images/appleImg.jpg";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import Title from "./Title";
 import { fadeIn } from "@/lib/Animations";
