@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CiClock1 } from "react-icons/ci";
+import { fadeIn } from "@/lib/Animations";
 
 const Clock = () => {
   const [time, setTime] = useState({
@@ -36,57 +36,23 @@ const Clock = () => {
     };
   }, []);
 
-  const rrClockIconIn = [0.45, 0, 0.55, 1];
-  const rrClockIconOut = [0.33, 1, 0.68, 1];
-  const rrTime = [0.76, 0, 0.24, 1];
-
-  const iconVariants = {
-    initial: { opacity: 0 },
-    animate: {
-      opacity: 1,
-      transition: { duration: 0.7, ease: rrClockIconIn },
-    },
-    exit: { opacity: 0, transition: { duration: 1, ease: rrClockIconOut } },
-  };
-
-  const clockVariants = {
-    initial: { opacity: 0, y: 70 },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 1.3, delay: 0.2, ease: rrTime },
-    },
-  };
-
   return (
     <>
       <AnimatePresence>
-        {!loaded && (
-          <motion.div
-            className="absolute top-1/4 z-10 flex h-12 w-full items-center justify-center text-white"
-            variants={iconVariants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-          >
-            <CiClock1 className="h-full w-full" />
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <AnimatePresence>
         {loaded && (
           <motion.div
-            className="absolute top-1/4 z-10 flex h-12 w-full justify-center text-4xl font-bold text-white"
-            variants={clockVariants}
-            initial="initial"
-            animate="animate"
-            exit="initial"
+            className="absolute right-[35px] top-[48px] z-10 hidden w-fit justify-center text-white lg:flex xl:top-[43px]"
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.5,
+              ease: fadeIn,
+            }}
           >
             <div className="flex gap-2">
               <h5>{time.hours} :</h5>
               <h5>{time.minutes} :</h5>
-              <h5 className="min-w-[65px]">{time.seconds}</h5>
+              <h5 className="min-w-[25px]">{time.seconds}</h5>
             </div>
           </motion.div>
         )}

@@ -30,9 +30,8 @@ const TopNavLinks = () => {
     setSelectedIndicator(pathname);
   }, [pathname]);
   return (
-    <div className="hidden items-center md:flex">
+    <div className="hidden items-center pr-[115px] lg:flex">
       <div className="mr-5">
-        {" "}
         <ThemeToggle />
       </div>
       {navItems.map((data, index) => {

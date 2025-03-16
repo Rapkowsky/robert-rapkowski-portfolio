@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
-import bgImage from "@/public/images/canyon-1740973.jpg";
+import bgImage from "@/public/images/apple2.jpg";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef } from "react";
-import Clock from "./Clock";
+import { motion } from "framer-motion";
+import { fadeIn } from "@/lib/Animations";
 
 export default function HeroSection() {
   const firstText = useRef(null);
@@ -41,22 +42,28 @@ export default function HeroSection() {
   };
   return (
     <section className="relative flex h-screen overflow-hidden">
-      <Clock />
       <div>
-        <Image
-          src={bgImage}
-          alt="Background image"
-          fill
-          quality={100}
-          className="object-cover"
-          priority
-        />
+        <motion.div
+          initial={{ scale: 0.55 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 50, ease: fadeIn }}
+        >
+          <Image
+            src={bgImage}
+            alt="Background image"
+            quality={100}
+            className="h-screen w-screen object-cover"
+          />
+        </motion.div>
         <div className="absolute bottom-10">
           <div
             ref={slider}
             className="relative z-10 whitespace-nowrap text-[clamp(180px,36vw,310px)] font-medium text-white"
           >
-            <p ref={firstText} className="relative m-0 pr-[50px] will-change-transform">
+            <p
+              ref={firstText}
+              className="relative m-0 pr-[50px] will-change-transform"
+            >
               Freelance Developer -
             </p>
 
