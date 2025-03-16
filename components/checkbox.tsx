@@ -22,26 +22,6 @@ const Checkbox = (props: SVGProps<SVGSVGElement>) => {
           d="M5 13l4 4L19 7"
         />
       </svg>
-      {/* Animated circle  */}
-      {/* <svg
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        className="absolute inset-0"
-      >
-        <motion.circle
-          cx="12"
-          cy="12"
-          r="10"
-          width={0}
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 1, ease: mainAnim }}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg> */}
     </div>
   );
 };

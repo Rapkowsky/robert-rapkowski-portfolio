@@ -40,7 +40,7 @@ export default function IndicatorLink({
             animate={isActive ? "open" : "closed"}
             className="pointer-events-none absolute bottom-[-20px] left-1/2 h-1.5 w-1.5 rounded-full bg-white"
           />
-          <div className="duration-500 ease-rrEaseButter active:scale-75">
+          <div className="ease-fadeIn duration-500 active:scale-75">
             <Link href={href}>{title}</Link>
           </div>
         </motion.div>
@@ -67,7 +67,7 @@ export default function IndicatorLink({
 
         <Link
           href={href}
-          className="font-normal text-white no-underline duration-500 ease-rrEaseButter active:scale-75"
+          className="ease-fadeIn font-normal text-white no-underline duration-500 active:scale-75"
         >
           {title}
         </Link>

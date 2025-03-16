@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import TopNavLinks from "./TopNavLinks";
 import useWindowResize from "./hooks/UseWindowResize";
+import Clock from "./Clock";
 
 export default function Nav() {
   const pathname = usePathname();
@@ -51,7 +52,7 @@ export default function Nav() {
       <div
         ref={headerRef}
         className={cn(
-          "absolute z-[3] flex w-fit flex-col gap-5 px-5 py-10 font-light text-rrDark dark:text-white md:w-full md:flex-row md:justify-between xl:p-[35px]",
+          "text-rrDark absolute z-[3] flex w-fit flex-col gap-5 px-5 py-10 font-light dark:text-white md:w-full md:flex-row md:justify-between xl:p-[35px]",
           { "text-white": pathname === "/" },
         )}
       >
@@ -75,12 +76,15 @@ export default function Nav() {
             </div>
           </Link>
         </MagneticWrapper>
-        <TopNavLinks />
+        <div className="flex items-center">
+          <TopNavLinks />
+          <Clock />
+        </div>
       </div>
       <BurgerButton
         isActive={isActive}
         setIsActive={setIsActive}
-        className={`${isMobile ? "scale-1 md:hidden" : "hidden md:block"}`}
+        className={`${isMobile ? "scale-1 lg:hidden" : "hidden lg:block"}`}
         {...(!isMobile && { ref: BurgerButtonRef })}
       />
       <AnimatePresence mode="wait">

@@ -35,7 +35,7 @@ export default {
         rrEaseBurgerLines: "cubic-bezier(0.25,1,0.5,1)",
         rrEaseBtnHover: "cubic-bezier(0.5,1,0.89,1)",
         rrEaseMain: "cubic-bezier(.7,0,.2,1)",
-        rrEaseButter: "cubic-bezier(0,0,0.5,1)",
+        fadeIn: "cubic-bezier(0,0,0.5,1)",
       },
       colors: {
         background: "hsl(var(--background))",
@@ -93,6 +93,9 @@ export default {
         80: "80",
         90: "90",
         100: "100",
+      },
+      backgroundImage: {
+        textGradient: "linear-gradient(90deg,#146ef5,#6e30f8,#c1498b,#fe5766)",
       },
     },
   },
