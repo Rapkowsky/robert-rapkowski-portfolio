@@ -57,7 +57,7 @@ export default function HeroSection() {
             className="h-[100svh] w-screen object-cover"
           />
         </motion.div>
-        <div className="absolute bottom-10">
+        <div className="absolute bottom-0">
           <div
             ref={slider}
             className="relative z-10 whitespace-nowrap text-[clamp(180px,36vw,310px)] font-medium text-white"
