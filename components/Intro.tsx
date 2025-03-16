@@ -51,7 +51,7 @@ export default function Intro() {
           <div className="relative w-full">
             <motion.p
               ref={description2Ref}
-              className="max-w-[260px] font-[300] text-rrDark opacity-0 dark:text-grayLight lg:max-w-full lg:pr-0 xl:text-xl"
+              className="max-w-[260px] font-[300] text-rrDark opacity-0 dark:text-textGray lg:max-w-full lg:pr-0 xl:text-xl"
               variants={opacitySlideUp}
               initial="exit"
               animate={isInView2 ? "enter" : "exit"}

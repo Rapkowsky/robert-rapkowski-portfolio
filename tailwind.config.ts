@@ -46,7 +46,7 @@ export default {
         borderGray: "#494a4d",
         textGray: "#86868b",
         bgDark: "#080808",
-        grayLight: "#d7d7d8",
+        borderGrayLight: "#d7d7d8",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
