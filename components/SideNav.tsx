@@ -37,7 +37,7 @@ export default function SideNav(isActive: { isActive: boolean }) {
       initial="initial"
       animate="enter"
       exit="exit"
-      className={`bg-bgGray fixed right-0 top-0 z-30 h-screen w-screen text-white ${isActive && "will-change-transform"} min-[500px]:w-[initial]`}
+      className={`fixed right-0 top-0 z-50 h-[100svh] w-screen bg-bgGray text-white ${isActive && "will-change-transform"} min-[500px]:w-[initial]`}
     >
       <div className="box-border flex h-full flex-col justify-between px-5 pb-12 pt-8 transition-[padding] duration-800 ease-rrEaseBtnHover min-[500px]:p-[clamp(50px,10vh,140px)_70px] md:px-[clamp(70px,9vw,140px)]">
         <div
@@ -46,7 +46,7 @@ export default function SideNav(isActive: { isActive: boolean }) {
           }}
           className="flex flex-col text-[40px] leading-[1.1] md:text-[56px]"
         >
-          <div className="text-textGray border-borderGray mb-10 mt-20 border-b pb-8 text-xs uppercase">
+          <div className="mb-10 mt-20 border-b border-borderGray pb-8 text-xs uppercase text-textGray">
             <p>Navigation</p>
           </div>
           <div className="flex flex-col gap-5 md:gap-9">
@@ -62,9 +62,9 @@ export default function SideNav(isActive: { isActive: boolean }) {
             })}
           </div>
         </div>
-        <div className="border-borderGray flex items-center justify-between border-t pt-8 transition-[width] duration-800 ease-rrEaseBtnHover min-[500px]:w-[300px] md:w-[350px]">
+        <div className="flex items-center justify-between border-t border-borderGray pt-8 transition-[width] duration-800 ease-rrEaseBtnHover min-[500px]:w-[300px] md:w-[350px]">
           <div className="flex flex-col gap-[10px]">
-            <p className="text-textGray m-0 text-xs font-light hover:after:w-full">
+            <p className="m-0 text-xs font-light text-textGray hover:after:w-full">
               Socials
             </p>
             <div className="flex space-x-5">

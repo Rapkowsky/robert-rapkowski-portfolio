@@ -41,18 +41,19 @@ export default function HeroSection() {
     xPercent += 0.05 * direction;
   };
   return (
-    <section className="relative flex h-screen overflow-hidden">
+    <section className="relative flex h-[100svh] overflow-hidden">
       <div>
         <motion.div
           initial={{ scale: 1.25 }}
           animate={{ scale: 1 }}
           transition={{ duration: 10, ease: fadeIn }}
+          viewport={{ once: true }}
         >
           <Image
             src={bgImage}
             alt="Background image"
             quality={100}
-            className="h-screen w-screen object-cover"
+            className="h-[100svh] w-screen object-cover"
           />
         </motion.div>
         <div className="absolute bottom-10">

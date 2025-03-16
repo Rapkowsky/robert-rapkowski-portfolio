@@ -35,7 +35,9 @@ const data: JourneySectionEntry[] = [
         <p className="mb-8 text-lg font-normal dark:text-textGray">
           I began my career as a tester, and during those early years in IT, I
           built a solid foundation{" "}
-          <span className="text-white">with a strong focus on quality.</span>
+          <span className="font-semibold dark:text-white">
+            with a strong focus on quality.
+          </span>
         </p>
         {/* <div className="grid grid-cols-2 gap-4">
           <Image
@@ -58,9 +60,11 @@ const data: JourneySectionEntry[] = [
       <motion.div {...defaultMotionProps}>
         <p className="mb-8 text-lg font-normal dark:text-textGray">
           At wowSchool,{" "}
-          <span className="text-white">I taught programming basics</span> to
-          children aged 7-14. It was a fantastic journey that{" "}
-          <span className="text-white">
+          <span className="font-semibold dark:text-white">
+            I taught programming basics
+          </span>{" "}
+          to children aged 7-14. It was a fantastic journey that{" "}
+          <span className="font-semibold dark:text-white">
             nurtured both technical and soft skills.
           </span>
         </p>
@@ -85,14 +89,14 @@ const data: JourneySectionEntry[] = [
       <motion.div {...defaultMotionProps}>
         <p className="mb-8 text-lg font-normal dark:text-textGray">
           Working as a{" "}
-          <span className="text-white">
+          <span className="font-semibold dark:text-white">
             Senior QA Specialist immersed me in the intricacies of IT,
             collaborating with developers, graphic designers, and project
             managers within an international team.
           </span>{" "}
           This role enabled me to develop both soft and hard skills, acquiring a
           range of technical expertise that{" "}
-          <span className="text-white">
+          <span className="font-semibold dark:text-white">
             gradually evolved into the competencies needed to transition into
             Frontend Development.
           </span>
@@ -118,18 +122,23 @@ const data: JourneySectionEntry[] = [
       <motion.div {...defaultMotionProps}>
         <p className="mb-8 text-lg font-normal dark:text-textGray">
           Working as a Frontend Developer is a role in which I{" "}
-          <span className="text-white">
+          <span className="font-semibold dark:text-white">
             truly thrive and passionately evolve with emerging technologies.
           </span>{" "}
           I aim to deliver{" "}
-          <span className="text-white">
+          <span className="font-semibold dark:text-white">
             modern, responsive, and high-quality
           </span>{" "}
           websites and applications by utilizing the latest
-          technologies—currently <span className="text-white">Next.js</span> and{" "}
-          <span className="text-white">React</span> —to provide efficient and
-          scalable solutions to clients. My near-future goal is to become a{" "}
-          <span className="text-white">Full Stack Developer</span>.
+          technologies—currently{" "}
+          <span className="font-semibold dark:text-white">Next.js</span> and{" "}
+          <span className="font-semibold dark:text-white">React</span> —to
+          provide efficient and scalable solutions to clients. My near-future
+          goal is to become a{" "}
+          <span className="font-semibold dark:text-white">
+            Full Stack Developer
+          </span>
+          .
         </p>
         {/* <div className="grid grid-cols-2 gap-4">
           <Image
@@ -201,7 +210,7 @@ export const JourneySection = () => {
             >
               <div className="sticky top-40 z-40 flex max-w-xs flex-col items-center self-start md:w-full md:flex-row lg:max-w-sm">
                 <div className="absolute left-3 flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-black md:left-3">
-                  <div className="h-4 w-4 rounded-full border border-neutral-300 bg-neutral-200 p-2 dark:border-neutral-700 dark:bg-neutral-800" />
+                  <div className="h-4 w-4 rounded-full border border-neutral-300 bg-textGray p-2 dark:border-neutral-700 dark:bg-neutral-800" />
                 </div>
                 <h3 className="hidden text-xl font-bold text-neutral-500 dark:text-textGray md:block md:pl-20 md:text-5xl">
                   {item.title}

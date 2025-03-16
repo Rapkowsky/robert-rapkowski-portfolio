@@ -38,40 +38,40 @@ export default function IndicatorLink({
           <motion.div
             variants={scale}
             animate={isActive ? "open" : "closed"}
-            className="pointer-events-none absolute bottom-[-20px] left-1/2 h-1.5 w-1.5 rounded-full bg-white"
+            className="pointer-events-none absolute bottom-[-20px] left-1/2 h-1.5 w-1.5 rounded-full bg-bgDark dark:bg-white"
           />
-          <div className="ease-fadeIn duration-500 active:scale-75">
+          <div className="duration-500 ease-fadeIn active:scale-75">
             <Link href={href}>{title}</Link>
           </div>
         </motion.div>
       </MagneticWrapper>
     );
-  }
-
-  return (
-    <MagneticWrapper>
-      <motion.div
-        className={`relative ml-[30px] flex w-fit items-center transition-[margin] xl:ml-0 ${isActive ? "will-change-transform" : ""}`}
-        onMouseEnter={() => setSelectedIndicator(href)}
-        custom={index}
-        variants={slide}
-        initial="initial"
-        animate="enter"
-        exit="exit"
-      >
+  } else {
+    return (
+      <MagneticWrapper>
         <motion.div
-          variants={scale}
-          animate={isActive ? "open" : "closed"}
-          className="pointer-events-none absolute left-[-30px] h-[10px] w-[10px] rounded-full bg-white"
-        />
-
-        <Link
-          href={href}
-          className="ease-fadeIn font-normal text-white no-underline duration-500 active:scale-75"
+          className={`relative ml-[30px] flex w-fit items-center transition-[margin] xl:ml-0 ${isActive ? "will-change-transform" : ""}`}
+          onMouseEnter={() => setSelectedIndicator(href)}
+          custom={index}
+          variants={slide}
+          initial="initial"
+          animate="enter"
+          exit="exit"
         >
-          {title}
-        </Link>
-      </motion.div>
-    </MagneticWrapper>
-  );
+          <motion.div
+            variants={scale}
+            animate={isActive ? "open" : "closed"}
+            className="pointer-events-none absolute left-[-30px] h-[10px] w-[10px] rounded-full bg-white"
+          />
+
+          <Link
+            href={href}
+            className="font-normal text-white no-underline duration-500 ease-fadeIn active:scale-75"
+          >
+            {title}
+          </Link>
+        </motion.div>
+      </MagneticWrapper>
+    );
+  }
 }

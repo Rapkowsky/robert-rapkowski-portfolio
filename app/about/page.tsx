@@ -103,7 +103,7 @@ const ImageGridHero = () => {
           initial={{ y: "300px", opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1.3, ease: mainAnim }}
-          className="sticky top-0 z-0 grid h-screen grid-cols-3 grid-rows-3 gap-4 overflow-hidden p-4"
+          className="sticky top-0 z-0 grid h-[100svh] grid-cols-3 grid-rows-3 gap-4 overflow-hidden p-4"
         >
           <Copy scrollYProgress={scrollYProgress} />
           <Images scrollYProgress={scrollYProgress} />
@@ -158,7 +158,7 @@ const ImageGridHero = () => {
                 viewport={{ once: true, margin: "0px 0px -100px 0px" }}
               >
                 <motion.div className="relative duration-3000 ease-rrEaseBtnHover active:scale-[0.25]">
-                  <ButtonWrapper className="bg-bgDark relative flex h-[150px] w-[150px] cursor-pointer items-center justify-center rounded-full font-medium text-white dark:bg-primary md:h-[170px] md:w-[170px] xl:h-[200px] xl:w-[200px]">
+                  <ButtonWrapper className="relative flex h-[150px] w-[150px] cursor-pointer items-center justify-center rounded-full bg-bgDark font-medium text-white dark:bg-primary md:h-[170px] md:w-[170px] xl:h-[200px] xl:w-[200px]">
                     <Link
                       href="/contact"
                       className="absolute inset-0 z-20 flex items-center justify-center"
@@ -237,7 +237,7 @@ const Copy = ({
         opacity: copyOpacity,
         y: copyY,
       }}
-      className="absolute z-20 flex h-screen w-full flex-col items-center justify-center px-8"
+      className="absolute z-20 flex h-[100svh] w-full flex-col items-center justify-center px-8"
     >
       <h1 className="max-w-xl text-center text-5xl font-bold md:text-7xl">
         Some pixels from my life.

@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { useScroll, motion, useTransform } from "framer-motion";
 import ButtonWrapper from "./ButtonWrapper";
 import Link from "next/link";
-import { mainAnim } from "@/lib/Animations";
+import { fadeIn, mainAnim } from "@/lib/Animations";
 import { usePathname } from "next/navigation";
 
 export default function Footer() {
@@ -89,7 +89,7 @@ export default function Footer() {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 2.5, ease: mainAnim }}
+            transition={{ duration: 1.5, ease: fadeIn }}
             viewport={{ amount: 1, once: true }}
             className="mt-[120px] flex flex-col gap-3 md:flex-row"
           >

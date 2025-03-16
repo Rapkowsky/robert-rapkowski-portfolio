@@ -27,11 +27,13 @@ const WhyMe = () => {
           ref={videoContainerRef}
           className={`flex h-[180vh] min-h-[1530px] flex-col bg-black md:min-h-[1000px] lg:h-[150vh] xl:h-[145vh] ${isImgInView ? "will-change-[opacity]" : ""}`}
         >
-          <Image
-            src={appleIMg}
-            alt=""
-            quality={100}
-            className="sticky top-0 h-screen object-cover object-[21%,0%] md:object-top"
+          <video
+            src="/images/appleMov2.mp4"
+            muted
+            loop
+            playsInline
+            autoPlay
+            className="sticky top-0 h-[100svh] w-screen object-cover object-[21%,0%] md:object-top"
           />
           <motion.div
             initial={{ opacity: 0, y: 25 }}
@@ -51,13 +53,13 @@ const WhyMe = () => {
             <p>Over 10 years of experience in the IT industry.</p>
           </FadeIn>
           <FadeIn>
-            <p>Frontend Developer - Code Crafted with a Designer’s Eye.</p>
+            <p>Frontend Developer - code crafted with a designer’s eye.</p>
           </FadeIn>
           <FadeIn>
-            <p>Quality Always Takes Center Stage.</p>
+            <p>Quality always takes center stage.</p>
           </FadeIn>
           <FadeIn>
-            <p>Stable Collaboration: Where Trust Fuels Innovation.</p>
+            <p>Stable collaboration: where trust fuels innovation.</p>
           </FadeIn>
         </div>
       </div>
