@@ -9,11 +9,9 @@ import React, { useRef } from "react";
 import { IconType } from "react-icons";
 import { FiCopy } from "react-icons/fi";
 import { RiCodeAiFill } from "react-icons/ri";
-import macBook from "@/public/images/macbook.png";
 import Image from "next/image";
 import { LuPanelsTopLeft } from "react-icons/lu";
 import { SiNextdotjs } from "react-icons/si";
-import Title from "./Title";
 import { FaReact } from "react-icons/fa";
 import { SiRedux } from "react-icons/si";
 import { SiTypescript } from "react-icons/si";
@@ -52,66 +50,9 @@ export const SkillsSection = () => {
     offset: ["start start", "end start"],
   });
 
-  const stickyContainerRef = useRef(null);
-  const { scrollYProgress: stickyScrollYProgress } = useScroll({
-    target: stickyContainerRef,
-    offset: ["start start", "end end"],
-  });
-
-  const { width } = useWindowResize();
-  const originalImageWidth = 3880;
-  const scaleFactor = width < 1024 ? 0.9 : 0.5;
-
-  const macScaleEnd = (scaleFactor * width) / originalImageWidth;
-  const macScaleStart = 1.1;
-
-  const scale = useTransform(
-    stickyScrollYProgress,
-    [0, 1],
-    [macScaleStart, macScaleEnd],
-  );
-  const opacity = useTransform(stickyScrollYProgress, [0, 1], [1, 0]);
-  const titleOpacity = useTransform(stickyScrollYProgress, [0, 0.3], [1, 0]);
   return (
     <>
-      <div ref={stickyContainerRef} className="relative h-[200vh]">
-        <motion.div
-          className="absolute inset-0 z-10 flex h-screen items-center justify-center"
-          style={{ opacity: titleOpacity }}
-        >
-          <Title text="Tech stack" className="!mb-0 self-center text-white" />
-        </motion.div>
-
-        <motion.div
-          className="pointer-events-none absolute top-[-10px] z-[2] float-left h-[200vh] w-full bg-[linear-gradient(to_bottom,black,transparent)] duration-500 dark:opacity-100"
-          style={{ opacity }}
-        />
-        <div className="sticky top-0 z-[1] h-screen overflow-hidden">
-          <motion.div
-            className="absolute top-0 flex h-full w-full items-center justify-center"
-            style={{ scale }}
-          >
-            <div
-              className="relative"
-              style={{ minWidth: `${originalImageWidth}px` }}
-            >
-              <Image src={macBook} alt="image" placeholder="blur" />
-              <div className="absolute left-[490px] top-[280px] h-[1822px] w-[2890px]">
-                <video
-                  src="/images/brain.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  className="h-full w-full object-cover"
-                >
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-      <div ref={cardsRef} className="relative mt-[-300px]">
+      <div ref={cardsRef} className="relative">
         {CARDS.map((c, idx) => (
           <Card
             key={c.id}
@@ -160,7 +101,7 @@ const Card = ({ position, card, scrollYProgress }: CardProps) => {
 
         <motion.h3
           ref={h3Ref}
-          className={`text-center text-4xl font-semibold !leading-[1.1] duration-1000 md:text-6xl ${h3InView ? "bg-[linear-gradient(90deg,#146ef5,#6e30f8,#c1498b,#fe5766)] bg-clip-text text-transparent" : ""}`}
+          className={`text-center text-4xl font-semibold !leading-[1.1] duration-1000 md:text-6xl ${h3InView ? "bg-textGradient bg-clip-text text-transparent" : ""}`}
         >
           {card.title}
         </motion.h3>

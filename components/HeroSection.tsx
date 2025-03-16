@@ -44,7 +44,7 @@ export default function HeroSection() {
     <section className="relative flex h-screen overflow-hidden">
       <div>
         <motion.div
-          initial={{ scale: 0.55 }}
+          initial={{ scale: 1.25 }}
           animate={{ scale: 1 }}
           transition={{ duration: 50, ease: fadeIn }}
         >

@@ -5,7 +5,9 @@ import SlidingImages from "@/components/SlidingImages";
 import Intro from "@/components/Intro";
 import { SkillsSection } from "@/components/SkillsSection";
 import { JourneySection } from "@/components/JourneySection";
-import { ScrollToTop, SmoothScroll } from "@/lib/utils";
+import { SmoothScroll } from "@/lib/utils";
+import Apple from "@/components/WhyMe";
+import WhyMe from "@/components/WhyMe";
 
 // import Preloader from "@/components/Preloader";
 // import { AnimatePresence } from "framer-motion";
@@ -29,7 +31,7 @@ const Home = () => {
 
   SmoothScroll();
 
-  ScrollToTop();
+  // ScrollToTop();
   return (
     <main>
       {/* <AnimatePresence mode="wait">
@@ -37,6 +39,7 @@ const Home = () => {
       </AnimatePresence> */}
       <HeroSection />
       <Intro />
+      <WhyMe />
       <SkillsSection />
       <ProjectsSection />
       <JourneySection />
