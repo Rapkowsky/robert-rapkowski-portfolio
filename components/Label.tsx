@@ -27,7 +27,7 @@ const Label = ({ text, className }: LabelProps) => {
       variants={elementSlideUp}
       whileInView="enter"
       className={cn(
-        "mb-20 self-start text-xs uppercase text-rrGrayText",
+        "text-textGray mb-20 self-start text-xs uppercase",
         className,
       )}
     >

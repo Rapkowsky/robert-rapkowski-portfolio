@@ -32,7 +32,7 @@ const data: JourneySectionEntry[] = [
     title: "2015 - 2017",
     content: (
       <motion.div {...defaultMotionProps}>
-        <p className="mb-8 text-lg font-normal dark:text-rrGrayText">
+        <p className="dark:text-textGray mb-8 text-lg font-normal">
           I began my career as a tester, and during those early years in IT, I
           built a solid foundation{" "}
           <span className="text-white">with a strong focus on quality.</span>
@@ -56,7 +56,7 @@ const data: JourneySectionEntry[] = [
     title: "2016 - 2017",
     content: (
       <motion.div {...defaultMotionProps}>
-        <p className="mb-8 text-lg font-normal dark:text-rrGrayText">
+        <p className="dark:text-textGray mb-8 text-lg font-normal">
           At wowSchool,{" "}
           <span className="text-white">I taught programming basics</span> to
           children aged 7-14. It was a fantastic journey that{" "}
@@ -83,7 +83,7 @@ const data: JourneySectionEntry[] = [
     title: "2017 - 2022",
     content: (
       <motion.div {...defaultMotionProps}>
-        <p className="mb-8 text-lg font-normal dark:text-rrGrayText">
+        <p className="dark:text-textGray mb-8 text-lg font-normal">
           Working as a{" "}
           <span className="text-white">
             Senior QA Specialist immersed me in the intricacies of IT,
@@ -116,7 +116,7 @@ const data: JourneySectionEntry[] = [
     title: "2022 - now",
     content: (
       <motion.div {...defaultMotionProps}>
-        <p className="mb-8 text-lg font-normal dark:text-rrGrayText">
+        <p className="dark:text-textGray mb-8 text-lg font-normal">
           Working as a Frontend Developer is a role in which I{" "}
           <span className="text-white">
             truly thrive and passionately evolve with emerging technologies.
@@ -203,7 +203,7 @@ export const JourneySection = () => {
                 <div className="absolute left-3 flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-black md:left-3">
                   <div className="h-4 w-4 rounded-full border border-neutral-300 bg-neutral-200 p-2 dark:border-neutral-700 dark:bg-neutral-800" />
                 </div>
-                <h3 className="hidden text-xl font-bold text-neutral-500 dark:text-rrGrayText md:block md:pl-20 md:text-5xl">
+                <h3 className="dark:text-textGray hidden text-xl font-bold text-neutral-500 md:block md:pl-20 md:text-5xl">
                   {item.title}
                 </h3>
               </div>

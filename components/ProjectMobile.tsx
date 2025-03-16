@@ -105,10 +105,10 @@ export const ProjectMobile = ({
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="my-5 h-[1px] bg-grayLight dark:bg-rrGrayBorder"
+          className="dark:bg-borderGray my-5 h-[1px] bg-grayLight"
         />
 
-        <div className="flex justify-between text-end text-sm text-rrDark dark:text-rrGrayText">
+        <div className="dark:text-textGray flex justify-between text-end text-sm text-rrDark">
           <motion.p
             variants={scopeVariants}
             initial="hidden"

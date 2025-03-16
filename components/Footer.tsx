@@ -23,15 +23,15 @@ export default function Footer() {
     !isContactPage && (
       <motion.div
         ref={container}
-        className="relative flex h-[calc(100vh-130px)] max-h-[1400px] min-h-[750px] flex-col items-center justify-center bg-rrGray px-xMobile text-white min-[500px]:px-xTablet"
+        className="bg-bgGray relative flex h-[calc(100vh-130px)] max-h-[1400px] min-h-[750px] flex-col items-center justify-center px-xMobile text-white min-[500px]:px-xTablet"
       >
-        <div className="w-full max-w-[1300px] bg-rrGray">
+        <div className="bg-bgGray w-full max-w-[1300px]">
           <div className="relative pb-[100px]">
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: "100%" }}
               transition={{ duration: 1.6, ease: mainAnim }}
-              className="absolute bottom-0 h-[1px] bg-rrGrayBorder"
+              className="bg-borderGray absolute bottom-0 h-[1px]"
             />
             <motion.div style={{ y, opacity }}>
               <div className="flex items-center">
@@ -91,7 +91,7 @@ export default function Footer() {
           >
             <div className="duration-3000 ease-rrEaseBtnHover active:scale-[0.75]">
               <a href="mailto:robertrapkowski19@gmail.com">
-                <ButtonWrapper className="border border-rrGrayBorder px-14 py-6 xl:py-7">
+                <ButtonWrapper className="border-borderGray border px-14 py-6 xl:py-7">
                   <p className="z-20">robertrapkowski19@gmail.com</p>
                 </ButtonWrapper>
               </a>
@@ -99,7 +99,7 @@ export default function Footer() {
 
             <div className="duration-3000 ease-rrEaseBtnHover active:scale-[0.75]">
               <a href="tel:+48698868730">
-                <ButtonWrapper className="border border-rrGrayBorder px-14 py-6 xl:py-7">
+                <ButtonWrapper className="border-borderGray border px-14 py-6 xl:py-7">
                   <p className="z-20"> +48 698868730</p>
                 </ButtonWrapper>
               </a>
