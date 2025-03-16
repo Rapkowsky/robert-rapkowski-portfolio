@@ -6,7 +6,6 @@ import Intro from "@/components/Intro";
 import { SkillsSection } from "@/components/SkillsSection";
 import { JourneySection } from "@/components/JourneySection";
 import { SmoothScroll } from "@/lib/utils";
-import Apple from "@/components/WhyMe";
 import WhyMe from "@/components/WhyMe";
 
 // import Preloader from "@/components/Preloader";
