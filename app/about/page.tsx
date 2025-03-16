@@ -112,7 +112,7 @@ const ImageGridHero = () => {
       </section>
 
       <SectionWrapper className="max-w-[1730px]">
-        <div className="flex min-h-screen flex-col">
+        <div className="flex min-h-[100svh] flex-col">
           <div className="relative mb-28 md:mb-40">
             <motion.p
               className="mb-28 flex max-w-[1040px] flex-wrap gap-x-2 text-left text-[9.1vw] font-medium normal-case !leading-[1.2] min-[500px]:text-[8.4vw] md:mb-40 md:text-6xl xl:text-7xl"
