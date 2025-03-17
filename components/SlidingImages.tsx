@@ -61,13 +61,13 @@ export default function SlidingImages() {
     >
       <motion.div
         style={{ x: x1 }}
-        className={`relative left-[-50vw] mb-[5vw] flex w-[200vw] gap-[5vw] ${isSlidingContainerInView ? "will-change-transform" : ""}`}
+        className={`relative left-[-50vw] mb-[5vw] flex w-[350vw] gap-[5vw] md:w-[200vw] ${isSlidingContainerInView ? "will-change-transform" : ""}`}
       >
         {slider1.map((project, i) => {
           return (
             <div
               key={i}
-              className={`flex h-[30vw] w-1/4 items-center justify-center ${project.bgColor}`}
+              className={`flex h-[56vw] w-1/4 items-center justify-center md:h-[30vw] ${project.bgColor}`}
             >
               <div
                 key={i}
@@ -86,13 +86,13 @@ export default function SlidingImages() {
       </motion.div>
       <motion.div
         style={{ x: x2 }}
-        className={`relative right-[-50vw] flex w-[200vw] gap-[5vw] pb-yMobile md:pb-yTablet lg:pb-yDesktop ${isSlidingContainerInView ? "will-change-transform" : ""}`}
+        className={`relative right-[-50vw] flex w-[350vw] gap-[5vw] pb-yMobile md:w-[200vw] md:pb-yTablet lg:pb-yDesktop ${isSlidingContainerInView ? "will-change-transform" : ""}`}
       >
         {slider2.map((project, i) => {
           return (
             <div
               key={i}
-              className={`flex h-[30vw] w-1/4 items-center justify-center ${project.bgColor}`}
+              className={`flex h-[56vw] w-1/4 items-center justify-center md:h-[30vw] ${project.bgColor}`}
             >
               <div
                 key={i}
