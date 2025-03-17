@@ -28,7 +28,7 @@ const WhyMe = () => {
         <motion.div
           style={{ opacity }}
           ref={videoContainerRef}
-          className={`flex h-[180vh] min-h-[1530px] flex-col bg-black md:min-h-[1000px] lg:h-[150vh] xl:h-[145vh] ${isImgInView ? "will-change-[opacity]" : ""}`}
+          className={`flex h-[180vh] min-h-[1530px] flex-col bg-black md:min-h-[1000px] lg:h-[150vh] xl:h-[165vh] ${isImgInView ? "will-change-[opacity]" : ""}`}
         >
           <video
             src="/keyboard.webm"
