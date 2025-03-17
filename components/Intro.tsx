@@ -8,7 +8,7 @@ import { Numbers } from "./Numbers";
 
 export default function Intro() {
   const phrase =
-    "Crafting modern and interactive websites and apps that help brands shine. Specializing in Next.js and React, I deliver refined, responsive digital experiences alongside cutting edge solutions.";
+    "Frontend Developer leveraging Next.js, React and TypeScript — crafting modern interfaces, boosting performance & SEO metrics, and building dynamic, reusable UIs with custom micro-animations. Continuously evolving into a Fullstack Developer.";
   const description1Ref = useRef(null);
   const isInView1 = useInView(description1Ref, { amount: 0.5, once: true });
 
