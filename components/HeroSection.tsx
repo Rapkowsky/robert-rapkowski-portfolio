@@ -4,13 +4,18 @@ import bgImage from "@/public/apple3.jpg";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { fadeIn } from "@/lib/Animations";
 
 export default function HeroSection() {
   const firstText = useRef(null);
   const secondText = useRef<HTMLDivElement>(null);
   const slider = useRef(null);
+
+  const isAnimInView = useInView(slider, {
+    margin: "200px 0px",
+  });
+
   let xPercent = 0;
   let direction = -1;
 
@@ -60,18 +65,21 @@ export default function HeroSection() {
         <div className="absolute bottom-0">
           <div
             ref={slider}
+            style={{ willChange: isAnimInView ? "transform" : undefined }}
             className="relative z-10 whitespace-nowrap text-[clamp(180px,36vw,310px)] font-medium text-white"
           >
             <p
               ref={firstText}
-              className="relative m-0 pr-[50px] will-change-transform"
+              className="relative m-0 pr-[50px]"
+              style={{ willChange: isAnimInView ? "transform" : undefined }}
             >
               Freelance Developer -
             </p>
 
             <p
               ref={secondText}
-              className="absolute left-full top-0 m-0 pr-[50px] will-change-transform"
+              className="absolute left-full top-0 m-0 pr-[50px]"
+              style={{ willChange: isAnimInView ? "transform" : undefined }}
             >
               Freelance Developer -
             </p>

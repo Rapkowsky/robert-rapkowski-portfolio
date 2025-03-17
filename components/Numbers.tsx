@@ -82,10 +82,17 @@ const Stat = ({ num, suffix, decimals = 0, subheading, x }: Props) => {
     });
   }, [num, decimals, isInView, hasAnimated]);
 
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const isWrapperInView = useInView(wrapperRef, {
+    margin: "200px 0px",
+  });
   return (
-    <div className="relative flex w-full max-w-[500px] flex-col items-center overflow-hidden py-14 text-rrDark dark:text-white md:py-0">
+    <div
+      ref={wrapperRef}
+      className="text-rrDark relative flex w-full max-w-[500px] flex-col items-center overflow-hidden py-14 dark:text-white md:py-0"
+    >
       <motion.div
-        style={{ x }}
+        style={{ x, willChange: isWrapperInView ? "transform" : undefined }}
         className="pointer-events-none absolute inset-0 z-0 w-[100%] cursor-none bg-[linear-gradient(90deg,_#fff0,_white_25%)] dark:bg-[linear-gradient(90deg,_#fff0,_black_25%)]"
       ></motion.div>
       <p className="mb-2 text-center text-7xl font-semibold md:text-6xl lg:text-8xl">

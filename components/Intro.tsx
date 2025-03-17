@@ -20,10 +20,19 @@ export default function Intro() {
     target: aboutMeBtnRef,
     offset: ["start end", "start start"],
   });
+
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const isWrapperInView = useInView(wrapperRef, {
+    margin: "200px 0px",
+  });
+
   const y = useTransform(scrollYProgress, [0, 1], [100, -50]);
   return (
     <SectionWrapper className="pb-0">
-      <div className="relative z-10 flex items-center justify-center">
+      <div
+        ref={wrapperRef}
+        className="relative z-10 flex items-center justify-center"
+      >
         <div className="text-rrDark relative flex w-full max-w-[700px] flex-col gap-16 dark:text-white lg:max-w-full lg:flex-row lg:gap-32">
           <motion.p
             className="flex max-w-[560px] flex-wrap gap-x-2 text-2xl !leading-[1.2] lg:max-w-full xl:text-5xl"
@@ -41,6 +50,9 @@ export default function Intro() {
                     custom={index}
                     initial="closed"
                     animate={isInView1 ? "open" : "closed"}
+                    style={{
+                      willChange: isWrapperInView ? "transform" : undefined,
+                    }}
                   >
                     {word}
                   </motion.span>
@@ -55,6 +67,9 @@ export default function Intro() {
               variants={opacitySlideUp}
               initial="exit"
               animate={isInView2 ? "enter" : "exit"}
+              style={{
+                willChange: isWrapperInView ? "transform" : undefined,
+              }}
             >
               Years of working with UX designers on diverse projects have
               sharpened my technical skills to implement these solutions and
@@ -63,7 +78,10 @@ export default function Intro() {
 
             <motion.div
               ref={aboutMeBtnRef}
-              style={{ y }}
+              style={{
+                y,
+                willChange: isWrapperInView ? "transform" : undefined,
+              }}
               className="absolute bottom-[-150px] right-0 ease-rrEaseBtnHover min-[500px]:bottom-[-50px] lg:bottom-[-200px]"
             >
               <div className="relative duration-3000 ease-rrEaseBtnHover active:scale-[0.25]">

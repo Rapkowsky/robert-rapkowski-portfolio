@@ -86,13 +86,19 @@ const Card = ({ position, card, scrollYProgress }: CardProps) => {
     amount: 1,
     once: true,
   });
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const isWrapperInView = useInView(wrapperRef, {
+    margin: "200px 0px",
+  });
   return (
     <motion.div
+      ref={wrapperRef}
       style={{
         height: CARD_HEIGHT,
         y: position === CARDS.length ? undefined : y,
         background: isOddCard ? "black" : "white",
         color: isOddCard ? "white" : "black",
+        willChange: isWrapperInView ? "transform" : undefined,
       }}
       className="sticky top-0 flex w-full origin-top flex-col items-center justify-center gap-10 px-4 md:gap-14"
     >

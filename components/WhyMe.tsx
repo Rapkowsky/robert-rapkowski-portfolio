@@ -17,6 +17,11 @@ const WhyMe = () => {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   const ySpacing = "dark:py-yMobile dark:md:py-yTablet dark:xl:py-yDesktop";
+
+  const titleRef = useRef<HTMLDivElement>(null);
+  const isTitleInView = useInView(titleRef, {
+    margin: "200px 0px",
+  });
   return (
     <>
       <div className={`relative justify-center ${ySpacing} flex bg-black`}>
@@ -34,11 +39,13 @@ const WhyMe = () => {
             className="sticky top-0 h-[100svh] w-screen object-cover object-[21%,0%] md:object-top"
           />
           <motion.div
+            ref={titleRef}
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ amount: 1, once: true }}
             transition={{ duration: 0.5, ease: fadeIn }}
             className="absolute w-full pt-10"
+            style={{ willChange: isTitleInView ? "transform" : undefined }}
           >
             <Title
               text="Where Creativity Meets Code"
