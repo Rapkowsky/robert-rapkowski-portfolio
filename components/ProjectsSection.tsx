@@ -8,7 +8,6 @@ import SectionWrapper from "./SectionWrapper";
 import TitleSlideLeft from "./TitleSlideLeft";
 import ProjectModal from "./ProjectModal";
 
-
 export const projects = [
   {
     title: "Matuszewski",
@@ -17,7 +16,7 @@ export const projects = [
     src: "mat.png",
     color: "bg-[#E4E3E3]",
     colorDark: "dark:bg-[#f0f0f0]",
-    link: "/matuszewski",
+    link: "/",
   },
   {
     title: "Portfolio",
@@ -35,7 +34,7 @@ export const projects = [
     src: "petsoft.png",
     color: "bg-[#def0eb]",
     colorDark: "dark:bg-[#f0f0f0]",
-    link: "/petsoft",
+    link: "/",
   },
   {
     title: "Silencio",
@@ -55,7 +54,7 @@ export default function ProjectsSection() {
   if (width === 0) return null;
 
   return (
-    <>
+    <div id="works">
       {isMobile ? (
         <SectionWrapper className="!pt-0">
           <TitleSlideLeft text="Recent projects" />
@@ -98,6 +97,6 @@ export default function ProjectsSection() {
           </section>
         </SectionWrapper>
       )}
-    </>
+    </div>
   );
 }
