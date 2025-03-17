@@ -24,7 +24,7 @@ const WhyMe = () => {
   });
   return (
     <>
-      <div className={`relative justify-center ${ySpacing} flex bg-black`}>
+      <div className={`relative z-10 justify-center ${ySpacing} flex bg-black`}>
         <motion.div
           style={{ opacity }}
           ref={videoContainerRef}
@@ -44,7 +44,7 @@ const WhyMe = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ amount: 1, once: true }}
             transition={{ duration: 0.5, ease: fadeIn }}
-            className="absolute w-full pt-10"
+            className="absolute w-full pt-28"
             style={{ willChange: isTitleInView ? "transform" : undefined }}
           >
             <Title
@@ -53,7 +53,7 @@ const WhyMe = () => {
             />
           </motion.div>
         </motion.div>
-        <div className="absolute bottom-[100px] flex h-[100svh] max-w-[1200px] flex-col justify-end gap-10 px-xMobile text-[min(7.9vw,40px)] font-bold text-white min-[500px]:px-xTablet lg:gap-20 lg:text-6xl xl:text-7xl">
+        <div className="absolute bottom-[200px] flex h-[100svh] max-w-[1200px] flex-col justify-end gap-10 px-xMobile text-[min(7.9vw,40px)] font-bold text-white min-[500px]:px-xTablet lg:gap-20 lg:text-6xl xl:text-7xl">
           <FadeIn>
             <p>Over 10 years of experience in the IT industry.</p>
           </FadeIn>

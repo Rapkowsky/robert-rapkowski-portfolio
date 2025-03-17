@@ -23,7 +23,7 @@ export const projects = [
     title: "Portfolio",
     year: "2025",
     scope: "Design & Development",
-    src: "portfolio.png",
+    src: "work1.png",
     color: "bg-[#0A0A0A]",
     colorDark: "dark:bg-[#f0f0f0]",
     link: "/",

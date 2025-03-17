@@ -42,6 +42,8 @@ import { FaWindows } from "react-icons/fa";
 import { cn } from "@/lib/utils";
 import useWindowResize from "./hooks/UseWindowResize";
 import { easefadeInUp } from "@/lib/Animations";
+import TitleSlideLeft from "./TitleSlideLeft";
+import SectionWrapper from "./SectionWrapper";
 
 export const SkillsSection = () => {
   const cardsRef = useRef(null);
@@ -52,6 +54,9 @@ export const SkillsSection = () => {
 
   return (
     <>
+      <SectionWrapper className="!pb-0">
+        <TitleSlideLeft text="Technology Stack" titleClassName="!m-0" />
+      </SectionWrapper>
       <div ref={cardsRef} className="relative">
         {CARDS.map((c, idx) => (
           <Card

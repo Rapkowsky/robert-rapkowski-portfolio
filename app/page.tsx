@@ -5,9 +5,14 @@ import SlidingImages from "@/components/SlidingImages";
 import Intro from "@/components/Intro";
 import { SkillsSection } from "@/components/SkillsSection";
 import { JourneySection } from "@/components/JourneySection";
-import { SmoothScroll } from "@/lib/utils";
+import { ScrollToTop, SmoothScroll } from "@/lib/utils";
 import WhyMe from "@/components/WhyMe";
 
+import dynamic from "next/dynamic";
+
+const TechCarousel = dynamic(() => import("@/components/TechCarousel"), {
+  ssr: false,
+});
 // import Preloader from "@/components/Preloader";
 // import { AnimatePresence } from "framer-motion";
 // import { useEffect, useState } from "react";
@@ -30,7 +35,7 @@ const Home = () => {
 
   SmoothScroll();
 
-  // ScrollToTop();
+  ScrollToTop();
   return (
     <main>
       {/* <AnimatePresence mode="wait">
@@ -39,6 +44,7 @@ const Home = () => {
       <HeroSection />
       <Intro />
       <WhyMe />
+      <TechCarousel />
       <SkillsSection />
       <ProjectsSection />
       <JourneySection />

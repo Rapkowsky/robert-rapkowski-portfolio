@@ -199,7 +199,7 @@ const ImageGridHero = () => {
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: easefadeInUp, delay: i * 0.2 }}
-                viewport={{ amount: 1, margin: "300px 0px 0px 0px" }}
+                viewport={{ margin: "100% 0px -100px 0px" }}
                 key={i}
                 className="min-w-[300px] flex-1"
               >
