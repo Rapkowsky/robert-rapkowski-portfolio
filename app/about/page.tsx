@@ -287,7 +287,7 @@ const Images = ({
         className="relative z-10 col-span-2"
         style={{
           borderRadius: "10px",
-          backgroundImage: "url(/rr1.jpeg)",
+          backgroundImage: "url(/lake.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           scale,
@@ -330,7 +330,7 @@ const Images = ({
         className="relative z-10"
         style={{
           borderRadius: "10px",
-          backgroundImage: "url(/rr4.jpeg)",
+          backgroundImage: "url(/guitar.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundPositionY: "32%",
@@ -346,9 +346,9 @@ const Images = ({
         className="relative z-10"
         style={{
           borderRadius: "10px",
-          backgroundImage: "url(/rr5.jpeg)",
+          backgroundImage: "url(/zanzi.jpg)",
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "10% 90%",
           scale,
           x: image5OffsetX,
           y: image5OffsetY,
@@ -360,7 +360,7 @@ const Images = ({
         className="relative z-10"
         style={{
           borderRadius: "10px",
-          backgroundImage: "url(/rr6.jpeg)",
+          backgroundImage: "url(/jordan.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           scale,
