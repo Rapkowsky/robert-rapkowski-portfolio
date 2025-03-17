@@ -11,7 +11,7 @@ export default function HeroSection() {
   const firstText = useRef(null);
   const secondText = useRef<HTMLDivElement>(null);
   const slider = useRef(null);
-
+ 
   let xPercent = 0;
   let direction = -1;
 
