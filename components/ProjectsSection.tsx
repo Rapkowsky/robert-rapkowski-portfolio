@@ -16,7 +16,7 @@ export const projects = [
     src: "mat.png",
     color: "bg-[#E4E3E3]",
     colorDark: "dark:bg-[#f0f0f0]",
-    link: "/",
+    link: "/matuszewski",
   },
   {
     title: "Portfolio",
@@ -25,7 +25,7 @@ export const projects = [
     src: "work1.png",
     color: "bg-[#0A0A0A]",
     colorDark: "dark:bg-[#f0f0f0]",
-    link: "/",
+    link: "/portfolio",
   },
   {
     title: "PetSoft",
@@ -34,16 +34,7 @@ export const projects = [
     src: "petsoft.png",
     color: "bg-[#def0eb]",
     colorDark: "dark:bg-[#f0f0f0]",
-    link: "/",
-  },
-  {
-    title: "Silencio",
-    year: "2022",
-    scope: "Design & Development",
-    src: "silencio.png",
-    color: "bg-[#E4E3E3]",
-    colorDark: "dark:bg-[#f0f0f0]",
-    link: "/",
+    link: "/petsoft",
   },
 ];
 
