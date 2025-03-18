@@ -87,7 +87,7 @@ const TechCarousel = () => {
                 src={techsStatic[1].poster}
                 alt={techsStatic[1].name}
               />
-              <motion.div
+              {/* <motion.div
                 variants={{
                   active: { opacity: 1 },
                   inactive: { opacity: 0 },
@@ -95,7 +95,7 @@ const TechCarousel = () => {
                 className="absolute bottom-0 left-0 z-10 flex w-full flex-col items-center gap-4 p-5 text-lg text-white md:flex-row md:justify-between md:gap-0"
               >
                 <p>Best video title ever</p>
-              </motion.div>
+              </motion.div> */}
             </motion.div>
             <motion.div
               style={{ opacity: postersOpacity, x: posterTranslateXRight }}
