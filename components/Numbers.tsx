@@ -45,9 +45,9 @@ export const Numbers = ({ className }: NumbersProps) => {
       />
       <Divider opacity={opacity} />
       <Stat
-        num={200}
+        num={3}
         suffix=" +"
-        subheading="Projects completed in the last year"
+        subheading="Years of professional experience as a Frontend Developer"
         x={x}
       />
     </motion.div>
@@ -99,7 +99,7 @@ const Stat = ({ num, suffix, decimals = 0, subheading, x }: Props) => {
         <span ref={ref}></span>
         {suffix}
       </p>
-      <p className="max-w-36 text-center xl:max-w-44">{subheading}</p>
+      <p className="max-w-[240px] text-center">{subheading}</p>
     </div>
   );
 };
