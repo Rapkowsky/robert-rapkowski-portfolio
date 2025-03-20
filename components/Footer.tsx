@@ -15,7 +15,7 @@ export default function Footer() {
     target: container,
     offset: ["start end", "end end"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], [-300, 0]);
+
   const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [162, 90]);
   return (
@@ -26,7 +26,7 @@ export default function Footer() {
       >
         <div className="relative w-full max-w-[1300px] bg-bgGray">
           <div className="relative pb-[100px]">
-            <motion.div style={{ opacity, y }}>
+            <motion.div style={{ opacity }}>
               <div className="flex items-center">
                 <motion.div className="relative h-[60px] w-[60px] overflow-hidden rounded-full md:h-[90px] md:w-[90px] lg:h-[100px] lg:w-[100px]">
                   <Image
