@@ -9,7 +9,7 @@ interface TitleProps {
 }
 
 const titleVariants = cva(
-  "mb-28 self-start text-center text-[min(16vw,60px)] font-semibold uppercase leading-[1.1] tracking-wider md:mb-40 md:text-8xl xl:text-9xl",
+  "mb-28 self-start text-center text-[min(10vw,100px)] font-semibold uppercase leading-[1.1] tracking-wider md:mb-40",
   {
     variants: {
       variant: {

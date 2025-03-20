@@ -26,7 +26,7 @@ export default function Footer() {
       >
         <div className="relative w-full max-w-[1300px] bg-bgGray">
           <div className="relative pb-[100px]">
-            <motion.div style={{ y, opacity }}>
+            <motion.div style={{ opacity, y }}>
               <div className="flex items-center">
                 <motion.div className="relative h-[60px] w-[60px] overflow-hidden rounded-full md:h-[90px] md:w-[90px] lg:h-[100px] lg:w-[100px]">
                   <Image
@@ -52,7 +52,7 @@ export default function Footer() {
               className="absolute bottom-[-70px] left-[unset] right-[10%] z-[1] max-[374px]:left-[40%] md:bottom-[-85px] lg:bottom-[-98px]"
             >
               <div className="relative duration-3000 ease-rrEaseBtnHover active:scale-[0.75]">
-                <ButtonWrapper className="relative flex h-[145px] w-[145px] cursor-pointer items-center justify-center rounded-full bg-primary text-xs font-bold md:h-[175px] md:w-[175px] md:text-base lg:h-[200px] lg:w-[200px]">
+                <ButtonWrapper className="relative flex h-[150px] w-[150px] cursor-pointer items-center justify-center rounded-full bg-primary text-xs font-bold md:h-[175px] md:w-[175px] md:text-base lg:h-[200px] lg:w-[200px]">
                   <Link
                     href="/contact"
                     className="absolute inset-0 z-20 flex items-center justify-center font-medium"

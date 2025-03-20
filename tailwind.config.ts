@@ -53,6 +53,7 @@ export default {
         primaryDarker: "#0a61e5",
         bgGray: "#171717",
         borderGray: "#494a4d",
+        bgGrayLight: "#494a4d",
         textGray: "#86868b",
         bgDark: "#080808",
         borderGrayLight: "#d7d7d8",
