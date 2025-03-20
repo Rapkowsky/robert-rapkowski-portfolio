@@ -9,7 +9,7 @@ const page = () => {
     <SectionWrapper className="!py-0">
       <div className="flex h-screen flex-col justify-center">
         <Title
-          text="The full content on this page will be live by the end of 19.03.2025."
+          text="The full content on this page will be live by the end of 20.03.2025."
           className="mx-auto !mb-5 w-full max-w-[500px] text-center text-2xl md:text-4xl xl:text-3xl"
         />
         <Title
