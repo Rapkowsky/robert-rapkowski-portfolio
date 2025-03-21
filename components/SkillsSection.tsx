@@ -239,7 +239,7 @@ const CARDS: CardType[] = [
   {
     id: 3,
     Icon: FiCopy,
-    title: "Management tools",
+    title: "Management tools / OS",
     description:
       "Experienced with management tools like Jira, Asana, EasyRedmine, and Office 365, enabling seamless adaptation to similar systems.",
   },

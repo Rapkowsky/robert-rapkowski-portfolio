@@ -10,7 +10,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import ButtonWrapper from "@/components/ButtonWrapper";
 import Link from "next/link";
-import matuszewskiImgMobile from "@/public/matMobile.png";
 import useWindowResize from "@/components/hooks/UseWindowResize";
 import portfolioPerformanceD from "@/public/portfolioPerformanceD.png";
 import portfolioPerformanceM from "@/public/portfolioPerformanceM.png";

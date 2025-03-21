@@ -7,6 +7,7 @@ import ProjectDesktop from "./ProjectDesktop";
 import SectionWrapper from "./SectionWrapper";
 import TitleSlideLeft from "./TitleSlideLeft";
 import ProjectModal from "./ProjectModal";
+import { usePathname } from "next/navigation";
 
 export const projects = [
   {
@@ -39,6 +40,8 @@ export const projects = [
 ];
 
 export default function ProjectsSection() {
+  const pathname = usePathname();
+  const isWorkPage = pathname === "/work";
   const [modal, setModal] = useState({ active: false, index: 0 });
   const { width } = useWindowResize();
   const isMobile = width < 1024;
@@ -48,7 +51,7 @@ export default function ProjectsSection() {
     <div id="works">
       {isMobile ? (
         <SectionWrapper className="!pt-0">
-          <TitleSlideLeft text="Recent projects" />
+          {!isWorkPage && <TitleSlideLeft text="Recent projects" />}
           <section>
             {projects.map((project, idx) => {
               return (
@@ -69,7 +72,7 @@ export default function ProjectsSection() {
         </SectionWrapper>
       ) : (
         <SectionWrapper className="max-w-[1860px] !px-0 !pt-0">
-          <TitleSlideLeft text="Recent projects" />
+          {!isWorkPage && <TitleSlideLeft text="Recent projects" />}
           <section className="lg:px flex items-center justify-center">
             <div className="flex w-full flex-col items-center justify-center">
               {projects.map((project, index) => {
