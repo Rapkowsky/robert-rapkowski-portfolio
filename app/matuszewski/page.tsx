@@ -3,7 +3,7 @@ import PageWrapper from "@/components/PageWrapper";
 import SectionWrapper from "@/components/SectionWrapper";
 import Title from "@/components/Title";
 import { ScrollToTop, SmoothScroll } from "@/lib/utils";
-import { InfoCard } from "./InfoCard";
+import { InfoCard } from "@/components/InfoCard";
 import Image from "next/image";
 import matuszewskiImg from "@/public/mat2.png";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -105,14 +105,11 @@ const performanceData = [
   {
     src: matuszewskiPerformanceD,
     alt: "Matuszewski Performance",
-    description: "Measurement taken using PageSpeed Insights - mobile version.",
     className: "",
   },
   {
     src: matuszewskiPerformanceM,
     alt: "Matuszewski Performance",
-    description:
-      "Measurement taken using PageSpeed Insights - desktop version.",
     className: "px-20 md:px-0  mx-auto justify-end",
   },
 ];
@@ -128,11 +125,11 @@ const Section2 = () => {
       <SectionWrapper className="flex min-h-[100vh] items-center justify-center !pt-0">
         <motion.div
           style={{ y, willChange: "transform" }}
-          className="flex flex-col gap-20 rounded-2xl md:flex-row"
+          className="flex flex-col gap-20 md:flex-row"
         >
           {performanceData.map((item, index) => (
             <div key={index} className={`flex flex-col ${item.className}`}>
-              <Image src={item.src} alt={item.alt} className="rounded-2xl" />
+              <Image src={item.src} alt={item.alt} />
             </div>
           ))}
         </motion.div>
