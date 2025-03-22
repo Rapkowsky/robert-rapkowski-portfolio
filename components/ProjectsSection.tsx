@@ -20,6 +20,15 @@ export const projects = [
     link: "/matuszewski",
   },
   {
+    title: "Movie app",
+    year: "2025",
+    scope: "Design & Development",
+    src: "movieApp.png",
+    color: "bg-[#def0eb]",
+    colorDark: "dark:bg-[#f0f0f0]",
+    link: "/movie-app",
+  },
+  {
     title: "Portfolio",
     year: "2025",
     scope: "Design & Development",
