@@ -49,7 +49,7 @@ const Section1 = () => {
       <PageWrapper className="">
         <SectionWrapper className="!pb-0">
           <div className="relative flex flex-col">
-            <Title text="Adwokat Matuszewski" className="!m-0 text-left" />
+            <Title text="Movie App" className="!m-0 text-left" />
 
             <div className="grid grid-cols-1 gap-10 pt-yMobile md:grid-cols-3 md:pt-yTablet lg:gap-20 xl:pt-yDesktop">
               {infoData.map((item, i) => (
