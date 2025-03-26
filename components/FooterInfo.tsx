@@ -13,14 +13,14 @@ const FooterInfo = () => {
     !isContactPage && (
       <div className="bg-bgGray">
         <div className="relative mx-auto flex max-w-[1900px] justify-between px-xMobile py-10">
-          <div className="bg-borderGray absolute left-[20px] top-0 h-[1px] w-[calc(100%-40px)] md:hidden" />
+          <div className="absolute left-[20px] top-0 h-[1px] w-[calc(100%-40px)] bg-borderGray md:hidden" />
           <div className="flex items-end gap-3">
             <span className="flex flex-col gap-3">
               <motion.h3
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 1, ease: [0.45, 0, 0.55, 1] }}
-                className="text-textGray m-0 text-xs font-light hover:after:w-full"
+                className="m-0 text-xs font-light text-textGray hover:after:w-full"
               >
                 VERSION
               </motion.h3>
@@ -43,7 +43,7 @@ const FooterInfo = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 1, ease: [0.45, 0, 0.55, 1] }}
-              className="text-textGray m-0 text-xs font-light hover:after:w-full"
+              className="m-0 text-xs font-light text-textGray hover:after:w-full"
             >
               SOCIALS
             </motion.p>
@@ -57,7 +57,9 @@ const FooterInfo = () => {
               <StandardLink href="https://www.linkedin.com/in/robert-rapkowski/details/experience/?locale=en_US">
                 Linkedin
               </StandardLink>
-              <StandardLink>Instagram</StandardLink>
+              <StandardLink href="https://github.com/Rapkowsky/robert-rapkowski-portfolio">
+                Github
+              </StandardLink>
             </motion.div>
           </div>
         </div>
