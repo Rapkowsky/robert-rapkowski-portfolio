@@ -15,7 +15,6 @@ import useWindowResize from "@/components/hooks/UseWindowResize";
 
 const infoData = [
   { header: "Project Type", description: "Demo" },
-  ,
   { header: "Year", description: "2025" },
   {
     header: "Technology",
