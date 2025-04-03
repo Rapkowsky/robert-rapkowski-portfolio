@@ -20,6 +20,15 @@ export const projects = [
     link: "/matuszewski",
   },
   {
+    title: "R-booking",
+    year: "2025",
+    scope: "Design & Development",
+    src: "rBooking.png",
+    color: "bg-[#def0eb]",
+    colorDark: "dark:bg-[#f0f0f0]",
+    link: "/r-booking",
+  },
+  {
     title: "Movie app",
     year: "2025",
     scope: "Design & Development",
@@ -59,7 +68,7 @@ export default function ProjectsSection() {
   return (
     <div id="works">
       {isMobile ? (
-        <SectionWrapper className="!pt-0">
+        <SectionWrapper>
           {!isWorkPage && <TitleSlideLeft text="Recent projects" />}
           <section>
             {projects.map((project, idx) => {
@@ -80,7 +89,7 @@ export default function ProjectsSection() {
           </section>
         </SectionWrapper>
       ) : (
-        <SectionWrapper className="max-w-[1860px] !px-0 !pt-0">
+        <SectionWrapper className="max-w-[1860px] !px-0">
           {!isWorkPage && <TitleSlideLeft text="Recent projects" />}
           <section className="lg:px flex items-center justify-center">
             <div className="flex w-full flex-col items-center justify-center">

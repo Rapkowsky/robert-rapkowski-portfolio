@@ -43,10 +43,10 @@ const Home = () => {
       </AnimatePresence> */}
       <HeroSection />
       <Intro />
+      <ProjectsSection />
       <WhyMe />
       <TechCarousel />
       <SkillsSection />
-      <ProjectsSection />
       <JourneySection />
       <SlidingImages />
     </main>
