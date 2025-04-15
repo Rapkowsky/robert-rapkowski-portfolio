@@ -64,16 +64,7 @@ const Section1 = () => {
           <div className="relative flex flex-col">
             <Title text="R-booking" className="!m-0 text-left" />
 
-            <div className="grid grid-cols-1 gap-10 pt-yMobile md:grid-cols-3 md:pt-yTablet lg:gap-20 xl:pt-yDesktop">
-              {infoData.map((item, i) => (
-                <div key={i}>
-                  <InfoCard
-                    header={item.header}
-                    description={item.description}
-                  />
-                </div>
-              ))}
-            </div>
+            <InfoCards data={infoData} />
           </div>
         </SectionWrapper>
 
@@ -111,6 +102,18 @@ const Section1 = () => {
     </div>
   );
 };
+
+const InfoCards = ({ data }: { data: typeof infoData }) => (
+  <div className="grid grid-cols-1 gap-10 pt-yMobile md:grid-cols-3 md:pt-yTablet lg:gap-20 xl:pt-yDesktop">
+    {data.map((item) => (
+      <InfoCard
+        key={item.header}
+        header={item.header}
+        description={item.description}
+      />
+    ))}
+  </div>
+);
 
 const ProjectDescription = () => {
   return (
