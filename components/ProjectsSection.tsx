@@ -10,14 +10,14 @@ import ProjectModal from "./ProjectModal";
 import { usePathname } from "next/navigation";
 
 export const projects = [
-  {
-    title: "Matuszewski",
-    year: "2024",
+   {
+    title: "Zoofy",
+    year: "2025",
     scope: "Design & Development",
-    src: "mat.png",
-    color: "bg-[#E4E3E3]",
+    src: "zoofy.png",
+    color: "bg-[#def0eb]",
     colorDark: "dark:bg-[#f0f0f0]",
-    link: "/matuszewski",
+    link: "/zoofy",
   },
   {
     title: "R-booking",
@@ -27,6 +27,15 @@ export const projects = [
     color: "bg-[#def0eb]",
     colorDark: "dark:bg-[#f0f0f0]",
     link: "/r-booking",
+  },
+  {
+    title: "Matuszewski",
+    year: "2024",
+    scope: "Design & Development",
+    src: "mat.png",
+    color: "bg-[#E4E3E3]",
+    colorDark: "dark:bg-[#f0f0f0]",
+    link: "/matuszewski",
   },
   {
     title: "Movie app",
@@ -45,15 +54,6 @@ export const projects = [
     color: "bg-[#0A0A0A]",
     colorDark: "dark:bg-[#f0f0f0]",
     link: "/portfolio",
-  },
-  {
-    title: "PetSoft",
-    year: "2025",
-    scope: "Design & Development",
-    src: "petsoft.png",
-    color: "bg-[#def0eb]",
-    colorDark: "dark:bg-[#f0f0f0]",
-    link: "/petsoft",
   },
 ];
 
