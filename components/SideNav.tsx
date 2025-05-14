@@ -71,7 +71,9 @@ export default function SideNav(isActive: { isActive: boolean }) {
               <StandardLink href="https://www.linkedin.com/in/robert-rapkowski/details/experience/?locale=en_US">
                 LinkedIn
               </StandardLink>
-              <StandardLink href="https://github.com/Rapkowsky/robert-rapkowski-portfolio">Github</StandardLink>
+              <StandardLink href="https://github.com/Rapkowsky">
+                Github
+              </StandardLink>
             </div>
           </div>
           <ThemeToggle />

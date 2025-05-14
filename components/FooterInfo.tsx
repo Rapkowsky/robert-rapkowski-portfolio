@@ -57,7 +57,7 @@ const FooterInfo = () => {
               <StandardLink href="https://www.linkedin.com/in/robert-rapkowski/details/experience/?locale=en_US">
                 Linkedin
               </StandardLink>
-              <StandardLink href="https://github.com/Rapkowsky/robert-rapkowski-portfolio">
+              <StandardLink href="https://github.com/Rapkowsky">
                 Github
               </StandardLink>
             </motion.div>
