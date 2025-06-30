@@ -12,6 +12,7 @@ type ProjectDesktopProps = {
   index: number;
   title: string;
   link: string;
+  scope: string;
   setModal: (state: ModalState) => void;
 };
 
@@ -19,6 +20,7 @@ export default function ProjectDesktop({
   index,
   title,
   link,
+  scope,
   setModal,
 }: ProjectDesktopProps) {
   return (
@@ -42,7 +44,7 @@ export default function ProjectDesktop({
           {title}
         </h2>
         <p className="text-rrDark text-[19px] font-[300] duration-300 ease-rrEaseBtnHover group-hover:translate-x-[30px] group-hover:text-textGray dark:text-textGray dark:group-hover:text-white">
-          Design & Development
+          {scope}
         </p>
       </motion.div>
     </Link>

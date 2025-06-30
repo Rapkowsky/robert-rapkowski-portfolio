@@ -8,7 +8,7 @@ import { Numbers } from "./Numbers";
 
 export default function Intro() {
   const phrase =
-    "Frontend Developer leveraging Next.js, React and TypeScript — crafting modern interfaces, boosting performance & SEO metrics, and building dynamic, reusable UIs with custom micro-animations. Continuously evolving into a Fullstack Developer.";
+    "Frontend Developer leveraging Next.js, React and TypeScript — crafting modern, fast, and scalable applications and websites. Also interested in fullstack development to gain a broad view of architecture and deep knowledge, enabling me to deliver optimal solutions.";
   const description1Ref = useRef(null);
   const isInView1 = useInView(description1Ref, { amount: 0.5, once: true });
 
@@ -71,9 +71,9 @@ export default function Intro() {
                 willChange: isWrapperInView ? "transform" : undefined,
               }}
             >
-              Years of working with UX designers on diverse projects have
-              sharpened my technical skills to implement these solutions and
-              fueled my ability to deliver UX solutions that make a real impact.
+              Years of collaborating with other developers on diverse projects
+              have sharpened my technical skills, enabling me to create
+              functional, responsive, and visually appealing applications.
             </motion.p>
 
             <motion.div

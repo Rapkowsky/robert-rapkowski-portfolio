@@ -23,12 +23,16 @@ export const InfoCard = ({ header, description }: InfoCardProps) => {
           {description.map((item, index) => (
             <div key={index} className="flex items-center gap-3">
               <RiCheckboxCircleFill className="text-bgGrayLight" />
-              <p className="lg:text-lg">{item}</p>
+              <p className="lg:text-lg">
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </p>
             </div>
           ))}
         </div>
       ) : (
-        <p className="lg:text-lg">{description}</p>
+        <p className="lg:text-lg">
+          {description.charAt(0).toUpperCase() + description.slice(1)}
+        </p>
       )}
     </div>
   );

@@ -10,10 +10,19 @@ import ProjectModal from "./ProjectModal";
 import { usePathname } from "next/navigation";
 
 export const projects = [
-   {
+  {
+    title: "DevHub",
+    year: "2025",
+    scope: "Fullstack application",
+    src: "devhub-bg-git.png",
+    color: "bg-[#E4E3E3]",
+    colorDark: "dark:bg-[#f0f0f0]",
+    link: "/devhub",
+  },
+  {
     title: "Zoofy",
     year: "2025",
-    scope: "Design & Development",
+    scope: "Fullstack application",
     src: "zoofy.png",
     color: "bg-[#def0eb]",
     colorDark: "dark:bg-[#f0f0f0]",
@@ -22,7 +31,7 @@ export const projects = [
   {
     title: "R-booking",
     year: "2025",
-    scope: "Design & Development",
+    scope: "Frontend application",
     src: "rBooking.png",
     color: "bg-[#def0eb]",
     colorDark: "dark:bg-[#f0f0f0]",
@@ -31,7 +40,7 @@ export const projects = [
   {
     title: "Matuszewski",
     year: "2024",
-    scope: "Design & Development",
+    scope: "Animated Website",
     src: "mat.png",
     color: "bg-[#E4E3E3]",
     colorDark: "dark:bg-[#f0f0f0]",
@@ -40,7 +49,7 @@ export const projects = [
   {
     title: "Movie app",
     year: "2025",
-    scope: "Design & Development",
+    scope: "Frontend application",
     src: "movieApp.png",
     color: "bg-[#def0eb]",
     colorDark: "dark:bg-[#f0f0f0]",
@@ -49,7 +58,7 @@ export const projects = [
   {
     title: "Portfolio",
     year: "2025",
-    scope: "Design & Development",
+    scope: "Animated Website",
     src: "work1.png",
     color: "bg-[#0A0A0A]",
     colorDark: "dark:bg-[#f0f0f0]",
@@ -100,6 +109,7 @@ export default function ProjectsSection() {
                     title={project.title}
                     setModal={setModal}
                     key={index}
+                    scope={project.scope}
                     link={project.link}
                   />
                 );
