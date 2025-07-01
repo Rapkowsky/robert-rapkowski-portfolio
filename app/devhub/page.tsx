@@ -145,7 +145,7 @@ const GitHubBlock = ({ words }: { words: string }) => {
             as="button"
             className="flex items-center space-x-2 bg-white px-6 py-1.5 text-black dark:bg-black dark:text-white sm:px-10 sm:py-3 md:px-14 md:py-[18px] xl:px-[75px] xl:py-5"
           >
-            Github
+            GitHub
           </HoverBorderGradient>
         </motion.div>
       </Link>

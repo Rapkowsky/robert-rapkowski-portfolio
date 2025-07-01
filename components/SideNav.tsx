@@ -72,7 +72,7 @@ export default function SideNav(isActive: { isActive: boolean }) {
                 LinkedIn
               </StandardLink>
               <StandardLink href="https://github.com/Rapkowsky">
-                Github
+                GitHub
               </StandardLink>
             </div>
           </div>

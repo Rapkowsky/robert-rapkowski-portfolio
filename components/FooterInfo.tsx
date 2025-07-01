@@ -58,7 +58,7 @@ const FooterInfo = () => {
                 Linkedin
               </StandardLink>
               <StandardLink href="https://github.com/Rapkowsky">
-                Github
+               GitHub
               </StandardLink>
             </motion.div>
           </div>
