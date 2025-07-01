@@ -39,7 +39,7 @@ export const TextGenerateEffect = ({
               key={word + idx}
               className={cn(
                 "text-[46px] md:text-[76px] sm:text-[60px] xl:text-[90px] font-semibold text-black opacity-0 dark:text-white",
-                idx === wordsArray.length - 2 ? "block" : null,
+                idx === wordsArray.length - 1 ? "block" : null,
               )}
               style={{
                 filter: filter ? "blur(10px)" : "none",
