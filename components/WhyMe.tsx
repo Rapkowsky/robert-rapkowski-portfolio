@@ -64,7 +64,10 @@ const WhyMe = () => {
             <p>Quality always takes center stage.</p>
           </FadeIn>
           <FadeIn>
-            <p>Over 3 years of professional commercial experience</p>
+            <p>
+              Over 3 years of professional commercial experience as a frontend
+              developer
+            </p>
           </FadeIn>
         </div>
       </div>

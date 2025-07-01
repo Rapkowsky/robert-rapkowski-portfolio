@@ -90,7 +90,6 @@ const ImageGridHero = () => {
     "Frontend Developer leveraging Next.js, React and TypeScript — crafting modern, fast, and scalable applications and websites. Also interested in fullstack development to gain a broad view of architecture and deep knowledge, enabling me to deliver optimal solutions.";
   const description1Ref = useRef(null);
   const isInView1 = useInView(description1Ref, {
-    amount: 1,
     once: true,
     margin: "0px 0px -100px 0px",
   });
@@ -137,10 +136,6 @@ const ImageGridHero = () => {
                 );
               })}
             </motion.p>
-            {/* <TitleSlideLeft
-              titleClassName="normal-case text-left xl:text-7xl !leading-[1.1] font-medium text-[9.1vw] min-[500px]:text-[8.4vw] md:text-6xl"
-              text="Cutting-edge Frontend Developer delivering bespoke, responsive digital experiences, driven by quality and the latest technologies."
-            ></TitleSlideLeft> */}
 
             <div className="overflow-hidden">
               <motion.div
@@ -186,7 +181,6 @@ const ImageGridHero = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 2.5, ease: mainAnim }}
-              viewport={{ amount: 1, margin: "0px 0px -300px 0px" }}
               className="text-5xl font-semibold leading-[1.2]"
             >
               Why me?
@@ -215,7 +209,7 @@ const ImageGridHero = () => {
         </div>
       </SectionWrapper>
       <motion.div style={{ height }} className="relative w-full">
-        <div className="absolute left-[-10%] z-[1] h-[1600%] w-[120%] rounded-bl-[50%] rounded-br-[50%] rounded-tl-none rounded-tr-none bg-white duration-500 dark:bg-black" />
+        <div className="absolute left-[-10%] z-[1] h-[900%] w-[120%] rounded-bl-[50%] rounded-br-[50%] rounded-tl-none rounded-tr-none bg-white duration-500 dark:bg-black" />
       </motion.div>
     </>
   );
