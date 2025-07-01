@@ -26,7 +26,7 @@ export default {
         xDesktop: "150px",
         yMobile: "110px",
         yTablet: "135px",
-        yDesktop: "175px",
+        yDesktop: "150px",
       },
       boxShadow: {
         shadowMain: "2px 4px 12px #00000014",

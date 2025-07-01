@@ -7,13 +7,14 @@ import { InfoCard } from "@/components/InfoCard";
 import Image from "next/image";
 import petsoft from "@/public/devhub-bg-git.png";
 import petsoftM from "@/public/m-devhub-bg-git.png";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
 import ButtonWrapper from "@/components/ButtonWrapper";
 import useWindowResize from "@/components/hooks/UseWindowResize";
 import Link from "next/link";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import { rrEaseBtnHover } from "@/lib/Animations";
 
 const infoData = [
   { header: "Project Type", description: "Fullstack Application" },
@@ -52,6 +53,8 @@ export default Page;
 
 const Section1 = () => {
   const container = useRef(null);
+  const githubBlockRef = useRef(null);
+
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start end", "end start"],
@@ -64,7 +67,9 @@ const Section1 = () => {
   const windowSize = useWindowResize();
   const isMobile = windowSize.width < 768;
   const imageSrc = isMobile ? petsoftM : petsoft;
-  const words = `Visit the GitHub repository to learn more about project details and get involved.`;
+  const words = `More project details `;
+
+  const isInView = useInView(githubBlockRef, { once: true });
 
   return (
     <div ref={container} className="min-h-screen">
@@ -83,29 +88,10 @@ const Section1 = () => {
                 </div>
               ))}
             </div>
-            <TextGenerateEffect
-              words={words}
-              duration={0.5}
-              className="mt-14"
-            />
-            <HoverBorderGradient
-              containerClassName="rounded-full mt-5 active:scale-[0.95]"
-              as="button"
-              className="flex items-center space-x-2 bg-white text-black dark:bg-black dark:text-white"
-            >
-              <Link
-                href="https://github.com/Rapkowsky/dev-hub "
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-14"
-              >
-                Github
-              </Link>
-            </HoverBorderGradient>
           </div>
         </SectionWrapper>
 
-        <SectionWrapper className="max-w-[1860px]">
+        <SectionWrapper className="max-w-[1860px] !pt-10">
           <div className="relative">
             <motion.div className="absolute inset-0 z-10 flex items-center justify-center will-change-transform">
               <div className="relative duration-3000 ease-rrEaseBtnHover active:scale-[0.25]">
@@ -130,8 +116,40 @@ const Section1 = () => {
               </motion.div>
             </div>
           </div>
+
+          <div ref={githubBlockRef} className="mt-16 flex justify-center">
+            {isInView && <GitHubBlock words={words} />}
+          </div>
         </SectionWrapper>
       </PageWrapper>
+    </div>
+  );
+};
+
+const GitHubBlock = ({ words }: { words: string }) => {
+  return (
+    <div className="relative w-fit">
+      <TextGenerateEffect words={words} duration={1.3} />
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.8, delay: 1.5, ease: rrEaseBtnHover }}
+      >
+        <HoverBorderGradient
+          containerClassName="rounded-full mt-5 active:scale-[0.95] absolute bottom-2 sm:bottom-3 md:bottom-5 right-0 xl:bottom-6"
+          as="button"
+          className="flex items-center space-x-2 bg-white px-6 py-1.5 text-black dark:bg-black dark:text-white sm:px-10 sm:py-3 md:px-14 md:py-[18px] xl:px-[75px] xl:py-5"
+        >
+          <Link
+            href="https://github.com/Rapkowsky/dev-hub "
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fonot-bold text-xl"
+          >
+            Github
+          </Link>
+        </HoverBorderGradient>
+      </motion.div>
     </div>
   );
 };
