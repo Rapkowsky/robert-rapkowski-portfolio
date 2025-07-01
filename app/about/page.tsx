@@ -190,11 +190,10 @@ const ImageGridHero = () => {
           <div className="flex flex-wrap gap-20">
             {data.map((item, i) => (
               <motion.div
+                key={i}
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: easefadeInUp, delay: i * 0.2 }}
-                viewport={{ margin: "100% 0px -100px 0px" }}
-                key={i}
                 className="min-w-[300px] flex-1"
               >
                 <p className="mb-10 border-b pb-5 text-stone-400">0{i + 1}</p>
