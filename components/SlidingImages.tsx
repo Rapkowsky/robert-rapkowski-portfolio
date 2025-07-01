@@ -5,7 +5,7 @@ import Image from "next/image";
 const slider1 = [
   {
     bgColor: "bg-[#F3F4F6] dark:bg-transparent",
-    src: "petsoft.png",
+    src: "zoofy.png",
   },
   {
     bgColor: "bg-[#F9FAFB] dark:bg-transparent",
@@ -24,7 +24,7 @@ const slider1 = [
 const slider2 = [
   {
     bgColor: "bg-[#def0eb] dark:bg-transparent",
-    src: "petsoft.png",
+    src: "zoofy.png",
   },
   {
     bgColor: "bg-[#D6D6D6] dark:bg-transparent",

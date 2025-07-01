@@ -26,37 +26,37 @@ const data = [
   {
     title: "Development",
     description:
-      "For over three years, I've been exploring Frontend development—a journey I truly adore. I thrive on the details, from microanimations to interactive touches that captivate users. While I continuously refine my Frontend expertise, my next ambition is to evolve into a Full Stack Developer.",
+      "I am a Frontend Developer with over 3 years of professional experience in building user application interfaces. I leverage Next.js, React, and TypeScript to craft modern, fast, and scalable applications and websites. I am also interested in fullstack development to gain a broad view of architecture and deepen my knowledge, enabling me to deliver optimal solutions.",
     Icon: FaCode,
   },
   {
-    title: "Design",
+    title: "Design & Quality",
     description:
-      "With 10 years in the industry, collaborating with design teams and delivering pixel-perfect websites based on meticulous projects has honed my expertise in best practices and given me a professional eye for UX/UI.",
+      "With 10 years in the industry, I have worked closely with design teams and delivered pixel-perfect user application interfaces based on detailed project requirements. This experience has helped me develop a solid understanding of best practices and a professional approach to UX/UI. My previous work as a tester also gave me an appreciation for software quality.",
     Icon: LuPanelsLeftBottom,
   },
   {
     title: "SEO",
     description:
-      "When it comes to SEO and performance, I'm no stranger to metrics like FCP, LCP, TBT, and CLS. I believe that top-notch performance always goes hand in hand with smart design and solid mechanics for websites and applications.",
+      "When it comes to SEO and performance, I'm no stranger to metrics like FCP, LCP, TBT, and CLS. I believe that top-notch performance always goes hand in hand with smart design and solid mechanics for websites and applications. I pay attention to optimizing assets, implementing responsive design, and using techniques such as lazy loading to improve loading times. Additionally, I leverage server-side rendering (SSR) and static site generation (SSG) to enhance both performance and SEO.",
     Icon: IoPulseOutline,
   },
   {
     title: "AI = opportunity != threat",
     description:
-      "AI is an opportunity, not a threat—it's the key to unlocking innovative potential and transforming challenges into creative breakthroughs. AI facilitates the acquisition of new skills and, when leveraged effectively, can accelerate work processes severalfold.",
+      "From my experience, I can see that using AI tools can really streamline work and make a lot of tasks easier—if you know how to use them well. At the same time, I think it’s important to remember that AI always needs to be supervised and double-checked, because leaving it unchecked can easily lead to mistakes.",
     Icon: RiRobot2Fill,
   },
   {
     title: "Beyond Code",
     description:
-      "Not only do I bring technical expertise to the table, but I'm also a strong communicator with finely honed soft skills—qualities I consider essential for thriving in teamwork and building lasting client relationships.",
+      "Not only do I bring technical skills to the table, but I also value good communication and strong soft skills—I believe these are key to working well in a team and building lasting relationships with clients. I really appreciate a positive atmosphere at work, as it helps everyone do their best.",
     Icon: RiSpeakAiLine,
   },
   {
     title: "Stable Collaboration",
     description:
-      "My professional experience clearly shows that I value long-term partnerships—you can always count on me.",
+      "My professional experience clearly shows that I value long-term partnerships - you can always count on me.",
     Icon: PiHandshake,
   },
 ];
@@ -87,7 +87,7 @@ const ImageGridHero = () => {
   const opacity = useTransform(containerScrollYProgress, [0, 0.5], [0, 1]);
 
   const phrase =
-    "Cutting-edge Frontend Developer delivering bespoke, responsive digital experiences, driven by quality and the latest technologies.";
+    "Frontend Developer leveraging Next.js, React and TypeScript — crafting modern, fast, and scalable applications and websites. Also interested in fullstack development to gain a broad view of architecture and deep knowledge, enabling me to deliver optimal solutions.";
   const description1Ref = useRef(null);
   const isInView1 = useInView(description1Ref, {
     amount: 1,

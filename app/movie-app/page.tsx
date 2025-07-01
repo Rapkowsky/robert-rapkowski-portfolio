@@ -7,16 +7,23 @@ import { InfoCard } from "@/components/InfoCard";
 import Image from "next/image";
 import movieApp from "@/public/movieApp.png";
 import movieAppMobile from "@/public/movieAppMobile.png";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import ButtonWrapper from "@/components/ButtonWrapper";
 import Link from "next/link";
 import useWindowResize from "@/components/hooks/UseWindowResize";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import { rrEaseBtnHover } from "@/lib/Animations";
 
 const infoData = [
-  { header: "Project Type", description: "Demo" },
+  { header: "Project Type", description: "Frontend Application" },
+  { header: "Role / Services", description: ["Development", "Design"] },
   { header: "Year", description: "2025" },
-  { header: "Technology", description: ["React", "Tailwind", "Appwrite"] },
+  {
+    header: "Technology",
+    description: ["React", "Appwrite", "Tailwind", "git", "vercel"],
+  },
 ];
 
 const Page = () => {
@@ -43,6 +50,10 @@ const Section1 = () => {
   const windowSize = useWindowResize();
   const isMobile = windowSize.width < 768;
   const imageSrc = isMobile ? movieAppMobile : movieApp;
+
+  const words = `More project details`;
+  const githubBlockRef = useRef(null);
+  const isInView = useInView(githubBlockRef, { once: true });
   return (
     <div ref={container} className="min-h-screen">
       <PageWrapper className="">
@@ -91,9 +102,40 @@ const Section1 = () => {
                 />
               </motion.div>
             </div>
+            <div ref={githubBlockRef} className="mt-16 flex justify-center">
+              {isInView && <GitHubBlock words={words} />}
+            </div>
           </div>
         </SectionWrapper>
       </PageWrapper>
+    </div>
+  );
+};
+
+const GitHubBlock = ({ words }: { words: string }) => {
+  return (
+    <div className="relative z-10 w-fit">
+      <TextGenerateEffect words={words} duration={1.3} />
+      <Link
+        href="https://github.com/Rapkowsky/movie-app "
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-xl"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.8, delay: 1.5, ease: rrEaseBtnHover }}
+        >
+          <HoverBorderGradient
+            containerClassName="rounded-full mt-5 active:scale-[0.95] absolute bottom-2 sm:bottom-3 md:bottom-5 right-0 xl:bottom-6"
+            as="button"
+            className="flex items-center space-x-2 bg-white px-6 py-1.5 text-black dark:bg-black dark:text-white sm:px-10 sm:py-3 md:px-14 md:py-[18px] xl:px-[75px] xl:py-5"
+          >
+            Github
+          </HoverBorderGradient>
+        </motion.div>
+      </Link>
     </div>
   );
 };

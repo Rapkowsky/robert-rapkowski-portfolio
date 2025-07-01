@@ -16,10 +16,24 @@ import matuszewskiPerformanceD from "@/public/matuszewskiPerformanceD.png";
 import matuszewskiPerformanceM from "@/public/matuszewskiPerformanceM.png";
 
 const infoData = [
-  { header: "Project Type", description: "Commercial" },
+  { header: "Project Type", description: "Animated Website" },
   { header: "Role / Services", description: ["Development", "Design"] },
   { header: "Year", description: "2024" },
-  { header: "Technology", description: ["Next.js", "React", "Tailwind"] },
+  {
+    header: "Technology",
+    description: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "React Hook Form",
+      "Zod",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Framer Motion",
+      "Git",
+      "Vercel",
+    ],
+  },
 ];
 
 const Page = () => {

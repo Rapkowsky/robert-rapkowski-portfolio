@@ -6,26 +6,43 @@ import { ScrollToTop, SmoothScroll } from "@/lib/utils";
 import { InfoCard } from "@/components/InfoCard";
 import Image from "next/image";
 import petsoft from "@/public/zoofy.png";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import ButtonWrapper from "@/components/ButtonWrapper";
 import useWindowResize from "@/components/hooks/UseWindowResize";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { rrEaseBtnHover } from "@/lib/Animations";
 import Link from "next/link";
-// import portfolioPerformanceD from "@/public/portfolioPerformanceD.png";
-// import portfolioPerformanceM from "@/public/portfolioPerformanceM.png";
+
 
 const infoData = [
-  { header: "Project Type", description: "Private" },
+  { header: "Project Type", description: "Fullstack Application" },
   { header: "Role / Services", description: ["Development", "Design"] },
   { header: "Year", description: "2025" },
-  { header: "Technology", description: ["Next.js", "React", "Tailwind"] },
+  {
+    header: "Technology",
+    description: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "React Hook Form",
+      "Zod",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Framer Motion",
+      "Node.js",
+      "Prisma",
+      "Git",
+      "Vercel",
+    ],
+  },
 ];
 
 const Page = () => {
   return (
     <div>
       <Section1 />
-      <ProjectDescription />
     </div>
   );
 };
@@ -46,6 +63,10 @@ const Section1 = () => {
   const windowSize = useWindowResize();
   const isMobile = windowSize.width < 768;
   const imageSrc = isMobile ? petsoft : petsoft;
+
+  const words = `More project details`;
+  const githubBlockRef = useRef(null);
+  const isInView = useInView(githubBlockRef, { once: true });
   return (
     <div ref={container} className="min-h-screen">
       <PageWrapper className="">
@@ -96,105 +117,12 @@ const Section1 = () => {
             </div>
           </div>
         </SectionWrapper>
-      </PageWrapper>
-    </div>
-  );
-};
-
-const ProjectDescription = () => {
-  return (
-    <SectionWrapper className="max-w-[1860px] !pt-0">
-      <div className="prose prose-lg dark:prose-invert mx-auto max-w-4xl">
-        <h1 className="mb-10 text-4xl font-bold">Project Description</h1>
-
-        <Section>
-          <p className="mb-8 text-lg">
-            Zoofy is a full-stack web application designed to perform CRUD
-            (Create, Read, Update, Delete) operations. Zoofy delivers a seamless
-            and efficient user experience for managing data. Additionally, the
-            application includes authentication functionality powered by
-            NextAuth, enabling secure user login and session management.
-          </p>
-        </Section>
-
-        <Section title="Features">
-          <ul className="mb-10 list-disc space-y-3 pl-6">
-            <li>User Registration: Create new user accounts.</li>
-            <li>Authentication: Log in and log out securely using NextAuth.</li>
-            <li>Payment System: Integrated payment functionality.</li>
-            <li>
-              Pet Management:
-              <ul className="list-disc space-y-2 pl-6 pt-2">
-                <li>Add a new pet to the database.</li>
-                <li>Edit existing pet details.</li>
-                <li>View the list of created pets.</li>
-                <li>Delete pets from the database.</li>
-              </ul>
-            </li>
-          </ul>
-        </Section>
-
-        <Section title="Technologies">
-          <ul className="mb-10 grid list-disc grid-cols-1 gap-3 pl-6 md:grid-cols-2 md:items-start">
-            <li>Next.js</li>
-            <li>React</li>
-            <li>Tailwind</li>
-            <li>React Hook Form</li>
-            <li>TypeScript</li>
-            <li>Prisma</li>
-            <li>Zod</li>
-            <li>Shadcn</li>
-          </ul>
-        </Section>
-
-        <Section title="User Authentication">
-          <p className="mb-4 text-lg">
-            To test the login functionality, create a new personal account or
-            use the following credentials:
-          </p>
-          <div className="mb-10 rounded-md bg-gray-100 p-4 dark:bg-gray-800">
-            <p className="mb-2 font-medium">Demo Login Credentials:</p>
-            <ul className="list-disc space-y-1 pl-6">
-              <li>
-                <strong>Email:</strong> example@gmail.com
-              </li>
-              <li>
-                <strong>Password:</strong> example
-              </li>
-            </ul>
+        <SectionWrapper className="max-w-[1860px] !pt-0">
+          <div ref={githubBlockRef} className="flex justify-center">
+            {isInView && <GitHubBlock words={words} />}
           </div>
-        </Section>
-
-        <Section title="Running the Project">
-          <pre className="mb-8 grid overflow-x-auto rounded-md bg-gray-100 p-4 dark:bg-gray-800">
-            <code className="text-sm"># Install dependencies: npm install</code>{" "}
-            <code className="text-sm">
-              # Start the development server: npm run dev
-            </code>
-          </pre>
-          <p className="mb-10 text-lg">
-            Once started, the application will be available at{" "}
-            <code className="rounded bg-gray-100 px-2 py-1 text-sm dark:bg-gray-800">
-              http://localhost:3000
-            </code>
-            .
-          </p>
-        </Section>
-      </div>
-    </SectionWrapper>
-  );
-};
-
-interface SectionProps {
-  title?: string;
-  children: React.ReactNode;
-}
-
-const Section = ({ title, children }: SectionProps) => {
-  return (
-    <div>
-      {title && <h2 className="mb-6 mt-12 text-2xl font-semibold">{title}</h2>}
-      {children}
+        </SectionWrapper>
+      </PageWrapper>
     </div>
   );
 };
@@ -235,3 +163,31 @@ const Section = ({ title, children }: SectionProps) => {
 //     </div>
 //   );
 // };
+const GitHubBlock = ({ words }: { words: string }) => {
+  return (
+    <div className="relative z-10 w-fit">
+      <TextGenerateEffect words={words} duration={1.3} />
+      <Link
+        href="https://github.com/Rapkowsky/zoofy "
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-xl"
+      >
+        {" "}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.8, delay: 1.5, ease: rrEaseBtnHover }}
+        >
+          <HoverBorderGradient
+            containerClassName="rounded-full mt-5 active:scale-[0.95] absolute bottom-2 sm:bottom-3 md:bottom-5 right-0 xl:bottom-6"
+            as="button"
+            className="flex items-center space-x-2 bg-white px-6 py-1.5 text-black dark:bg-black dark:text-white sm:px-10 sm:py-3 md:px-14 md:py-[18px] xl:px-[75px] xl:py-5"
+          >
+            Github
+          </HoverBorderGradient>
+        </motion.div>
+      </Link>
+    </div>
+  );
+};

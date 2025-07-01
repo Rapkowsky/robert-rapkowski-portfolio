@@ -5,8 +5,8 @@ import Title from "@/components/Title";
 import { ScrollToTop, SmoothScroll } from "@/lib/utils";
 import { InfoCard } from "@/components/InfoCard";
 import Image from "next/image";
-import petsoft from "@/public/devhub-bg-git.png";
-import petsoftM from "@/public/m-devhub-bg-git.png";
+import devhub from "@/public/devhub-bg-git.png";
+import devhubM from "@/public/m-devhub-bg-git.png";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
 import ButtonWrapper from "@/components/ButtonWrapper";
@@ -31,7 +31,7 @@ const infoData = [
       "openai",
       "mongodb",
       "tailwind",
-      "shadcnui",
+      "shadcn",
       "motion",
       "node",
       "prisma",
@@ -53,7 +53,6 @@ export default Page;
 
 const Section1 = () => {
   const container = useRef(null);
-  const githubBlockRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
     target: container,
@@ -66,9 +65,10 @@ const Section1 = () => {
 
   const windowSize = useWindowResize();
   const isMobile = windowSize.width < 768;
-  const imageSrc = isMobile ? petsoftM : petsoft;
-  const words = `More project details `;
+  const imageSrc = isMobile ? devhubM : devhub;
 
+  const words = `More project details`;
+  const githubBlockRef = useRef(null);
   const isInView = useInView(githubBlockRef, { once: true });
 
   return (
@@ -115,10 +115,9 @@ const Section1 = () => {
                 <Image src={imageSrc} alt="DevHub Project image" />
               </motion.div>
             </div>
-          </div>
-
-          <div ref={githubBlockRef} className="mt-16 flex justify-center">
-            {isInView && <GitHubBlock words={words} />}
+            <div ref={githubBlockRef} className="mt-16 flex justify-center">
+              {isInView && <GitHubBlock words={words} />}
+            </div>
           </div>
         </SectionWrapper>
       </PageWrapper>
@@ -128,28 +127,28 @@ const Section1 = () => {
 
 const GitHubBlock = ({ words }: { words: string }) => {
   return (
-    <div className="relative w-fit">
+    <div className="relative z-100 w-fit">
       <TextGenerateEffect words={words} duration={1.3} />
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.8, delay: 1.5, ease: rrEaseBtnHover }}
+      <Link
+        href="https://github.com/Rapkowsky/dev-hub "
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-xl"
       >
-        <HoverBorderGradient
-          containerClassName="rounded-full mt-5 active:scale-[0.95] absolute bottom-2 sm:bottom-3 md:bottom-5 right-0 xl:bottom-6"
-          as="button"
-          className="flex items-center space-x-2 bg-white px-6 py-1.5 text-black dark:bg-black dark:text-white sm:px-10 sm:py-3 md:px-14 md:py-[18px] xl:px-[75px] xl:py-5"
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.8, delay: 1.5, ease: rrEaseBtnHover }}
         >
-          <Link
-            href="https://github.com/Rapkowsky/dev-hub "
-            target="_blank"
-            rel="noopener noreferrer"
-            className="fonot-bold text-xl"
+          <HoverBorderGradient
+            containerClassName="rounded-full mt-5 active:scale-[0.95] absolute bottom-2 sm:bottom-3 md:bottom-5 right-0 xl:bottom-6"
+            as="button"
+            className="flex items-center space-x-2 bg-white px-6 py-1.5 text-black dark:bg-black dark:text-white sm:px-10 sm:py-3 md:px-14 md:py-[18px] xl:px-[75px] xl:py-5"
           >
             Github
-          </Link>
-        </HoverBorderGradient>
-      </motion.div>
+          </HoverBorderGradient>
+        </motion.div>
+      </Link>
     </div>
   );
 };
