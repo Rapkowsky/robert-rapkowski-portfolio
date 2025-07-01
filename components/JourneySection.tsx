@@ -79,29 +79,22 @@ const data: JourneySectionEntry[] = [
         <p className="mb-8 text-lg font-normal dark:text-textGray">
           Working as a{" "}
           <span className="font-semibold dark:text-white">
-            Senior QA Specialist immersed me in the intricacies of IT,
-            collaborating with developers, graphic designers, and project
-            managers within an international team.
+            Senior QA Specialist
           </span>{" "}
-          This role enabled me to develop both soft and hard skills, acquiring a
-          range of technical expertise that{" "}
+          gave me a close look at how IT projects really work. I had the chance
+          to work alongside developers, graphic designers, and project managers
+          in an international team, which{" "}
           <span className="font-semibold dark:text-white">
-            gradually evolved into the competencies needed to transition into
-            Frontend Development.
-          </span>
+            helped me build both soft and technical skills.
+          </span>{" "}
+          Over time, I found myself{" "}
+          <span className="font-semibold dark:text-white">
+            getting more and more involved with applications, especially diving
+            deeper into frontend topics.
+          </span>{" "}
+          This hands-on experience made it a natural step for me to move into
+          Frontend Development.
         </p>
-        {/* <div className="grid grid-cols-2 gap-4">
-          <Image
-            alt=""
-            src={tcWork3}
-            className="h-20 w-full rounded-lg object-cover shadow-shadowMain md:h-44 lg:h-60"
-          />
-          <Image
-            alt=""
-            src={tcWork2}
-            className="h-20 w-full rounded-lg object-cover shadow-shadowMain md:h-44 lg:h-60"
-          />
-        </div> */}
       </motion.div>
     ),
   },
@@ -118,7 +111,7 @@ const data: JourneySectionEntry[] = [
           <span className="font-semibold dark:text-white">
             modern, responsive, and high-quality
           </span>{" "}
-          websites and applications by utilizing the latest
+          applications and websites by utilizing the latest
           technologies—currently{" "}
           <span className="font-semibold dark:text-white">Next.js</span> and{" "}
           <span className="font-semibold dark:text-white">React</span> —to
@@ -185,9 +178,9 @@ export const JourneySection = () => {
             Changelog from my journey
           </h2>
           <p className="max-w-sm text-sm text-neutral-700 dark:text-neutral-300 md:text-base">
-            As a Frontend Developer, I have worked commercially for over the
-            past 3 years.
-            <br /> Here&apos;s a timeline of my whole IT journey.
+            As a Frontend Developer, I have worked professionally and
+            commercially for over 3 years. Here&#39;s a timeline of my entire IT
+            journey.
           </p>
         </div>
 
@@ -201,7 +194,7 @@ export const JourneySection = () => {
                 <div className="absolute left-3 flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-black md:left-3">
                   <div className="h-4 w-4 rounded-full border border-neutral-300 bg-bgDark p-2 dark:border-neutral-700 dark:bg-neutral-800" />
                 </div>
-                <h3 className="hidden text-xl font-bold  dark:text-textGray md:block md:pl-20 md:text-5xl">
+                <h3 className="hidden text-xl font-bold dark:text-textGray md:block md:pl-20 md:text-5xl">
                   {item.title}
                 </h3>
               </div>
