@@ -32,11 +32,11 @@ const slider2 = [
   },
   {
     bgColor: "bg-[#CFCFCF] dark:bg-transparent",
-    src: "matContact.png",
+    src: "movieApp.png",
   },
   {
     bgColor: "bg-[#CFCFCF] dark:bg-transparent",
-    src: "matContact.png",
+    src: "devhub-bg-git.png",
   },
 ];
 
