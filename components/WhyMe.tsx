@@ -64,7 +64,7 @@ const WhyMe = () => {
             <p>Quality always takes center stage.</p>
           </FadeIn>
           <FadeIn>
-            <p>Stable collaboration: where trust fuels innovation.</p>
+            <p>Over 3 years of professional commercial experience</p>
           </FadeIn>
         </div>
       </div>
