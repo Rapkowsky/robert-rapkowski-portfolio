@@ -87,7 +87,7 @@ const ImageGridHero = () => {
   const opacity = useTransform(containerScrollYProgress, [0, 0.5], [0, 1]);
 
   const phrase =
-    "Frontend Developer leveraging Next.js, React and TypeScript — crafting modern, fast, and scalable applications and websites. Also interested in fullstack development to gain a broad view of architecture and deep knowledge, enabling me to deliver optimal solutions.";
+    "Frontend Developer with 3+ years of commercial experience in developing and maintaining modern e-commerce applications and websites. Proficient in Next.js, React, Redux, TypeScript, JavaScript, Tailwind CSS, CSS3, REST APIs, and Git. Skilled in UX/UI design, working in Agile methodologies in international teams. Interested in full-stack development to broaden architectural expertise. English proficiency at B2/C1 level.";
   const description1Ref = useRef(null);
   const isInView1 = useInView(description1Ref, {
     once: true,
@@ -120,7 +120,7 @@ const ImageGridHero = () => {
               {phrase.split(" ").map((word, index) => {
                 return (
                   <span
-                    className="relative inline-flex overflow-hidden"
+                    className="relative inline-flex overflow-hidden text-2xl sm:text-4xl"
                     key={index}
                   >
                     <motion.span
@@ -174,14 +174,14 @@ const ImageGridHero = () => {
               <Image
                 src={rrImg}
                 alt="image"
-                className="h-[120px] w-[120px] rounded-full object-cover object-top"
+                className="h-[120px] w-[120px] flex-1 rounded-full object-cover object-top"
               />
             </motion.div>
             <motion.h1
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 2.5, ease: mainAnim }}
-              className="text-5xl font-semibold leading-[1.2]"
+              className="flex-1 text-5xl font-semibold leading-[1.2]"
             >
               Why me?
             </motion.h1>

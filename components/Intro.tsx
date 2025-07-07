@@ -8,7 +8,7 @@ import { Numbers } from "./Numbers";
 
 export default function Intro() {
   const phrase =
-    "Frontend Developer leveraging Next.js, React and TypeScript — crafting modern, fast, and scalable applications and websites. Also interested in fullstack development to gain a broad view of architecture and deep knowledge, enabling me to deliver optimal solutions.";
+    "Frontend Developer with 3+ years of commercial experience in developing and maintaining modern e-commerce applications and websites. Proficient in Next.js, React, Redux, TypeScript, JavaScript, Tailwind CSS, CSS3, REST APIs, and Git. Skilled in UX/UI design, working in Agile methodologies in international teams. Interested in full-stack development to broaden architectural expertise. English proficiency at B2/C1 level.";
   const description1Ref = useRef(null);
   const isInView1 = useInView(description1Ref, { amount: 0.5, once: true });
 
@@ -35,7 +35,7 @@ export default function Intro() {
       >
         <div className="text-rrDark relative flex w-full max-w-[700px] flex-col gap-16 dark:text-white lg:max-w-full lg:flex-row lg:gap-32">
           <motion.p
-            className="flex max-w-[560px] flex-wrap gap-x-2 text-2xl !leading-[1.2] lg:max-w-full xl:text-5xl"
+            className="flex max-w-[560px] flex-wrap gap-x-2 text-2xl !leading-[1.2] lg:max-w-full xl:text-4xl"
             ref={description1Ref}
           >
             {phrase.split(" ").map((word, index) => {
