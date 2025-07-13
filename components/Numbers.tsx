@@ -38,7 +38,7 @@ export const Numbers = ({ className }: NumbersProps) => {
       />
       <Divider opacity={opacity} />
       <Stat
-        num={150}
+        num={100}
         suffix=" +"
         subheading="Developed responsive web application interfaces"
         x={x}

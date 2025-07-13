@@ -87,7 +87,7 @@ const ImageGridHero = () => {
   const opacity = useTransform(containerScrollYProgress, [0, 0.5], [0, 1]);
 
   const phrase =
-    "Frontend Developer with 3+ years of commercial experience in developing and maintaining modern e-commerce applications and websites. Proficient in Next.js, React, Redux, TypeScript, JavaScript, Tailwind CSS, CSS3, REST APIs, and Git. Skilled in UX/UI design, working in Agile methodologies in international teams. Interested in full-stack development to broaden architectural expertise. English proficiency at B2/C1 level.";
+    "Frontend Developer with 3 years of professional experience. Specializing in Next.js, React, TypeScript, and Tailwind CSS. Developing maintainable and scalable web applications and websites, optimizing performance with server-side rendering (SSR). Enhancing accessibility and conversion rates through best practices in frontend architecture and design patterns. Proficient in delivering responsive, accessible, and high-performing user interfaces. Thriving in Agile environments within international teams, including both traditional and virtual teams. Continuously learning Fullstack development to expand architectural skills. English proficiency at B2/C1 level.";
   const description1Ref = useRef(null);
   const isInView1 = useInView(description1Ref, {
     once: true,
