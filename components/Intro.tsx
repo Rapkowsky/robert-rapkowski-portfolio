@@ -10,10 +10,10 @@ export default function Intro() {
   const phrase =
     "Frontend Developer with 3 years of professional experience. Specializing in Next.js, React, TypeScript, and Tailwind CSS. Developing maintainable and scalable web applications and websites, optimizing performance with server-side rendering (SSR). Enhancing accessibility and conversion rates through best practices in frontend architecture and design patterns. Proficient in delivering responsive, accessible, and high-performing user interfaces. Thriving in Agile environments within international teams, including both traditional and virtual teams. Continuously learning Fullstack development to expand architectural skills. English proficiency at B2/C1 level.";
   const description1Ref = useRef(null);
-  const isInView1 = useInView(description1Ref, { amount: 0.5, once: true });
+  const isInView1 = useInView(description1Ref, { once: true });
 
   const description2Ref = useRef(null);
-  const isInView2 = useInView(description2Ref, { amount: 0.5, once: true });
+  const isInView2 = useInView(description2Ref, { once: true });
 
   const aboutMeBtnRef = useRef(null);
   const { scrollYProgress } = useScroll({

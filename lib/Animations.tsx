@@ -59,11 +59,11 @@ export const wordSlideUp = {
   },
   open: (i: number) => ({
     y: "0%",
-    transition: { duration: 0.6, delay: 0.04 * i, ease: "easeInOut" },
+    transition: { duration: 0.3, delay: 0.04 * i, ease: "easeInOut" },
   }),
   closed: {
     y: "100%",
-    transition: { duration: 0.6, ease: "easeInOut" },
+    transition: { duration: 0.3, ease: "easeInOut" },
   },
 };
 
