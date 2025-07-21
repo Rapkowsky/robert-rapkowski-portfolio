@@ -11,7 +11,7 @@ export default function HeroSection() {
   const firstText = useRef(null);
   const secondText = useRef<HTMLDivElement>(null);
   const slider = useRef(null);
- 
+
   let xPercent = 0;
   let direction = -1;
 
@@ -64,14 +64,14 @@ export default function HeroSection() {
             className="relative z-10 whitespace-nowrap text-[clamp(95px,30vw,310px)] font-medium text-white"
           >
             <p ref={firstText} className="relative m-0 pr-[50px]">
-              Freelance Developer -
+              Frontend Developer -
             </p>
 
             <p
               ref={secondText}
               className="absolute left-full top-0 m-0 pr-[50px]"
             >
-              Freelance Developer -
+              Frontend Developer -
             </p>
           </div>
         </div>
