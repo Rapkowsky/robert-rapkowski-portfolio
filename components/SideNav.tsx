@@ -68,7 +68,7 @@ export default function SideNav(isActive: { isActive: boolean }) {
               Socials
             </p>
             <div className="flex space-x-5">
-              <StandardLink href="https://www.linkedin.com/in/robert-rapkowski/details/experience/?locale=en_US">
+              <StandardLink href="https://www.linkedin.com/in/robert-rapkowski">
                 LinkedIn
               </StandardLink>
               <StandardLink href="https://github.com/Rapkowsky">

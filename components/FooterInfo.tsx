@@ -54,7 +54,7 @@ const FooterInfo = () => {
               transition={{ duration: 1, delay: 0.2, ease: [0.45, 0, 0.55, 1] }}
               className="flex space-x-5 text-white"
             >
-              <StandardLink href="https://www.linkedin.com/in/robert-rapkowski/details/experience/?locale=en_US">
+              <StandardLink href="https://www.linkedin.com/in/robert-rapkowski">
                 Linkedin
               </StandardLink>
               <StandardLink href="https://github.com/Rapkowsky">
