@@ -208,7 +208,7 @@ const ImageGridHero = () => {
         </div>
       </SectionWrapper>
       <motion.div style={{ height }} className="relative w-full">
-        <div className="absolute z-[1] h-[900%] w-[100%] rounded-bl-[50%] rounded-br-[50%] rounded-tl-none rounded-tr-none bg-white duration-500 dark:bg-black" />
+        <div className="absolute z-[1] h-[500%] w-[100%] rounded-bl-[50%] rounded-br-[50%] rounded-tl-none rounded-tr-none bg-white duration-500 dark:bg-black" />
       </motion.div>
     </>
   );
